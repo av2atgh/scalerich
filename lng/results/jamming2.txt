@@ -1,0 +1,8 @@
+alpha=0.6: depletion recursion lambda0* = 0.168 (c(t) measured, T=inf); with c=1.163 throughout: 0.162; Both et al.: 0.189
+alpha=0.75: depletion recursion lambda0* = 0.404 (c(t) measured, T=inf); with c=1.163 throughout: 0.374; Both et al.: 0.405
+alpha=1.0: depletion recursion lambda0* = 0.745 (c(t) measured, T=inf); with c=1.163 throughout: 0.658; Both et al.: 0.643
+alpha=1.5: depletion recursion lambda0* = 1.254 (c(t) measured, T=inf); with c=1.163 throughout: 1.045; Both et al.: 0.879
+alpha=0.6 T=20000: simulated lambda0* = 0.232
+alpha=0.6 T=100000: simulated lambda0* = 0.214
+alpha=0.75 T=20000: simulated lambda0* = 0.363
+alpha=0.75 T=100000: simulated lambda0* = 0.359

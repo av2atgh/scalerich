@@ -1,0 +1,36 @@
+seed 1 (c_L=2.319)
+   mu[2,4) n=11965: ratio=1.005 D=0.93 Fano-in-bin=1.05
+   mu[4,8) n=6713: ratio=1.020 D=0.96 Fano-in-bin=1.18
+   mu[8,16) n=2989: ratio=1.027 D=1.02 Fano-in-bin=1.36
+   mu[16,32) n=1059: ratio=1.034 D=1.09 Fano-in-bin=2.02
+   mu[32,64) n=290: ratio=1.023 D=1.19 Fano-in-bin=3.08
+   mu[64,128) n=89: ratio=1.019 D=1.06 Fano-in-bin=4.71
+   reinforcement mu>16: n=1471 corr = -0.017
+   reinforcement mu in [4,16]: n=9702 corr = -0.004
+seed 2 (c_L=2.327)
+   mu[2,4) n=11996: ratio=1.005 D=0.92 Fano-in-bin=1.05
+   mu[4,8) n=6666: ratio=1.020 D=0.94 Fano-in-bin=1.15
+   mu[8,16) n=2916: ratio=1.030 D=1.03 Fano-in-bin=1.40
+   mu[16,32) n=1040: ratio=1.031 D=1.07 Fano-in-bin=2.03
+   mu[32,64) n=329: ratio=1.006 D=1.05 Fano-in-bin=2.79
+   mu[64,128) n=90: ratio=1.016 D=0.92 Fano-in-bin=3.45
+   reinforcement mu>16: n=1490 corr = 0.032
+   reinforcement mu in [4,16]: n=9583 corr = -0.004
+seed 3 (c_L=2.324)
+   mu[2,4) n=11915: ratio=1.011 D=0.94 Fano-in-bin=1.06
+   mu[4,8) n=6700: ratio=1.023 D=0.93 Fano-in-bin=1.14
+   mu[8,16) n=2897: ratio=1.019 D=1.01 Fano-in-bin=1.44
+   mu[16,32) n=1053: ratio=1.009 D=1.12 Fano-in-bin=2.06
+   mu[32,64) n=330: ratio=1.016 D=1.38 Fano-in-bin=3.23
+   mu[64,128) n=84: ratio=1.025 D=1.04 Fano-in-bin=3.28
+   reinforcement mu>16: n=1499 corr = 0.094
+   reinforcement mu in [4,16]: n=9597 corr = -0.015
+T=1e6 seed 11: ratio by mu bin 0.932 1.005 1.025 1.024 1.025 1.019 1.022 1.013 1.021
+T=1e6 seed 12: ratio by mu bin 0.933 1.009 1.022 1.023 1.023 1.013 1.014 1.015 1.006
+T=1e6 seed 13: ratio by mu bin 0.934 1.004 1.023 1.023 1.023 1.017 1.013 1.012 1.015
+K=32: measured 5.780  Poisson(mu) 5.544  Poisson(r(mu) mu) 5.783  BA 5.818
+K=64: measured 5.793  Poisson(mu) 5.624  Poisson(r(mu) mu) 5.767  BA 5.908
+K=128: measured 5.756  Poisson(mu) 5.674  Poisson(r(mu) mu) 5.696  BA 5.953
+uniform: <l_i> ~ i^-0.499 (i=10..3e4)
+circ: <l_i> ~ i^-0.350 (i=10..3e4)
+wave_w0.125: <l_i> ~ i^-0.388 (i=10..3e4)

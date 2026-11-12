@@ -196,7 +196,7 @@ def fig4():
         c = [float(r['Cmean']) for r in g if r['name'] == key]
         if v:
             rows.append((lbl, np.mean(v), np.std(v), np.mean(c)))
-    rows.append(('3D plates', 2.495, 0.015, 0.72))
+    rows.append(('3D plates ($k_{\\min}\\geq80$)', 2.495, 0.015, 0.72))
     fig, axs = plt.subplots(1, 2, figsize=(W2, 2.6), gridspec_kw=dict(width_ratios=[1.35, 1]))
     ax = axs[0]
     y = np.arange(len(rows))[::-1]
@@ -212,10 +212,12 @@ def fig4():
     ax = axs[1]
     for field, cc, mk in (('circ', C2, 'o'), ('wave', C3, 's')):
         pf = sorted({float(r['pfield']) for r in pol if r['field'] == field and r['T'] == '30000'})
-        gv = [np.mean([float(r['gmle10']) for r in pol if r['field'] == field and r['T'] == '30000'
-                       and float(r['pfield']) == p]) for p in pf]
-        pf = [0.0] + pf; gv = [2.90] + gv
-        ax.plot(pf, gv, mk + '-', color=cc, label={'circ': 'circular field', 'wave': 'wave field'}[field])
+        vals = [np.array([float(r['gmle10']) for r in pol if r['field'] == field and r['T'] == '30000'
+                          and float(r['pfield']) == p]) for p in pf]
+        gv = [2.899] + [v.mean() for v in vals]; ge = [0.013] + [(v.max() - v.min()) / 2 for v in vals]
+        pf = [0.0] + pf
+        ax.errorbar(pf, gv, yerr=ge, fmt=mk + '-', color=cc, capsize=1.5,
+                    label={'circ': 'circular field', 'wave': 'wave field'}[field])
     ax.axhline(3, color=INK, lw=0.8, ls='--')
     ax.set_xlabel('fraction of ligaments following the field'); ax.set_ylabel('$\\gamma_{\\rm MLE}$')
     ax.legend(loc='lower left')
