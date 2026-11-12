@@ -1,0 +1,83 @@
+% Drop-in replacement for the "Three dimensions" paragraph of Sec. VII.
+% Numbers: d3/results/{cells,degree_iso_s*,mechanism_iso_s*,cluster_*,knobs,beams3d}.txt
+% (scripts in d3/, T = 2x10^6, three realisations unless stated).
+
+\paragraph*{Three dimensions.}
+With plates, the SR construction is the iterated division of convex polyhedra. A cell
+is selected with probability equal to its volume, and it is cut by the plane through a
+uniform point with an isotropic normal. The argument of Sec.~\ref{sec:model} carries over
+unchanged: for a fixed normal, the offset of the plane has density $A(s)/V_K$, with $A(s)$
+the section area, so the volume fraction of a daughter is uniform. The cell hierarchy is
+again a binary search tree, with exponential volumes and split depth $2\ln t$. We measure
+a daughter-fraction variance of $0.0833$ ($1/12$) and a depth slope of $2.01$. A plane that
+crosses $m$ faces of a simple polyhedron changes $(F,V,E)$ by $(m+2,2m,3m)$ summed over the
+two daughters. Hence the mean numbers of faces, vertices and edges per cell are
+$2+\bar m$, $2\bar m$ and $3\bar m$, the counterpart of $\langle n\rangle=4$ (measured
+$6.585$, $9.170$, $13.755$). Unlike in two dimensions, the number $m$ of plates met by a new
+plate is not fixed by topology. Its mean converges to $\bar m=4.577$ for plates away from
+the walls. Plate areas decay as $a_t\simeq c_at^{-2/3}$ with $c_a=1.23$, so the total area
+grows as $3c_at^{1/3}$ and the area distribution is $P(a)\sim a^{-5/2}$ (maximum-likelihood
+exponent $2.49$--$2.51$). The first plate has $\langle a_1\rangle=0.941$.
+
+In three dimensions the incidence argument and the metric argument of
+Sec.~\ref{sec:degree} part ways. Counting faces, a new plate creates $2+\bar m$ incidences
+and hands out $\bar m$ links. A uniform hit rate per incidence would give
+$b=\bar m/(2+\bar m)$ and $\gamma=2+2/\bar m=2.44$. The hit rate is set instead by the
+plate area, which is fixed at birth. With a rate per unit area $\bar m/2A(t)$ on each side,
+\begin{equation}
+  k_i=o_i+\frac{\bar m}{2}\,x_i\Big[\Big(\frac{T}{i}\Big)^{2/3}-1\Big],\qquad
+  \gamma=\frac{5}{2},
+  \label{eq:k3d}
+\end{equation}
+where $o_i$ is the out-degree at birth and $x_i=a_i/\langle a_i\rangle$. The general form is
+$\gamma=(2d-1)/(d-1)$, the exponent of random Apollonian networks in $d$
+dimensions~\cite{kolossvary2016}. The two pictures agree in two dimensions only because
+$m/(2+m)=(d-1)/d$ when $m=2$. Geometry decides between them: an old plate is tiled by
+faces of linear size $t^{-1/3}$, so its number of faces grows as $t^{2/3}$. Newborn plates
+are single large faces and are hit more often per face, by $8\%$ relative to plates older
+than $10^{-3}t$. We find:
+\begin{itemize}
+\item the faces of a fixed old plate grow as $t^{0.663\text{--}0.668}$, against $0.694$ for
+incidence preferential attachment;
+\item Eq.~\eqref{eq:k3d} predicts the hits received by each plate with ratio $1.015$ and
+correlation $0.99$;
+\item at fixed age the hits scale with birth area with elasticity $0.94$--$0.95$;
+\item hits in $(i,2i]$ predict hits in $(2i,T]$ at fixed area only weakly (log--log slope
+$0.025$--$0.030$), against $0.55$ in a reinforcement surrogate with the same out-degrees.
+\end{itemize}
+The dispersion of the received hits around Eq.~\eqref{eq:k3d} is $1.5$--$4$ times Poisson,
+against $100$--$380$ times for the reinforcement surrogate. The degree of a plate is
+therefore a fitness (its area) multiplied by an age factor. The degree distribution follows
+the fitness surrogate within $3$--$7\%$ up to $k\approx800$, while it departs from the
+reinforcement surrogate by up to $23\%$. The maximum-likelihood exponent of all plates is
+$2.48$--$2.51$ for $k_{\min}=80$--$640$. The fitness and reinforcement surrogates, whose
+asymptotes are $2.5$ and $2.44$, read $2.48$--$2.53$ and $2.40$--$2.46$ at the same cuts.
+Restricting the fit to plates away from the walls is biased: the oldest, largest plates
+touch the walls. Three-dimensional SR materials therefore have $\gamma=5/2$. The host of a
+new plate satisfies $h/t\to U^3$ (measured $P(h/t\le0.01)=0.217$, against $0.215$), so the
+thickness ratio to the host is $U^{3\alpha}$.
+
+The fill fraction follows from $dF/dt=-\lambda_0c(t)F^{2/3}t^{-\alpha-2/3}$ for the free
+volume $F$. It matches simulations to within $0.4\%$ in the tunable phase. The sum
+converges only for $\alpha>1/3$, which places the jamming boundary at $\alpha=1/3$ in three
+dimensions. In the tunable phase $\rho\simeq\lambda_0c_a\zeta(\alpha+2/3)$ for small
+$\lambda_0$.
+
+Clustering is high because a new plate's section polygon is a cycle of plates already in
+contact. Each newcomer closes $4.39$ triangles along its polygon and $2.52$ more through
+contacts outside its cell. Each received link brings $q=3.26$ triangles. Then
+$C(k)=2[e_0+q(k-o)]/[k(k-1)]\to6.5/k$, which agrees with the data within $1\%$ for $k\ge16$,
+and $\langle C\rangle=0.72$. The three-dimensional random Apollonian network has the same
+$\gamma$, $C(k)=6/k$ and $\langle C\rangle=0.82$. The mean neighbour degree decreases with
+$k$ and grows as $T^{1/3}$.
+
+Thickness and jamming change neither $\gamma$ ($2.49$--$2.55$) nor $C$ ($0.71$--$0.72$).
+With three orthogonal orientations every cell is a box and every plate a rectangle
+($m=4$). The two counting arguments then coincide at $b=2/3$, and $\gamma\simeq2.5$. These
+boxes cluster ($C=0.55$), whereas rectangles in two dimensions do not. Beams, in contrast,
+need a capture rule, because zero-width lines do not meet in three dimensions. If a rod of
+radius $\lambda_t/2$ grows until it touches another, its target is its cross-section
+$\ell_iR_i$. The mean-field exponent is then $\gamma=(3+\alpha)/(1+\alpha)$, so for beams
+the thickness exponent would tune $\gamma$. Our simulations up to $T=10^5$ confirm that
+hits scale with rod length, but they are still dominated by the walls. The rule used in
+Ref.~\cite{both2026} is specified in their Supplementary Information.
