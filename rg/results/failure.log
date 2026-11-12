@@ -1,0 +1,20 @@
+SR a=0 0 {'band': 0.1733, 'nnr': 0.6825, 'aval_max': 10, 'aval_mean': 1.9481, 'eps_first': 0.001, 'eps_last': 0.0837, 'E_drop': 0.0765, 'nseg': 2883} time 3.1
+SR a=0 1 {'band': 0.1733, 'nnr': 0.7987, 'aval_max': 9, 'aval_mean': 1.9, 'eps_first': 0.0017, 'eps_last': 0.1962, 'E_drop': 0.2526, 'nseg': 2908} time 3.2
+SR a=0 2 {'band': 0.16, 'nnr': 0.7565, 'aval_max': 19, 'aval_mean': 2.3438, 'eps_first': 0.0018, 'eps_last': 0.1562, 'E_drop': 0.1383, 'nseg': 2904} time 2.8
+SR a=0.3 0 {'band': 0.16, 'nnr': 0.8145, 'aval_max': 9, 'aval_mean': 1.8434, 'eps_first': 0.0003, 'eps_last': 0.0267, 'E_drop': 0.3304, 'nseg': 2883} time 3.0
+SR a=0.3 1 {'band': 0.2333, 'nnr': 0.8308, 'aval_max': 36, 'aval_mean': 2.0548, 'eps_first': 0.0004, 'eps_last': 0.0878, 'E_drop': 0.2039, 'nseg': 2908} time 2.7
+SR a=0.3 2 {'band': 0.2, 'nnr': 0.8563, 'aval_max': 23, 'aval_mean': 1.8313, 'eps_first': 0.0003, 'eps_last': 0.1293, 'E_drop': 0.0989, 'nseg': 2904} time 2.8
+SR a=0.6 0 {'band': 0.2067, 'nnr': 0.8616, 'aval_max': 12, 'aval_mean': 1.7241, 'eps_first': 0.0001, 'eps_last': 0.0045, 'E_drop': 0.5402, 'nseg': 2883} time 3.0
+SR a=0.6 1 {'band': 0.2067, 'nnr': 0.8682, 'aval_max': 26, 'aval_mean': 1.7333, 'eps_first': 0.0, 'eps_last': 0.0212, 'E_drop': 0.341, 'nseg': 2908} time 3.0
+SR a=0.6 2 {'band': 0.18, 'nnr': 0.8332, 'aval_max': 24, 'aval_mean': 1.7045, 'eps_first': 0.0, 'eps_last': 0.0261, 'E_drop': 0.1534, 'nseg': 2904} time 2.9
+SR a=0.6 shuffled 0 {'band': 0.1933, 'nnr': 0.9657, 'aval_max': 24, 'aval_mean': 1.8537, 'eps_first': 0.0003, 'eps_last': 0.0593, 'E_drop': 0.069, 'nseg': 2883} time 2.9
+SR a=0.6 shuffled 1 {'band': 0.14, 'nnr': 0.8422, 'aval_max': 11, 'aval_mean': 2.0, 'eps_first': 0.0006, 'eps_last': 0.1012, 'E_drop': 0.3057, 'nseg': 2908} time 3.1
+SR a=0.6 shuffled 2 {'band': 0.1533, 'nnr': 0.7638, 'aval_max': 15, 'aval_mean': 2.25, 'eps_first': 0.0003, 'eps_last': 0.0869, 'E_drop': 0.1553, 'nseg': 2904} time 2.8
+square 5% noise 0 {'band': 0.4867, 'nnr': 0.8539, 'aval_max': 46, 'aval_mean': 8.0, 'eps_first': 0.0062, 'eps_last': 0.3991, 'E_drop': 0.0059, 'nseg': 1300} time 0.6
+square 5% noise 1 {'band': 0.4667, 'nnr': 0.8727, 'aval_max': 89, 'aval_mean': 15.8, 'eps_first': 0.007, 'eps_last': 0.3067, 'E_drop': 0.0064, 'nseg': 1300} time 0.4
+square 5% noise 2 {'band': 0.4467, 'nnr': 0.8672, 'aval_max': 36, 'aval_mean': 10.0, 'eps_first': 0.0066, 'eps_last': 0.3045, 'E_drop': 0.0066, 'nseg': 1300} time 0.5
+SR a=0 {'band': 0.169, 'nnr': 0.746, 'aval_max': 12.667, 'aval_mean': 2.064, 'eps_first': 0.001, 'eps_last': 0.145, 'E_drop': 0.156, 'nseg': 2898.333}
+SR a=0.3 {'band': 0.198, 'nnr': 0.834, 'aval_max': 22.667, 'aval_mean': 1.91, 'eps_first': 0.0, 'eps_last': 0.081, 'E_drop': 0.211, 'nseg': 2898.333}
+SR a=0.6 {'band': 0.198, 'nnr': 0.854, 'aval_max': 20.667, 'aval_mean': 1.721, 'eps_first': 0.0, 'eps_last': 0.017, 'E_drop': 0.345, 'nseg': 2898.333}
+SR a=0.6 shuffled {'band': 0.162, 'nnr': 0.857, 'aval_max': 16.667, 'aval_mean': 2.035, 'eps_first': 0.0, 'eps_last': 0.082, 'E_drop': 0.177, 'nseg': 2898.333}
+square 5% noise {'band': 0.467, 'nnr': 0.865, 'aval_max': 57.0, 'aval_mean': 11.267, 'eps_first': 0.007, 'eps_last': 0.337, 'E_drop': 0.006, 'nseg': 1300.0}
