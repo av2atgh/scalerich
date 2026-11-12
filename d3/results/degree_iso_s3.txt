@@ -1,0 +1,33 @@
+== iso_s3: T=2000000; <m> all faces 4.5855, plate faces 4.5387; <k>=9.0775 (2<m_p> = 9.0775)
+   predictions: incidence PA b=m/(2+m)=0.6941, gamma=2+2/m=2.4407; area rule b=2/3, gamma=5/2
+[MLE] all plates: k>=20:2.557(n=107077) k>=40:2.515(n=35345) k>=80:2.502(n=12225) k>=160:2.489(n=4279) k>=320:2.499(n=1522) k>=640:2.500(n=544) k>=1280:2.570(n=194); kmax=30094
+[MLE] interior plates: k>=20:2.661(n=95134) k>=40:2.658(n=29554) k>=80:2.693(n=9368) k>=160:2.755(n=2929) k>=320:2.905(n=890) k>=640:3.147(n=252) k>=1280:4.040(n=61); kmax=5155
+[interior fraction] i in [10,100): 0.189; <k> interior 1895.6 vs touching cube 3633.2
+[interior fraction] i in [100,1000): 0.566; <k> interior 595.1 vs touching cube 779.1
+[interior fraction] i in [1000,10000): 0.772; <k> interior 140.6 vs touching cube 169.2
+[interior fraction] i in [10000,100000): 0.893; <k> interior 32.1 vs touching cube 38.0
+[cohort] beta over i in [1e+02,2e+04]: total k 0.6320, received 0.6461  (2/3=0.6667, inc-PA 0.6941)
+[cohort] beta over i in [1e+03,2e+04]: total k 0.6681, received 0.6932  (2/3=0.6667, inc-PA 0.6941)
+[cohort] beta over i in [1e+01,2e+03]: total k 0.5798, received 0.5843  (2/3=0.6667, inc-PA 0.6941)
+[fixed plates] i in [10,100) (n=17): d<ln s_i>/d ln t over [1e4,T] = 0.6642; local slopes over the last 4 intervals [0.6537, 0.6546, 0.6686, 0.661] mean 0.6595  (area rule 2/3, incidence PA 0.6941)
+[fixed plates] i in [100,1000) (n=509): d<ln s_i>/d ln t over [1e4,T] = 0.6618; local slopes over the last 4 intervals [0.6567, 0.6626, 0.6673, 0.665] mean 0.6629  (area rule 2/3, incidence PA 0.6941)
+[fixed plates] i in [1000,10000) (n=6949): d<ln s_i>/d ln t over [1e4,T] = 0.6557; local slopes over the last 4 intervals [0.6678, 0.6635, 0.6646, 0.6619] mean 0.6644  (area rule 2/3, incidence PA 0.6941)
+[area rule] i in [1e+02,1e+03): sum recv / sum pred = 1.0423, corr(recv,pred) = 0.995, <recv>=590.63
+[area rule] i in [1e+03,1e+04): sum recv / sum pred = 1.0357, corr(recv,pred) = 0.988, <recv>=136.01
+[area rule] i in [1e+04,1e+05): sum recv / sum pred = 1.0146, corr(recv,pred) = 0.962, <recv>=27.55
+[area rule] i in [1e+05,1e+06): sum recv / sum pred = 0.9751, corr(recv,pred) = 0.890, <recv>=4.06
+[area rule] i in [1e+06,2e+06): sum recv / sum pred = 0.9418, corr(recv,pred) = 0.597, <recv>=0.51
+[area rule] all interior i in [100, T/10): sum recv/sum pred = 1.0156, corr = 0.9914, corr(log) = 0.9431
+[regression] i in [100,T/100), within-cohort log recv ~ 0.924 log a + 0.049 log p (area rule: 1, 0; p ~ a^(1/2) collinear: corr(la,lp)=0.929); single-variable slopes: a 0.945, p 1.855
+[snapshot t0=500000, window 10%] age bins h/t0 edges [1e-05, 0.0001, 0.001, 0.01, 0.03, 0.1, 0.3, 0.6, 0.9, 1.0001]
+    hit rate per incidence / mean: 1.111 0.947 0.956 0.986 0.988 1.015 1.011 1.019 1.041
+    hit rate per unit area / mean: 1.313 1.049 1.039 1.044 1.020 1.010 0.967 0.954 0.960
+    faces per unit area / mean:     1.182 1.107 1.087 1.059 1.032 0.995 0.957 0.936 0.922
+[snapshot t0=1000000, window 10%] age bins h/t0 edges [1e-05, 0.0001, 0.001, 0.01, 0.03, 0.1, 0.3, 0.6, 0.9, 1.0001]
+    hit rate per incidence / mean: 0.953 0.961 0.966 0.984 0.990 1.007 1.013 1.025 1.036
+    hit rate per unit area / mean: 1.077 1.055 1.047 1.042 1.024 0.999 0.969 0.955 0.952
+    faces per unit area / mean:     1.130 1.097 1.083 1.059 1.034 0.992 0.956 0.931 0.919
+[host age] P(h/t <= y) for y = 1e-3, 1e-2, 0.1, 0.3, 0.5, 0.8: 0.0953/0.1000 0.2169/0.2154 0.4741/0.4642 0.6806/0.6694 0.8026/0.7937 0.9321/0.9283  (measured / U^3 law)
+[host age] <(h/t)^al> for al = 1/6, 1/3, 1/2, 1: 0.6648/0.6667 0.4948/0.5000 0.3933/0.4000 0.2428/0.2500  (measured / 1/(1+3 al))
+[host age] incidence-PA alternative P(h/t<=y)=y^(1-b) with b=0.6941: at y=0.01 0.2445
+[tail] c_a=1.2349, <x^1.5>=1.1874 (x = a_i i^(2/3)/c_a, all plates); predicted K^1.5 P(k>=K) -> (m/2)^1.5<x^1.5> = 4.122; measured (all plates) at K=20,40,80,160,320,640,1280: 4.789 4.471 4.374 4.330 4.356 4.404 4.442

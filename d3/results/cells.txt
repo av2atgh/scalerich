@@ -1,0 +1,70 @@
+== iso_s1: T=2000000, rejected steps=0
+[split] daughter volume fraction: mean 0.4997 var 0.08322 (1/12=0.08333); decile counts/expected: [1.0, 1.001, 0.998, 1.001, 1.001, 1.001, 1.005, 0.999, 0.999, 0.994]; KS D=0.00083 (n=2000000)
+[BST] depth of split at t: slope d<depth>/dln t = 2.0102 (2), d var/dln t = 2.0168 (2); <depth>(T)-2lnT = -0.802
+[volumes] cells=2000001 sum V=1.000000; P(NV>x) at x=0.5,1,2,3,5: 0.6069/0.6065 0.3679/0.3679 0.1354/0.1353 0.0497/0.0498 0.0067/0.0067; sum V^2 = 9.9923e-07 vs 2/(T+2) = 1.0000e-06
+[cells] <F>=6.5851 pred (6+sum(m+2))/(T+1)=6.5851 = 2+<m> -> 6.5851; <V>=9.1702 pred (8+2 sum m)/(T+1)=9.1702; <E>=13.7554 pred (12+3 sum m)/(T+1)=13.7554
+[cells] number fractions F=4..13: 0.0446 0.1835 0.2823 0.2497 0.1480 0.0640 0.0211 0.0054 0.0012 0.0002; volume-weighted <F>=7.3225; cells touching cube: 0.0464
+[m] <m> all steps=4.5851; interior plates (no cube face) <m>=4.5765 (fraction interior 0.9538)
+[m] interior m=3..11 fractions: 0.1163 0.3874 0.3357 0.1293 0.0273 0.0037 0.0003 0.0000 0.0000
+[m(t)] t in [1e+02,1e+03): interior <m>=4.4562 +- 0.0436  parent <F>=7.3187  <a t^2/3>=1.1224  <p t^1/3>=4.6452
+[m(t)] t in [1e+03,1e+04): interior <m>=4.5175 +- 0.0116  parent <F>=7.3186  <a t^2/3>=1.1955  <p t^1/3>=4.8693
+[m(t)] t in [1e+04,1e+05): interior <m>=4.5633 +- 0.0034  parent <F>=7.3265  <a t^2/3>=1.2223  <p t^1/3>=4.9377
+[m(t)] t in [1e+05,1e+06): interior <m>=4.5772 +- 0.0011  parent <F>=7.3253  <a t^2/3>=1.2296  <p t^1/3>=4.9565
+[m(t)] t in [1e+06,1e+07): interior <m>=4.5774 +- 0.0010  parent <F>=7.3223  <a t^2/3>=1.2293  <p t^1/3>=4.9580
+[A(t)] t=1000: A=33.314  A/t^(1/3)=3.3314  L_perim=7.2409 t^(2/3)
+[A(t)] t=10000: A=76.223  A/t^(1/3)=3.5379  L_perim=7.3947 t^(2/3)
+[A(t)] t=100000: A=168.543  A/t^(1/3)=3.6311  L_perim=7.4372 t^(2/3)
+[A(t)] t=1000000: A=367.123  A/t^(1/3)=3.6712  L_perim=7.4494 t^(2/3)
+[A(t)] t=2000000: A=463.321  A/t^(1/3)=3.6774  L_perim=7.4498 t^(2/3)
+[a_t] fit log a_t vs log t (t>1e4): slope -0.6668 (-2/3); <a_1>=0.4108 (single draw)
+[P(a)] MLE exponent of plate areas a >= 10 <a_T> (n=54731): 2.4958 (5/2)
+[P(a)] MLE exponent of plate areas a >= 30 <a_T> (n=10527): 2.4918 (5/2)
+[P(a)] MLE exponent of plate areas a >= 100 <a_T> (n=1735): 2.5051 (5/2)
+[shape] <a/V_parent^(2/3)>=0.8129, <p/V^(1/3)>=4.1898, <m> for parent F=4,5,6,7,8: 3.490 3.832 4.177 4.501 4.810
+== iso_s2: T=2000000, rejected steps=0
+[split] daughter volume fraction: mean 0.4997 var 0.08342 (1/12=0.08333); decile counts/expected: [1.003, 1.002, 0.999, 1.004, 1.0, 0.995, 0.999, 0.997, 0.999, 1.003]; KS D=0.00096 (n=2000000)
+[BST] depth of split at t: slope d<depth>/dln t = 2.0100 (2), d var/dln t = 2.0609 (2); <depth>(T)-2lnT = -1.409
+[volumes] cells=2000001 sum V=1.000000; P(NV>x) at x=0.5,1,2,3,5: 0.6062/0.6065 0.3677/0.3679 0.1354/0.1353 0.0499/0.0498 0.0067/0.0067; sum V^2 = 1.0010e-06 vs 2/(T+2) = 1.0000e-06
+[cells] <F>=6.5851 pred (6+sum(m+2))/(T+1)=6.5851 = 2+<m> -> 6.5851; <V>=9.1702 pred (8+2 sum m)/(T+1)=9.1702; <E>=13.7553 pred (12+3 sum m)/(T+1)=13.7553
+[cells] number fractions F=4..13: 0.0444 0.1840 0.2823 0.2493 0.1481 0.0640 0.0210 0.0055 0.0012 0.0002; volume-weighted <F>=7.3249; cells touching cube: 0.0460
+[m] <m> all steps=4.5851; interior plates (no cube face) <m>=4.5767 (fraction interior 0.9542)
+[m] interior m=3..11 fractions: 0.1159 0.3884 0.3350 0.1290 0.0277 0.0037 0.0003 0.0000 0.0000
+[m(t)] t in [1e+02,1e+03): interior <m>=4.4686 +- 0.0416  parent <F>=7.2799  <a t^2/3>=1.1769  <p t^1/3>=4.8263
+[m(t)] t in [1e+03,1e+04): interior <m>=4.5429 +- 0.0117  parent <F>=7.3299  <a t^2/3>=1.2179  <p t^1/3>=4.9366
+[m(t)] t in [1e+04,1e+05): interior <m>=4.5620 +- 0.0034  parent <F>=7.3210  <a t^2/3>=1.2137  <p t^1/3>=4.9269
+[m(t)] t in [1e+05,1e+06): interior <m>=4.5759 +- 0.0011  parent <F>=7.3247  <a t^2/3>=1.2281  <p t^1/3>=4.9534
+[m(t)] t in [1e+06,1e+07): interior <m>=4.5790 +- 0.0010  parent <F>=7.3272  <a t^2/3>=1.2301  <p t^1/3>=4.9568
+[A(t)] t=1000: A=33.352  A/t^(1/3)=3.3352  L_perim=7.2347 t^(2/3)
+[A(t)] t=10000: A=76.964  A/t^(1/3)=3.5724  L_perim=7.4524 t^(2/3)
+[A(t)] t=100000: A=168.625  A/t^(1/3)=3.6329  L_perim=7.4395 t^(2/3)
+[A(t)] t=1000000: A=367.035  A/t^(1/3)=3.6704  L_perim=7.4479 t^(2/3)
+[A(t)] t=2000000: A=463.290  A/t^(1/3)=3.6771  L_perim=7.4483 t^(2/3)
+[a_t] fit log a_t vs log t (t>1e4): slope -0.6666 (-2/3); <a_1>=1.0501 (single draw)
+[P(a)] MLE exponent of plate areas a >= 10 <a_T> (n=54325): 2.4932 (5/2)
+[P(a)] MLE exponent of plate areas a >= 30 <a_T> (n=10554): 2.4902 (5/2)
+[P(a)] MLE exponent of plate areas a >= 100 <a_T> (n=1776): 2.4935 (5/2)
+[shape] <a/V_parent^(2/3)>=0.8121, <p/V^(1/3)>=4.1881, <m> for parent F=4,5,6,7,8: 3.488 3.835 4.177 4.501 4.808
+== iso_s3: T=2000000, rejected steps=0
+[split] daughter volume fraction: mean 0.5001 var 0.08335 (1/12=0.08333); decile counts/expected: [1.001, 0.999, 0.999, 1.0, 0.998, 0.997, 1.002, 1.002, 1.0, 1.001]; KS D=0.00064 (n=2000000)
+[BST] depth of split at t: slope d<depth>/dln t = 1.9931 (2), d var/dln t = 1.9235 (2); <depth>(T)-2lnT = -0.397
+[volumes] cells=2000001 sum V=1.000000; P(NV>x) at x=0.5,1,2,3,5: 0.6066/0.6065 0.3679/0.3679 0.1352/0.1353 0.0498/0.0498 0.0068/0.0067; sum V^2 = 1.0002e-06 vs 2/(T+2) = 1.0000e-06
+[cells] <F>=6.5855 pred (6+sum(m+2))/(T+1)=6.5855 = 2+<m> -> 6.5855; <V>=9.1711 pred (8+2 sum m)/(T+1)=9.1711; <E>=13.7566 pred (12+3 sum m)/(T+1)=13.7566
+[cells] number fractions F=4..13: 0.0444 0.1839 0.2823 0.2496 0.1479 0.0639 0.0211 0.0056 0.0012 0.0002; volume-weighted <F>=7.3259; cells touching cube: 0.0460
+[m] <m> all steps=4.5855; interior plates (no cube face) <m>=4.5771 (fraction interior 0.9542)
+[m] interior m=3..11 fractions: 0.1160 0.3874 0.3360 0.1289 0.0277 0.0036 0.0003 0.0000 0.0000
+[m(t)] t in [1e+02,1e+03): interior <m>=4.4420 +- 0.0409  parent <F>=7.2692  <a t^2/3>=1.1498  <p t^1/3>=4.6882
+[m(t)] t in [1e+03,1e+04): interior <m>=4.5510 +- 0.0115  parent <F>=7.3003  <a t^2/3>=1.1963  <p t^1/3>=4.8798
+[m(t)] t in [1e+04,1e+05): interior <m>=4.5599 +- 0.0034  parent <F>=7.3195  <a t^2/3>=1.2156  <p t^1/3>=4.9214
+[m(t)] t in [1e+05,1e+06): interior <m>=4.5768 +- 0.0011  parent <F>=7.3289  <a t^2/3>=1.2302  <p t^1/3>=4.9561
+[m(t)] t in [1e+06,1e+07): interior <m>=4.5791 +- 0.0010  parent <F>=7.3248  <a t^2/3>=1.2292  <p t^1/3>=4.9573
+[A(t)] t=1000: A=33.628  A/t^(1/3)=3.3628  L_perim=7.2888 t^(2/3)
+[A(t)] t=10000: A=76.345  A/t^(1/3)=3.5436  L_perim=7.3967 t^(2/3)
+[A(t)] t=100000: A=168.244  A/t^(1/3)=3.6247  L_perim=7.4223 t^(2/3)
+[A(t)] t=1000000: A=367.004  A/t^(1/3)=3.6700  L_perim=7.4465 t^(2/3)
+[A(t)] t=2000000: A=463.193  A/t^(1/3)=3.6764  L_perim=7.4476 t^(2/3)
+[a_t] fit log a_t vs log t (t>1e4): slope -0.6671 (-2/3); <a_1>=0.4070 (single draw)
+[P(a)] MLE exponent of plate areas a >= 10 <a_T> (n=54642): 2.5022 (5/2)
+[P(a)] MLE exponent of plate areas a >= 30 <a_T> (n=10562): 2.5101 (5/2)
+[P(a)] MLE exponent of plate areas a >= 100 <a_T> (n=1724): 2.4956 (5/2)
+[shape] <a/V_parent^(2/3)>=0.8125, <p/V^(1/3)>=4.1888, <m> for parent F=4,5,6,7,8: 3.485 3.834 4.178 4.501 4.810
+[a_1] MC (4e5 draws) first plate in the unit cube: <a_1>=0.9413+-0.0005, <p_1>=3.8796, <m_1>=4.4126
