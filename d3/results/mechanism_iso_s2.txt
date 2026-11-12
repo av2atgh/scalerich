@@ -1,0 +1,19 @@
+== iso_s2: T=2000000; FIT and PA surrogates use the SR plate out-degrees m_t (mean 4.5382) and SR birth areas
+[SR ] (a) i in [1e3,T/100): sum recv/sum pred_area = 1.0303; corr(recv, pred) = 0.9883; within-cohort slope of log recv on log a = 0.948 (fitness x age: 1; PA: 0)
+[SR ] (b) dispersion <(recv-pred)^2>/<pred> by predicted mean: area[10,30) 1.47; cohort[30,100) 35.03; area[30,100) 1.91; cohort[100,300) 92.36; area[100,300) 2.60; cohort[300,1000) 187.37; area[300,1000) 3.94
+[SR ] (c) i in [1e3,1e4): corr(late, early) within cohort = 0.5524; partial corr at fixed area = 0.1077; log late = 0.027 log early + 0.947 log a
+[SR ] (d) fixed plates i in [1e3,1e4): local d<ln s>/d ln t, last 4 intervals mean 0.6667
+[SR ] (d) MLE k>=20,40,80,160,320,640: 2.554 2.504 2.487 2.468 2.484 2.587 | K^1.5 P(k>=K) K=20..640: 4.77 4.44 4.36 4.35 4.46 4.67 | K^(2+2/m-1) P: 3.98 3.56 3.36 3.21 3.16 3.17
+[FIT] (a) i in [1e3,T/100): sum recv/sum pred_area = 0.9996; corr(recv, pred) = 0.9956; within-cohort slope of log recv on log a = 0.997 (fitness x age: 1; PA: 0)
+[FIT] (b) dispersion <(recv-pred)^2>/<pred> by predicted mean: area[10,30) 0.99; cohort[30,100) 36.45; area[30,100) 0.98; cohort[100,300) 93.60; area[100,300) 1.00; cohort[300,1000) 181.76; area[300,1000) 1.00
+[FIT] (c) i in [1e3,1e4): corr(late, early) within cohort = 0.5767; partial corr at fixed area = 0.0141; log late = 0.003 log early + 0.998 log a
+[FIT] (d) fixed plates i in [1e3,1e4): local d<ln s>/d ln t, last 4 intervals mean 0.6608
+[FIT] (d) MLE k>=20,40,80,160,320,640: 2.578 2.521 2.503 2.484 2.499 2.573 | K^1.5 P(k>=K) K=20..640: 4.85 4.43 4.28 4.23 4.29 4.36 | K^(2+2/m-1) P: 4.05 3.55 3.29 3.12 3.03 2.96
+[PA ] (a) i in [1e3,T/100): sum recv/sum pred_area = 1.0361; corr(recv, pred) = 0.3624; within-cohort slope of log recv on log a = 0.003 (fitness x age: 1; PA: 0)
+[PA ] (b) dispersion <(recv-pred)^2>/<pred> by predicted mean: area[10,30) 336.48; cohort[30,100) 34.60; area[30,100) 109.15; cohort[100,300) 83.28; area[100,300) 104.28; cohort[300,1000) 165.57; area[300,1000) 226.34
+[PA ] (c) i in [1e3,1e4): corr(late, early) within cohort = 0.5556; partial corr at fixed area = 0.5555; log late = 0.546 log early + -0.005 log a
+[PA ] (d) fixed plates i in [1e3,1e4): local d<ln s>/d ln t, last 4 intervals mean 0.6899
+[PA ] (d) MLE k>=20,40,80,160,320,640: 2.524 2.476 2.464 2.451 2.417 2.404 | K^1.5 P(k>=K) K=20..640: 4.51 4.31 4.32 4.41 4.52 4.82 | K^(2+2/m-1) P: 3.77 3.45 3.32 3.25 3.20 3.27
+[shape] CCDF ratio SR/FIT at K=10,24,58,141,341,827,2000: 0.972 0.987 1.003 1.020 1.045 1.069 1.053
+[shape] CCDF ratio SR/PA  at same K: 1.059 1.053 1.021 0.993 0.980 0.958 0.800
+[shape] max |ln(SR/FIT)| = 0.068; max |ln(SR/PA)| = 0.228
