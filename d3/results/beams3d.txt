@@ -1,0 +1,12 @@
+== rods lam0=0.02 alpha=0.5: rods placed 100000 of 100000 (nucleation tries 100299), volume fraction 0.0026, [121s]
+  length exponent l_t ~ t^-0.214 (theory (1-alpha)/2 = 0.250); <k>=2.734; fraction of ends on rods 0.684
+  cohort beta [30,n/30] = 0.529; fixed rods 100-1000 d<ln(1+recv)>/d ln t = 0.612  (theory (1+alpha)/2 = 0.750); within-cohort elasticity of hits on length = 1.042 (1)
+  MLE k>=10,20,40,80: 2.920 2.943 3.146 3.147  (theory (3+alpha)/(1+alpha) = 2.333); kmax=463
+== rods lam0=0.05 alpha=0.8: rods placed 100000 of 100000 (nucleation tries 100381), volume fraction 0.0040, [202s]
+  length exponent l_t ~ t^-0.066 (theory (1-alpha)/2 = 0.100); <k>=1.539; fraction of ends on rods 0.385
+  cohort beta [30,n/30] = 0.769; fixed rods 100-1000 d<ln(1+recv)>/d ln t = 0.618  (theory (1+alpha)/2 = 0.900); within-cohort elasticity of hits on length = 0.915 (1)
+  MLE k>=10,20,40,80: 2.319 2.320 2.349 2.197  (theory (3+alpha)/(1+alpha) = 2.111); kmax=2165
+== rods lam0=0.004 alpha=0.0: rods placed 100000 of 100000 (nucleation tries 131316), volume fraction 0.0884, [59s]
+  length exponent l_t ~ t^-0.534 (theory (1-alpha)/2 = 0.500); <k>=3.717; fraction of ends on rods 0.929
+  cohort beta [30,n/30] = 0.290; fixed rods 100-1000 d<ln(1+recv)>/d ln t = 0.556  (theory (1+alpha)/2 = 0.500); within-cohort elasticity of hits on length = 0.984 (1)
+  MLE k>=10,20,40,80: 3.021 3.517 5.810 nan  (theory (3+alpha)/(1+alpha) = 3.000); kmax=74

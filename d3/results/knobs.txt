@@ -1,0 +1,18 @@
+c(t)=<a_t>t^(2/3): t=1 0.623 (one draw per seed), t~1e2 1.357, t~1e4 1.208, asymptote 1.2338
+== lam_a0.8_l0.05 (lam0=0.05, alpha=0.8): plates 300000, jammed at t=None; free volume sim/pred: t=100: 0.8791/0.8781 t=1000: 0.8701/0.8692 t=10000: 0.8669/0.8660 t=100000: 0.8658/0.8649 t=300000: 0.8656/0.8647; linear rho estimate lam0 c zeta(alpha+2/3) = 0.1698
+  <m>=4.583; MLE all plates k>=20,40,80: 2.546 2.491 2.488; cohort beta [1e2,T/1e2] 0.634; <C>=0.7168; <k C(k)> for k>=50: 6.212
+== lam_a0.5_l0.02 (lam0=0.02, alpha=0.5): plates 300000, jammed at t=None; free volume sim/pred: t=100: 0.9193/0.9192 t=1000: 0.8979/0.8991 t=10000: 0.8843/0.8852 t=100000: 0.8749/0.8758 t=300000: 0.8716/0.8725; linear rho estimate lam0 c zeta(alpha+2/3) = 0.1626
+  <m>=4.580; MLE all plates k>=20,40,80: 2.552 2.515 2.500; cohort beta [1e2,T/1e2] 0.683; <C>=0.7169; <k C(k)> for k>=50: 6.214
+== lam_a0.4_l0.02 (lam0=0.02, alpha=0.4): plates 300000, jammed at t=None; free volume sim/pred: t=100: 0.9015/0.9018 t=1000: 0.8652/0.8668 t=10000: 0.8351/0.8367 t=100000: 0.8100/0.8116 t=300000: 0.7995/0.8011; linear rho estimate lam0 c zeta(alpha+2/3) = 0.3845
+  <m>=4.570; MLE all plates k>=20,40,80: 2.555 2.507 2.493; cohort beta [1e2,T/1e2] 0.673; <C>=0.7166; <k C(k)> for k>=50: 6.188
+== lam_a0.25_l0.02 (lam0=0.02, alpha=0.25): plates 300000, jammed at t=None; free volume sim/pred: t=100: 0.8681/0.8641 t=1000: 0.7845/0.7846 t=10000: 0.6907/0.6928 t=100000: 0.5891/0.5925 t=300000: 0.5377/0.5417; linear rho estimate lam0 c zeta(alpha+2/3) = inf
+  <m>=4.522; MLE all plates k>=20,40,80: 2.548 2.511 2.516; cohort beta [1e2,T/1e2] 0.677; <C>=0.7134; <k C(k)> for k>=50: 6.106
+== lam_a0.0_l0.01 (lam0=0.01, alpha=0.0): plates 300000, jammed at t=None; free volume sim/pred: t=100: 0.8672/0.8686 t=1000: 0.6909/0.7016 t=10000: 0.3983/0.4132 t=100000: 0.0610/0.0842 t=300000: 0.0008/0.0063; linear rho estimate lam0 c zeta(alpha+2/3) = inf
+  <m>=4.001; MLE all plates k>=20,40,80: 2.623 2.546 2.460; cohort beta [1e2,T/1e2] 0.658; <C>=0.6776; <k C(k)> for k>=50: 5.336
+== axes_s1 (normals in {x,y,z}): T=1000000; m values [4]; cell faces [6]; <k>=7.871; incidence PA b = 4/6 = area rule 2/3
+  MLE all plates k>=20,40,80,160,320: 2.560 2.522 2.521 2.502 2.466; cohort beta [1e2,T/1e2] = 0.674 ; K^1.5 P(k>=K) K=20..320: 3.77 3.52 3.43 3.35 3.29
+== axes_s2 (normals in {x,y,z}): T=1000000; m values [4]; cell faces [6]; <k>=7.920; incidence PA b = 4/6 = area rule 2/3
+  MLE all plates k>=20,40,80,160,320: 2.558 2.528 2.510 2.507 2.531; cohort beta [1e2,T/1e2] = 0.635 ; K^1.5 P(k>=K) K=20..320: 3.78 3.52 3.40 3.34 3.30
+== axes_s3 (normals in {x,y,z}): T=200000; m values [4]; cell faces [6]; <k>=7.752; incidence PA b = 4/6 = area rule 2/3
+  MLE all plates k>=20,40,80,160,320: 2.545 2.535 2.547 2.532 2.597; cohort beta [1e2,T/1e2] = 0.654 ; K^1.5 P(k>=K) K=20..320: 3.72 3.53 3.47 3.27 3.23
+  <C>=0.5480; <k C(k)> for k>=50: 3.825; triangles per received link (fit, k>=20): 1.938

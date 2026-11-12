@@ -15,6 +15,7 @@ RUNS = {
     'iso_s4': (200_000, 4, 'iso', 0, 0),
     'axes_s1': (1_000_000, 1, 'axes', 0, 0),
     'axes_s2': (1_000_000, 2, 'axes', 0, 0),
+    'axes_s3': (200_000, 3, 'axes', 0, 0),
     # thickness: tunable (alpha > 1/3) and jammed (alpha < 1/3)
     'lam_a0.5_l0.02': (300_000, 1, 'iso', 0.02, 0.5),
     'lam_a0.8_l0.05': (300_000, 1, 'iso', 0.05, 0.8),
