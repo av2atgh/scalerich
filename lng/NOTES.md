@@ -341,3 +341,15 @@ T = 1e5, three seeds, t = T/8, T/4, T/2:
   Hits follow degree exactly: every incidence equally likely = effective PA from local sampling.
 Reading: area weighting links hits to length, not to degree. Without it, the same face-local
 rule gives degree-proportional hits. Both are local; gamma = 3 either way (q=0 item above).
+
+## Do hubs border large voids? (2026-11-12, `exp_void_degree.py`, `results/void_degree.txt`)
+T = 1e5, three seeds, interior ligaments, areas in units of the mean cell area.
+A ligament of degree k borders exactly k cells (incidences = degree). Mean area of
+those cells: 1.04 (k=2), 1.08 (k=3), 1.11 (4–5), 1.13 (6–9), 1.15 (10–19), 1.15–1.17
+for k up to 160: flat from k≈10. Spearman(k, mean adjacent area) = 0.13.
+Largest adjacent cell grows 1.56 → 5.7, but that is the maximum of k exponential
+areas (H_k = 1.5 … 5.3): extreme-value sampling, not bigger voids.
+Total adjacent area ≈ 1.15 k. Hubs do NOT sit next to large voids; they border many
+voids of typical size. A random nucleation point lands next to ligament i with
+probability ∝ k_i — effective PA from local sampling at the void level; within the
+void the side is hit by length.
