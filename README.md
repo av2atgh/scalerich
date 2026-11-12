@@ -35,7 +35,13 @@ Anchored on local growth + Cowan's recursive cell division. The chygraph/RG
 component (`rg/`) is dropped from the paper; only the Cowan-level facts from it
 (uniform split → BST, host-age law h/t → U²) are used. `rg/` stays as a record.
 
-## Pending revisions (apply at resubmission; manuscript frozen until then)
+## Revision v2 (2026-11-12): key message restored
+Items 1–3 below are applied in `manuscript.tex` (v2, 10 pp): abstract, introduction,
+Secs. IV–VI and conclusions now lead with the local class, clustering as its evidence,
+and preferential attachment as the mean-field outcome of local sampling. Results are
+unchanged. The submitted v1 is commit edc3328.
+
+### Notes behind v2
 1. **"Non-local closures" is a misnomer (raised 2026-11-12).** Every SR step is
    face-local: the new node joins two sides of the chosen face. The 0.048 of
    steps that close a triangle without cutting a corner hit two non-adjacent

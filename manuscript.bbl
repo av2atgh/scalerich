@@ -132,16 +132,6 @@
   {https://doi.org/10.1103/PhysRevE.67.026112} {\bibfield  {journal} {\bibinfo
   {journal} {Physical Review E}\ }\textbf {\bibinfo {volume} {67}},\ \bibinfo
   {pages} {026112} (\bibinfo {year} {2003})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Bianconi}\ and\ \citenamefont
-  {Barab{\'a}si}(2001)}]{bianconi2001}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {G.}~\bibnamefont
-  {Bianconi}}\ and\ \bibinfo {author} {\bibfnamefont {A.-L.}\ \bibnamefont
-  {Barab{\'a}si}},\ }\bibfield  {title} {\bibinfo {title} {Competition and
-  multiscaling in evolving networks},\ }\href
-  {https://doi.org/10.1209/epl/i2001-00260-6} {\bibfield  {journal} {\bibinfo
-  {journal} {Europhysics Letters}\ }\textbf {\bibinfo {volume} {54}},\ \bibinfo
-  {pages} {436} (\bibinfo {year} {2001})}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Cowan}(2010)}]{cowan2010}%
   \BibitemOpen
   \bibfield  {author} {\bibinfo {author} {\bibfnamefont {R.}~\bibnamefont
@@ -267,6 +257,16 @@
   {journal} {\bibinfo  {journal} {Advances in Physics}\ }\textbf {\bibinfo
   {volume} {51}},\ \bibinfo {pages} {1079} (\bibinfo {year}
   {2002})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Bianconi}\ and\ \citenamefont
+  {Barab{\'a}si}(2001)}]{bianconi2001}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {G.}~\bibnamefont
+  {Bianconi}}\ and\ \bibinfo {author} {\bibfnamefont {A.-L.}\ \bibnamefont
+  {Barab{\'a}si}},\ }\bibfield  {title} {\bibinfo {title} {Competition and
+  multiscaling in evolving networks},\ }\href
+  {https://doi.org/10.1209/epl/i2001-00260-6} {\bibfield  {journal} {\bibinfo
+  {journal} {Europhysics Letters}\ }\textbf {\bibinfo {volume} {54}},\ \bibinfo
+  {pages} {436} (\bibinfo {year} {2001})}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Santal{\'o}}(1976)}]{santalo1976}%
   \BibitemOpen
   \bibfield  {author} {\bibinfo {author} {\bibfnamefont {L.~A.}\ \bibnamefont
