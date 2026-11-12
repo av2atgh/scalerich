@@ -329,3 +329,15 @@ the fewest times).
    internal-vertex counts are the natural place).
 7. 3D: larger T with interior-only statistics to pin 2.44 vs 2.5 (the
    m-formula vs the dimensional argument).
+
+## Area selection vs degree (2026-11-12, `exp_area_degree.py`, `results/area_degree.txt`)
+Question: does area-weighted cell selection route hits to high-degree ligaments?
+Poisson regression of hits in [t,2t) on ln l, ln k(t), ln i, ligaments born in [t/40, t/4),
+T = 1e5, three seeds, t = T/8, T/4, T/2:
+- q = 1 (SR): a(ln l) = 1.00–1.10, b(ln k) = −0.09…+0.04 (mean −0.03, se 0.02–0.04).
+  Degree adds nothing at fixed length and age; hits follow length.
+- Catchment area per unit length vs k at fixed (age, length): r = −0.06…−0.07 (weakly negative).
+- q = 0 (cells chosen uniformly, geometry kept): a = 0.01–0.02, b = 0.99–1.01.
+  Hits follow degree exactly: every incidence equally likely = effective PA from local sampling.
+Reading: area weighting links hits to length, not to degree. Without it, the same face-local
+rule gives degree-proportional hits. Both are local; gamma = 3 either way (q=0 item above).
