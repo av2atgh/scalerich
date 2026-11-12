@@ -1,0 +1,101 @@
+% Draft section: the scale-rich construction as a nested hierarchy.
+% Numbers: rg/NOTES.md and rg/results/*.json (scripts in rg/).
+\section{The splitting hierarchy and a generation flow}
+\label{sec:rg}
+
+\paragraph{Cells as nested complexes.}
+In the scale-rich (SR) construction every ligament grows from a uniform point,
+at a uniform angle, until it meets the boundary of the convex cell holding
+that point. Each step therefore cuts one convex cell into two, and the material
+is a binary hierarchy of cells. A cell is a complex whose members are its two
+children and the segments of its chord. Its boundary vertices are the
+junctions that interior chords make with its sides. Ligament $t$ has thickness
+$\lambda_t=\lambda_0 t^{-\alpha}$, which labels the generation; thickness does
+not change the topology.
+
+\paragraph{The hierarchy is a random binary search tree.}
+Let $x$ be uniform in a convex body $K$ and let $\theta$ be independent of
+$x$. For fixed $\theta$ the offset $s$ of $x$ perpendicular to $\theta$ has
+density $\ell(s)/|K|$, with $\ell(s)$ the chord length, and the area fraction
+on one side of the chord is $F(s)=\int_{-\infty}^{s}\ell/|K|$, the distribution
+function of $s$. Hence
+\begin{equation}
+  r \equiv \frac{|K_0|}{|K|} \sim \mathrm{Uniform}(0,1)
+\end{equation}
+whatever the shape of $K$ and the law of $\theta$. Cells are chosen with
+probability proportional to area, so the area-labelled splitting tree has
+exactly the law of a binary search tree built from uniform keys. The $T+1$
+cell areas are uniform spacings, $\sum A^2 = 2/(T+2)$ and
+$P(TA>x)\to e^{-x}$. The cell split at step $t$ sits at depth
+$2\ln t$ with variance $2\ln t$ (measured slopes $1.983$ and $1.980$). Area
+moments scale ordinarily, $\sum A^q\sim t^{1-q}$, so the multiscaling of
+Krapivsky and Ben-Naim is confined to lengths in the rectangular model
+(reproduced: $\gamma(a,0)=(a-\sqrt{a^2+4})/2$ to 2\%). It is absent for
+isotropic angles ($\sum P^a\sim t^{1-a/2}$ within $0.013$).
+
+\paragraph{The coupling between generations is exactly marginal.}
+A chord ends on existing ligaments with probability proportional to length,
+and $\langle\ell_h\rangle\simeq c_\ell h^{-1/2}$ with $c_\ell=1.161$. The
+birth index of the host is therefore $h=tU^2$ with $U$ uniform, and the
+thickness ratio between a chord and its host,
+\begin{equation}
+  \frac{\lambda_t}{\lambda_h} = U^{2\alpha},\qquad
+  \Big\langle \Big(\frac{h}{t}\Big)^{\alpha}\Big\rangle=\frac{1}{1+2\alpha},
+\end{equation}
+does not depend on $t$ (measured $0.667, 0.498, 0.330$ at $\alpha=\tfrac14,\tfrac12,1$).
+Under coarse-graining in $\ln t$, $\alpha$ is thus relevant for the density,
+$\rho(t)\propto t^{1/2-\alpha}$, which is the jamming line at $\alpha=\tfrac12$.
+It is exactly marginal for the coupling of each generation to the frame it
+hangs on. Moments $\langle(\lambda_h/\lambda_t)^p\rangle=1/(1-2p\alpha)$
+diverge at $\alpha=1/(2p)$. For host bending ($p=3$) this happens at
+$\alpha=1/6$.
+
+\paragraph{Generation flow of the conductance.}
+Give each segment the conductance $\lambda/\ell_{\rm seg}$. Adding chord $t$,
+of conductance $g_t=\lambda_t/\ell_t$, between points $P$ and $Q$ raises the
+dissipated power at unit field by the rank-one amount
+\begin{equation}
+  \Delta P_t=\frac{g_t\,\Delta V_t^2}{1+g_tR_t},
+  \qquad
+  \sigma(T)=\sum_{t\le T}\psi_t\,\lambda_t\ell_t\cos^2\theta_t ,
+\end{equation}
+where $\Delta V_t$ is the pre-existing potential difference and $R_t$ the
+$PQ$ resistance. This is exact (checked to $4\times10^{-7}$). For
+$\alpha<\tfrac12$ the increments $\psi_t$ are stationary in $\ln t$. The ratio
+$\Phi=\sigma/\sigma_{\rm aff}$ to the affine bound
+$\sigma_{\rm aff}=\sum\lambda\ell\cos^2\theta=\rho/2$ therefore converges to a
+line of fixed points labelled by $\alpha$:
+$\Phi=0.59,\,0.70,\,0.82$ at $\alpha=0,\,0.2,\,0.4$ ($\Phi(T)$ at $T=3\times10^4$:
+$0.597,\,0.691,\,0.757$; the remaining transient decays as $T^{-(1/2-\alpha)}$).
+For $\alpha>\tfrac12$ the late increments exceed one. The thick early wires are
+nearly equipotential and focus the field into the gaps that late chords
+bridge. A hierarchical surrogate that smears each chord into its cell and
+laminates the children across it (bond moving in continuum form) is exact on
+its own hierarchy. It reproduces the stationarity and the trend in $\alpha$,
+but lies about $0.2$ below the network ($\Phi_{\rm lam}=0.37,\,0.48,\,0.62$).
+The density exponent of transport is $m=1$ for every $\alpha$.
+
+\paragraph{Elasticity.}
+With pinned joints the SR network is floppy: junctions are T-shaped, with
+degree three and collinear host segments. Its stiffness is therefore
+bending-stabilised. In an Euler--Bernoulli frame at $\rho=0.4$ the
+per-ligament energy decays with birth index as $i^{-x}$ with
+$x=0.78,\,0.83,\,1.04$ at $\alpha=0,\,0.3,\,0.6$, close to the reported
+$\tfrac34+\tfrac\alpha2$. The split of this law into degree and thickness
+exponents cannot be identified within one ensemble, because both are functions
+of $i$. Scaling all thicknesses bounds the density exponent,
+$1\le m\le 3$. Growing $T$ at fixed $\lambda_0$ gives $m_T\simeq1.7$--$2.5$ for
+$0\le\alpha\le0.4$ with no divergence as $\alpha\to\tfrac12$. Two couplings
+flow: the slenderness of the newest generation, $s_t\rho(t)\to2c_\ell^2/(1-2\alpha)$,
+and the marginal host ratio $U^{-2\alpha}$. Increments do not collapse on
+$s_t$ alone.
+
+\paragraph{What the hierarchy buys.}
+The exact contraction of the cell tree (Dirichlet-to-Neumann messages,
+chords as separators) is planar nested dissection. Its root width grows as
+$\sqrt T$ ($w\simeq5n^{0.53}$ for a cell holding $n$ chords), so it gives no
+computational gain. Chords end on the sides of ancestors, so a cell is not a
+two-terminal bond and admits no closed scalar recursion. What the hierarchy
+does give is structural and exact: the binary-search-tree law of the cells,
+the stationary host law, and through them a generation flow in which $\alpha$
+labels a line of fixed points.
