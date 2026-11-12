@@ -300,8 +300,7 @@ taken around each ligament's own prediction, should be one. In bins
 $\mu_i\in[2,4),[4,8),\dots,[64,128)$ we measure $D=0.92$--$0.94$, $0.93$--$0.96$,
 $1.01$--$1.03$, $1.07$--$1.12$, $1.05$--$1.38$ and $0.92$--$1.06$, the last two bins
 holding $300$ and $90$ ligaments per realisation; no growth of $D$ with $\mu$ is
-resolved. (The variance-to-mean ratio within a bin is larger, $1.05$ to $4.7$, only
-because ligaments in a bin have different means.) The mean is also close: the ratio of
+resolved. The mean is also close: the ratio of
 received to predicted hits is $1.005$--$1.011$ for $\mu_i<4$ and $1.006$--$1.034$ above,
 so old ligaments receive about $2\%$ more hits than the mean-field rate $2/L(t)$ gives.
 Under mechanism A no birth attribute absorbs the variance: in the surrogate of
@@ -317,10 +316,9 @@ realisation). In the surrogate the same correlation at fixed age is $0.46$--$0.5
 $5.75\pm0.03$ and $5.75\pm0.06$ at $K=32$, $64$ and $128$. The exact finite-$K$ value of
 Eq.~\eqref{eq:pk}, $6K/(K+1)$, is $5.82$, $5.91$ and $5.95$, so the data lie below
 preferential attachment by $5\sigma$ at $K=64$. Drawing each degree as $2$ plus a
-Poisson variable with the mean of Eq.~\eqref{eq:kl} and the actual birth lengths gives
-$5.54$--$5.57$, $5.56$--$5.62$ and $5.59$--$5.67$. Multiplying the mean by the measured
-ratio of received to predicted hits in each $\mu$ bin ($1.01$--$1.025$ for $\mu>2$) gives
-$5.78$, $5.77$ and $5.70$ (three realisations), which reproduces the data. The tail
+Poisson variable with the mean of Eq.~\eqref{eq:kl} gives $5.54$--$5.67$; multiplying
+the mean by the measured ratio of received to predicted hits ($1.01$--$1.025$ for
+$\mu>2$) gives $5.70$--$5.78$, which reproduces the data. The tail
 amplitude is therefore that of the Poisson fitness model with the $2\%$ mean-field
 correction.
 
@@ -336,6 +334,15 @@ the two mechanisms predict different exponents (Sec.~\ref{sec:3d}).
 Over all ligaments the ratio of measured to predicted degree in Eq.~\eqref{eq:kl}
 averages $1.006$, with correlation $0.95$ [Fig.~\ref{fig:degree}(b)]. The degree of the cohort born at $i$ decays as $i^{-\beta}$
 with $\beta=0.50$--$0.51$.
+
+\paragraph*{Hubs and voids.}
+Hubs do not border large voids. A ligament of degree $k$ borders $k$ cells, of mean
+area $1.04$ (in units of the mean) at $k=2$ and $1.15$--$1.17$ for $10\le k<160$
+($T=10^5$, three realisations). A nucleation point thus lands next to ligament $i$ with
+probability $\propto k_i$, preferential attachment by local sampling; within the cell
+the side is hit by length, and at fixed length and age the degree does not change the
+future hit rate (Poisson exponent $-0.03\pm0.03$). Choosing cells uniformly makes hits
+follow degree exactly, with $\gamma=3$.
 
 \begin{figure}[t]
 \includegraphics[width=\columnwidth]{figs/fig3.pdf}
@@ -464,7 +471,7 @@ squares. Geometry thus matters for the properties that depend on which particula
 are hit, such as distances, and not for $P(k)$, $C(k)$ or $k_{nn}(k)$.
 
 \begin{figure*}[tbp]
-\includegraphics[width=\textwidth]{figs/fig4.pdf}
+\includegraphics[width=0.93\textwidth]{figs/fig4.pdf}
 \caption{(a) Maximum-likelihood exponent ($k\ge10$) for the design rules of
 Ref.~\cite{both2026}, $T=3\times10^4$, two realisations (the jammed $\alpha=0$ case stops at
 $T\simeq2000$; 3D plates: $T=2\times10^6$, three realisations, $k_{\min}=80$--$640$). The number on the right is the mean
@@ -733,11 +740,9 @@ from cohort scaling alone.
 
 Separating them requires the per-ligament energies themselves: a within-cohort
 regression of $U$ on $k$, $\ell$ and $\lambda$ would show whether degree adds anything
-beyond length and age. In a slender-beam frame model that we used as a check
-(Euler--Bernoulli beams, rigid T-junctions, $T\le5000$), fits on degree and on length
-were indistinguishable ($R^2=0.634$ and $0.631$); a frame of slender beams is not the
-continuum finite-element model of Ref.~\cite{both2026}, so we do not report its
-exponents.
+beyond length and age. In a slender-beam frame model (rigid T-junctions, $T\le5000$), which is not the
+finite-element model of Ref.~\cite{both2026}, fits on degree and on length were
+indistinguishable ($R^2=0.634$ and $0.631$).
 
 The same reasoning applies to design. Thickness is a function of birth order, and
 degree and length are statistically slaved to birth order, so $\alpha$ and $\lambda_0$
@@ -777,16 +782,12 @@ degree, and the fraction $0.048$ of closures through a link off the face require
 next to long ligaments. Under coherent orientation fields we observe
 $\gamma\simeq2.4$--$2.5$ up to $T=10^6$; the fitness argument gives the direction of the
 change but not its value. In three dimensions the mean number of plates met by a new plate,
-$\bar m=4.577$, has no closed form. For beams, zero-width lines do not meet in three
-dimensions and a capture rule is needed. If a rod of radius $R_t=\lambda_t/2$ grows until it
-touches another, it stops after a mean free path $\ell_t\sim1/S(t)$, where
-$S(t)=\sum_j\ell_jR_j$ is the total capture cross-section. With $\ell_t\sim t^{-\beta'}$,
-$S\sim t^{1-\beta'-\alpha}$, and self-consistency gives $\beta'=(1-\alpha)/2$. A rod is
-then hit in proportion to $\ell_iR_i\propto i^{-(1+\alpha)/2}$, so its degree grows as
-$(t/i)^{(1+\alpha)/2}$ and, as a conjecture, $\gamma=1+2/(1+\alpha)=(3+\alpha)/(1+\alpha)$:
-for beams the thickness exponent would tune $\gamma$. Our simulations up to $T=10^5$ find
-hits proportional to rod length but are dominated by the walls, and the capture rule of
-Ref.~\cite{both2026} is not specified in the main text. Finally, the growth of the shortest-path excess with $T$ is
+$\bar m=4.577$, has no closed form. Beams need a capture rule. If a rod of radius $R_t=\lambda_t/2$ stops at first
+contact, its mean free path is $\ell_t\sim1/\sum_j\ell_jR_j$; self-consistency gives
+$\ell_t\sim t^{-(1-\alpha)/2}$, hits $\propto\ell_iR_i\propto i^{-(1+\alpha)/2}$ and, as a
+conjecture, $\gamma=(3+\alpha)/(1+\alpha)$, so thickness would tune $\gamma$. Our
+simulations up to $T=10^5$ are dominated by the walls, and the capture rule of
+Ref.~\cite{both2026} is not specified in its main text. Finally, the growth of the shortest-path excess with $T$ is
 consistent with both a log-quadratic and a weak power law over the range studied.
 
 More broadly, the SR dual is a physical instance of preferential attachment as an
