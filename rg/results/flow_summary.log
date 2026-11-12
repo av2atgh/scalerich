@@ -1,0 +1,51 @@
+alpha 0.0
+  tau    10-   46  psi 0.604  F 2.110  thevenin 0.286  median gR 1.207  Phi(tau) 0.371  (n=48)
+  tau    76-  209  psi 0.466  F 0.923  thevenin 0.505  median gR 1.003  Phi(tau) 0.505  (n=42)
+  tau   347-  956  psi 0.425  F 0.923  thevenin 0.461  median gR 0.878  Phi(tau) 0.545  (n=47)
+  tau  1587- 4373  psi 0.576  F 1.465  thevenin 0.393  median gR 0.926  Phi(tau) 0.574  (n=46)
+  tau  7258-19996  psi 0.389  F 0.707  thevenin 0.551  median gR 0.917  Phi(tau) 0.584  (n=48)
+alpha 0.2
+  tau    10-   46  psi 0.731  F 2.098  thevenin 0.349  median gR 0.966  Phi(tau) 0.380  (n=48)
+  tau    76-  209  psi 0.586  F 0.983  thevenin 0.596  median gR 0.700  Phi(tau) 0.556  (n=42)
+  tau   347-  956  psi 0.499  F 0.857  thevenin 0.583  median gR 0.644  Phi(tau) 0.610  (n=47)
+  tau  1587- 4373  psi 0.662  F 1.288  thevenin 0.514  median gR 0.661  Phi(tau) 0.649  (n=46)
+  tau  7258-19996  psi 0.474  F 0.715  thevenin 0.663  median gR 0.600  Phi(tau) 0.672  (n=48)
+alpha 0.4
+  tau    10-   46  psi 0.876  F 2.118  thevenin 0.413  median gR 0.763  Phi(tau) 0.374  (n=48)
+  tau    76-  209  psi 0.720  F 1.071  thevenin 0.672  median gR 0.494  Phi(tau) 0.580  (n=42)
+  tau   347-  956  psi 0.546  F 0.806  thevenin 0.677  median gR 0.452  Phi(tau) 0.643  (n=47)
+  tau  1587- 4373  psi 0.703  F 1.131  thevenin 0.621  median gR 0.499  Phi(tau) 0.689  (n=46)
+  tau  7258-19996  psi 0.544  F 0.738  thevenin 0.737  median gR 0.369  Phi(tau) 0.722  (n=48)
+alpha 0.5
+  tau    10-   46  psi 0.953  F 2.134  thevenin 0.447  median gR 0.667  Phi(tau) 0.365  (n=48)
+  tau    76-  209  psi 0.798  F 1.135  thevenin 0.703  median gR 0.436  Phi(tau) 0.580  (n=42)
+  tau   347-  956  psi 0.561  F 0.787  thevenin 0.712  median gR 0.395  Phi(tau) 0.644  (n=47)
+  tau  1587- 4373  psi 0.710  F 1.073  thevenin 0.662  median gR 0.441  Phi(tau) 0.690  (n=46)
+  tau  7258-19996  psi 0.581  F 0.760  thevenin 0.764  median gR 0.301  Phi(tau) 0.726  (n=48)
+alpha 0.6
+  tau    10-   46  psi 1.033  F 2.151  thevenin 0.480  median gR 0.600  Phi(tau) 0.353  (n=48)
+  tau    76-  209  psi 0.889  F 1.217  thevenin 0.730  median gR 0.401  Phi(tau) 0.571  (n=42)
+  tau   347-  956  psi 0.573  F 0.772  thevenin 0.741  median gR 0.368  Phi(tau) 0.634  (n=47)
+  tau  1587- 4373  psi 0.715  F 1.035  thevenin 0.691  median gR 0.403  Phi(tau) 0.678  (n=46)
+  tau  7258-19996  psi 0.624  F 0.791  thevenin 0.788  median gR 0.275  Phi(tau) 0.714  (n=48)
+alpha 0.8
+  tau    10-   46  psi 1.194  F 2.185  thevenin 0.547  median gR 0.473  Phi(tau) 0.319  (n=48)
+  tau    76-  209  psi 1.133  F 1.465  thevenin 0.773  median gR 0.325  Phi(tau) 0.530  (n=42)
+  tau   347-  956  psi 0.595  F 0.759  thevenin 0.784  median gR 0.320  Phi(tau) 0.585  (n=47)
+  tau  1587- 4373  psi 0.726  F 1.010  thevenin 0.719  median gR 0.344  Phi(tau) 0.618  (n=46)
+  tau  7258-19996  psi 0.748  F 0.906  thevenin 0.825  median gR 0.219  Phi(tau) 0.642  (n=48)
+alpha 1.0
+  tau    10-   46  psi 1.346  F 2.212  thevenin 0.608  median gR 0.368  Phi(tau) 0.279  (n=48)
+  tau    76-  209  psi 1.498  F 1.858  thevenin 0.806  median gR 0.251  Phi(tau) 0.465  (n=42)
+  tau   347-  956  psi 0.625  F 0.769  thevenin 0.813  median gR 0.267  Phi(tau) 0.505  (n=47)
+  tau  1587- 4373  psi 0.751  F 1.034  thevenin 0.726  median gR 0.276  Phi(tau) 0.525  (n=46)
+  tau  7258-19996  psi 0.955  F 1.117  thevenin 0.855  median gR 0.168  Phi(tau) 0.537  (n=48)
+
+window increments psi = (sigma(t2)-sigma(t1))/(aff(t2)-aff(t1)), pooled over seeds
+0.0 [0.957, 0.762, 0.503, 0.526, 0.484, 0.585, 0.582, 0.576, 0.585, 0.608, 0.614, 0.592, 0.579, 0.605, 0.596]
+0.2 [1.072, 0.949, 0.568, 0.635, 0.582, 0.688, 0.687, 0.668, 0.691, 0.717, 0.721, 0.712, 0.691, 0.718, 0.704]
+0.4 [1.184, 1.166, 0.622, 0.779, 0.685, 0.782, 0.799, 0.747, 0.8, 0.826, 0.825, 0.856, 0.811, 0.841, 0.819]
+0.5 [1.237, 1.285, 0.646, 0.873, 0.741, 0.825, 0.863, 0.784, 0.86, 0.885, 0.881, 0.95, 0.883, 0.917, 0.891]
+0.6 [1.289, 1.411, 0.667, 0.988, 0.804, 0.867, 0.935, 0.823, 0.927, 0.952, 0.941, 1.066, 0.969, 1.01, 0.981]
+0.8 [1.386, 1.679, 0.701, 1.289, 0.955, 0.952, 1.122, 0.919, 1.094, 1.126, 1.086, 1.379, 1.205, 1.265, 1.243]
+1.0 [1.472, 1.96, 0.728, 1.701, 1.152, 1.05, 1.388, 1.058, 1.337, 1.388, 1.293, 1.797, 1.559, 1.638, 1.647]
