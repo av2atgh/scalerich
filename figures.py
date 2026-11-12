@@ -227,18 +227,32 @@ def fig4():
 # ---------------------------------------------------------------- Fig. 5 (paths)
 def fig5():
     import csv
-    rows = list(csv.DictReader(open(os.path.join(RES, 'paths_scaling.csv'))))
-    fig, axs = plt.subplots(1, 2, figsize=(W1 * 1.02, 2.0))
-    for model, cc, lbl in (('SR', C1, 'SR'), ('SR*', C4, 'SR rewired'),
-                           ('U-padj', C2, 'face surrogate'), ('DM', C3, 'DM')):
-        Ts = sorted({int(r['T']) for r in rows if r['model'] == model})
-        md = [np.mean([float(r['meand']) for r in rows if r['model'] == model and int(r['T']) == t]) for t in Ts]
-        lm = [np.mean([float(r['lnmu']) for r in rows if r['model'] == model and int(r['T']) == t]) for t in Ts]
-        c2 = [np.mean([float(r['c2']) for r in rows if r['model'] == model and int(r['T']) == t]) for t in Ts]
-        axs[0].semilogx(Ts, md, 'o-', color=cc, mfc='none', label=lbl)
-        axs[1].semilogx(Ts, lm, 'o-', color=cc, mfc='none')
-    axs[0].set_xlabel('$T$'); axs[0].set_ylabel('$\\langle d\\rangle$'); axs[0].legend(fontsize=6)
-    axs[1].set_xlabel('$T$'); axs[1].set_ylabel('$\\langle\\ln\\mu\\rangle$')
+    rows = list(csv.DictReader(open(os.path.join(RES, 'paths2_scaling.csv'))))
+    old = list(csv.DictReader(open(os.path.join(RES, 'paths_scaling.csv'))))
+    fig, axs = plt.subplots(1, 2, figsize=(W1 * 1.02, 2.1))
+    ax = axs[0]
+    for model, cc, lbl, src in (('SR', C1, 'SR', rows), ('SR*', C4, 'SR rewired', rows),
+                                ('DM', C3, 'DM', rows), ('U-padj', C2, 'face surrogate', old)):
+        Ts = sorted({int(r['T']) for r in src if r['model'] == model})
+        v = [np.array([float(r['meand']) for r in src if r['model'] == model and int(r['T']) == t]) for t in Ts]
+        ax.errorbar(Ts, [x.mean() for x in v], yerr=[x.std(ddof=1) / np.sqrt(len(x)) for x in v],
+                    fmt='o-', color=cc, mfc='none', label=lbl, capsize=1.5, lw=1)
+    ax.set_xscale('log'); ax.set_xlabel('$T$'); ax.set_ylabel('$\\langle d\\rangle$'); ax.legend(fontsize=6)
+    ax = axs[1]
+    c = list(csv.DictReader(open(os.path.join(RES, 'paths2_control.csv'))))
+    for fam, cc, mk, lbl in (('SR', C1, 'o', 'SR variants'), ('surr', C2, 's', 'surrogate, varied $p_4$')):
+        names = [n for n in dict.fromkeys(r['variant'] for r in c) if n.startswith(fam)]
+        for n in names:
+            v = [r for r in c if r['variant'] == n]
+            tri = np.mean([float(r['tri']) for r in v]); d = np.array([float(r['delta']) for r in v])
+            ax.errorbar(tri, d.mean(), yerr=d.std(ddof=1) / np.sqrt(len(d)), fmt=mk, color=cc, mfc='none',
+                        capsize=1.5, label=lbl if n == names[0] else None)
+            if n == 'SR':
+                ax.annotate('SR', (tri, d.mean()), xytext=(-12, -9), textcoords='offset points', fontsize=6)
+            if n == 'SR_q0':
+                ax.annotate('$q=0$', (tri, d.mean()), xytext=(4, 2), textcoords='offset points', fontsize=6)
+    ax.set_xlabel('triangle-closing fraction'); ax.set_ylabel('$\\Delta\\langle\\ln\\mu\\rangle$')
+    ax.set_ylim(0, 4.2); ax.legend(fontsize=6, loc='upper right', handletextpad=0.2)
     for a, s in zip(axs, 'ab'):
         lab(a, f'({s})')
     fig.tight_layout(); fig.savefig(os.path.join(FIG, 'fig5.pdf')); plt.close(fig)

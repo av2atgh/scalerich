@@ -18,28 +18,27 @@ Scale-rich (SR) metamaterials are planar ligament networks grown by nucleating a
 segment at a random point and angle and extending it until it meets the existing
 structure, with a thickness that decays with the time of birth. In the dual graph,
 where ligaments are nodes and junctions are links, the degree distribution has a
-$k^{-3}$ tail that was attributed to a spatial preferential attachment. Here we show
-that, at zero thickness, the SR construction is Cowan's iterated division of cells
-with area-weighted selection, and that its dual graph grows by a face-local rule: a
-new node joins the two nodes that carry the sides of one face. Three exact
-statements follow. The area fractions of the two daughter cells are uniform, so the
-cell hierarchy is a random binary search tree and the cell areas are uniform
-spacings. A new ligament ends on a ligament born at $h=tU^2$, with $U$ uniform, so the
-thickness ratio between a ligament and its host does not depend on time. The degree of
-an interior ligament equals its number of face incidences, which yields linear
-preferential attachment and the Barab\'asi--Albert distribution
-$p_k=12/[k(k+1)(k+2)]$. Using integral geometry we compute the probability that a
-new ligament cuts off a corner of its cell ($2\ln2/\pi$ for a square, $0.448$
-averaged over cells), which sets the clustering spectrum
-$C(k)\simeq2[p_0+p(k-2)]/[k(k-1)]$. A purely topological face-splitting rule
-reproduces $P(k)$, $C(k)$ and $k_{nn}(k)$ but not distances; the half of the
-splits that close squares boosts the shortest-path multiplicity above the
-configuration-model value. The exponent $\gamma=3$ is pinned by the ratio of links
-received to face incidences created; thickness, jamming, angle sets, alignment and
-density gradients do not move it, whereas coherent orientation fields
-($\gamma\simeq2.4$--$2.5$ up to $T=10^6$) and three-dimensional plates
-($\gamma\simeq2.5$) do. At fixed decay exponent, the reported per-ligament energy law
-cannot distinguish degree from length or age.
+$k^{-3}$ tail. Here we show that, at zero thickness, the SR construction is Cowan's
+iterated division of cells with area-weighted selection, and that its dual graph grows
+by a face-local rule: a new node joins the two nodes that carry two sides of one face.
+Cowan's uniform split fractions make the cell genealogy a random binary search tree.
+The degree of an interior ligament equals its number of face incidences, so linear
+preferential attachment on incidences would give the Barab\'asi--Albert law
+$p_k=12/[k(k+1)(k+2)]$. The geometric model does not grow that way. A ligament is hit
+in proportion to its length, which is fixed at birth, and its degree is a Poisson
+variable with mean $4\ell_i(\sqrt T-\sqrt i)/c_L$: at fixed length and age the
+variance-to-mean ratio is close to one, and early and late hits are uncorrelated.
+Length acts as a fitness that the cell hierarchy assigns at birth,
+$\ell_i\propto i^{-1/2}$, and the $k^{-3}$ tail follows from it. Using integral geometry we compute the probability that a new
+ligament cuts off a corner of its cell ($2\ln2/\pi$ for a square), which sets the
+triangle closure and the clustering spectrum $C(k)\simeq2[p_0+p(k-2)]/[k(k-1)]$. A
+purely topological face-splitting rule reproduces $P(k)$, $C(k)$ and $k_{nn}(k)$, but
+through reinforcement and with longer distances. Square-closing splits raise the
+shortest-path multiplicity above its value at fixed degree sequence. Thickness,
+jamming, angle sets, alignment and density gradients leave $\gamma=3$, whereas coherent
+orientation fields, which make the hit rate grow faster than length, give
+$\gamma\simeq2.4$--$2.5$ up to $T=10^6$. At fixed decay exponent, the reported
+per-ligament energy law cannot distinguish degree from length or age.
 \end{abstract}
 
 \maketitle
@@ -67,18 +66,26 @@ that class rather than by the design parameters $(\alpha,\lambda_0)$? Local grow
 rules, in which a new node attaches to an existing node and to some of its
 neighbours, generate preferential attachment without global information, together
 with a hierarchical clustering spectrum $C(k)\sim1/k$ and degree
-correlations~\cite{vazquez2003,holme2002,dorogovtsev2001,ravasz2003}. Here we show
-that the SR construction is of this type. The geometric construction is itself not
-new: with zero thickness it is Cowan's iterated cell division~\cite{cowan2010}, a
-member of the family of random tessellations that also contains the STIT
-model~\cite{nagel2005,redenbach2025}. Keeping both references in view, the recursive
-division and the local graph rule, turns most of the reported network statistics into
-exact or asymptotically exact statements.
+correlations~\cite{vazquez2003,holme2002,dorogovtsev2001,ravasz2003}. Growth with
+node-specific fitness generates scale-free degrees in a different way, through
+attractiveness fixed at birth rather than through
+reinforcement~\cite{bianconi2001}. The geometric construction is itself not new: with
+zero thickness it is Cowan's iterated cell division~\cite{cowan2010}, a member of the
+family of random tessellations that also contains the STIT
+model~\cite{nagel2005,redenbach2025} and related to hierarchical crack patterns formed
+by successive domain divisions~\cite{bohn2005,bohn2005b}. We show that the SR dual
+grows by a face-local rule, as local-growth models do, but that its degree law is of
+the fitness type: the fitness is the ligament length, assigned at birth by the cell
+hierarchy. Both mechanisms give $\gamma=3$ in two dimensions; they are told apart by
+the fluctuations of the degree at fixed length and age. Keeping both references in
+view, the recursive division and the local graph rule, turns most of the reported
+network statistics into exact or asymptotically exact statements.
 
 The paper is organised as follows. Section~\ref{sec:model} maps the SR construction
 onto Cowan's division and derives the statistics of the cell hierarchy. In
-Sec.~\ref{sec:degree} we write the dual growth as a face-local rule and obtain its
-degree distribution. Section~\ref{sec:triangles} computes the corner-cut probability
+Sec.~\ref{sec:degree} we write the dual growth as a face-local rule, contrast
+preferential attachment with length as fitness, and test which one the geometry
+realises. Section~\ref{sec:triangles} computes the corner-cut probability
 by integral geometry and derives the clustering spectrum. Section~\ref{sec:topology}
 asks which properties survive when geometry is removed, and Sec.~\ref{sec:paths}
 turns to distances and shortest-path multiplicity. Section~\ref{sec:gamma} identifies
@@ -108,12 +115,17 @@ convex and bounded by ligaments, the new ligament grown from that point stops on
 boundary of $K$: it is the chord of $K$ through a uniform point of $K$ at a uniform
 angle. The SR model is therefore the iterated division of cells with
 \emph{area-weighted selection} and the \emph{chord through a uniform point} division
-rule, model~(a) of Fig.~2 in Cowan~\cite{cowan2010}. Cowan's rescaling of the window
-does not change the topology. STIT tessellations differ in both rules: cells are
-selected by perimeter and cut by isotropic uniform random
-lines~\cite{nagel2005,redenbach2025}. Gilbert's model~\cite{gilbert1967}, used as a
-reference architecture in Ref.~\cite{both2026}, grows all segments simultaneously and
-is a different process.
+rule, model~(a) of Fig.~2 in Cowan~\cite{cowan2010}. Cowan rescales the window after
+each division, by a factor that keeps the mean cell size fixed, so that a stationary
+limit exists; the rescaling is a similarity and does not change the topology. STIT
+tessellations differ in both rules: cells are selected by perimeter and cut by
+isotropic uniform random lines~\cite{nagel2005,redenbach2025}. Gilbert's
+model~\cite{gilbert1967}, used as a reference architecture in Ref.~\cite{both2026},
+grows all segments simultaneously and is a different process. Hierarchical crack
+patterns in drying layers also divide domains one at a time and form T-junctions, but
+the division is deterministic or nearly so, set by the domain shape and the layer
+thickness~\cite{bohn2005,bohn2005b}. Throughout, the boundary of the square is not a
+node of the dual graph; $0.55\%$ of ligament ends lie on it.
 
 \paragraph*{Corner numbers.}
 A junction placed on the side of a neighbouring cell is a straight angle there, so
@@ -121,7 +133,11 @@ the corner number $n$ of a cell is fixed at birth. A chord ending on two sides g
 each daughter the two new corners at its ends, so $n_1+n_2=n+4$. Starting from the
 square, after $t$ steps there are $t+1$ cells and $4+4t$ corners, so the mean corner
 number is exactly $\langle n\rangle=4$. Measured number fractions for $n=3,\dots,7$
-are $0.301,0.452,0.200,0.042,0.005$.
+are $0.301,0.452,0.200,0.042,0.005$. A Markov-chain treatment of the side number under
+division, as done for proliferating epithelia~\cite{gibson2006}, would give these
+fractions once the corner-cut probabilities of Sec.~\ref{sec:triangles} are known by
+side number; the rules differ from the epithelial case because T-junctions do not add
+corners to the neighbours.
 
 \paragraph*{Uniform splitting and the binary search tree.}
 Let $K$ be a convex body, $x$ a uniform point in $K$, and $\theta$ any direction
@@ -129,15 +145,17 @@ independent of $x$. For fixed $\theta$, the offset $s$ of the line through $x$ a
 the normal direction has density $w(s)/A_K$, where $w(s)$ is the chord length at
 offset $s$. The area on one side of the line is $\int_{-\infty}^s w(s')ds'$, so the
 area fraction is the cumulative distribution function of $s$ evaluated at $s$. It is
-therefore uniform on $(0,1)$, whatever the shape of $K$ and the law of $\theta$.
-Combined with area-weighted selection, this has a direct consequence. Label each cell
-by the interval of $[0,1]$ that it would occupy if areas were laid on a line. The
-sequence of splits is then exactly that of a binary search tree (BST) built from
-uniform keys: the key falls in an interval with probability equal to its length and
-splits it at the key~\cite{devroye1986}. Hence the cell areas after $T$ steps are the
-$T+1$ spacings of $T$ uniform points, $P(TA>x)\to e^{-x}$, which recovers Cowan's
-exponential area law~\cite{cowan2010}, and $\sum_KA_K^2=2/(T+2)$. The depth of the split at
-step $t$ grows as $2\ln t$, with variance $2\ln t$, and areas never multiscale. Our
+therefore uniform on $(0,1)$, whatever the shape of $K$ and the law of $\theta$. This
+uniformity and the resulting exponential law of rescaled areas are Cowan's
+results~\cite{cowan2010}. They have a compact restatement. Label each cell by the
+interval of $[0,1]$ that it would occupy if areas were laid on a line. With
+area-weighted selection, the sequence of splits is exactly that of a binary search tree
+(BST) built from uniform keys, the familiar random scission of an interval: the key
+falls in an interval with probability equal to its length and splits it at the
+key~\cite{devroye1986}. The cell areas after $T$ steps are therefore the $T+1$
+spacings of $T$ uniform points, $P(TA>x)\to e^{-x}$ and $\sum_KA_K^2=2/(T+2)$, and
+the genealogy of cells inherits the BST statistics: the depth of the split at step $t$
+grows as $2\ln t$, with variance $2\ln t$, and areas never multiscale. Our
 simulations give a depth slope $1.983$, a variance slope $1.980$ and $\sum A^2=9.998\times10^{-5}$
 at $T=2\times10^4$ against $9.999\times10^{-5}$ [Fig.~\ref{fig:bst}(a,b)]. The
 multiscaling of Krapivsky and Ben-Naim~\cite{krapivsky1994} arises with rectangular
@@ -149,10 +167,11 @@ angles the perimeter moments scale as $t^{1-a/2}$, without multiscaling.
 Cells at time $t$ have linear size $t^{-1/2}$, and the mean length of the ligament
 born at $t$ is $\langle\ell_t\rangle\simeq c_\ell t^{-1/2}$ with $c_\ell=1.16$. The total
 length grows as $L(t)\simeq c_L\sqrt t$ with $c_L=2c_\ell=2.33$. The first ligament has
-$\langle\ell_1\rangle=0.945$, the $\ell_0$ of Ref.~\cite{both2026}. In the mean-field
-approximation of Sec.~\ref{sec:degree}, an end of ligament $t$ lands on a ligament
-with probability proportional to its length, so the host's birth index $h$ satisfies
-$P(h)\simeq\ell_h/L(t)\simeq\tfrac12(ht)^{-1/2}$. Then $P(h\le xt)=\sqrt x$, that is
+$\langle\ell_1\rangle=0.945$, the $\ell_0$ of Ref.~\cite{both2026}. Section~\ref{sec:degree}
+shows that an end of ligament $t$ lands on a given ligament with probability
+proportional to its length. Replacing that length by its mean, a mean-field step, the
+host's birth index $h$ satisfies $P(h)\simeq\ell_h/L(t)\simeq\tfrac12(ht)^{-1/2}$. Then
+$P(h\le xt)=\sqrt x$, that is, asymptotically,
 \begin{equation}
   h/t\;\to\;U^2,\qquad U\sim\mathrm{Uniform}(0,1).
   \label{eq:host}
@@ -163,38 +182,48 @@ $\alpha=1/4$, $1/2$ and $1$, against $1/(1+2\alpha)=0.667$, $0.500$ and $0.333$.
 
 \paragraph*{Thickness.}
 With $\lambda_t=\lambda_0t^{-\alpha}$, Eq.~\eqref{eq:host} gives the thickness ratio
-between a new ligament and its host as $\lambda_t/\lambda_h=U^{2\alpha}$. Its law does
-not depend on $t$, so every generation couples to the frame it attaches to in the same
-statistical way. Its moments $\langle(\lambda_h/\lambda_t)^p\rangle=1/(1-2p\alpha)$
-diverge at $\alpha=1/(2p)$; for the bending stiffness of the host ($p=3$) this happens
-at $\alpha=1/6$. The fill fraction without overlaps is
-$\rho\simeq\lambda_0\sum_t\ell_tt^{-\alpha}\simeq\lambda_0c_\ell\sum_tt^{-\alpha-1/2}$,
-which converges only for $\alpha>1/2$. This recovers the boundary between the jammed and
-tunable-density phases of Ref.~\cite{both2026}, and $\rho\simeq\lambda_0c_\ell\zeta(\alpha+1/2)$
-matches their $\rho\approx\ell_0\lambda_0\zeta(\alpha+\beta)$ with $\beta=1/2$. Thickness
-removes area and eventually stops growth in the jammed phase, but it does not change
-the rule by which cells are split (Sec.~\ref{sec:gamma}). In what follows the network is
-the zero-thickness one unless stated otherwise.
+between a new ligament and its host as $\lambda_t/\lambda_h=U^{2\alpha}$, again
+asymptotically and in mean field. Its law does not depend on $t$, so every generation
+couples to the frame it attaches to in the same statistical way.
+
+The fill fraction without overlaps,
+$\rho\simeq\lambda_0\sum_t\langle\ell_t\rangle t^{-\alpha}$, converges only for
+$\alpha>1/2$. This recovers the $\alpha=1/2$ line of the phase diagram of
+Ref.~\cite{both2026}, but not its second branch: for $\alpha>1/2$ the structure also
+jams when $\lambda_0>[\ell_0\zeta(2\alpha)]^{-1}$~\cite{both2026}. That branch comes from
+the depletion of free area, which shortens later ligaments and which the overlap-free
+estimate ignores. Bisecting $\lambda_0$ in finite-width simulations, in which
+ligaments nucleate only in free area and stop at the surface of the ligaments they
+meet ($T=2\times10^4$, two realisations per $\lambda_0$), we find the threshold
+$\lambda_0^*=0.233$, $0.363$, $0.643$ and $0.958$ for $\alpha=0.6$, $0.75$, $1$ and
+$1.5$. The formula of Ref.~\cite{both2026} gives $0.189$, $0.405$, $0.643$ and $0.879$,
+while the overlap-free estimate $1/\sum_t\langle\ell_t\rangle t^{-\alpha}$ gives $0.132$,
+$0.219$, $0.375$ and $0.627$, too low by a factor of about $1.7$. Thickness removes area
+and stops growth in the jammed phase, but it does not change the rule by which cells
+are split (Sec.~\ref{sec:gamma}). In what follows the network is the zero-thickness
+one unless stated otherwise.
 
 \begin{figure*}[tbp]
 \includegraphics[width=\textwidth]{figs/fig2.pdf}
 \caption{The cell hierarchy of the SR construction (six realisations, $T=2\times10^4$).
 (a) The area fraction of a daughter cell is uniform. (b) Rescaled cell areas follow
 $e^{-x}$, the spacing law of uniform points. (c) The birth index $h$ of the ligament
-hit by a new ligament $t$ satisfies $h/t\to U^2$, so $\ln(t/h)$ has density
-$\frac12e^{-x/2}$.}
+hit by a new ligament $t$ follows the mean-field law $h/t\to U^2$, for which $\ln(t/h)$
+has density $\frac12e^{-x/2}$.}
 \label{fig:bst}
 \end{figure*}
 
 %======================================================================
-\section{A face-local growth rule and its degree distribution}
+\section{A face-local growth rule: preferential attachment or fitness?}
 \label{sec:degree}
 
 In the dual graph, step $t$ reads as follows: choose a face (a cell) with probability
 equal to its area, choose the two sides of that face that the chord meets, and join
 the new node $t$ to the two ligaments that carry them [Fig.~\ref{fig:model}(c)]. The new
 node never links to a node outside the chosen face. It is a local rule in the sense of
-Ref.~\cite{vazquez2003}, with faces in place of neighbourhoods.
+Ref.~\cite{vazquez2003}, with faces in place of neighbourhoods. Which two sides are hit
+is decided by the geometry, and two different mechanisms are compatible with the
+bookkeeping.
 
 \paragraph*{Incidences equal degree.}
 Call an incidence a pair (ligament $i$, cell $K$) in which $i$ contributes a side to
@@ -203,47 +232,94 @@ ligament ends on $i$, it adds one link to $i$ and cuts one of $i$'s sides in two
 one incidence. For a ligament whose ends are both interior, the number of incidences
 therefore equals the degree $k_i$ at all times. Each step creates two hits and four
 incidences, so the total number of incidences is $4t$, in agreement with
-$\langle n\rangle=4$.
+$\langle n\rangle=4$. This identity is exact.
 
-\paragraph*{Rate equation.}
-If every incidence is equally likely to be hit, the rate at which node $i$ gains links
-is $2k_i/4t$, linear preferential attachment with
+\paragraph*{Mechanism A: preferential attachment on incidences.}
+If every incidence were equally likely to be hit, node $i$ would gain links at rate
+$2k_i/4t$, linear preferential attachment with
 \begin{equation}
-  \frac{dk_i}{dt}=\frac{k_i}{2t},\qquad k_i(t)=2\sqrt{t/i}.
+  \frac{dk_i}{dt}=\frac{k_i}{2t},\qquad k_i(t)=2\sqrt{t/i},
   \label{eq:pa}
 \end{equation}
-This is the Barab\'asi--Albert rule with $m=2$~\cite{barabasi1999}. The master
+the Barab\'asi--Albert rule with $m=2$~\cite{barabasi1999}. Its master
 equation~\cite{krapivsky2001,dorogovtsev2002} gives
 \begin{equation}
   p_k=\frac{12}{k(k+1)(k+2)},\qquad P(k'\ge k)=\frac{6}{k(k+1)},
   \label{eq:pk}
 \end{equation}
-for $k\ge2$, so $\gamma=3$. At $T=10^5$ the measured $K^2P(k-2\ge K)$ at $K=8,16,32$ is
-$3.53,4.45,5.19$, against $3.49,4.49,5.16$ from Eq.~\eqref{eq:pk} [Fig.~\ref{fig:degree}(a)].
-The degree of the cohort born at $i$ decays as $i^{-\beta}$ with $\beta=0.50$--$0.51$.
+for $k\ge2$, so $\gamma=3$ and $K^2P(k\ge K)\to6$. Each hit adds an incidence and
+therefore raises the future hit rate: early hits beget late hits.
 
-\paragraph*{Metric form.}
-The spatial preferential attachment of Ref.~\cite{both2026} is the same statement in
-metric form. Two ends land per step on a total length $L(t)=c_L\sqrt t$, so the hit
-rate per unit length is $2/L(t)$ and
+\paragraph*{Mechanism B: length as fitness.}
+In the geometry, a chord ends on a side with a probability that grows with the side's
+length, and the total length that ligament $i$ exposes is its length $\ell_i$, fixed at
+birth. Being hit splits a side but adds no length, so there is no reinforcement. Two
+ends land per step on a total length $L(t)=c_L\sqrt t$, so the hit rate per unit length
+is $2/L(t)$, and the degree is a sum of independent rare events with mean
 \begin{equation}
-  k_i-2=\frac{4\ell_i}{c_L}\left(\sqrt T-\sqrt i\right).
+  \langle k_i\rangle-2=\frac{4\ell_i}{c_L}\left(\sqrt T-\sqrt i\right).
   \label{eq:kl}
 \end{equation}
-The ratio of measured to predicted degree averages $1.006$, with correlation $0.95$
-[Fig.~\ref{fig:degree}(b)]. Equations~\eqref{eq:pa} and \eqref{eq:kl} agree on average
-because $\langle\ell_i\rangle=c_\ell i^{-1/2}$ and $4c_\ell/c_L=2$. They differ in
-where the randomness sits. In Eq.~\eqref{eq:pa} it is in the history of hits. In
-Eq.~\eqref{eq:kl} it is in the birth length, $x=\ell_i/\langle\ell_i\rangle$, with
-$\langle x^2\rangle=1.39$. With $k\simeq2x\sqrt{T/i}$ and $i$ uniform, the tail amplitude
-is $K^2P(k\ge K)\to4\langle x^2\rangle=5.56$, about $7\%$ below the value $6$ of
-Eq.~\eqref{eq:pk}. A hub is therefore predictable at birth from its length, which is
-not the case in the Barab\'asi--Albert model.
+This is the ``more opportunities to be hit'' argument of Ref.~\cite{both2026}, made
+quantitative. It is a fitness model~\cite{bianconi2001} in which the fitness is the
+birth length. The cell hierarchy assigns it: $\langle\ell_i\rangle=c_\ell i^{-1/2}$, so
+that, with $4c_\ell/c_L=2$, Eq.~\eqref{eq:kl} reduces on average to $k_i\simeq2\sqrt{T/i}$,
+the same growth law as Eq.~\eqref{eq:pa}. The randomness, however, sits in the birth
+length, $x=\ell_i/\langle\ell_i\rangle$, rather than in the history of hits. With
+$k\simeq2x\sqrt{T/i}$ and $i$ uniform,
+\begin{equation}
+  P(k\ge K)\simeq\frac{4\langle x^2\rangle}{K^2},
+  \label{eq:amp}
+\end{equation}
+again $\gamma=3$, with an amplitude set, in mean field, by the spread of birth lengths.
+A hub is predictable at birth from its length.
+
+\paragraph*{Which mechanism the geometry realises.}
+Both mechanisms predict $\gamma=3$ and the same mean growth law, so the exponent cannot
+decide between them. We apply three tests (three realisations with $T=10^5$ unless stated).
+(i) At fixed predicted mean $\mu_i$ from Eq.~\eqref{eq:kl}, mechanism B makes $k_i-2$
+nearly Poisson. The measured variance-to-mean ratio is $1.05$--$1.06$ for
+$\mu_i\in[2,4)$, $1.14$--$1.18$ for $[4,8)$ and $1.36$--$1.44$ for $[8,16)$, and
+$\mathrm{var}(k_i-2-\mu_i)/\langle\mu_i\rangle=0.98$--$1.09$ for ligaments born in
+$[100,T/20)$. The excess for the largest $\mu_i$ ($2$--$4.7$ for $\mu_i>16$, a few
+hundred early ligaments) reflects the local environment of the oldest ligaments, which
+the mean-field rate $2/L(t)$ ignores. Under mechanism A the variance at fixed age
+exceeds the mean by a factor that grows with the mean: in the topological surrogate of
+Sec.~\ref{sec:topology} the ratio is $10$ for ligaments born at $i\simeq1000$ (mean
+degree $16$--$17$) and $51$--$91$ for those born at $i\simeq100$ (mean $66$--$68$). (ii) Let $e_i$ be the number of
+hits on ligament $i$ during $[i,2i)$ and $l_i$ the number during $[2i,T)$. After
+subtracting the expectations of Eq.~\eqref{eq:kl}, $e_i$ and $l_i$ are uncorrelated
+($r=-0.027$, $-0.015$ and $0.045$). In the topological surrogate of
+Sec.~\ref{sec:topology}, which realises mechanism A, the same correlation at fixed age is
+$0.46$--$0.50$. (iii) The tail amplitude does not separate the
+mechanisms cleanly. At $T=10^6$ (five realisations) the measured $K^2P(k\ge K)$ is
+$5.78\pm0.02$, $5.75\pm0.03$ and $5.75\pm0.06$ at $K=32$, $64$ and $128$. The exact
+finite-$K$ value of Eq.~\eqref{eq:pk}, $6K/(K+1)$, is $5.82$, $5.91$ and $5.95$, so the
+data lie below preferential attachment by $5\sigma$ at $K=64$. Drawing each degree as
+$2$ plus a Poisson variable with the mean of Eq.~\eqref{eq:kl}, using the actual birth
+lengths ($\langle x^2\rangle=1.41$, so $4\langle x^2\rangle=5.64$), gives $5.57\pm0.02$,
+$5.56\pm0.09$ and $5.59\pm0.07$, below the data. The excess over the Poisson fitness
+model comes from the extra spread of the oldest ligaments noted in test (i).
+
+The geometric SR dual therefore grows by mechanism B: a face-local rule in which old
+nodes are hit in proportion to a fitness fixed at birth. Mechanism A is what the same
+face-local bookkeeping produces when geometry is removed (Sec.~\ref{sec:topology}). In
+two dimensions the two coincide in the exponent because the hierarchy makes the
+fitness scale as $i^{-1/2}$, exactly the growth law of preferential attachment with
+$m=2$. They differ in their fluctuations, and they differ in three dimensions, where
+the two mechanisms predict different exponents (Sec.~\ref{sec:gamma}).
+
+At $T=10^5$ the measured $K^2P(k-2\ge K)$ at $K=8,16,32$ is $3.53,4.45,5.19$
+[Fig.~\ref{fig:degree}(a)], and the ratio of measured to predicted degree in
+Eq.~\eqref{eq:kl} averages $1.006$, with correlation $0.95$
+[Fig.~\ref{fig:degree}(b)]. The degree of the cohort born at $i$ decays as $i^{-\beta}$
+with $\beta=0.50$--$0.51$.
 
 \begin{figure}[t]
 \includegraphics[width=\columnwidth]{figs/fig3.pdf}
 \caption{Dual graph of the SR construction, three realisations with $T=10^5$.
-(a) Cumulative degree distribution and Eq.~\eqref{eq:pk}. (b) Degree against the
+(a) Cumulative degree distribution and Eq.~\eqref{eq:pk}; on this scale it cannot be
+told apart from Eq.~\eqref{eq:amp}. (b) Degree against the
 prediction~\eqref{eq:kl} from birth length and age (light dots: a random sample of
 ligaments; circles: binned means). (c) Clustering spectrum and
 Eq.~\eqref{eq:ck} with $p_0=0.494$, $p=0.53$. (d) Mean neighbour degree; the dashed line
@@ -271,12 +347,17 @@ Hence
   P_{\rm corner}(K)=\frac{1}{\pi A_K}\int_0^\pi\big[A_{\rm lo}(\theta)+A_{\rm hi}(\theta)\big]\,d\theta .
   \label{eq:corner}
 \end{equation}
-For a triangle every chord cuts off a corner, so $P_{\rm corner}=1$. For a square,
-Eq.~\eqref{eq:corner} gives $2\ln2/\pi=0.4413$, for a $1\times4$ rectangle $0.303$, for
-regular pentagons and hexagons $0.232$ and $0.136$~\cite{santalo1976}. Averaged over the
-SR cell population, by corner number $n=3,\dots,7$, the values are
-$1.000$, $0.461$, $0.254$, $0.152$ and $0.10$, and the area-weighted average is
-$0.447$--$0.449$. The measured frequency of corner cuts is $0.447$--$0.449$.
+The line measure is the standard one of integral geometry~\cite{santalo1976}, weighted
+here by the chord length because the line passes through a uniform point. For a
+triangle every chord cuts off a corner, so $P_{\rm corner}=1$. For a square,
+Eq.~\eqref{eq:corner} gives $2\ln2/\pi=0.4413$ in closed form. Numerical quadrature of
+Eq.~\eqref{eq:corner} gives $0.303$ for a $1\times4$ rectangle and $0.232$ and $0.136$ for
+regular pentagons and hexagons. Evaluated on the simulated SR cells, the mean of
+Eq.~\eqref{eq:corner} by corner number $n=3,\dots,7$ is $1.000$, $0.461$, $0.254$,
+$0.152$ and $0.10$, and its area-weighted average is $0.447$--$0.449$ (numerical). The
+frequency of corner cuts measured directly in the growth is $0.447$--$0.449$. This
+agreement checks the formula and the code against each other; it is not an
+independent prediction, because the cell shapes are taken from the simulation.
 
 \paragraph*{Triangle bookkeeping.}
 A corner cut creates a triangular daughter unless the parent was already a
@@ -287,20 +368,26 @@ triangles. Measured values are $0.30=0.449-0.147$.
 \paragraph*{Non-local closures.}
 The fraction of new nodes that close a triangle is $0.496$, not $1/2$. Corner cuts
 account for $0.448$. The other $0.048$ join two non-adjacent sides of their cell whose
-ligaments already meet outside it. The remaining half of the new nodes close a square
-around the cell.
+ligaments already meet outside it. The remaining $0.50$ of new nodes join two ligaments
+at distance two or more around the cell: distance two closes a square, and in cells
+with $n\ge6$ the two sides can be three steps apart around the face.
 
 \paragraph*{Clustering spectrum.}
 Links between existing nodes are never added. A node therefore acquires triangles only
 at birth, with probability $p_0$, or when it is hit and the other end of the new
-ligament lands on one of its neighbours, with probability $p$ per hit. The number of
-triangles at node $i$ is $e_i=p_0+p(k_i-2)$, and
+ligament lands on one of its neighbours, with probability $p$ per hit. With constant
+$p$ the number of triangles at node $i$ is $e_i=p_0+p(k_i-2)$, and
 \begin{equation}
   C(k)=\frac{2[p_0+p(k-2)]}{k(k-1)}\simeq\frac{2p}{k},
   \label{eq:ck}
 \end{equation}
 the hierarchical form produced by triadic
-closure~\cite{vazquez2003,ravasz2003,holme2002}. With $p_0=0.494$ and a fitted $p=0.53$,
+closure~\cite{vazquez2003,ravasz2003,holme2002}. Counting the per-hit triangle events
+directly, $p$ is not constant: it is $0.41$ when the hit node has degree $2$, $0.48$ for
+degrees $3$--$4$, $0.53$ for $5$--$9$, and $0.56$--$0.58$ for degrees $10$ and above
+(two realisations, $T=10^5$, each bin $\ge10^4$ hits). Hits on hubs are more likely to
+land next to a neighbour because hubs are long and carry many short stems. With
+$p_0=0.494$ and a single fitted $p=0.53$ ($0.56$ when the fit is restricted to $k>7$),
 Eq.~\eqref{eq:ck} is within $2\%$ of the data for $k\ge15$ [Fig.~\ref{fig:degree}(c)].
 The mean clustering is $0.38$. At $k=2$ the measured $C=0.536$ exceeds $p_0$, because
 corner-cut ligaments are short and rarely hit again. The degree assortativity is
@@ -312,8 +399,9 @@ In the language of local rules, the SR dual mixes two moves. With probability $\
 the new node attaches to both ends of a link (the corner), as in the edge-attachment
 model of Dorogovtsev, Mendes and Samukhin~\cite{dorogovtsev2001}, except that the
 link is selected with probability proportional to the area of its cell rather than
-uniformly. With probability $\simeq0.55$ it attaches to two nodes at distance two on a
-face cycle and closes a square. The edge-attachment model has $\gamma=3$ and
+uniformly. With probability $\simeq0.50$ it attaches to two nodes at distance two or
+more on a face cycle, mostly closing a square, and with probability $0.05$ it closes a
+triangle non-locally. The edge-attachment model has $\gamma=3$ and
 clustering $0.74$~\cite{dorogovtsev2001,dorogovtsevgoltsev2002}. The SR dual has the
 same $\gamma$ and half the clustering; the other half of the closures went into squares.
 It is also the two-dimensional relative of the random Apollonian
@@ -331,28 +419,35 @@ sides are joined with probability $p_4$, or two non-adjacent sides with probabil
 $1-p_4$. The face is then split into two, with $n_1+n_2=n+4$ as in the tessellation.
 No lengths or positions are used.
 
-Every face-local variant we tried (faces chosen uniformly, by number of sides, or by
-a random-split area) reproduces Eq.~\eqref{eq:pk}: $\gamma_{\rm MLE}(k\ge10)=2.88$--$2.91$
-and the same $K^2P$ amplitudes. The single parameter $p_4=0.29$ also gives a mean
-clustering of $0.386$ (SR, $0.377$) and places $C(k)$ and $k_{nn}(k)$ on the SR curves.
-A variant in which sides are chosen with probability proportional to a mean-field
-length, instead of uniformly, breaks the equality between hits and incidences and gives
-$\gamma\simeq3.6$. The degree statistics are therefore fixed by the face-local rule and
-by the equivalence of incidences, not by the geometry.
+Because every side of the chosen face is equally likely to be hit, every incidence is
+equally likely to be hit, and the surrogate realises mechanism A of
+Sec.~\ref{sec:degree} exactly. Every face-local variant we tried (faces chosen
+uniformly, by number of sides, or by a random-split area) reproduces
+Eq.~\eqref{eq:pk}: $\gamma_{\rm MLE}(k\ge10)=2.88$--$2.91$ and the same $K^2P$
+amplitudes at $K\le32$. The single parameter $p_4=0.29$ also gives a mean clustering of
+$0.386$ (SR, $0.377$) and places $C(k)$ and $k_{nn}(k)$ on the SR curves. The surrogate
+reaches these statistics through reinforcement, as test (ii) of Sec.~\ref{sec:degree}
+shows, whereas the geometric model reaches them through length. The low-order degree
+statistics therefore do not identify the mechanism.
 
-The surrogate fails on distances. At $T=10^5$ its mean distance is $14.1$ against $8.8$
-for SR, and it grows as $1.43\ln T$ against $0.60\ln T$ [Fig.~\ref{fig:paths}(a)].
-Faces cut across, in the surrogate, stack into long ladders of squares. In the geometric
-model chords hit long sides preferentially, and long sides belong to old, long
-ligaments, so new nodes stay close to the hubs and the dual remains small-world.
-Geometry matters for metric properties only.
+The surrogate differs on distances. At $T=10^5$ its mean distance is $14.1$ against
+$8.8$ for SR. Both grow logarithmically, but with prefactors $1.43$ and $0.60$
+[Fig.~\ref{fig:paths}(a)]. In the geometric model chords hit long sides
+preferentially, and long sides belong to old, long ligaments, so new nodes attach
+close to the hubs. In the surrogate, sides are hit regardless of the age of the
+ligament that carries them, and repeated cuts across faces can produce long chains of
+squares. Geometry thus matters for the properties that depend on which particular sides
+are hit, such as distances, and not for $P(k)$, $C(k)$ or $k_{nn}(k)$.
 
 \begin{figure*}[tbp]
 \includegraphics[width=\textwidth]{figs/fig4.pdf}
 \caption{(a) Maximum-likelihood exponent ($k\ge10$) for the design rules of
 Ref.~\cite{both2026}, $T=3\times10^4$, two realisations (the jammed $\alpha=0$ case stops at
 $T\simeq2000$; 3D plates at $T=8\times10^4$, $k\ge40$). The number on the right is the mean
-clustering coefficient. Dashed line: $\gamma=3$; dotted line: $\gamma=2.5$.
+clustering coefficient. Error bars: half the difference between the two realisations
+(3D: estimator standard error). Dashed line: $\gamma=3$; dotted line: $\gamma=2.5$. The
+uniform SR control gives $2.87$--$2.91$ at this size, the downward bias of the estimator
+discussed in Sec.~\ref{sec:gamma}.
 (b) Exponent against the fraction of ligaments whose angle follows a circular or a wave
 orientation field ($T=3\times10^4$); the remaining ligaments have uniform angles.}
 \label{fig:gamma}
@@ -367,28 +462,63 @@ ligament the fewest times. For a random graph with given degrees, the mean numbe
 shortest paths between two nodes is $\langle\mu\rangle\simeq c_2/e$ with
 $c_2=\langle k(k-1)\rangle/\langle k\rangle$, and local growth rules depart from this
 value in a rule-dependent way~\cite{vazquezpaths2026}. For $\gamma=3$, $c_2$ grows as
-$\ln T$; we measure $c_2=7.9$ at $T=10^3$ and $15.6$ at $T=3\times10^5$.
+$\ln T$.
 
-The degree-preserving randomisation of the SR dual follows the configuration-model
-value, with $\langle\mu\rangle/(c_2/e)=1.03$, $0.98$, $0.95$, $0.94$ and $0.89$ for
-$T=10^3,\dots,10^5$. The SR dual itself exceeds it by a factor that grows with size:
-$2.3$, $2.8$, $3.9$, $4.9$, $4.9$ and $6.8$ for $T=10^3,\dots,3\times10^5$. The
-edge-attachment model stays close to the baseline ($0.9$--$1.2$) over the same range,
-so triangles add no redundancy. The excess comes from the square-closing half of the
-splits: the number of shortest paths grows with distance at a rate of $0.45$--$0.6$
-per hop, as on a square lattice, where fewest-turn routes through a grid of ligaments
-are many. Because $\mu$ has a heavy tail, Fig.~\ref{fig:paths}(b) shows
-$\langle\ln\mu\rangle$, which grows as $0.18\ln T$ for SR against $0.06\ln T$ for the
-randomised graph. In the surrogate the ladders make the multiplicity explode
-($\langle\ln\mu\rangle=3.4$ at $T=3\times10^5$). The squares supply the redundancy,
-while the geometry keeps them from stacking.
+Table~\ref{tab:paths} lists the measurements for the SR dual, its degree-preserving
+randomisation (SR$^*$) and the edge-attachment (DM) model~\cite{dorogovtsev2001}, each
+averaged over six realisations and $100$ sources per realisation. The randomised graph
+sits on the configuration-model value, $\langle\mu\rangle/(c_2/e)=1.00$--$0.90$. The SR
+dual exceeds it, by a factor that grows from $2.0\pm0.3$ at $T=10^3$ to $6.4\pm0.9$ at
+$T=10^5$, and the DM model stays within $0.87$--$1.20$. Because $\mu$ has a heavy tail,
+$\langle\mu\rangle$ is dominated by rare pairs; the mean logarithm is better determined.
+The excess $\Delta\langle\ln\mu\rangle=\langle\ln\mu\rangle_{\rm SR}-\langle\ln\mu\rangle_{\rm SR^*}$,
+taken at the same degree sequence, grows from $0.40$ to $1.03$ over the same range.
+
+\begin{table}[b]
+\caption{Shortest-path statistics of the dual graph: mean distance $\langle d\rangle$,
+$\langle\mu\rangle/(c_2/e)$ and $\langle\ln\mu\rangle$, mean $\pm$ standard error over six
+realisations (100 sources each). Each entry gives SR / SR$^*$, where SR$^*$ is the
+degree-preserving randomisation of the SR dual; standard errors of the SR$^*$ entries are
+below $0.03$.}
+\label{tab:paths}
+\begin{ruledtabular}
+\begin{tabular}{rcccc}
+$T$ & $c_2$ & $\langle d\rangle$ & $\langle\mu\rangle/(c_2/e)$ & $\langle\ln\mu\rangle$\\
+\hline
+$10^3$ & $7.9$ & $5.78/4.48$ & $2.0\pm0.3/1.00$ & $1.09\pm0.06/0.70$\\
+$3\times10^3$ & $9.3$ & $6.60/4.98$ & $2.9\pm0.5/1.00$ & $1.39\pm0.07/0.80$\\
+$10^4$ & $11.0$ & $7.18/5.31$ & $3.3\pm0.4/0.94$ & $1.55\pm0.06/0.87$\\
+$3\times10^4$ & $12.3$ & $7.98/5.65$ & $5.4\pm1.0/0.93$ & $1.77\pm0.07/0.94$\\
+$10^5$ & $14.1$ & $8.69/6.06$ & $6.4\pm0.9/0.90$ & $2.03\pm0.06/1.00$\\
+\end{tabular}
+\end{ruledtabular}
+\end{table}
+
+To ask where the excess comes from, we varied the fraction of new nodes that close a
+triangle at fixed construction and measured $\Delta\langle\ln\mu\rangle$ against each
+network's own randomisation [$T=3\times10^4$, six realisations,
+Fig.~\ref{fig:paths}(b)]. In the topological surrogate, raising the corner-cut
+probability $p_4$ from $0.1$ to $0.9$ raises the triangle-closing fraction from $0.24$
+to $0.97$ and lowers the excess monotonically, from $2.09\pm0.17$ to $0.19\pm0.03$. In the
+geometric model, the angle set $\{0,\pi/2\}$ closes no triangles and gives an excess
+of $2.87\pm0.13$; the set $\{0,\pi/3,2\pi/3\}$ closes $0.23$ and gives $2.43\pm0.32$;
+uniform angles close $0.49$ and give $0.83\pm0.07$. Square-closing splits therefore
+supply the redundancy. The fraction of squares is not the only factor, however:
+selecting cells uniformly ($q=0$) raises the triangle fraction to $0.62$ but also
+raises the excess, to $1.50\pm0.19$. Uniform selection splits small cells as often as
+large ones and stacks squares locally, which the area weighting of the SR rule
+avoids. The DM model, which closes only triangles, has no excess.
 
 \begin{figure}[t]
 \includegraphics[width=\columnwidth]{figs/fig5.pdf}
 \caption{(a) Mean distance in the dual graph against $T$ for the SR construction, its
-degree-preserving randomisation, the topological face surrogate ($p_4=0.29$) and the
-edge-attachment (DM) model~\cite{dorogovtsev2001}. (b) Mean logarithm of the
-shortest-path multiplicity. Averages over three realisations and 100 sources.}
+degree-preserving randomisation, the edge-attachment (DM) model~\cite{dorogovtsev2001}
+(six realisations) and the topological face surrogate with $p_4=0.29$ (two to three
+realisations). (b) Excess of the mean log-multiplicity over each network's
+degree-preserving randomisation against the fraction of new nodes that close a
+triangle, $T=3\times10^4$, six realisations: SR rule variants (angle sets
+$\{0,\pi/2\}$, $\{0,\pi/3,2\pi/3\}$, uniform angles, and uniform cell selection $q=0$) and
+the face surrogate with $p_4=0.1$, $0.29$, $0.6$, $0.9$. Error bars: standard errors.}
 \label{fig:paths}
 \end{figure}
 
@@ -396,14 +526,26 @@ shortest-path multiplicity. Averages over three realisations and 100 sources.}
 \section{What moves the degree exponent}
 \label{sec:gamma}
 
-In a growth rule where each new node creates a fixed number of incidences and old
-nodes are hit in proportion to theirs, the exponent is $\gamma=1+1/b$, with $b$ the
-number of links received by old nodes per step divided by the number of incidences
-created per step. In two dimensions every new ligament makes two junctions and four
-incidences, so $b=1/2$ and $\gamma=3$, whatever the cell selection, the angle and the
-thickness, provided the hit rate per incidence is uniform across nodes.
+Within mechanism B the exponent follows from two scalings: how the fitness of a
+ligament depends on its birth index, and how its hit rate depends on its fitness. If
+the hit rate is proportional to $\ell_i^a$ and $\ell_i\propto i^{-1/2}$, the total
+rate $\sum_j\ell_j^a$ grows as $t^{1-a/2}$ for $a<2$, so
+$k_i\propto\ell_i^at^{a/2}\propto(t/i)^{a/2}$, giving $\beta=a/2$ and
+$\gamma=1+1/\beta=1+2/a$. In two dimensions with uniform angles $a=1$, so $\gamma=3$.
+Any rule that keeps the hit rate proportional to length and the birth length
+proportional to the local cell size leaves $\gamma$ at $3$.
 
-We tested this with the design rules of Ref.~\cite{both2026} at $T=3\times10^4$, two
+Exponents are estimated with the discrete maximum-likelihood approximation
+$\hat\gamma=1+n[\sum_i\ln(k_i/(k_{\min}-1/2))]^{-1}$ over the $n$ nodes with
+$k\ge k_{\min}$~\cite{clauset2009}, with standard error $(\hat\gamma-1)/\sqrt n$. For a
+distribution with the curvature of Eq.~\eqref{eq:pk} this estimator is biased low at
+small $k_{\min}$: on $10^5$ samples drawn exactly from Eq.~\eqref{eq:pk} it returns
+$2.77\pm0.02$, $2.87\pm0.03$, $2.91\pm0.05$ and $2.91\pm0.10$ for $k_{\min}=6$, $10$, $20$
+and $40$. The SR model at $T=10^5$ gives $2.77$--$2.79$, $2.86$--$2.90$, $2.94$--$2.97$
+and $2.90$--$3.03$. Statements that $\gamma=3$ therefore rest on comparison with these
+controls, not on the raw value of $\hat\gamma$.
+
+We tested the design rules of Ref.~\cite{both2026} at $T=3\times10^4$, two
 realisations each [Fig.~\ref{fig:gamma}(a)]:
 \begin{itemize}
 \item Thickness in the tunable-density phase ($\alpha=0.5$--$1$, $\lambda_0=0.01$--$0.1$,
@@ -425,11 +567,16 @@ while the exponent stays at $3$.
 
 \paragraph*{Coherent orientation fields.}
 The polarized rule of Ref.~\cite{both2026}, in which the angle follows a prescribed
-field $\theta(x,y)$, breaks the uniformity of the hit rate. Locally parallel newcomers
-cannot hit each other; they end on the ligaments that are misaligned with the local field,
-and for straight ligaments in a curved field the misalignment grows with length. The
-degree then grows faster than length, $k\sim\ell^{1.5\text{--}1.6}$ instead of
-$\ell^{1.03}$. For a circular field and for waves $\theta=\pi(x+y)/w$ with
+field $\theta(x,y)$, breaks the proportionality between hit rate and length. Locally
+parallel newcomers cannot hit each other; they end on the ligaments that are misaligned
+with the local field, and for straight ligaments in a curved field the misalignment
+grows with length. The degree then grows faster than length: fitting
+$\ln(k-2)$ against $\ln\ell$ for the oldest $5\%$ of ligaments with $k>4$ gives slopes
+$a=1.43$--$1.63$, against $1.03$--$1.05$ for uniform angles. With $a\simeq1.5$ the
+argument above predicts $\beta\simeq0.75$ and $\gamma\simeq2.3$. It captures the
+direction of the change but overshoots it; the measured cohort exponents are smaller
+(see below), because the misaligned length of a ligament is not simply a power of its
+total length. For a circular field and for waves $\theta=\pi(x+y)/w$ with
 $w=0.125$--$1$ we find $\gamma\simeq2.44$--$2.51$ and cohort exponents $\beta\simeq0.6$--$0.67$,
 stable from $T=10^4$ to $2\times10^5$. At $T=10^6$ the maximum-likelihood exponent is
 $2.43$--$2.50$ ($k\ge10$ to $k\ge40$) for the circular field and $2.36$--$2.47$ for the
@@ -464,53 +611,58 @@ $b=1/2$, the reported exponents. Because $k\propto\ell$ at fixed age
 $U\sim\ell^{3/2}\lambda^{1/2}f(\theta)$. Degree, length and age cannot be separated
 from cohort scaling alone.
 
-As an illustration, we computed per-ligament energies in an Euler--Bernoulli frame
-(axial area $\lambda$, bending moment of inertia $\lambda^3/12$, rigid T-junctions,
-affine uniaxial strain on the boundary) for $T=1000$--$5000$. Fits on degree and on
-length are indistinguishable, $U\propto k^{1.64}\lambda^{1.61}$ ($R^2=0.634$) against
-$U\propto\ell^{0.82}\lambda^{2.02}$ ($R^2=0.631$), and the age alone gives an $R^2$
-within $0.03$--$0.08$ of the best fit. Within a birth cohort the partial correlations
-of $U$ with $k$ ($0.22$--$0.30$) and with $\ell$ ($0.17$--$0.34$) are comparable. The thickness
-exponent of a slender-beam frame lies between stretching ($1$) and bending ($3$) and is
-not $1/2$. A frame of slender beams is not the continuum finite-element model of
-Ref.~\cite{both2026}, so we do not attach weight to this exponent. The identifiability
-statement does not depend on it.
+Separating them requires the per-ligament energies themselves: a within-cohort
+regression of $U$ on $k$, $\ell$ and $\lambda$ would show whether degree adds anything
+beyond length and age. In a slender-beam frame model that we used as a check
+(Euler--Bernoulli beams, rigid T-junctions, $T\le5000$), fits on degree and on length
+were indistinguishable ($R^2=0.634$ and $0.631$); a frame of slender beams is not the
+continuum finite-element model of Ref.~\cite{both2026}, so we do not report its
+exponents.
 
 The same reasoning applies to design. Thickness is a function of birth order, and
 degree and length are statistically slaved to birth order, so $\alpha$ and $\lambda_0$
-act on the material through the age of each ligament on a fixed network. Connectivity
-becomes a design variable only when the growth rule is changed so that $b$ moves away
-from $1/2$, as with coherent orientation fields or in three dimensions.
+act on the material through the age of each ligament on a fixed network.
+Connectivity becomes a design variable only when the rule is changed so that the hit
+rate stops being proportional to length, as with coherent orientation fields, or when
+the dimension changes the relation between fitness and birth order
+(Sec.~\ref{sec:gamma}).
 
 %======================================================================
-\section{Discussion}
+\section{Conclusions}
 
 The scale-rich construction joins two known structures. Geometrically it is Cowan's
-recursive division of cells~\cite{cowan2010}; as a graph it is a face-local growth
-rule~\cite{vazquez2003} whose degree distribution is the Barab\'asi--Albert form with
-$m=2$. The recursion explains the cell hierarchy: uniform split fractions, a
-binary-search-tree genealogy and exponential areas. The local rule explains the
-network: linear preferential attachment from the identity between degree and face
-incidences, a hierarchical clustering spectrum from corner cuts, and an excess of
-shortest paths from square-closing splits. Keeping both references in view settles which
-features are fixed by the class and which can be designed. The exponent $\gamma=3$, the
-equality $\langle n\rangle=4$, the host-age law $h/t\to U^2$ and the stationarity of the
-thickness ratio are fixed. Clustering is designable through the angle set and the
-selection weight. The degree exponent is designable only through rules that change $b$.
+recursive division of cells~\cite{cowan2010}; as a graph it grows by a face-local rule
+in which each new node joins two nodes on the boundary of one face. The recursion
+explains the cell hierarchy: uniform split fractions, a binary-search-tree genealogy and
+exponential areas. It also assigns each ligament its length at birth,
+$\ell_i\propto i^{-1/2}$, and that length acts as a fitness: the degree is a nearly
+Poisson count of hits with mean proportional to length times remaining time, without
+reinforcement. The $k^{-3}$ tail, which preferential attachment on face incidences would
+also give, follows from that fitness, and the two mechanisms are separated by the
+fluctuations of the degree rather than by its exponent. The local rule explains the rest
+of the network: a hierarchical clustering spectrum from corner cuts and an excess of
+shortest paths from square-closing splits. Keeping both references in view settles
+which features are fixed by the class and which can be designed. The exponent
+$\gamma=3$ and the equality $\langle n\rangle=4$ are fixed, and in mean field so are
+the host-age law $h/t\to U^2$ and the stationarity of the thickness ratio. Clustering
+is designable through the angle set and the selection weight. The degree exponent is
+designable only through rules that make the hit rate grow faster than length.
 
-Several points remain open. The uniformity of the hit rate per incidence is a mean-field
-assumption, accurate to a few per cent in the tail but not proven. The per-hit triangle
-probability $p\simeq0.53$ and the non-local closure fraction $0.048$ require the joint
-law of cell shapes next to long ligaments. Under coherent orientation fields we observe
-$\gamma\simeq2.4$--$2.5$ up to $T=10^6$ but have no theory of its value. In three
-dimensions the two estimates, $2.44$ and $2.5$, are not separated by our data. Finally,
-the growth of the shortest-path multiplicity with $T$ is consistent with both a
-log-quadratic and a weak power law over the range studied.
+Several points remain open. The rate $2/L(t)$ per unit length is a mean-field rate;
+the excess variance of the oldest ligaments shows that their local environment
+matters, and it raises the tail amplitude by about $4\%$ above the Poisson
+fitness prediction. The per-hit triangle probability, which rises from $0.41$ to $0.57$ with the
+degree, and the non-local closure fraction $0.048$ require the joint law of cell shapes
+next to long ligaments. Under coherent orientation fields we observe
+$\gamma\simeq2.4$--$2.5$ up to $T=10^6$; the fitness argument gives the direction of the
+change but not its value. Finally, the growth of the shortest-path excess with $T$ is
+consistent with both a log-quadratic and a weak power law over the range studied.
 
-More broadly, the SR dual is a reminder that a spatial growth process can carry a
-non-spatial growth class. Here the area-weighted point and the convexity of the cells do
-the work of a random walk on the graph: they deliver the new node to a face, and the face
-does the rest.
+More broadly, the SR dual shows that a spatial growth process can reproduce the degree
+statistics of a non-spatial growth class by a different route. Here the area-weighted
+point and the convexity of the cells deliver each new node to a face, as a random walk
+would, but the choice of sides within the face is set by length, a property fixed at
+birth, rather than by accumulated links.
 
 \begin{acknowledgments}
 All code is available at \url{https://github.com/av2atgh/scalerich}.

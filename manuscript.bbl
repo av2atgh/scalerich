@@ -6,7 +6,7 @@
 %Control: page (0) single
 %Control: year (1) truncated
 %Control: production of eprint (0) enabled
-\begin{thebibliography}{22}%
+\begin{thebibliography}{27}%
 \makeatletter
 \providecommand \@ifxundefined [1]{%
  \@ifx{#1\undefined}
@@ -132,6 +132,16 @@
   {https://doi.org/10.1103/PhysRevE.67.026112} {\bibfield  {journal} {\bibinfo
   {journal} {Physical Review E}\ }\textbf {\bibinfo {volume} {67}},\ \bibinfo
   {pages} {026112} (\bibinfo {year} {2003})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Bianconi}\ and\ \citenamefont
+  {Barab{\'a}si}(2001)}]{bianconi2001}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {G.}~\bibnamefont
+  {Bianconi}}\ and\ \bibinfo {author} {\bibfnamefont {A.-L.}\ \bibnamefont
+  {Barab{\'a}si}},\ }\bibfield  {title} {\bibinfo {title} {Competition and
+  multiscaling in evolving networks},\ }\href
+  {https://doi.org/10.1209/epl/i2001-00260-6} {\bibfield  {journal} {\bibinfo
+  {journal} {Europhysics Letters}\ }\textbf {\bibinfo {volume} {54}},\ \bibinfo
+  {pages} {436} (\bibinfo {year} {2001})}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Cowan}(2010)}]{cowan2010}%
   \BibitemOpen
   \bibfield  {author} {\bibinfo {author} {\bibfnamefont {R.}~\bibnamefont
@@ -160,6 +170,35 @@
   overview of models},\ }\href@noop {} {\bibfield  {journal} {\bibinfo
   {journal} {arXiv}\ } (\bibinfo {year} {2025})},\ \Eprint
   {https://arxiv.org/abs/2501.05166} {2501.05166} \BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Bohn}\ \emph
+  {et~al.}(2005{\natexlab{a}})\citenamefont {Bohn}, \citenamefont {Pauchard},\
+  and\ \citenamefont {Couder}}]{bohn2005}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {S.}~\bibnamefont
+  {Bohn}}, \bibinfo {author} {\bibfnamefont {L.}~\bibnamefont {Pauchard}},\
+  and\ \bibinfo {author} {\bibfnamefont {Y.}~\bibnamefont {Couder}},\
+  }\bibfield  {title} {\bibinfo {title} {Hierarchical crack pattern as formed
+  by successive domain divisions. {I}. {T}emporal and geometrical hierarchy},\
+  }\href {https://doi.org/10.1103/PhysRevE.71.046214} {\bibfield  {journal}
+  {\bibinfo  {journal} {Physical Review E}\ }\textbf {\bibinfo {volume} {71}},\
+  \bibinfo {pages} {046214} (\bibinfo {year} {2005}{\natexlab{a}})}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Bohn}\ \emph
+  {et~al.}(2005{\natexlab{b}})\citenamefont {Bohn}, \citenamefont
+  {Platkiewicz}, \citenamefont {Andreotti}, \citenamefont {Adda-Bedia},\ and\
+  \citenamefont {Couder}}]{bohn2005b}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {S.}~\bibnamefont
+  {Bohn}}, \bibinfo {author} {\bibfnamefont {J.}~\bibnamefont {Platkiewicz}},
+  \bibinfo {author} {\bibfnamefont {B.}~\bibnamefont {Andreotti}}, \bibinfo
+  {author} {\bibfnamefont {M.}~\bibnamefont {Adda-Bedia}},\ and\ \bibinfo
+  {author} {\bibfnamefont {Y.}~\bibnamefont {Couder}},\ }\bibfield  {title}
+  {\bibinfo {title} {Hierarchical crack pattern as formed by successive domain
+  divisions. {II}. {F}rom disordered to deterministic behavior},\ }\href
+  {https://doi.org/10.1103/PhysRevE.71.046215} {\bibfield  {journal} {\bibinfo
+  {journal} {Physical Review E}\ }\textbf {\bibinfo {volume} {71}},\ \bibinfo
+  {pages} {046215} (\bibinfo {year} {2005}{\natexlab{b}})}\BibitemShut
+  {NoStop}%
 \bibitem [{\citenamefont {Gilbert}(1967)}]{gilbert1967}%
   \BibitemOpen
   \bibfield  {author} {\bibinfo {author} {\bibfnamefont {E.~N.}\ \bibnamefont
@@ -169,6 +208,18 @@
   {editor} {edited by\ \bibinfo {editor} {\bibfnamefont {B.}~\bibnamefont
   {Noble}}}\ (\bibinfo  {publisher} {Macmillan},\ \bibinfo {address} {New
   York},\ \bibinfo {year} {1967})\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Gibson}\ \emph {et~al.}(2006)\citenamefont {Gibson},
+  \citenamefont {Patel}, \citenamefont {Nagpal},\ and\ \citenamefont
+  {Perrimon}}]{gibson2006}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {M.~C.}\ \bibnamefont
+  {Gibson}}, \bibinfo {author} {\bibfnamefont {A.~B.}\ \bibnamefont {Patel}},
+  \bibinfo {author} {\bibfnamefont {R.}~\bibnamefont {Nagpal}},\ and\ \bibinfo
+  {author} {\bibfnamefont {N.}~\bibnamefont {Perrimon}},\ }\bibfield  {title}
+  {\bibinfo {title} {The emergence of geometric order in proliferating metazoan
+  epithelia},\ }\href {https://doi.org/10.1038/nature05014} {\bibfield
+  {journal} {\bibinfo  {journal} {Nature}\ }\textbf {\bibinfo {volume} {442}},\
+  \bibinfo {pages} {1038} (\bibinfo {year} {2006})}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Devroye}(1986)}]{devroye1986}%
   \BibitemOpen
   \bibfield  {author} {\bibinfo {author} {\bibfnamefont {L.}~\bibnamefont
@@ -269,6 +320,18 @@
   {10.1103/t1sg-qhhf} (\bibinfo {year} {2026}),\ \Eprint
   {https://arxiv.org/abs/2605.25237} {arXiv:2605.25237 [physics.soc-ph]}
   \BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Clauset}\ \emph {et~al.}(2009)\citenamefont
+  {Clauset}, \citenamefont {Shalizi},\ and\ \citenamefont
+  {Newman}}]{clauset2009}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {A.}~\bibnamefont
+  {Clauset}}, \bibinfo {author} {\bibfnamefont {C.~R.}\ \bibnamefont
+  {Shalizi}},\ and\ \bibinfo {author} {\bibfnamefont {M.~E.~J.}\ \bibnamefont
+  {Newman}},\ }\bibfield  {title} {\bibinfo {title} {Power-law distributions in
+  empirical data},\ }\href {https://doi.org/10.1137/070710111} {\bibfield
+  {journal} {\bibinfo  {journal} {SIAM Review}\ }\textbf {\bibinfo {volume}
+  {51}},\ \bibinfo {pages} {661} (\bibinfo {year} {2009})}\BibitemShut
+  {NoStop}%
 \bibitem [{\citenamefont {Kolossv{\'a}ry}\ \emph {et~al.}(2016)\citenamefont
   {Kolossv{\'a}ry}, \citenamefont {Komj{\'a}thy},\ and\ \citenamefont
   {V{\'a}g{\'o}}}]{kolossvary2016}%

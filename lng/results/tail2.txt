@@ -1,0 +1,4 @@
+K=16: measured 5.646+-0.021  fitness-model (Poisson, actual lengths) 5.461+-0.013  BA 5.647
+K=32: measured 5.780+-0.020  fitness-model (Poisson, actual lengths) 5.568+-0.024  BA 5.818
+K=64: measured 5.793+-0.023  fitness-model (Poisson, actual lengths) 5.562+-0.087  BA 5.908
+K=128: measured 5.756+-0.080  fitness-model (Poisson, actual lengths) 5.587+-0.066  BA 5.953

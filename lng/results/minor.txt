@@ -1,0 +1,20 @@
+exact BA m=2 sample n=100000: MLE(k>=6)=2.768+-0.015  MLE(k>=10)=2.867+-0.025  MLE(k>=20)=2.909+-0.050  MLE(k>=40)=2.914+-0.099
+exact BA m=2 sample n=300000: MLE(k>=6)=2.785+-0.009  MLE(k>=10)=2.854+-0.014  MLE(k>=20)=2.901+-0.029  MLE(k>=40)=2.965+-0.058
+SR seed 1: boundary ends 1107 of 200000 (0.0055); square boundary is not a node
+   MLE: k>=6: 2.771+-0.015  k>=10: 2.899+-0.025  k>=20: 2.965+-0.052  k>=40: 2.899+-0.102
+   per-hit triangle prob overall 0.496
+     degree at hit in [2,3): n=49292 p=0.412
+     degree at hit in [3,5): n=49683 p=0.476
+     degree at hit in [5,10): n=45771 p=0.532
+     degree at hit in [10,20): n=26036 p=0.561
+     degree at hit in [20,50): n=16268 p=0.571
+     degree at hit in [50,1000000): n=10179 p=0.568
+SR seed 2: boundary ends 1113 of 200000 (0.0056); square boundary is not a node
+   MLE: k>=6: 2.785+-0.015  k>=10: 2.863+-0.025  k>=20: 2.941+-0.051  k>=40: 3.031+-0.107
+   per-hit triangle prob overall 0.497
+     degree at hit in [2,3): n=49323 p=0.412
+     degree at hit in [3,5): n=49642 p=0.475
+     degree at hit in [5,10): n=45435 p=0.532
+     degree at hit in [10,20): n=26025 p=0.563
+     degree at hit in [20,50): n=17144 p=0.576
+     degree at hit in [50,1000000): n=9646 p=0.577
