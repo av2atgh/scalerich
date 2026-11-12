@@ -1,0 +1,17 @@
+T = 1000 3000 10000 30000 100000 300000
+SR      meand : 5.87 6.65 7.45 8.04 8.41 9.49 | linear in lnT slope=0.595 | quad coef=-0.004
+SR      mu    : 6.52 9.70 15.55 22.27 25.06 39.13 | linear in lnT slope=5.370 | quad coef=0.570
+SR      lnmu  : 1.11 1.42 1.66 1.85 1.90 2.23 | linear in lnT slope=0.179 | quad coef=-0.009
+SR      <mu>/(c2/e): 2.25 2.81 3.85 4.90 4.86 6.82
+SR*     meand : 4.50 4.90 5.29 5.70 6.13 | linear in lnT slope=0.352 | quad coef=0.002
+SR*     mu    : 2.98 3.39 3.83 4.28 4.60 | linear in lnT slope=0.359 | quad coef=-0.011
+SR*     lnmu  : 0.71 0.80 0.88 0.95 0.99 | linear in lnT slope=0.061 | quad coef=-0.005
+SR*     <mu>/(c2/e): 1.03 0.98 0.95 0.94 0.89
+U-padj  meand : 5.40 6.25 7.24 9.24 11.92 13.05 | linear in lnT slope=1.428 | quad coef=0.114
+U-padj  mu    : 7.83 18.56 66.48 111.06 88.04 490.93 | linear in lnT slope=66.213 | quad coef=22.740
+U-padj  lnmu  : 1.08 1.54 2.02 2.28 2.62 3.44 | linear in lnT slope=0.380 | quad coef=0.017
+U-padj  <mu>/(c2/e): 3.05 5.90 17.61 25.68 17.59 89.36
+DM      meand : 4.87 5.76 6.45 7.38 8.11 8.85 | linear in lnT slope=0.694 | quad coef=-0.008
+DM      mu    : 3.25 3.76 4.80 6.56 6.62 7.65 | linear in lnT slope=0.805 | quad coef=-0.020
+DM      lnmu  : 0.83 0.95 1.12 1.35 1.35 1.46 | linear in lnT slope=0.114 | quad coef=-0.010
+DM      <mu>/(c2/e): 0.89 0.91 0.99 1.20 1.10 1.17

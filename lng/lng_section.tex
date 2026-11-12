@@ -1,0 +1,103 @@
+% Draft section: the scale-rich network as local network growth.
+% Numbers from ~/av2atg/scalerich/lng (see NOTES.md for scripts and output files).
+\section{The scale-rich network as a face-local growth rule}
+\label{sec:sr-lng}
+
+\paragraph{Exact reformulation.}
+In the zero-thickness scale-rich (SR) model, a new ligament is nucleated at a
+uniform point with a uniform angle and grows both ways to the first hit. The
+nucleation point falls in a cell $K$ of the current T-tessellation with
+probability equal to its area $A_K$, and the ligament is the chord of $K$
+through that point. The model is therefore Cowan's iterated cell division with
+area-weighted selection and the ``chord through a uniform point'' division
+rule~\cite{cowan2010}. In the dual graph (ligament $=$ node, junction $=$
+link) one step reads as follows: choose a face, and join a newcomer to the two
+nodes whose sides the chord crosses. A cell's corner number is fixed at birth,
+because a junction on a neighbour's side is a straight angle there. Each split
+gives $n_1+n_2=n+4$, so the mean corner number is exactly $4$ and
+$\langle k\rangle\to4$.
+
+\paragraph{Degree distribution.}
+Each later ligament that ends on node $i$ adds one link to $i$ and cuts one of
+its face sides in two. The number of face incidences of an interior node
+therefore equals its degree. Each step creates $2$ hits and $4$ incidences. If
+every incidence is equally likely to be hit, a node of degree $k$ gains links
+at rate $k/2t$. The affine rate equation then gives
+\begin{equation}
+  p_k=\frac{12}{k(k+1)(k+2)},\qquad P(k\ge K)=\frac{6}{K(K+1)},\qquad \gamma=3,
+\end{equation}
+the Barab\'asi--Albert $m=2$ form. For $T=10^5$ the measured
+$K^2P(k-2\ge K)$ at $K=8,16,32$ is $3.53,4.45,5.19$, against
+$3.49,4.49,5.16$ from the formula.
+
+The ``spatial preferential attachment'' of Ref.~\cite{both2026} is the same
+statement in metric form. With $L(t)=c_L\sqrt t$ the total ligament length
+($c_L=2.33$), the hit rate per unit length is $2/L(t)$, so
+\begin{equation}
+  k_i-2=\frac{4\ell_i}{c_L}\left(\sqrt T-\sqrt i\right)
+\end{equation}
+(measured/predicted $=1.006$, correlation $0.95$). Hub degree is fixed by the
+birth length. The ligament-length scatter ($\langle x^2\rangle=1.39$) replaces
+the Yule noise of preferential attachment ($1.5$).
+
+\paragraph{Triangles.}
+A chord closes a dual triangle locally when it cuts off a single corner of the
+cell. For chords through uniform points the line density is
+$\sigma\,dh\,d\theta/\pi A$. Integrating $\sigma$ over the corner-cutting lines
+of fixed direction gives the area of the cut-off corner, so
+\begin{equation}
+  P_{\rm corner}(K)=\frac{1}{\pi A_K}\int_0^\pi\!\big[A_{\rm lo}(\theta)+A_{\rm hi}(\theta)\big]\,d\theta,
+\end{equation}
+which equals $2\ln2/\pi$ for a square and $1$ for a triangle. Averaged over
+cells by area, it gives $0.448$, as measured. Another $0.048$ of newcomers join
+two opposite sides that are already linked elsewhere, so the total triangle
+closure is $0.496$, close to but not exactly $1/2$. The remaining half close a
+square.
+
+Triangles at a node form only at birth (probability $p_0$) or when it is hit
+next to a dual neighbour (probability $p$ per hit). Hence
+\begin{equation}
+  C(k)=\frac{2[p_0+p(k-2)]}{k(k-1)}\simeq\frac{2p}{k},
+\end{equation}
+with $p_0=0.49$ and $p=0.53$, which is the triadic-closure law
+$\langle c\rangle_k\simeq2\mu_1/k$. The hubs' $k_{nn}$ saturates at
+$\simeq\ln T$, the $m=2$ BA value.
+
+\paragraph{What topology alone reproduces.}
+A purely topological surrogate reproduces $P(k)$, $C(k)$ and $k_{nn}(k)$ with
+one parameter, the corner-cut probability of non-triangular faces ($0.29$).
+The surrogate picks a face and joins two of its sides, with no lengths or
+positions. It does not reproduce distances: $\langle d\rangle$ grows as
+$1.4\ln T$ instead of $0.6\ln T$, because faces split ``across'' stack into
+ladders. In the geometric model chords favour the long sides of old ligaments,
+and this keeps the dual small-world.
+
+\paragraph{Which knobs move $\gamma$.}
+None of the paper's two-parameter knobs moves the exponent. Thickness and the
+tunable or jammed density ($\alpha=0$--$1$), angle sets, global alignment,
+area$^q$ cell selection and density gradients all give
+$\gamma_{\rm MLE}=2.85$--$2.96$ and cohort exponents $\beta=0.46$--$0.52$ at
+$T=3\times10^4$. Jamming only truncates growth. The angle set does tune
+clustering: $\{0,\pi/2\}$ gives rectangles and $C=0$ exactly,
+$\{0,\pi/3,2\pi/3\}$ gives $C=0.17$, and uniform cell selection gives $C=0.45$.
+
+Two rules do move $\gamma$. First, a coherent (polarized) orientation field
+gives $\gamma\simeq2.45$--$2.5$, stable for $T=10^4$--$2\times10^5$.
+Newcomers are locally parallel and land on the misaligned old ligaments, so the
+hit rate per incidence is no longer uniform and $k\sim\ell^{1.5}$. Second,
+plates in three dimensions give $\gamma\simeq2.5$, in agreement with
+$\gamma=(2d-1)/(d-1)$ and with $\gamma=2+2/\bar m$, where $\bar m\simeq4.5$ is
+the mean side number of the dividing polygon.
+
+\paragraph{Energy law and path multiplicity.}
+At fixed $\alpha$, $\lambda_i=\lambda_0i^{-\alpha}$, and $k_i\propto\ell_i\propto
+i^{-1/2}$ in the mean. The per-ligament law $U\sim k^{3/2}\lambda^{1/2}$ is
+therefore equivalent to the age law $U\sim i^{-(3/4+\alpha/2)}$ and to
+$U\sim\ell^{3/2}\lambda^{1/2}$. In an Euler--Bernoulli frame, degree- and
+length-based fits are indistinguishable ($R^2=0.634$ vs $0.631$).
+
+Dual shortest paths are fewest-turn load paths. Their multiplicity exceeds the
+configuration-model value $c_2/e$~\cite{vazquez2026multiplicity} by a factor
+that grows from $2.3$ to $6.8$ for $T=10^3$--$3\times10^5$. The degree-preserving
+rewired network sits on $c_2/e$ (ratio $0.9$--$1.0$). The excess comes from
+the square-closing half of the splits.
