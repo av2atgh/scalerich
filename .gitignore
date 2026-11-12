@@ -1,0 +1,4 @@
+*.npz
+*.pdf
+__pycache__/
+results/big/
