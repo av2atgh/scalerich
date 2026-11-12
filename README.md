@@ -63,7 +63,15 @@ component (`rg/`) is dropped from the paper; only the Cowan-level facts from it
    per side (each hit adds a side → reinforcement → BA), B in proportion to side
    length (length fixed at birth → no reinforcement). Clustering, C(k), k_nn come
    from face locality and do not discriminate (the A surrogate matches them with
-   p₄ = 0.29); the tests of Sec. IV select B only for the degree law. Changes:
+   p₄ = 0.29); the tests of Sec. IV select B only for the degree law.
+   **Classification: the SR dual is in the local class.** The hierarchical
+   C(k) ≃ 2p/k from triadic closure within a face is the local-class signature
+   (vazquez2003); fitness with global attachment gives C → 0. Length weighting
+   is a detail inside the class: in classic local rules PA arises because
+   neighbours are reached in proportion to degree; here the hit rate follows
+   length fixed at birth, which reaches the same k^-3 without reinforcement.
+   The paper should state the class first and the length weighting second.
+   Changes:
    - Name the mechanisms by the within-face choice: "A: uniform choice of sides
      (reinforcing)", "B: length-weighted choice of sides (no reinforcement)".
    - Mechanism B paragraph: replace "It is a fitness model [bianconi2001] in
@@ -78,5 +86,7 @@ component (`rg/`) is dropped from the paper; only the Cowan-level facts from it
      birth attribute rather than by reinforcement".
    - Abstract: "fluctuation tests select the fitness mechanism" → "fluctuation
      tests select length weighting over reinforcement". Same in Sec. VIII (3D).
+   - Title/abstract/conclusions: lead with "the SR dual belongs to the local
+     growth class", with clustering as the evidence.
    - Conclusions: say explicitly that the local rule fixes the clustering and the
      length weighting fixes the degree fluctuations; both are needed.
