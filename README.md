@@ -90,3 +90,22 @@ component (`rg/`) is dropped from the paper; only the Cowan-level facts from it
      growth class", with clustering as the evidence.
    - Conclusions: say explicitly that the local rule fixes the clustering and the
      length weighting fixes the degree fluctuations; both are needed.
+3. **Preferential attachment is an effective result, not a mechanism.** The
+   literature is biased toward explaining scale-free degrees with preferential
+   attachment models. Those models, the original Barabási–Albert model included,
+   have no connection to any real growth process. Preferential attachment is an
+   effective result: a randomly chosen link lands preferentially on nodes of high
+   degree, so any rule that samples the structure locally produces it on average
+   (local rules, Vázquez 2003). The SR model illustrates this cleanly. A new
+   ligament ends at a random point of the existing structure, so it hits a
+   ligament in proportion to its length, ℓ_i ∝ i^{-1/2}, set by the cell
+   hierarchy. On average this gives the BA growth law k_i ≃ 2√(T/i), although
+   nothing in the rule refers to degree, and the fluctuation tests show no
+   reinforcement. The "spatial preferential attachment" of Both et al. is
+   therefore the effective description, not the explanation. Changes:
+   - Do not present preferential attachment and length weighting as competing
+     mechanisms (Sec. IV "PA or fitness?"). Present the local rule as the
+     mechanism and preferential attachment as its mean-field consequence.
+   - Introduction and conclusions: state that the SR dual is in the local class,
+     that random sampling of the structure produces effective preferential
+     attachment, and that the same face-local step produces the clustering.
