@@ -1,0 +1,7 @@
+files: beams_T3000_a0.25_l0.02_s1.csv, beams_T3000_a0.5_l0.06_s1.csv, beams_T3000_a0.75_l0.08_s1.csv, beams_T3000_a1.0_l0.1_s1.csv
+U ~ k^a lam^b     : k=1.641 lam=1.613  R2=0.634
+U ~ l^a lam^b     : l=0.824 lam=2.016  R2=0.631
+U ~ k^a i^c       : k=1.688 i=-0.972  R2=0.619
+U ~ k^a l^b lam^c : k=1.110 l=0.465 lam=1.603  R2=0.639
+U ~ k l lam i     : k=1.176 l=0.471 lam=1.777 i=0.163  R2=0.639
+paper comb k^1.5 lam^0.5 (slope, should be 1): comb=1.631  R2=0.624

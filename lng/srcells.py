@@ -15,7 +15,7 @@ the half-plane offset lam_t/2 from the centreline.  Nucleation only in free area
 Knobs (all generalisations of the paper's Fig. 6 rules):
   q        cell weight = area**q  (q = 1 is the SR model; q = 0 uniform cell)
   angle    'uniform' | 'set' (angles drawn from `angles`) | 'vonmises' (kappa
-           around angle0) | 'field' (theta = atan2 field + vonmises noise)
+           around angle0) | 'field' (theta = field(x,y) + vonmises noise, with prob. pfield; else uniform)
   dens     None or callable g(x, y) >= 0: nucleation density; cell weight is
            area**q * g(centroid) and the point is drawn by rejection inside the
            cell.
@@ -136,7 +136,7 @@ def clip(P, L, nx, ny, c, newlab):
 
 
 def run(T, alpha=0.5, lam0=0.0, q=1.0, angle='uniform', angles=None, kappa=0.0,
-        angle0=0.0, field=None, dens=None, seed=0, keep_cells=False, maxtry=200):
+        angle0=0.0, field=None, pfield=1.0, dens=None, seed=0, keep_cells=False, maxtry=200):
     rng = np.random.default_rng(seed)
     pyrng = rng  # numpy Generator: .random()
     fw = Fenwick(T + 2)
@@ -194,7 +194,10 @@ def run(T, alpha=0.5, lam0=0.0, q=1.0, angle='uniform', angles=None, kappa=0.0,
         elif angle == 'vonmises':
             th = (angle0 + rng.vonmises(0.0, kappa) / 2.0) % math.pi  # axial
         elif angle == 'field':
-            th = (field(px, py) + (rng.vonmises(0.0, kappa) / 2.0 if kappa > 0 else 0.0)) % math.pi
+            if pfield < 1.0 and rng.random() >= pfield:
+                th = rng.random() * math.pi
+            else:
+              th = (field(px, py) + (rng.vonmises(0.0, kappa) / 2.0 if kappa > 0 else 0.0)) % math.pi
         else:
             raise ValueError(angle)
         dx, dy = math.cos(th), math.sin(th)

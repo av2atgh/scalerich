@@ -1,0 +1,168 @@
+T1000_a0.0_l0.03_s1: rho=1.000 n=806  corr(lk,ll)=0.728 corr(lk,li)=-0.836
+   U ~ i       : i=-1.161  R2=0.402
+   U ~ k       : k=2.106  R2=0.443
+   U ~ l       : l=0.625  R2=0.386
+   U ~ k*lam   : k=2.106 lam=6.913  R2=0.443
+   U ~ l*lam   : l=0.625 lam=5.587  R2=0.386
+   U ~ k*i     : k=1.448 i=-0.458  R2=0.460
+   U ~ l*i     : l=0.337 i=-0.706  R2=0.448
+   U ~ k*l*i   : k=1.169 l=0.247 i=-0.260  R2=0.483
+   paper comb: slope_k1.5_lam0.5=1.404 R2=0.443 | same with l for k: slope_l1.5_lam0.5=0.417 R2=0.386
+   within-cohort partial corr: U-k 0.301  U-l 0.227  k-l 0.285
+   Utot=1.390e-07 Voigt(affine stretch, 0.5*E*eps^2*sum lam l cos^4)=2.080e-07
+T1000_a0.0_l0.03_s2: rho=1.000 n=805  corr(lk,ll)=0.719 corr(lk,li)=-0.816
+   U ~ i       : i=-1.151  R2=0.354
+   U ~ k       : k=1.981  R2=0.374
+   U ~ l       : l=0.607  R2=0.325
+   U ~ k*lam   : k=1.981 lam=6.909  R2=0.374
+   U ~ l*lam   : l=0.607 lam=5.650  R2=0.325
+   U ~ k*i     : k=1.229 i=-0.550  R2=0.399
+   U ~ l*i     : l=0.301 i=-0.743  R2=0.388
+   U ~ k*l*i   : k=1.010 l=0.220 i=-0.359  R2=0.416
+   paper comb: slope_k1.5_lam0.5=1.321 R2=0.374 | same with l for k: slope_l1.5_lam0.5=0.404 R2=0.325
+   within-cohort partial corr: U-k 0.252  U-l 0.188  k-l 0.335
+   Utot=1.175e-07 Voigt(affine stretch, 0.5*E*eps^2*sum lam l cos^4)=1.904e-07
+T3000_a0.25_l0.02_s1: rho=0.528 n=2824  corr(lk,ll)=0.723 corr(lk,li)=-0.761
+   U ~ i       : i=-1.154  R2=0.266
+   U ~ k       : k=2.120  R2=0.317
+   U ~ l       : l=1.219  R2=0.294
+   U ~ k*lam   : k=1.532 lam=1.841  R2=0.334
+   U ~ l*lam   : l=0.823 lam=2.707  R2=0.352
+   U ~ k*i     : k=1.532 i=-0.460  R2=0.334
+   U ~ l*i     : l=0.823 i=-0.677  R2=0.352
+   U ~ k*l*i   : k=0.862 l=0.605 i=-0.412  R2=0.368
+   paper comb: slope_k1.5_lam0.5=1.294 R2=0.327 | same with l for k: slope_l1.5_lam0.5=0.794 R2=0.309
+   within-cohort partial corr: U-k 0.304  U-l 0.341  k-l 0.531
+   Utot=3.280e-08 Voigt(affine stretch, 0.5*E*eps^2*sum lam l cos^4)=9.615e-08
+T3000_a0.25_l0.02_s2: rho=0.526 n=2851  corr(lk,ll)=0.732 corr(lk,li)=-0.762
+   U ~ i       : i=-1.154  R2=0.293
+   U ~ k       : k=2.077  R2=0.331
+   U ~ l       : l=1.202  R2=0.303
+   U ~ k*lam   : k=1.411 lam=2.072  R2=0.354
+   U ~ l*lam   : l=0.775 lam=2.829  R2=0.371
+   U ~ k*i     : k=1.411 i=-0.518  R2=0.354
+   U ~ l*i     : l=0.775 i=-0.707  R2=0.371
+   U ~ k*l*i   : k=0.778 l=0.572 i=-0.474  R2=0.385
+   paper comb: slope_k1.5_lam0.5=1.270 R2=0.343 | same with l for k: slope_l1.5_lam0.5=0.784 R2=0.321
+   within-cohort partial corr: U-k 0.298  U-l 0.333  k-l 0.539
+   Utot=3.076e-08 Voigt(affine stretch, 0.5*E*eps^2*sum lam l cos^4)=8.984e-08
+T3000_a0.5_l0.06_s1: rho=0.526 n=2832  corr(lk,ll)=0.719 corr(lk,li)=-0.758
+   U ~ i       : i=-1.432  R2=0.317
+   U ~ k       : k=2.522  R2=0.344
+   U ~ l       : l=1.360  R2=0.277
+   U ~ k*lam   : k=1.616 lam=1.414  R2=0.376
+   U ~ l*lam   : l=0.791 lam=1.994  R2=0.380
+   U ~ k*i     : k=1.616 i=-0.707  R2=0.376
+   U ~ l*i     : l=0.791 i=-0.997  R2=0.380
+   U ~ k*l*i   : k=1.005 l=0.531 i=-0.689  R2=0.396
+   paper comb: slope_k1.5_lam0.5=1.418 R2=0.368 | same with l for k: slope_l1.5_lam0.5=0.879 R2=0.316
+   within-cohort partial corr: U-k 0.292  U-l 0.301  k-l 0.545
+   Utot=2.508e-08 Voigt(affine stretch, 0.5*E*eps^2*sum lam l cos^4)=9.366e-08
+T3000_a0.5_l0.06_s2: rho=0.506 n=2830  corr(lk,ll)=0.710 corr(lk,li)=-0.754
+   U ~ i       : i=-1.346  R2=0.264
+   U ~ k       : k=2.394  R2=0.293
+   U ~ l       : l=1.290  R2=0.221
+   U ~ k*lam   : k=1.584 lam=1.277  R2=0.318
+   U ~ l*lam   : l=0.721 lam=1.920  R2=0.309
+   U ~ k*i     : k=1.584 i=-0.638  R2=0.318
+   U ~ l*i     : l=0.721 i=-0.960  R2=0.309
+   U ~ k*l*i   : k=1.134 l=0.426 i=-0.611  R2=0.330
+   paper comb: slope_k1.5_lam0.5=1.345 R2=0.312 | same with l for k: slope_l1.5_lam0.5=0.835 R2=0.254
+   within-cohort partial corr: U-k 0.276  U-l 0.246  k-l 0.525
+   Utot=1.939e-08 Voigt(affine stretch, 0.5*E*eps^2*sum lam l cos^4)=7.176e-08
+T3000_a0.75_l0.08_s1: rho=0.356 n=2847  corr(lk,ll)=0.720 corr(lk,li)=-0.743
+   U ~ i       : i=-1.965  R2=0.314
+   U ~ k       : k=3.225  R2=0.295
+   U ~ l       : l=1.705  R2=0.205
+   U ~ k*lam   : k=1.683 lam=1.635  R2=0.349
+   U ~ l*lam   : l=0.793 lam=2.091  R2=0.344
+   U ~ k*i     : k=1.683 i=-1.226  R2=0.349
+   U ~ l*i     : l=0.793 i=-1.568  R2=0.344
+   U ~ k*l*i   : k=1.172 l=0.458 i=-1.221  R2=0.356
+   paper comb: slope_k1.5_lam0.5=1.708 R2=0.336 | same with l for k: slope_l1.5_lam0.5=1.113 R2=0.267
+   within-cohort partial corr: U-k 0.220  U-l 0.207  k-l 0.567
+   Utot=1.282e-08 Voigt(affine stretch, 0.5*E*eps^2*sum lam l cos^4)=6.095e-08
+T3000_a0.75_l0.08_s2: rho=0.332 n=2817  corr(lk,ll)=0.703 corr(lk,li)=-0.763
+   U ~ i       : i=-1.879  R2=0.330
+   U ~ k       : k=3.200  R2=0.336
+   U ~ l       : l=1.675  R2=0.223
+   U ~ k*lam   : k=1.861 lam=1.384  R2=0.376
+   U ~ l*lam   : l=0.768 lam=1.980  R2=0.361
+   U ~ k*i     : k=1.861 i=-1.038  R2=0.376
+   U ~ l*i     : l=0.768 i=-1.485  R2=0.361
+   U ~ k*l*i   : k=1.465 l=0.387 i=-1.018  R2=0.382
+   paper comb: slope_k1.5_lam0.5=1.660 R2=0.370 | same with l for k: slope_l1.5_lam0.5=1.080 R2=0.285
+   within-cohort partial corr: U-k 0.268  U-l 0.218  k-l 0.516
+   Utot=5.376e-09 Voigt(affine stretch, 0.5*E*eps^2*sum lam l cos^4)=3.530e-08
+T3000_a1.0_l0.1_s1: rho=0.295 n=2845  corr(lk,ll)=0.716 corr(lk,li)=-0.753
+   U ~ i       : i=-2.481  R2=0.345
+   U ~ k       : k=4.152  R2=0.338
+   U ~ l       : l=2.005  R2=0.195
+   U ~ k*lam   : k=2.285 lam=1.465  R2=0.389
+   U ~ l*lam   : l=0.760 lam=2.094  R2=0.365
+   U ~ k*i     : k=2.285 i=-1.465  R2=0.389
+   U ~ l*i     : l=0.760 i=-2.094  R2=0.365
+   U ~ k*l*i   : k=2.083 l=0.185 i=-1.460  R2=0.390
+   paper comb: slope_k1.5_lam0.5=2.006 R2=0.384 | same with l for k: slope_l1.5_lam0.5=1.297 R2=0.279
+   within-cohort partial corr: U-k 0.262  U-l 0.173  k-l 0.548
+   Utot=3.160e-09 Voigt(affine stretch, 0.5*E*eps^2*sum lam l cos^4)=4.842e-08
+T3000_a1.0_l0.1_s2: rho=0.265 n=2822  corr(lk,ll)=0.707 corr(lk,li)=-0.769
+   U ~ i       : i=-2.425  R2=0.324
+   U ~ k       : k=3.950  R2=0.306
+   U ~ l       : l=2.106  R2=0.207
+   U ~ k*lam   : k=2.016 lam=1.498  R2=0.356
+   U ~ l*lam   : l=0.912 lam=1.955  R2=0.350
+   U ~ k*i     : k=2.016 i=-1.498  R2=0.356
+   U ~ l*i     : l=0.912 i=-1.955  R2=0.350
+   U ~ k*l*i   : k=1.466 l=0.530 i=-1.478  R2=0.363
+   paper comb: slope_k1.5_lam0.5=1.908 R2=0.349 | same with l for k: slope_l1.5_lam0.5=1.327 R2=0.284
+   within-cohort partial corr: U-k 0.225  U-l 0.197  k-l 0.521
+   Utot=1.671e-09 Voigt(affine stretch, 0.5*E*eps^2*sum lam l cos^4)=2.004e-08
+T5000_a0.5_l0.06_s1: rho=0.550 n=4793  corr(lk,ll)=0.721 corr(lk,li)=-0.760
+   U ~ i       : i=-1.386  R2=0.303
+   U ~ k       : k=2.500  R2=0.341
+   U ~ l       : l=1.338  R2=0.269
+   U ~ k*lam   : k=1.683 lam=1.265  R2=0.367
+   U ~ l*lam   : l=0.789 lam=1.909  R2=0.366
+   U ~ k*i     : k=1.683 i=-0.633  R2=0.367
+   U ~ l*i     : l=0.789 i=-0.955  R2=0.366
+   U ~ k*l*i   : k=1.099 l=0.503 i=-0.619  R2=0.385
+   paper comb: slope_k1.5_lam0.5=1.397 R2=0.362 | same with l for k: slope_l1.5_lam0.5=0.863 R2=0.307
+   within-cohort partial corr: U-k 0.303  U-l 0.300  k-l 0.548
+   Utot=2.404e-08 Voigt(affine stretch, 0.5*E*eps^2*sum lam l cos^4)=9.832e-08
+T5000_a0.5_l0.06_s2: rho=0.531 n=4790  corr(lk,ll)=0.724 corr(lk,li)=-0.764
+   U ~ i       : i=-1.355  R2=0.267
+   U ~ k       : k=2.431  R2=0.300
+   U ~ l       : l=1.310  R2=0.224
+   U ~ k*lam   : k=1.632 lam=1.236  R2=0.323
+   U ~ l*lam   : l=0.721 lam=1.923  R2=0.311
+   U ~ k*i     : k=1.632 i=-0.618  R2=0.323
+   U ~ l*i     : l=0.721 i=-0.962  R2=0.311
+   U ~ k*l*i   : k=1.197 l=0.403 i=-0.595  R2=0.332
+   paper comb: slope_k1.5_lam0.5=1.358 R2=0.318 | same with l for k: slope_l1.5_lam0.5=0.844 R2=0.257
+   within-cohort partial corr: U-k 0.278  U-l 0.243  k-l 0.535
+   Utot=1.943e-08 Voigt(affine stretch, 0.5*E*eps^2*sum lam l cos^4)=7.662e-08
+T5000_a1.0_l0.1_s1: rho=0.296 n=4786  corr(lk,ll)=0.720 corr(lk,li)=-0.752
+   U ~ i       : i=-2.501  R2=0.347
+   U ~ k       : k=4.092  R2=0.324
+   U ~ l       : l=2.143  R2=0.208
+   U ~ k*lam   : k=2.094 lam=1.571  R2=0.383
+   U ~ l*lam   : l=0.884 lam=2.059  R2=0.371
+   U ~ k*i     : k=2.094 i=-1.571  R2=0.383
+   U ~ l*i     : l=0.884 i=-2.059  R2=0.371
+   U ~ k*l*i   : k=1.656 l=0.408 i=-1.561  R2=0.387
+   paper comb: slope_k1.5_lam0.5=1.994 R2=0.375 | same with l for k: slope_l1.5_lam0.5=1.366 R2=0.294
+   within-cohort partial corr: U-k 0.244  U-l 0.196  k-l 0.554
+   Utot=2.612e-09 Voigt(affine stretch, 0.5*E*eps^2*sum lam l cos^4)=4.857e-08
+T5000_a1.0_l0.1_s2: rho=0.266 n=4761  corr(lk,ll)=0.715 corr(lk,li)=-0.762
+   U ~ i       : i=-2.390  R2=0.319
+   U ~ k       : k=3.981  R2=0.310
+   U ~ l       : l=2.025  R2=0.191
+   U ~ k*lam   : k=2.154 lam=1.418  R2=0.356
+   U ~ l*lam   : l=0.786 lam=1.986  R2=0.338
+   U ~ k*i     : k=2.154 i=-1.418  R2=0.356
+   U ~ l*i     : l=0.786 i=-1.986  R2=0.338
+   U ~ k*l*i   : k=1.864 l=0.279 i=-1.405  R2=0.358
+   paper comb: slope_k1.5_lam0.5=1.916 R2=0.351 | same with l for k: slope_l1.5_lam0.5=1.286 R2=0.266
+   within-cohort partial corr: U-k 0.243  U-l 0.168  k-l 0.533
+   Utot=1.321e-09 Voigt(affine stretch, 0.5*E*eps^2*sum lam l cos^4)=2.018e-08
