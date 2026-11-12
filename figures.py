@@ -45,7 +45,7 @@ def fig1():
     ax.plot([0, 1, 1, 0, 0], [0, 0, 1, 1, 0], color=INK, lw=1.5)
     segs = [[(e[0], e[1]), (e[2], e[3])] for e in o['ends']]
     ax.add_collection(LineCollection(segs, linewidths=lam / lam[0] * 3.2 + 0.3, colors=INK, capstyle='butt'))
-    ax.set_title('SR material, $T=60$', fontsize=8)
+    ax.set_title('material', fontsize=8)
     ax = axs[1]
     E = edges_from_hits(o['hit']); A = gs.adjacency(E, T); k = gs.degrees(A)
     ax.add_collection(LineCollection(segs, linewidths=0.5, colors='#c9c8c0'))
@@ -53,7 +53,7 @@ def fig1():
     m = o['mid']
     ax.add_collection(LineCollection([[m[i], m[j]] for i, j in E], linewidths=0.7, colors=C1))
     ax.scatter(m[:, 0], m[:, 1], s=6 + 5 * k, color=C1, edgecolor='white', linewidth=0.6, zorder=3)
-    ax.set_title('dual graph: ligament = node', fontsize=8)
+    ax.set_title('dual graph', fontsize=8)
     for a in axs[:2]:
         a.set_aspect('equal'); a.set_xlim(-0.02, 1.02); a.set_ylim(-0.02, 1.02); a.axis('off')
     for a, s in zip(axs, 'abc'):
@@ -139,9 +139,9 @@ def fig3():
     ax = axs[0, 0]
     K = np.unique(np.logspace(np.log10(2), np.log10(k.max()), 40).astype(int))
     P = np.array([(k >= x).mean() for x in K])
-    ax.loglog(K, P, 'o', color=C1, mfc='none', label='SR, $T=10^5$')
-    ax.loglog(K, 6 / (K * (K + 1.0)) * (K > 2) + (K == 2), color=INK, lw=1, label='$6/[k(k+1)]$')
-    ax.set_xlabel('$k$'); ax.set_ylabel('$P(\\geq k)$'); ax.legend(loc='upper right')
+    ax.loglog(K, P, 'o', color=C1, mfc='none', label='SR')
+    ax.loglog(K, 6 / (K * (K + 1.0)) * (K > 2) + (K == 2), color=INK, lw=1, label='Eq. (3)')
+    ax.set_xlabel('$k$'); ax.set_ylabel('$P(\\geq k)$'); ax.legend(loc='lower left')
     ax = axs[0, 1]
     i = np.arange(T)
     x = 4 * d['L'] / 2.33 * (np.sqrt(T) - np.sqrt(i + 1)); y = d['k'] - 2
@@ -153,7 +153,7 @@ def fig3():
     xb = np.logspace(0, np.log10(xs.max()), 16)
     mb = np.array([(np.sqrt(xb[j] * xb[j + 1]), ys[(xs >= xb[j]) & (xs < xb[j + 1])].mean())
                    for j in range(15) if ((xs >= xb[j]) & (xs < xb[j + 1])).sum() > 5])
-    ax.loglog(mb[:, 0], mb[:, 1], 'o', color=C1, mfc='none', label='binned mean')
+    ax.loglog(mb[:, 0], mb[:, 1], 'o', color=C1, mfc='none', label='mean')
     zz = np.logspace(0, 3, 10); ax.loglog(zz, zz, color=INK, lw=1, label='slope 1'); ax.legend(loc='upper left')
     ax.set_xlim(0.8, 1.2e3); ax.set_ylim(0.8, 1.2e3)
     ax.set_xlabel('$4\\ell_i(\\sqrt{T}-\\sqrt{i})/c_L$'); ax.set_ylabel('$k_i-2$')
@@ -165,14 +165,14 @@ def fig3():
     cb = np.array(cb)
     ax.loglog(cb[:, 0], cb[:, 1], 'o', color=C1, mfc='none', label='SR')
     ax.loglog(kk, 2 * (0.494 + 0.53 * (kk - 2)) / (kk * (kk - 1.0)), color=INK, lw=1,
-              label='$2[p_0+p(k-2)]/[k(k-1)]$')
+              label='Eq. (7)')
     ax.set_xlabel('$k$'); ax.set_ylabel('$C(k)$'); ax.legend(loc='lower left')
     ax = axs[1, 1]
     kn = d['knn'].ravel()
     nb = np.array([(np.exp(np.mean(np.log(kb[j:j + 2]))), kn[(k >= kb[j]) & (k < kb[j + 1])].mean())
                    for j in range(len(kb) - 1) if ((k >= kb[j]) & (k < kb[j + 1])).sum() > 5])
     ax.semilogx(nb[:, 0], nb[:, 1], 'o-', color=C1, mfc='none', lw=0.8)
-    ax.axhline(np.log(T), color=INK, lw=1, ls='--'); ax.text(60, np.log(T) + 0.4, '$\\ln T$', fontsize=7)
+    ax.axhline(np.log(T), color=INK, lw=1, ls='--'); ax.text(2.2, np.log(T) - 0.9, '$\\ln T$', fontsize=7)
     ax.set_xlabel('$k$'); ax.set_ylabel('$k_{nn}(k)$')
     for a, s in zip(axs.ravel(), 'abcd'):
         lab(a, f'({s})')
@@ -206,9 +206,9 @@ def fig4():
     ax.set_yticks(y); ax.set_yticklabels([r[0] for r in rows], fontsize=7)
     ax.axvline(3, color=INK, lw=0.8, ls='--'); ax.axvline(2.5, color=MUTED, lw=0.8, ls=':')
     for yy, r in zip(y, rows):
-        ax.text(3.08, yy, f'{r[3]:.2f}', va='center', fontsize=6.5, color=INK)
-    ax.text(3.08, len(rows) - 0.2, '$C$', fontsize=7)
-    ax.set_xlim(2.3, 3.2); ax.set_xlabel('$\\gamma_{\\rm MLE}$ ($k\\geq10$)')
+        ax.text(3.14, yy, f'{r[3]:.2f}', va='center', fontsize=6.5, color=INK)
+    ax.text(3.14, len(rows) - 0.2, '$C$', fontsize=7)
+    ax.set_xlim(2.3, 3.26); ax.set_xlabel('$\\gamma_{\\rm MLE}$ ($k\\geq10$)')
     ax = axs[1]
     for field, cc, mk in (('circ', C2, 'o'), ('wave', C3, 's')):
         pf = sorted({float(r['pfield']) for r in pol if r['field'] == field and r['T'] == '30000'})
@@ -234,15 +234,15 @@ def fig5():
     fig, axs = plt.subplots(1, 2, figsize=(W1 * 1.02, 2.1))
     ax = axs[0]
     for model, cc, lbl, src in (('SR', C1, 'SR', rows), ('SR*', C4, 'SR rewired', rows),
-                                ('DM', C3, 'DM', rows), ('U-padj', C2, 'face surrogate', old)):
+                                ('DM', C3, 'DM', rows), ('U-padj', C2, 'surrogate', old)):
         Ts = sorted({int(r['T']) for r in src if r['model'] == model})
         v = [np.array([float(r['meand']) for r in src if r['model'] == model and int(r['T']) == t]) for t in Ts]
         ax.errorbar(Ts, [x.mean() for x in v], yerr=[x.std(ddof=1) / np.sqrt(len(x)) for x in v],
                     fmt='o-', color=cc, mfc='none', label=lbl, capsize=1.5, lw=1)
-    ax.set_xscale('log'); ax.set_xlabel('$T$'); ax.set_ylabel('$\\langle d\\rangle$'); ax.legend(fontsize=6)
+    ax.set_xscale('log'); ax.set_xlabel('$T$'); ax.set_ylabel('$\\langle d\\rangle$'); ax.set_ylim(4, 19); ax.legend(fontsize=6, loc='upper left')
     ax = axs[1]
     c = list(csv.DictReader(open(os.path.join(RES, 'paths2_control.csv'))))
-    for fam, cc, mk, lbl in (('SR', C1, 'o', 'SR variants'), ('surr', C2, 's', 'surrogate, varied $p_4$')):
+    for fam, cc, mk, lbl in (('SR', C1, 'o', 'SR'), ('surr', C2, 's', 'surrogate')):
         names = [n for n in dict.fromkeys(r['variant'] for r in c) if n.startswith(fam)]
         for n in names:
             v = [r for r in c if r['variant'] == n]
@@ -254,7 +254,7 @@ def fig5():
             if n == 'SR_q0':
                 ax.annotate('$q=0$', (tri, d.mean()), xytext=(4, 2), textcoords='offset points', fontsize=6)
     ax.set_xlabel('triangle-closing fraction'); ax.set_ylabel('$\\Delta\\langle\\ln\\mu\\rangle$')
-    ax.set_ylim(0, 4.2); ax.legend(fontsize=6, loc='upper right', handletextpad=0.2)
+    ax.set_ylim(0, 4.2); ax.legend(fontsize=6, loc='upper right', handletextpad=0.2, bbox_to_anchor=(1.02, 1.02))
     for a, s in zip(axs, 'ab'):
         lab(a, f'({s})')
     fig.tight_layout(); fig.savefig(os.path.join(FIG, 'fig5.pdf')); plt.close(fig)
