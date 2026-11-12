@@ -37,7 +37,9 @@ through reinforcement and with longer distances. Square-closing splits raise the
 shortest-path multiplicity above its value at fixed degree sequence. Thickness,
 jamming, angle sets, alignment and density gradients leave $\gamma=3$, whereas coherent
 orientation fields, which make the hit rate grow faster than length, give
-$\gamma\simeq2.4$--$2.5$ up to $T=10^6$. At fixed decay exponent, the reported
+$\gamma\simeq2.4$--$2.5$ up to $T=10^6$. In three dimensions plates are hit in proportion
+to their birth area, and $\gamma=5/2$, whereas preferential attachment on incidences would
+give $2.44$; the mechanism tests again select the fitness picture. At fixed decay exponent, the reported
 per-ligament energy law cannot distinguish degree from length or age.
 \end{abstract}
 
@@ -89,7 +91,8 @@ realises. Section~\ref{sec:triangles} computes the corner-cut probability
 by integral geometry and derives the clustering spectrum. Section~\ref{sec:topology}
 asks which properties survive when geometry is removed, and Sec.~\ref{sec:paths}
 turns to distances and shortest-path multiplicity. Section~\ref{sec:gamma} identifies
-which rules move the degree exponent, and Sec.~\ref{sec:energy} discusses what this
+which rules move the degree exponent, Sec.~\ref{sec:3d} treats plates in three
+dimensions, and Sec.~\ref{sec:energy} discusses what this
 means for the reported structure--property relations.
 
 \begin{figure*}[tbp]
@@ -307,7 +310,7 @@ face-local bookkeeping produces when geometry is removed (Sec.~\ref{sec:topology
 two dimensions the two coincide in the exponent because the hierarchy makes the
 fitness scale as $i^{-1/2}$, exactly the growth law of preferential attachment with
 $m=2$. They differ in their fluctuations, and they differ in three dimensions, where
-the two mechanisms predict different exponents (Sec.~\ref{sec:gamma}).
+the two mechanisms predict different exponents (Sec.~\ref{sec:3d}).
 
 At $T=10^5$ the measured $K^2P(k-2\ge K)$ at $K=8,16,32$ is $3.53,4.45,5.19$
 [Fig.~\ref{fig:degree}(a)], and the ratio of measured to predicted degree in
@@ -443,9 +446,9 @@ are hit, such as distances, and not for $P(k)$, $C(k)$ or $k_{nn}(k)$.
 \includegraphics[width=\textwidth]{figs/fig4.pdf}
 \caption{(a) Maximum-likelihood exponent ($k\ge10$) for the design rules of
 Ref.~\cite{both2026}, $T=3\times10^4$, two realisations (the jammed $\alpha=0$ case stops at
-$T\simeq2000$; 3D plates at $T=8\times10^4$, $k\ge40$). The number on the right is the mean
+$T\simeq2000$; 3D plates: $T=2\times10^6$, three realisations, $k_{\min}=80$--$640$). The number on the right is the mean
 clustering coefficient. Error bars: half the difference between the two realisations
-(3D: estimator standard error). Dashed line: $\gamma=3$; dotted line: $\gamma=2.5$. The
+(3D: range over $k_{\min}$). Dashed line: $\gamma=3$; dotted line: $\gamma=2.5$. The
 uniform SR control gives $2.87$--$2.91$ at this size, the downward bias of the estimator
 discussed in Sec.~\ref{sec:gamma}.
 (b) Exponent against the fraction of ligaments whose angle follows a circular or a wave
@@ -584,16 +587,87 @@ shortest wave ($w=0.125$), while the uniform control gives $2.88$--$2.98$, so th
 does not wash out at this size. The exponent decreases continuously as the fraction of
 ligaments following the field increases [Fig.~\ref{fig:gamma}(b)].
 
-\paragraph*{Three dimensions.}
-For plates in a cube, a new plate meets $\bar m$ existing plates (the sides of its
-section polygon), creates $2+\bar m$ incidences and hands out $\bar m$ links. Then
-$b=\bar m/(2+\bar m)$ and $\gamma=2+2/\bar m$. We measure $\bar m=4.47$--$4.57$, which
-predicts $\gamma=2.44$. The dimensional argument $k\sim(\ell/\ell_T)^{d-1}$ gives
-$\gamma=(2d-1)/(d-1)=2.5$, the exponent of random Apollonian networks in $d$
-dimensions~\cite{kolossvary2016}. At $T=8\times10^4$ the measured value is $2.50$
-($k\ge40$), with $\beta=0.66$. Three-dimensional SR materials therefore have
-$\gamma\simeq2.5$, not $3$.
+%======================================================================
+\section{Three dimensions}
+\label{sec:3d}
+With plates, the SR construction is the iterated division of convex polyhedra. A cell
+is selected with probability equal to its volume, and it is cut by the plane through a
+uniform point with an isotropic normal. The argument of Sec.~\ref{sec:model} carries over
+unchanged: for a fixed normal, the offset of the plane has density $A(s)/V_K$, with $A(s)$
+the section area, so the volume fraction of a daughter is uniform. The cell hierarchy is
+again a binary search tree, with exponential volumes and split depth $2\ln t$. We measure
+a daughter-fraction variance of $0.0833$ ($1/12$) and a depth slope of $2.01$. A plane that
+crosses $m$ faces of a simple polyhedron changes $(F,V,E)$ by $(m+2,2m,3m)$ summed over the
+two daughters. Hence the mean numbers of faces, vertices and edges per cell are
+$2+\bar m$, $2\bar m$ and $3\bar m$, the counterpart of $\langle n\rangle=4$ (measured
+$6.585$, $9.170$, $13.755$). Unlike in two dimensions, the number $m$ of plates met by a new
+plate is not fixed by topology. Its mean converges to $\bar m=4.577$ for plates away from
+the walls. Plate areas decay as $a_t\simeq c_at^{-2/3}$ with $c_a=1.23$, so the total area
+grows as $3c_at^{1/3}$ and the area distribution is $P(a)\sim a^{-5/2}$ (maximum-likelihood
+exponent $2.49$--$2.51$). The first plate has $\langle a_1\rangle=0.941$.
 
+In three dimensions mechanisms A and B of Sec.~\ref{sec:degree} predict different
+exponents. Counting faces, a new plate creates $2+\bar m$ incidences
+and hands out $\bar m$ links. Mechanism A, a uniform hit rate per incidence, would give
+$b=\bar m/(2+\bar m)$ and $\gamma=2+2/\bar m=2.44$. Under mechanism B the hit rate is set by the
+plate area, which is fixed at birth. With a rate per unit area $\bar m/2A(t)$ on each side,
+\begin{equation}
+  k_i=o_i+\frac{\bar m}{2}\,x_i\Big[\Big(\frac{T}{i}\Big)^{2/3}-1\Big],\qquad
+  \gamma=\frac{5}{2},
+  \label{eq:k3d}
+\end{equation}
+where $o_i$ is the out-degree at birth and $x_i=a_i/\langle a_i\rangle$. This is the fitness argument of Sec.~\ref{sec:gamma} with area in place of length; its
+general form is $\gamma=(2d-1)/(d-1)$, the exponent of random Apollonian networks in $d$
+dimensions~\cite{kolossvary2016}. The two mechanisms agree in two dimensions only because
+$m/(2+m)=(d-1)/d$ when $m=2$. Geometry decides between them: an old plate is tiled by
+faces of linear size $t^{-1/3}$, so its number of faces grows as $t^{2/3}$. Newborn plates
+are single large faces and are hit more often per face, by $8\%$ relative to plates older
+than $10^{-3}t$. We find:
+\begin{itemize}
+\item the faces of a fixed old plate grow as $t^{0.663\text{--}0.668}$, against $0.694$ for
+incidence preferential attachment;
+\item Eq.~\eqref{eq:k3d} predicts the hits received by each plate with ratio $1.015$ and
+correlation $0.99$;
+\item at fixed age the hits scale with birth area with elasticity $0.94$--$0.95$;
+\item hits in $(i,2i]$ predict hits in $(2i,T]$ at fixed area only weakly (log--log slope
+$0.025$--$0.030$), against $0.55$ in a reinforcement surrogate with the same out-degrees.
+\end{itemize}
+The dispersion of the received hits around Eq.~\eqref{eq:k3d} is $1.5$--$4$ times Poisson,
+against $100$--$380$ times for the reinforcement surrogate. The degree of a plate is
+therefore a fitness (its area) multiplied by an age factor. The degree distribution follows
+the fitness surrogate within $3$--$7\%$ up to $k\approx800$, while it departs from the
+reinforcement surrogate by up to $23\%$. The maximum-likelihood exponent of all plates is
+$2.48$--$2.51$ for $k_{\min}=80$--$640$. The fitness and reinforcement surrogates, whose
+asymptotes are $2.5$ and $2.44$, read $2.48$--$2.53$ and $2.40$--$2.46$ at the same cuts.
+Restricting the fit to plates away from the walls is biased: the oldest, largest plates
+touch the walls. Three-dimensional SR materials therefore have $\gamma=5/2$. The host of a
+new plate satisfies $h/t\to U^3$ (measured $P(h/t\le0.01)=0.217$, against $0.215$), so the
+thickness ratio to the host is $U^{3\alpha}$.
+
+The fill fraction follows from $dF/dt=-\lambda_0c(t)F^{2/3}t^{-\alpha-2/3}$ for the free
+volume $F$. It matches simulations to within $0.4\%$ in the tunable phase. The sum
+converges only for $\alpha>1/3$, which places the jamming boundary at $\alpha=1/3$ in three
+dimensions. In the tunable phase $\rho\simeq\lambda_0c_a\zeta(\alpha+2/3)$ for small
+$\lambda_0$.
+
+Clustering is high because a new plate's section polygon is a cycle of plates already in
+contact. Each newcomer closes $4.39$ triangles along its polygon and $2.52$ more through
+contacts outside its cell. Each received link brings $q=3.26$ triangles. Then
+$C(k)=2[e_0+q(k-o)]/[k(k-1)]\to6.5/k$, which agrees with the data within $1\%$ for $k\ge16$,
+and $\langle C\rangle=0.72$. The three-dimensional random Apollonian network has the same
+$\gamma$, $C(k)=6/k$ and $\langle C\rangle=0.82$. The mean neighbour degree decreases with
+$k$ and grows as $T^{1/3}$.
+
+Thickness and jamming change neither $\gamma$ ($2.49$--$2.55$) nor $C$ ($0.71$--$0.72$).
+With three orthogonal orientations every cell is a box and every plate a rectangle
+($m=4$). The two counting arguments then coincide at $b=2/3$, and $\gamma\simeq2.5$. These
+boxes cluster ($C=0.55$), whereas rectangles in two dimensions do not. Beams, in contrast,
+need a capture rule, because zero-width lines do not meet in three dimensions. If a rod of
+radius $\lambda_t/2$ grows until it touches another, its target is its cross-section
+$\ell_iR_i$. The mean-field exponent is then $\gamma=(3+\alpha)/(1+\alpha)$, so for beams
+the thickness exponent would tune $\gamma$. Our simulations up to $T=10^5$ confirm that
+hits scale with rod length, but they are still dominated by the walls. The rule used in
+Ref.~\cite{both2026} is specified in their Supplementary Information.
 
 %======================================================================
 \section{Consequences for structure--property relations}
@@ -625,7 +699,7 @@ act on the material through the age of each ligament on a fixed network.
 Connectivity becomes a design variable only when the rule is changed so that the hit
 rate stops being proportional to length, as with coherent orientation fields, or when
 the dimension changes the relation between fitness and birth order
-(Sec.~\ref{sec:gamma}).
+(Secs.~\ref{sec:gamma} and \ref{sec:3d}).
 
 %======================================================================
 \section{Conclusions}
@@ -643,7 +717,8 @@ fluctuations of the degree rather than by its exponent. The local rule explains 
 of the network: a hierarchical clustering spectrum from corner cuts and an excess of
 shortest paths from square-closing splits. Keeping both references in view settles
 which features are fixed by the class and which can be designed. The exponent
-$\gamma=3$ and the equality $\langle n\rangle=4$ are fixed, and in mean field so are
+$\gamma=3$ (and $5/2$ for plates in three dimensions) and the equality $\langle n\rangle=4$
+are fixed, and in mean field so are
 the host-age law $h/t\to U^2$ and the stationarity of the thickness ratio. Clustering
 is designable through the angle set and the selection weight. The degree exponent is
 designable only through rules that make the hit rate grow faster than length.
@@ -655,7 +730,9 @@ fitness prediction. The per-hit triangle probability, which rises from $0.41$ to
 degree, and the non-local closure fraction $0.048$ require the joint law of cell shapes
 next to long ligaments. Under coherent orientation fields we observe
 $\gamma\simeq2.4$--$2.5$ up to $T=10^6$; the fitness argument gives the direction of the
-change but not its value. Finally, the growth of the shortest-path excess with $T$ is
+change but not its value. In three dimensions the mean number of plates met by a new plate,
+$\bar m=4.577$, has no closed form, and the beam version depends on a capture rule that
+we have not fixed. Finally, the growth of the shortest-path excess with $T$ is
 consistent with both a log-quadratic and a weak power law over the range studied.
 
 More broadly, the SR dual shows that a spatial growth process can reproduce the degree

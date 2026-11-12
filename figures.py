@@ -196,7 +196,7 @@ def fig4():
         c = [float(r['Cmean']) for r in g if r['name'] == key]
         if v:
             rows.append((lbl, np.mean(v), np.std(v), np.mean(c)))
-    rows.append(('3D plates', 2.50, 0.05, 0.71))
+    rows.append(('3D plates', 2.495, 0.015, 0.72))
     fig, axs = plt.subplots(1, 2, figsize=(W2, 2.6), gridspec_kw=dict(width_ratios=[1.35, 1]))
     ax = axs[0]
     y = np.arange(len(rows))[::-1]
