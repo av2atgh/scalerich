@@ -40,7 +40,7 @@ def cached(name, fn):
 def fig1():
     o = srcells.run(60, alpha=0.5, lam0=0.0, seed=4)
     T = o['T']; lam = 0.035 * np.arange(1, T + 1) ** -0.5
-    fig, axs = plt.subplots(1, 3, figsize=(W2, 2.45), gridspec_kw=dict(width_ratios=[1, 1, 1.05]))
+    fig, axs = plt.subplots(1, 3, figsize=(W2, 2.15), gridspec_kw=dict(width_ratios=[1, 1, 1.05]))
     ax = axs[0]
     ax.plot([0, 1, 1, 0, 0], [0, 0, 1, 1, 0], color=INK, lw=1.5)
     segs = [[(e[0], e[1]), (e[2], e[3])] for e in o['ends']]
@@ -100,7 +100,7 @@ def fig2():
         return dict(r=np.concatenate(r), TA=np.concatenate(TA),
                     x=np.concatenate(x), late=np.concatenate(lnh))
     d = cached('bst', sim)
-    fig, axs = plt.subplots(1, 3, figsize=(W2, 2.1))
+    fig, axs = plt.subplots(1, 3, figsize=(W2, 1.85))
     ax = axs[0]
     ax.hist(d['r'], bins=20, range=(0, 1), density=True, color=C1, edgecolor='white', linewidth=0.8)
     ax.axhline(1, color=INK, lw=1, ls='--'); ax.set_ylim(0, 1.3)
@@ -134,7 +134,7 @@ def sim_main():
 def fig3():
     d = cached('main', sim_main)
     T = d['k'].shape[1]
-    fig, axs = plt.subplots(2, 2, figsize=(W1 * 1.02, 4.6))
+    fig, axs = plt.subplots(2, 2, figsize=(W1 * 1.02, 4.2))
     k = d['k'].ravel()
     ax = axs[0, 0]
     K = np.unique(np.logspace(np.log10(2), np.log10(k.max()), 40).astype(int))
@@ -197,7 +197,7 @@ def fig4():
         if v:
             rows.append((lbl, np.mean(v), np.std(v), np.mean(c)))
     rows.append(('3D plates ($k_{\\min}\\geq80$)', 2.495, 0.015, 0.72))
-    fig, axs = plt.subplots(1, 2, figsize=(W2, 2.6), gridspec_kw=dict(width_ratios=[1.35, 1]))
+    fig, axs = plt.subplots(1, 2, figsize=(W2, 2.35), gridspec_kw=dict(width_ratios=[1.35, 1]))
     ax = axs[0]
     y = np.arange(len(rows))[::-1]
     col = [C2 if ('polar' in r[0] or '3D' in r[0]) else C1 for r in rows]

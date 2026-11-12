@@ -207,19 +207,17 @@ structure jams when $\lambda_0\ge\lambda_0^*=2/\sum_tc(t)t^{-\alpha-1/2}$. With 
 measured in zero-thickness runs ($c\to c_\ell=1.163$), this gives $\lambda_0^*=0.168$,
 $0.404$, $0.745$ and $1.254$ for $\alpha=0.6$, $0.75$, $1$ and $1.5$.
 
-We located the threshold in finite-width simulations, in which ligaments nucleate only
-in free area and stop at the surface of the ligaments they meet. A run counts as jammed
-when the free area is exhausted (total free-cell area below $10^{-14}$) before step $T$;
-$\lambda_0^*$ is bisected with two realisations per value. At $T=2\times10^4$ we find
+In finite-width simulations, where ligaments nucleate only in free area and stop at
+the surface of the ligaments they meet, a run counts as jammed when the free area is
+exhausted (below $10^{-14}$) before step $T$; $\lambda_0^*$ is bisected with two
+realisations per value. At $T=2\times10^4$ we find
 $\lambda_0^*=0.232$, $0.363$, $0.643$ and $0.958$. Near $\alpha=1/2$ the free-area sum
 converges slowly, its remainder beyond $T$ scaling as $T^{1/2-\alpha}$, and the threshold
 drifts: at $\alpha=0.6$ it falls to $0.214$ at $T=10^5$, while at $\alpha=0.75$ it is
 stable ($0.359$). The formula of Ref.~\cite{both2026} gives $0.189$, $0.405$, $0.643$ and
 $0.879$. The depletion recursion is within $11\%$ at $\alpha=0.75$ but overestimates the
 threshold by $16$--$31\%$ at $\alpha\ge1$, where jamming is decided by the first few
-thick ligaments and a mean-field length law is least accurate. The overlap-free estimate
-$1/\sum_t\langle\ell_t\rangle t^{-\alpha}$ ($0.132$, $0.219$, $0.375$, $0.627$) is too low
-by a factor of about $1.7$. Thickness removes area
+thick ligaments. The overlap-free estimate is too low by a factor of about $1.7$. Thickness removes area
 and stops growth in the jammed phase, but it does not change the rule by which cells
 are split (Sec.~\ref{sec:gamma}). In what follows the network is the zero-thickness
 one unless stated otherwise.
@@ -303,19 +301,15 @@ Eq.~\eqref{eq:kl}, so the dispersion $D=\langle(k_i-2-\mu_i)^2\rangle/\langle\mu
 taken around each ligament's own prediction, should be one. In bins
 $\mu_i\in[2,4),[4,8),\dots,[64,128)$ we measure $D=0.92$--$0.94$, $0.93$--$0.96$,
 $1.01$--$1.03$, $1.07$--$1.12$, $1.05$--$1.38$ and $0.92$--$1.06$, the last two bins
-holding $300$ and $90$ ligaments per realisation. No growth of $D$ with $\mu$ is
-resolved. (The variance-to-mean ratio of $k_i-2$ within a bin is larger, rising from
-$1.05$ to $3.3$--$4.7$, because ligaments in a bin of width two in $\mu$ have different
-means; it should not be read as overdispersion.) The mean is also close: the ratio of
+holding $300$ and $90$ ligaments per realisation; no growth of $D$ with $\mu$ is
+resolved. (The variance-to-mean ratio within a bin is larger, $1.05$ to $4.7$, only
+because ligaments in a bin have different means.) The mean is also close: the ratio of
 received to predicted hits is $1.005$--$1.011$ for $\mu_i<4$ and $1.006$--$1.034$ above,
 so old ligaments receive about $2\%$ more hits than the mean-field rate $2/L(t)$ gives.
-Mechanism A predicts something else. The surrogate of Sec.~\ref{sec:topology}
-realises it exactly and has no birth attribute that could absorb the variance, so its
-variance at fixed age is the relevant comparison. That variance exceeds the mean by a
-factor that grows with the mean: $10$ for ligaments born at $i\simeq1000$ (mean degree
-$16$--$17$) and $51$--$91$ for those born at $i\simeq100$ (mean $66$--$68$). The point of
-the comparison is that in the geometric model a birth attribute, the length, absorbs the
-variance, and in the surrogate nothing does. (ii) Let $e_i$ be the number of hits on
+Under mechanism A no birth attribute absorbs the variance: in the surrogate of
+Sec.~\ref{sec:topology}, which realises it exactly, the variance at fixed age exceeds
+the mean by a factor $10$ for ligaments born at $i\simeq1000$ (mean degree $16$--$17$) and
+$51$--$91$ for those born at $i\simeq100$ (mean $66$--$68$). (ii) Let $e_i$ be the number of hits on
 ligament $i$ during $[i,2i)$ and $l_i$ the number during $[2i,T)$. After subtracting the
 expectations of Eq.~\eqref{eq:kl}, $e_i$ and $l_i$ are uncorrelated, both overall
 ($r=-0.027$, $-0.015$ and $0.045$) and for the oldest ligaments with $\mu_i>16$, where
@@ -588,12 +582,12 @@ does not change $\gamma$ ($2.89$--$2.94$ wherever the statistics allow) or $C$
 \item Angle sets change clustering but not $\gamma$. With angles $\{0,\pi/2\}$ all cells are
 rectangles, so $C=0$ exactly and $\gamma=2.87$; this is the rectangular fragmentation of
 Ref.~\cite{krapivsky1994}. With $\{0,\pi/3,2\pi/3\}$, $C=0.17$.
-\item Global alignment (von Mises, $\kappa$ up to $16$), cell selection proportional to
-area$^q$ ($q=0,0.5,2$), and linear or radial density gradients give $\gamma=2.86$--$2.96$.
-Selection with $q=0$ raises $C$ to $0.45$, and $q=2$ lowers it to $0.35$.
+\item Global alignment (von Mises, $\kappa\le16$), cell selection proportional to
+area$^q$ ($q=0,0.5,2$), and density gradients give $\gamma=2.86$--$2.96$; $q=0$ and $q=2$
+give $C=0.45$ and $0.35$.
 \end{itemize}
-The angle set and the selection weight therefore tune clustering between $0$ and $0.45$,
-while the exponent stays at $3$.
+The angle set and the selection weight tune clustering between $0$ and $0.45$; the
+exponent stays at $3$.
 
 \paragraph*{Coherent orientation fields.}
 The polarized rule of Ref.~\cite{both2026}, in which the angle follows a prescribed
