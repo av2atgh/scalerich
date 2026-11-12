@@ -16,32 +16,23 @@
 \begin{abstract}
 Scale-rich (SR) metamaterials are planar ligament networks grown by nucleating a
 segment at a random point and angle and extending it until it meets the existing
-structure, with a thickness that decays with the time of birth. In the dual graph,
-where ligaments are nodes and junctions are links, the degree distribution has a
-$k^{-3}$ tail. Here we show that, at zero thickness, the SR construction is Cowan's
-iterated division of cells with area-weighted selection, and that its dual graph grows
-by a face-local rule: a new node joins the two nodes that carry two sides of one face.
-Cowan's uniform split fractions make the cell genealogy a random binary search tree.
-The degree of an interior ligament equals its number of face incidences, so linear
-preferential attachment on incidences would give the Barab\'asi--Albert law
-$p_k=12/[k(k+1)(k+2)]$. The geometric model does not grow that way. A ligament is hit
-in proportion to its length, which is fixed at birth. Its degree is close to a Poisson
-variable with mean $4\ell_i(\sqrt T-\sqrt i)/c_L$: the variance around this mean equals
-the mean within the errors, the oldest ligaments receive $2\%$ more hits than this
-mean-field rate, and early and late hits are uncorrelated.
-Length acts as a fitness that the cell hierarchy assigns at birth,
-$\ell_i\propto i^{-1/2}$, and the $k^{-3}$ tail follows from it. Using integral geometry we compute the probability that a new
-ligament cuts off a corner of its cell ($2\ln2/\pi$ for a square), which sets the
-triangle closure and the clustering spectrum $C(k)\simeq2[p_0+p(k-2)]/[k(k-1)]$. A
-purely topological face-splitting rule reproduces $P(k)$, $C(k)$ and $k_{nn}(k)$, but
-through reinforcement and with longer distances. Square-closing splits raise the
-shortest-path multiplicity above its value at fixed degree sequence. Thickness,
-jamming, angle sets, alignment and density gradients leave $\gamma=3$, whereas coherent
-orientation fields, which make the hit rate grow faster than length, give
-$\gamma\simeq2.4$--$2.5$ up to $T=10^6$. In three dimensions plates are hit in proportion
-to their birth area, and $\gamma=5/2$, whereas preferential attachment on incidences would
-give $2.44$; the mechanism tests again select the fitness picture. At fixed decay exponent, the reported
-per-ligament energy law cannot distinguish degree from length or age.
+structure. In the dual graph, where ligaments are nodes and junctions are links, the
+degree distribution has a $k^{-3}$ tail. We show that the SR construction is Cowan's
+iterated cell division with area-weighted selection, so the cell genealogy is a random
+binary search tree, and that the dual grows by a face-local rule: a new node joins two
+nodes on the boundary of one face. Preferential attachment on face incidences would give
+the Barab\'asi--Albert law, but the geometry works differently. A ligament is hit in
+proportion to its length, fixed at birth, and its degree is close to a Poisson variable
+with mean $4\ell_i(\sqrt T-\sqrt i)/c_L$, without reinforcement. Length is a fitness
+assigned by the cell hierarchy, $\ell_i\propto i^{-1/2}$, and the $k^{-3}$ tail follows.
+Integral geometry gives the probability that a new ligament cuts off a corner of its
+cell, which sets the triangle closure and the clustering spectrum $C(k)\simeq2p/k$.
+Square-closing splits raise the shortest-path multiplicity above its value at fixed
+degree sequence. Thickness, jamming, angle sets and density gradients leave $\gamma=3$;
+coherent orientation fields give $\gamma\simeq2.4$--$2.5$. For plates in three
+dimensions the fitness is the birth area and $\gamma=5/2$, whereas preferential
+attachment would give $2.44$; fluctuation tests select the fitness mechanism. The
+reported per-ligament energy law cannot distinguish degree from length or age.
 \end{abstract}
 
 \maketitle
