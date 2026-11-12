@@ -1,0 +1,285 @@
+%apsrev4-2.bst 2019-01-14 (MD) hand-edited version of apsrev4-1.bst
+%Control: key (0)
+%Control: author (8) initials jnrlst
+%Control: editor formatted (1) identically to author
+%Control: production of article title (0) allowed
+%Control: page (0) single
+%Control: year (1) truncated
+%Control: production of eprint (0) enabled
+\begin{thebibliography}{22}%
+\makeatletter
+\providecommand \@ifxundefined [1]{%
+ \@ifx{#1\undefined}
+}%
+\providecommand \@ifnum [1]{%
+ \ifnum #1\expandafter \@firstoftwo
+ \else \expandafter \@secondoftwo
+ \fi
+}%
+\providecommand \@ifx [1]{%
+ \ifx #1\expandafter \@firstoftwo
+ \else \expandafter \@secondoftwo
+ \fi
+}%
+\providecommand \natexlab [1]{#1}%
+\providecommand \enquote  [1]{``#1''}%
+\providecommand \bibnamefont  [1]{#1}%
+\providecommand \bibfnamefont [1]{#1}%
+\providecommand \citenamefont [1]{#1}%
+\providecommand \href@noop [0]{\@secondoftwo}%
+\providecommand \href [0]{\begingroup \@sanitize@url \@href}%
+\providecommand \@href[1]{\@@startlink{#1}\@@href}%
+\providecommand \@@href[1]{\endgroup#1\@@endlink}%
+\providecommand \@sanitize@url [0]{\catcode `\\12\catcode `\$12\catcode
+  `\&12\catcode `\#12\catcode `\^12\catcode `\_12\catcode `\%12\relax}%
+\providecommand \@@startlink[1]{}%
+\providecommand \@@endlink[0]{}%
+\providecommand \url  [0]{\begingroup\@sanitize@url \@url }%
+\providecommand \@url [1]{\endgroup\@href {#1}{\urlprefix }}%
+\providecommand \urlprefix  [0]{URL }%
+\providecommand \Eprint [0]{\href }%
+\providecommand \doibase [0]{https://doi.org/}%
+\providecommand \selectlanguage [0]{\@gobble}%
+\providecommand \bibinfo  [0]{\@secondoftwo}%
+\providecommand \bibfield  [0]{\@secondoftwo}%
+\providecommand \translation [1]{[#1]}%
+\providecommand \BibitemOpen [0]{}%
+\providecommand \bibitemStop [0]{}%
+\providecommand \bibitemNoStop [0]{.\EOS\space}%
+\providecommand \EOS [0]{\spacefactor3000\relax}%
+\providecommand \BibitemShut  [1]{\csname bibitem#1\endcsname}%
+\let\auto@bib@innerbib\@empty
+%</preamble>
+\bibitem [{\citenamefont {Both}\ \emph {et~al.}(2026)\citenamefont {Both},
+  \citenamefont {Chen}, \citenamefont {Gao}, \citenamefont {Mooij},
+  \citenamefont {Charara}, \citenamefont {Wadhwa}, \citenamefont {Portela},\
+  and\ \citenamefont {Barab{\'a}si}}]{both2026}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {C.}~\bibnamefont
+  {Both}}, \bibinfo {author} {\bibfnamefont {A.~Y.-J.}\ \bibnamefont {Chen}},
+  \bibinfo {author} {\bibfnamefont {T.-T.}\ \bibnamefont {Gao}}, \bibinfo
+  {author} {\bibfnamefont {N.}~\bibnamefont {Mooij}}, \bibinfo {author}
+  {\bibfnamefont {M.}~\bibnamefont {Charara}}, \bibinfo {author} {\bibfnamefont
+  {J.}~\bibnamefont {Wadhwa}}, \bibinfo {author} {\bibfnamefont {C.~M.}\
+  \bibnamefont {Portela}},\ and\ \bibinfo {author} {\bibfnamefont {A.-L.}\
+  \bibnamefont {Barab{\'a}si}},\ }\bibfield  {title} {\bibinfo {title}
+  {Scale-rich network-based metamaterials},\ }\href
+  {https://doi.org/10.1038/s41586-026-11191-2} {\bibfield  {journal} {\bibinfo
+  {journal} {Nature}\ }\textbf {\bibinfo {volume} {659}},\ \bibinfo {pages}
+  {345} (\bibinfo {year} {2026})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Rosvall}\ \emph {et~al.}(2005)\citenamefont
+  {Rosvall}, \citenamefont {Trusina}, \citenamefont {Minnhagen},\ and\
+  \citenamefont {Sneppen}}]{rosvall2005}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {M.}~\bibnamefont
+  {Rosvall}}, \bibinfo {author} {\bibfnamefont {A.}~\bibnamefont {Trusina}},
+  \bibinfo {author} {\bibfnamefont {P.}~\bibnamefont {Minnhagen}},\ and\
+  \bibinfo {author} {\bibfnamefont {K.}~\bibnamefont {Sneppen}},\ }\bibfield
+  {title} {\bibinfo {title} {Networks and cities: An information perspective},\
+  }\href {https://doi.org/10.1103/PhysRevLett.94.028701} {\bibfield  {journal}
+  {\bibinfo  {journal} {Physical Review Letters}\ }\textbf {\bibinfo {volume}
+  {94}},\ \bibinfo {pages} {028701} (\bibinfo {year} {2005})}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Kalapala}\ \emph {et~al.}(2006)\citenamefont
+  {Kalapala}, \citenamefont {Sanwalani}, \citenamefont {Clauset},\ and\
+  \citenamefont {Moore}}]{kalapala2006}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {V.}~\bibnamefont
+  {Kalapala}}, \bibinfo {author} {\bibfnamefont {V.}~\bibnamefont {Sanwalani}},
+  \bibinfo {author} {\bibfnamefont {A.}~\bibnamefont {Clauset}},\ and\ \bibinfo
+  {author} {\bibfnamefont {C.}~\bibnamefont {Moore}},\ }\bibfield  {title}
+  {\bibinfo {title} {Scale invariance in road networks},\ }\href
+  {https://doi.org/10.1103/PhysRevE.73.026130} {\bibfield  {journal} {\bibinfo
+  {journal} {Physical Review E}\ }\textbf {\bibinfo {volume} {73}},\ \bibinfo
+  {pages} {026130} (\bibinfo {year} {2006})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Vazquez}(2003)}]{vazquez2003}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {A.}~\bibnamefont
+  {Vazquez}},\ }\bibfield  {title} {\bibinfo {title} {Growing network with
+  local rules: Preferential attachment, clustering hierarchy, and degree
+  correlations},\ }\href {https://doi.org/10.1103/PhysRevE.67.056104}
+  {\bibfield  {journal} {\bibinfo  {journal} {Physical Review E}\ }\textbf
+  {\bibinfo {volume} {67}},\ \bibinfo {pages} {056104} (\bibinfo {year}
+  {2003})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Holme}\ and\ \citenamefont {Kim}(2002)}]{holme2002}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {P.}~\bibnamefont
+  {Holme}}\ and\ \bibinfo {author} {\bibfnamefont {B.~J.}\ \bibnamefont
+  {Kim}},\ }\bibfield  {title} {\bibinfo {title} {Growing scale-free networks
+  with tunable clustering},\ }\href
+  {https://doi.org/10.1103/PhysRevE.65.026107} {\bibfield  {journal} {\bibinfo
+  {journal} {Physical Review E}\ }\textbf {\bibinfo {volume} {65}},\ \bibinfo
+  {pages} {026107} (\bibinfo {year} {2002})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Dorogovtsev}\ \emph {et~al.}(2001)\citenamefont
+  {Dorogovtsev}, \citenamefont {Mendes},\ and\ \citenamefont
+  {Samukhin}}]{dorogovtsev2001}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {S.~N.}\ \bibnamefont
+  {Dorogovtsev}}, \bibinfo {author} {\bibfnamefont {J.~F.~F.}\ \bibnamefont
+  {Mendes}},\ and\ \bibinfo {author} {\bibfnamefont {A.~N.}\ \bibnamefont
+  {Samukhin}},\ }\bibfield  {title} {\bibinfo {title} {Size-dependent degree
+  distribution of a scale-free growing network},\ }\href
+  {https://doi.org/10.1103/PhysRevE.63.062101} {\bibfield  {journal} {\bibinfo
+  {journal} {Physical Review E}\ }\textbf {\bibinfo {volume} {63}},\ \bibinfo
+  {pages} {062101} (\bibinfo {year} {2001})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Ravasz}\ and\ \citenamefont
+  {Barab{\'a}si}(2003)}]{ravasz2003}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {E.}~\bibnamefont
+  {Ravasz}}\ and\ \bibinfo {author} {\bibfnamefont {A.-L.}\ \bibnamefont
+  {Barab{\'a}si}},\ }\bibfield  {title} {\bibinfo {title} {Hierarchical
+  organization in complex networks},\ }\href
+  {https://doi.org/10.1103/PhysRevE.67.026112} {\bibfield  {journal} {\bibinfo
+  {journal} {Physical Review E}\ }\textbf {\bibinfo {volume} {67}},\ \bibinfo
+  {pages} {026112} (\bibinfo {year} {2003})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Cowan}(2010)}]{cowan2010}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {R.}~\bibnamefont
+  {Cowan}},\ }\bibfield  {title} {\bibinfo {title} {New classes of random
+  tessellations arising from iterative division of cells},\ }\href@noop {}
+  {\bibfield  {journal} {\bibinfo  {journal} {Advances in Applied Probability}\
+  }\textbf {\bibinfo {volume} {42}},\ \bibinfo {pages} {26} (\bibinfo {year}
+  {2010})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Nagel}\ and\ \citenamefont
+  {Wei{\ss}}(2005)}]{nagel2005}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {W.}~\bibnamefont
+  {Nagel}}\ and\ \bibinfo {author} {\bibfnamefont {V.}~\bibnamefont
+  {Wei{\ss}}},\ }\bibfield  {title} {\bibinfo {title} {Crack {STIT}
+  tessellations: characterization of stationary random tessellations stable
+  with respect to iteration},\ }\href@noop {} {\bibfield  {journal} {\bibinfo
+  {journal} {Advances in Applied Probability}\ }\textbf {\bibinfo {volume}
+  {37}},\ \bibinfo {pages} {859} (\bibinfo {year} {2005})}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Redenbach}\ and\ \citenamefont
+  {Jung}(2025)}]{redenbach2025}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {C.}~\bibnamefont
+  {Redenbach}}\ and\ \bibinfo {author} {\bibfnamefont {T.}~\bibnamefont
+  {Jung}},\ }\bibfield  {title} {\bibinfo {title} {Random tessellations -- an
+  overview of models},\ }\href@noop {} {\bibfield  {journal} {\bibinfo
+  {journal} {arXiv}\ } (\bibinfo {year} {2025})},\ \Eprint
+  {https://arxiv.org/abs/2501.05166} {2501.05166} \BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Gilbert}(1967)}]{gilbert1967}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {E.~N.}\ \bibnamefont
+  {Gilbert}},\ }\bibfield  {title} {\bibinfo {title} {Random plane networks and
+  needle-shaped crystals},\ }in\ \href@noop {} {\emph {\bibinfo {booktitle}
+  {Applications of Undergraduate Mathematics in Engineering}}},\ \bibinfo
+  {editor} {edited by\ \bibinfo {editor} {\bibfnamefont {B.}~\bibnamefont
+  {Noble}}}\ (\bibinfo  {publisher} {Macmillan},\ \bibinfo {address} {New
+  York},\ \bibinfo {year} {1967})\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Devroye}(1986)}]{devroye1986}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {L.}~\bibnamefont
+  {Devroye}},\ }\bibfield  {title} {\bibinfo {title} {A note on the height of
+  binary search trees},\ }\href@noop {} {\bibfield  {journal} {\bibinfo
+  {journal} {Journal of the ACM}\ }\textbf {\bibinfo {volume} {33}},\ \bibinfo
+  {pages} {489} (\bibinfo {year} {1986})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Krapivsky}\ and\ \citenamefont
+  {Ben-Naim}(1994)}]{krapivsky1994}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {P.~L.}\ \bibnamefont
+  {Krapivsky}}\ and\ \bibinfo {author} {\bibfnamefont {E.}~\bibnamefont
+  {Ben-Naim}},\ }\bibfield  {title} {\bibinfo {title} {Scaling and multiscaling
+  in models of fragmentation},\ }\href
+  {https://doi.org/10.1103/PhysRevE.50.3502} {\bibfield  {journal} {\bibinfo
+  {journal} {Physical Review E}\ }\textbf {\bibinfo {volume} {50}},\ \bibinfo
+  {pages} {3502} (\bibinfo {year} {1994})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Barab{\'a}si}\ and\ \citenamefont
+  {Albert}(1999)}]{barabasi1999}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {A.-L.}\ \bibnamefont
+  {Barab{\'a}si}}\ and\ \bibinfo {author} {\bibfnamefont {R.}~\bibnamefont
+  {Albert}},\ }\bibfield  {title} {\bibinfo {title} {Emergence of scaling in
+  random networks},\ }\href {https://doi.org/10.1126/science.286.5439.509}
+  {\bibfield  {journal} {\bibinfo  {journal} {Science}\ }\textbf {\bibinfo
+  {volume} {286}},\ \bibinfo {pages} {509} (\bibinfo {year}
+  {1999})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Krapivsky}\ and\ \citenamefont
+  {Redner}(2001)}]{krapivsky2001}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {P.~L.}\ \bibnamefont
+  {Krapivsky}}\ and\ \bibinfo {author} {\bibfnamefont {S.}~\bibnamefont
+  {Redner}},\ }\bibfield  {title} {\bibinfo {title} {Organization of growing
+  random networks},\ }\href {https://doi.org/10.1103/PhysRevE.63.066123}
+  {\bibfield  {journal} {\bibinfo  {journal} {Physical Review E}\ }\textbf
+  {\bibinfo {volume} {63}},\ \bibinfo {pages} {066123} (\bibinfo {year}
+  {2001})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Dorogovtsev}\ and\ \citenamefont
+  {Mendes}(2002)}]{dorogovtsev2002}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {S.~N.}\ \bibnamefont
+  {Dorogovtsev}}\ and\ \bibinfo {author} {\bibfnamefont {J.~F.~F.}\
+  \bibnamefont {Mendes}},\ }\bibfield  {title} {\bibinfo {title} {Evolution of
+  networks},\ }\href {https://doi.org/10.1080/00018730110112519} {\bibfield
+  {journal} {\bibinfo  {journal} {Advances in Physics}\ }\textbf {\bibinfo
+  {volume} {51}},\ \bibinfo {pages} {1079} (\bibinfo {year}
+  {2002})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Santal{\'o}}(1976)}]{santalo1976}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {L.~A.}\ \bibnamefont
+  {Santal{\'o}}},\ }\href@noop {} {\emph {\bibinfo {title} {Integral Geometry
+  and Geometric Probability}}}\ (\bibinfo  {publisher} {Addison-Wesley},\
+  \bibinfo {address} {Reading, MA},\ \bibinfo {year} {1976})\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Dorogovtsev}\ \emph {et~al.}(2002)\citenamefont
+  {Dorogovtsev}, \citenamefont {Goltsev},\ and\ \citenamefont
+  {Mendes}}]{dorogovtsevgoltsev2002}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {S.~N.}\ \bibnamefont
+  {Dorogovtsev}}, \bibinfo {author} {\bibfnamefont {A.~V.}\ \bibnamefont
+  {Goltsev}},\ and\ \bibinfo {author} {\bibfnamefont {J.~F.~F.}\ \bibnamefont
+  {Mendes}},\ }\bibfield  {title} {\bibinfo {title} {Pseudofractal scale-free
+  web},\ }\href {https://doi.org/10.1103/PhysRevE.65.066122} {\bibfield
+  {journal} {\bibinfo  {journal} {Physical Review E}\ }\textbf {\bibinfo
+  {volume} {65}},\ \bibinfo {pages} {066122} (\bibinfo {year}
+  {2002})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Andrade}\ \emph {et~al.}(2005)\citenamefont
+  {Andrade}, \citenamefont {Herrmann}, \citenamefont {Andrade},\ and\
+  \citenamefont {da~Silva}}]{andrade2005}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {J.~S.}\ \bibnamefont
+  {Andrade}}, \bibinfo {author} {\bibfnamefont {H.~J.}\ \bibnamefont
+  {Herrmann}}, \bibinfo {author} {\bibfnamefont {R.~F.~S.}\ \bibnamefont
+  {Andrade}},\ and\ \bibinfo {author} {\bibfnamefont {L.~R.}\ \bibnamefont
+  {da~Silva}},\ }\bibfield  {title} {\bibinfo {title} {Apollonian networks:
+  Simultaneously scale-free, small world, euclidean, space filling, and with
+  matching graphs},\ }\href {https://doi.org/10.1103/PhysRevLett.94.018702}
+  {\bibfield  {journal} {\bibinfo  {journal} {Physical Review Letters}\
+  }\textbf {\bibinfo {volume} {94}},\ \bibinfo {pages} {018702} (\bibinfo
+  {year} {2005})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Zhou}\ \emph {et~al.}(2005)\citenamefont {Zhou},
+  \citenamefont {Yan},\ and\ \citenamefont {Wang}}]{zhou2005}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {T.}~\bibnamefont
+  {Zhou}}, \bibinfo {author} {\bibfnamefont {G.}~\bibnamefont {Yan}},\ and\
+  \bibinfo {author} {\bibfnamefont {B.-H.}\ \bibnamefont {Wang}},\ }\bibfield
+  {title} {\bibinfo {title} {Maximal planar networks with large clustering
+  coefficient and power-law degree distribution},\ }\href
+  {https://doi.org/10.1103/PhysRevE.71.046141} {\bibfield  {journal} {\bibinfo
+  {journal} {Physical Review E}\ }\textbf {\bibinfo {volume} {71}},\ \bibinfo
+  {pages} {046141} (\bibinfo {year} {2005})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Vazquez}(2026)}]{vazquezpaths2026}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {A.}~\bibnamefont
+  {Vazquez}},\ }\bibfield  {title} {\bibinfo {title} {Local network evolution
+  rules driving shortest path multiplicity},\ }\bibfield  {journal} {\bibinfo
+  {journal} {Physical Review E}\ }\href {https://doi.org/10.1103/t1sg-qhhf}
+  {10.1103/t1sg-qhhf} (\bibinfo {year} {2026}),\ \Eprint
+  {https://arxiv.org/abs/2605.25237} {arXiv:2605.25237 [physics.soc-ph]}
+  \BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Kolossv{\'a}ry}\ \emph {et~al.}(2016)\citenamefont
+  {Kolossv{\'a}ry}, \citenamefont {Komj{\'a}thy},\ and\ \citenamefont
+  {V{\'a}g{\'o}}}]{kolossvary2016}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {I.}~\bibnamefont
+  {Kolossv{\'a}ry}}, \bibinfo {author} {\bibfnamefont {J.}~\bibnamefont
+  {Komj{\'a}thy}},\ and\ \bibinfo {author} {\bibfnamefont {L.}~\bibnamefont
+  {V{\'a}g{\'o}}},\ }\bibfield  {title} {\bibinfo {title} {Degrees and
+  distances in random and evolving {A}pollonian networks},\ }\href
+  {https://doi.org/10.1017/apr.2016.32} {\bibfield  {journal} {\bibinfo
+  {journal} {Advances in Applied Probability}\ }\textbf {\bibinfo {volume}
+  {48}},\ \bibinfo {pages} {865} (\bibinfo {year} {2016})}\BibitemShut
+  {NoStop}%
+\end{thebibliography}%

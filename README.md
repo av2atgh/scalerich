@@ -28,3 +28,9 @@ U_i ~ k^{3/2} λ^{1/2} f(θ).
   elastic/rigidity, percolation and transport on the SR structure.
 
 Status and next steps: see `lng/NOTES.md`, `rg/NOTES.md`.
+
+## Manuscript (2026-11-12)
+`manuscript.tex` (PRE, revtex4-2, pdflatex + bibtex), figures from `figures.py`.
+Anchored on local growth + Cowan's recursive cell division. The chygraph/RG
+component (`rg/`) is dropped from the paper; only the Cowan-level facts from it
+(uniform split → BST, host-age law h/t → U²) are used. `rg/` stays as a record.

@@ -1,4 +1,11 @@
 *.npz
-*.pdf
 __pycache__/
 results/big/
+figs/cache_*
+figs/ms*.png
+figs/fig*-1.png
+*.aux
+*.log
+*.blg
+*.out
+manuscriptNotes.bib
