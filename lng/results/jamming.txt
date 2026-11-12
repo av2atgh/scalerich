@@ -1,0 +1,4 @@
+alpha=0.6: lambda0* (sim, T=20000) = 0.233  overlap-free 1/sum<l_t>t^-a = 0.132  1/(c_l zeta(a+1/2)) = 0.081  paper 1/(l0 zeta(2a)) = 0.189
+alpha=0.75: lambda0* (sim, T=20000) = 0.363  overlap-free 1/sum<l_t>t^-a = 0.219  1/(c_l zeta(a+1/2)) = 0.187  paper 1/(l0 zeta(2a)) = 0.405
+alpha=1.0: lambda0* (sim, T=20000) = 0.643  overlap-free 1/sum<l_t>t^-a = 0.375  1/(c_l zeta(a+1/2)) = 0.329  paper 1/(l0 zeta(2a)) = 0.643
+alpha=1.5: lambda0* (sim, T=20000) = 0.958  overlap-free 1/sum<l_t>t^-a = 0.627  1/(c_l zeta(a+1/2)) = 0.523  paper 1/(l0 zeta(2a)) = 0.879

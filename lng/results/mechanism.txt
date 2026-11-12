@@ -1,0 +1,51 @@
+SR seed1 conditional Fano of k-2 at fixed predicted mean:
+    mu[2,4) n=11912 mean(k-2)/mu=1.010 Fano=1.05
+    mu[4,8) n=6702 mean(k-2)/mu=1.025 Fano=1.18
+    mu[8,16) n=2971 mean(k-2)/mu=1.032 Fano=1.36
+    mu[16,32) n=1050 mean(k-2)/mu=1.040 Fano=2.01
+    mu[32,64) n=290 mean(k-2)/mu=1.028 Fano=3.15
+    mu[64,128) n=87 mean(k-2)/mu=1.023 Fano=4.66
+SR seed1   overall var(k-2-mu)/<mu> (i in [100,T/20)) = 1.04
+SR seed1   corr(early,late) raw = 0.318; after removing length*age expectation = -0.027
+SR seed1   corr(early,late) within (age, length-quintile) cells: mean 0.091 sd 0.134 (10 cells)
+SR seed1   Fano of k-2 at age~100 (not conditioning on length): 29.56 (mean 62.8)
+SR seed1   Fano of k-2 at age~1000 (not conditioning on length): 7.70 (mean 18.1)
+SR seed2 conditional Fano of k-2 at fixed predicted mean:
+    mu[2,4) n=11999 mean(k-2)/mu=1.006 Fano=1.05
+    mu[4,8) n=6652 mean(k-2)/mu=1.022 Fano=1.14
+    mu[8,16) n=2912 mean(k-2)/mu=1.031 Fano=1.40
+    mu[16,32) n=1040 mean(k-2)/mu=1.033 Fano=2.04
+    mu[32,64) n=327 mean(k-2)/mu=1.006 Fano=2.80
+    mu[64,128) n=90 mean(k-2)/mu=1.018 Fano=3.45
+SR seed2   overall var(k-2-mu)/<mu> (i in [100,T/20)) = 0.98
+SR seed2   corr(early,late) raw = 0.307; after removing length*age expectation = -0.015
+SR seed2   corr(early,late) within (age, length-quintile) cells: mean 0.083 sd 0.122 (10 cells)
+SR seed2   Fano of k-2 at age~100 (not conditioning on length): 19.28 (mean 44.4)
+SR seed2   Fano of k-2 at age~1000 (not conditioning on length): 7.75 (mean 17.8)
+SR seed3 conditional Fano of k-2 at fixed predicted mean:
+    mu[2,4) n=11889 mean(k-2)/mu=1.013 Fano=1.06
+    mu[4,8) n=6686 mean(k-2)/mu=1.025 Fano=1.14
+    mu[8,16) n=2888 mean(k-2)/mu=1.022 Fano=1.44
+    mu[16,32) n=1050 mean(k-2)/mu=1.011 Fano=2.06
+    mu[32,64) n=329 mean(k-2)/mu=1.018 Fano=3.20
+    mu[64,128) n=83 mean(k-2)/mu=1.030 Fano=3.08
+SR seed3   overall var(k-2-mu)/<mu> (i in [100,T/20)) = 1.09
+SR seed3   corr(early,late) raw = 0.342; after removing length*age expectation = 0.045
+SR seed3   corr(early,late) within (age, length-quintile) cells: mean 0.113 sd 0.169 (10 cells)
+SR seed3   Fano of k-2 at age~100 (not conditioning on length): 16.13 (mean 45.9)
+SR seed3   Fano of k-2 at age~1000 (not conditioning on length): 8.11 (mean 19.7)
+surrogate seed1   corr(early,late) raw = 0.344
+surrogate seed1   corr(early,late) within age cells: mean 0.458
+surrogate seed1   Fano of k-2 at age~100: 50.62 (mean 65.7)
+surrogate seed1   Fano of k-2 at age~1000: 9.65 (mean 15.8)
+surrogate seed2   corr(early,late) raw = 0.341
+surrogate seed2   corr(early,late) within age cells: mean 0.495
+surrogate seed2   Fano of k-2 at age~100: 91.26 (mean 67.6)
+surrogate seed2   Fano of k-2 at age~1000: 9.91 (mean 17.4)
+T=1e6: <x^2> (birth-length scatter, i>1000) = 1.410 -> 4<x^2> = 5.64; BA = 6
+  K=8: K^2 P(k>=K) = 5.40   BA exact 6K/(K+1) = 5.33
+  K=16: K^2 P(k>=K) = 5.68   BA exact 6K/(K+1) = 5.65
+  K=32: K^2 P(k>=K) = 5.76   BA exact 6K/(K+1) = 5.82
+  K=64: K^2 P(k>=K) = 5.75   BA exact 6K/(K+1) = 5.91
+  K=128: K^2 P(k>=K) = 5.65   BA exact 6K/(K+1) = 5.95
+  K=256: K^2 P(k>=K) = 6.49   BA exact 6K/(K+1) = 5.98
