@@ -9,3 +9,4 @@ figs/fig*-1.png
 *.blg
 *.out
 manuscriptNotes.bib
+private/
