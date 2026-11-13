@@ -478,7 +478,7 @@ same rate equation: $P(k)$, $C(k)$ and $k_{nn}(k)$ are fixed by face locality, n
 the sides are sampled.
 
 The surrogate differs on distances. At $T=10^5$ its mean distance is $14.1$ against
-$8.69$ for SR (Table~\ref{tab:paths}). Both grow logarithmically, but with prefactors $1.43$ and $0.60$
+$8.69$ for SR. Both grow logarithmically, but with prefactors $1.43$ and $0.60$
 [Fig.~\ref{fig:paths}(a)]. In the geometric model chords hit long sides
 preferentially, and long sides belong to old, long ligaments, so new nodes attach
 close to the hubs. In the surrogate, sides are hit regardless of the age of the
@@ -512,9 +512,11 @@ $c_2=\langle k(k-1)\rangle/\langle k\rangle$, and local growth rules depart from
 value in a rule-dependent way~\cite{vazquezpaths2026}. For $\gamma=3$, $c_2$ grows as
 $\ln T$.
 
-Table~\ref{tab:paths} lists the measurements for the SR dual, its degree-preserving
-randomisation (SR$^*$) and the edge-attachment (DM) model~\cite{dorogovtsev2001}, each
-averaged over six realisations and $100$ sources per realisation. The randomised graph
+We compare the SR dual with its degree-preserving randomisation (SR$^*$) and with the
+edge-attachment (DM) model~\cite{dorogovtsev2001}, averaging over six realisations and
+$100$ sources per realisation, for $T=10^3$ to $10^5$; over this range $c_2$ grows from
+$7.9$ to $14.1$ and the mean distance of the SR dual from $5.78$ to $8.69$ ($4.48$ to
+$6.06$ for SR$^*$). The randomised graph
 sits on the configuration-model value, $\langle\mu\rangle/(c_2/e)=1.00$--$0.90$. The SR
 dual exceeds it, by a factor that grows from $2.0\pm0.3$ at $T=10^3$ to $6.4\pm0.9$ at
 $T=10^5$, and the DM model stays within $0.87$--$1.20$. Because $\mu$ has a heavy tail,
@@ -522,25 +524,6 @@ $\langle\mu\rangle$ is dominated by rare pairs; the mean logarithm is better det
 The excess $\Delta\langle\ln\mu\rangle=\langle\ln\mu\rangle_{\rm SR}-\langle\ln\mu\rangle_{\rm SR^*}$,
 taken at the same degree sequence, grows from $0.40$ to $1.03$ over the same range.
 
-\begin{table}[b]
-\caption{Shortest-path statistics of the dual graph: mean distance $\langle d\rangle$,
-$\langle\mu\rangle/(c_2/e)$ and $\langle\ln\mu\rangle$, mean $\pm$ standard error over six
-realisations (100 sources each). Each entry gives SR / SR$^*$, where SR$^*$ is the
-degree-preserving randomisation of the SR dual; standard errors of the SR$^*$ entries are
-below $0.03$.}
-\label{tab:paths}
-\begin{ruledtabular}
-\begin{tabular}{rcccc}
-$T$ & $c_2$ & $\langle d\rangle$ & $\langle\mu\rangle/(c_2/e)$ & $\langle\ln\mu\rangle$\\
-\hline
-$10^3$ & $7.9$ & $5.78/4.48$ & $2.0\pm0.3/1.00$ & $1.09\pm0.06/0.70$\\
-$3\times10^3$ & $9.3$ & $6.60/4.98$ & $2.9\pm0.5/1.00$ & $1.39\pm0.07/0.80$\\
-$10^4$ & $11.0$ & $7.18/5.31$ & $3.3\pm0.4/0.94$ & $1.55\pm0.06/0.87$\\
-$3\times10^4$ & $12.3$ & $7.98/5.65$ & $5.4\pm1.0/0.93$ & $1.77\pm0.07/0.94$\\
-$10^5$ & $14.1$ & $8.69/6.06$ & $6.4\pm0.9/0.90$ & $2.03\pm0.06/1.00$\\
-\end{tabular}
-\end{ruledtabular}
-\end{table}
 
 To ask where the excess comes from, we varied the fraction of new nodes that close a
 triangle at fixed construction and measured $\Delta\langle\ln\mu\rangle$ against each
