@@ -81,7 +81,7 @@ def fig1():
             ax.scatter(*s, s=16, color=C1, zorder=3, edgecolor='white', linewidth=0.5)
         ax.scatter(*nm, s=16, color=C2, zorder=4, edgecolor='white', linewidth=0.5)
     fig.subplots_adjust(left=0.01, right=0.99, top=0.88, bottom=0.04, wspace=0.08)
-    fig.savefig(os.path.join(FIG, 'fig1.pdf')); plt.close(fig)
+    fig.savefig(os.path.join(FIG, 'fig1.pdf'), bbox_inches='tight', pad_inches=0.02); plt.close(fig)
 
 
 # ---------------------------------------------------------------- Fig. 2 (Cowan / BST)
@@ -118,7 +118,7 @@ def fig2():
     ax.set_xlabel('$\\ln(t/h)$, $h$ = host birth index'); ax.set_ylabel('density'); ax.legend()
     for a, s in zip(axs, 'abc'):
         lab(a, f'({s})')
-    fig.tight_layout(); fig.savefig(os.path.join(FIG, 'fig2.pdf')); plt.close(fig)
+    fig.tight_layout(pad=0.3); fig.savefig(os.path.join(FIG, 'fig2.pdf'), bbox_inches='tight', pad_inches=0.02); plt.close(fig)
 
 
 # ---------------------------------------------------------------- Fig. 3 (degrees, clustering)
@@ -163,8 +163,8 @@ def fig3():
     cb = np.array(cb)
     ax.loglog(cb[:, 0], cb[:, 1], 'o', color=C1, mfc='none', label='SR')
     ax.loglog(kk, 2 * (0.494 + 0.53 * (kk - 2)) / (kk * (kk - 1.0)), color=INK, lw=1,
-              label='triadic closure')
-    ax.set_xlabel('$k$'); ax.set_ylabel('$C(k)$'); ax.legend(loc='upper right')
+              label='theory')
+    ax.set_xlabel('$k$'); ax.set_ylabel('$C(k)$'); ax.legend(loc='lower left')
     ax = axs[1, 1]
     kn = d['knn'].ravel()
     nb = np.array([(np.exp(np.mean(np.log(kb[j:j + 2]))), kn[(k >= kb[j]) & (k < kb[j + 1])].mean())
@@ -174,7 +174,7 @@ def fig3():
     ax.set_xlabel('$k$'); ax.set_ylabel('$k_{nn}(k)$')
     for a, s in zip(axs.ravel(), 'abcd'):
         lab(a, f'({s})')
-    fig.tight_layout(); fig.savefig(os.path.join(FIG, 'fig3.pdf')); plt.close(fig)
+    fig.tight_layout(pad=0.3); fig.savefig(os.path.join(FIG, 'fig3.pdf'), bbox_inches='tight', pad_inches=0.02); plt.close(fig)
 
 
 # ---------------------------------------------------------------- Fig. 4 (what moves gamma)
@@ -221,7 +221,7 @@ def fig4():
     ax.legend(loc='lower left')
     for a, s in zip(axs, 'ab'):
         lab(a, f'({s})')
-    fig.tight_layout(); fig.savefig(os.path.join(FIG, 'fig4.pdf')); plt.close(fig)
+    fig.tight_layout(pad=0.3); fig.savefig(os.path.join(FIG, 'fig4.pdf'), bbox_inches='tight', pad_inches=0.02); plt.close(fig)
 
 
 # ---------------------------------------------------------------- Fig. 5 (paths)
@@ -255,7 +255,7 @@ def fig5():
     ax.set_ylim(0, 4.2); ax.legend(fontsize=6, loc='upper right', handletextpad=0.2, bbox_to_anchor=(1.02, 1.02))
     for a, s in zip(axs, 'ab'):
         lab(a, f'({s})')
-    fig.tight_layout(); fig.savefig(os.path.join(FIG, 'fig5.pdf')); plt.close(fig)
+    fig.tight_layout(pad=0.3); fig.savefig(os.path.join(FIG, 'fig5.pdf'), bbox_inches='tight', pad_inches=0.02); plt.close(fig)
 
 
 if __name__ == '__main__':
