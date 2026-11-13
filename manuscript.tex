@@ -253,7 +253,7 @@ cells. Each step creates two hits and four incidences, so the total number of
 incidences is $4t$, in agreement with $\langle n\rangle=4$. This identity is exact.
 
 \paragraph*{The attachment rate.}
-The growth rule contains no degree. A uniform point selects a cell, and the chord ends
+A uniform point selects a cell, and the chord ends
 on the cell's boundary. Ligament $i$ is therefore reached through the cells it borders,
 and the rate can be counted in two ways.
 
@@ -282,7 +282,7 @@ the long ones.
 Both counts give an attachment rate linear in the degree, $(a+bk)/t$ with $a=0$ and
 $b=2/\langle n\rangle=1/2$, exact within mean field because $\langle n\rangle=4$ is exact.
 Preferential attachment is thus the mean-field outcome of local
-sampling~\cite{vazquez2003,vazquezbook}; the rule contains no degree. The spatial
+sampling~\cite{vazquez2003,vazquezbook}. The spatial
 preferential attachment of Ref.~\cite{both2026} is count (ii).
 
 \paragraph*{Rate equation.}
@@ -317,8 +317,7 @@ which $a=0$, $b=1/2$ and $\langle o\rangle=2$ satisfy. With $o=2$, $\eta=0$ and 
   p_k=\frac{12}{k(k+1)(k+2)},\qquad P(k'\ge k)=\frac{6}{k(k+1)},
   \label{eq:pk}
 \end{equation}
-and $\gamma=3$, the Barab\'asi--Albert form with $m=2$~\cite{barabasi1999}, reached here
-from a rule that contains no degree.
+and $\gamma=3$, the Barab\'asi--Albert form with $m=2$~\cite{barabasi1999}.
 
 \paragraph*{Test against the growth history.}
 We measured the kernel directly. With $H_k$ the number of hits on nodes of degree $k$
@@ -797,8 +796,7 @@ rate equation~\cite{krapivsky2000} with a kernel deduced from the rule:
 a ligament of degree $k$ borders $k$ cells, so $b=2/\langle n\rangle=1/2$, the sum rule
 gives $a=0$, and $p_k=12/[k(k+1)(k+2)]$ follows with no free parameter. The measured
 kernel is $\kappa=0.50\,k$ and the predicted distribution is within $4\%$ of the
-simulations. Preferential attachment enters only as this mean-field outcome; the rule
-contains no degree. Beyond mean field, the recursion assigns each ligament its length
+simulations. Preferential attachment enters only as this mean-field outcome. Beyond mean field, the recursion assigns each ligament its length
 at birth, $\ell_i\propto i^{-1/2}$, and the degree is a Poisson count of hits with mean
 proportional to length times remaining time, without reinforcement. In $d$ dimensions
 the hierarchy fixes $b=(d-1)/d$, and plates in three dimensions have $\gamma=5/2$, with
@@ -826,8 +824,7 @@ Ref.~\cite{both2026} is not specified in its main text. Finally, the growth of t
 consistent with both a log-quadratic and a weak power law over the range studied.
 
 More broadly, the SR dual is a physical instance of preferential attachment as an
-effective result rather than a mechanism: the growth rule contains no degree, and
-the clustering that comes with the local sampling identifies the class.
+effective result rather than a mechanism, and the clustering that comes with the local sampling identifies the class.
 
 \begin{acknowledgments}
 All code is available at \url{https://github.com/av2atgh/scalerich}.
