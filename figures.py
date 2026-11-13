@@ -233,11 +233,11 @@ def fig5():
     ax = axs[0]
     for model, cc, mk, lbl, src in (('SR', C1, 'o', 'SR', rows), ('SR*', C4, 'v', 'SR rewired', rows),
                                     ('DM', C3, '^', 'DM', rows), ('U-padj', C2, 's', 'surrogate', old)):
-        Ts = sorted({int(r['T']) for r in src if r['model'] == model})
+        Ts = sorted({int(r['T']) for r in src if r['model'] == model and int(r['T']) <= 100000})
         v = [np.array([float(r['meand']) for r in src if r['model'] == model and int(r['T']) == t]) for t in Ts]
         ax.errorbar(Ts, [x.mean() for x in v], yerr=[x.std(ddof=1) / np.sqrt(len(x)) for x in v],
                     fmt=mk + '-', color=cc, mfc='none', ms=4, label=lbl, capsize=1.5, lw=1)
-    ax.set_xscale('log'); ax.set_xlabel('$T$'); ax.set_ylabel('$\\langle d\\rangle$'); ax.set_ylim(4, 19); ax.legend(fontsize=6, loc='upper left')
+    ax.set_xscale('log'); ax.set_xlabel('$T$'); ax.set_ylabel('$\\langle d\\rangle$'); ax.set_ylim(4, 15.5); ax.legend(fontsize=6, loc='upper left')
     ax = axs[1]
     c = list(csv.DictReader(open(os.path.join(RES, 'paths2_control.csv'))))
     for fam, cc, mk, lbl in (('SR', C1, 'o', 'SR'), ('surr', C2, 's', 'surrogate')):
