@@ -253,9 +253,9 @@ cells. Each step creates two hits and four incidences, so the total number of
 incidences is $4t$, in agreement with $\langle n\rangle=4$. This identity is exact.
 
 \paragraph*{The attachment rate.}
-The new ligament never consults degrees. A uniform point selects a cell, and the chord
-ends on the cell's boundary. Ligament $i$ is therefore reached through the cells it
-borders, and there are two ways to count how often.
+The growth rule contains no degree. A uniform point selects a cell, and the chord ends
+on the cell's boundary. Ligament $i$ is therefore reached through the cells it borders,
+and the rate can be counted in two ways.
 
 (i) \emph{By incidences.} Ligament $i$ borders $k_i$ cells. If these are typical cells,
 each selected with probability $1/t$ on average, and each of a cell's $\langle n\rangle$
@@ -282,7 +282,7 @@ the long ones.
 Both counts give an attachment rate linear in the degree, $(a+bk)/t$ with $a=0$ and
 $b=2/\langle n\rangle=1/2$, exact within mean field because $\langle n\rangle=4$ is exact.
 Preferential attachment is thus the mean-field outcome of local
-sampling~\cite{vazquez2003,vazquezbook}; nothing in the rule refers to degree. The spatial
+sampling~\cite{vazquez2003,vazquezbook}; the rule contains no degree. The spatial
 preferential attachment of Ref.~\cite{both2026} is count (ii).
 
 \paragraph*{Rate equation.}
@@ -318,7 +318,7 @@ which $a=0$, $b=1/2$ and $\langle o\rangle=2$ satisfy. With $o=2$, $\eta=0$ and 
   \label{eq:pk}
 \end{equation}
 and $\gamma=3$, the Barab\'asi--Albert form with $m=2$~\cite{barabasi1999}, reached here
-without any reference to degree in the rule.
+from a rule that contains no degree.
 
 \paragraph*{Test against the growth history.}
 We measured the kernel directly. With $H_k$ the number of hits on nodes of degree $k$
@@ -346,7 +346,7 @@ $1.01$--$1.03$, $1.07$--$1.12$, $1.05$--$1.38$ and $0.92$--$1.06$ ($T=10^5$, thr
 realisations). (2) Hits during $[i,2i)$ and during $[2i,T)$, each taken relative to
 Eq.~\eqref{eq:kl}, are uncorrelated, overall ($r=-0.027$, $-0.015$, $0.045$) and for the
 oldest ligaments with $\mu_i>16$ ($r=-0.017$, $0.032$, $0.094$). The topological surrogate
-of Sec.~\ref{sec:topology} chooses sides uniformly and has the same kernel, $b=1/2$, by
+of Sec.~\ref{sec:topology} selects sides uniformly and has the same kernel, $b=1/2$, by
 construction. There, each hit adds an incidence and raises the future rate, and the
 same tests give a variance $10$--$91$ times the mean at fixed age and an early--late
 correlation of $0.46$--$0.50$. The geometry thus realises the mean-field kernel without
@@ -798,7 +798,7 @@ a ligament of degree $k$ borders $k$ cells, so $b=2/\langle n\rangle=1/2$, the s
 gives $a=0$, and $p_k=12/[k(k+1)(k+2)]$ follows with no free parameter. The measured
 kernel is $\kappa=0.50\,k$ and the predicted distribution is within $4\%$ of the
 simulations. Preferential attachment enters only as this mean-field outcome; the rule
-never refers to degree. Beyond mean field, the recursion assigns each ligament its length
+contains no degree. Beyond mean field, the recursion assigns each ligament its length
 at birth, $\ell_i\propto i^{-1/2}$, and the degree is a Poisson count of hits with mean
 proportional to length times remaining time, without reinforcement. In $d$ dimensions
 the hierarchy fixes $b=(d-1)/d$, and plates in three dimensions have $\gamma=5/2$, with
@@ -826,7 +826,7 @@ Ref.~\cite{both2026} is not specified in its main text. Finally, the growth of t
 consistent with both a log-quadratic and a weak power law over the range studied.
 
 More broadly, the SR dual is a physical instance of preferential attachment as an
-effective result rather than a mechanism: the growth rule never refers to degree, and
+effective result rather than a mechanism: the growth rule contains no degree, and
 the clustering that comes with the local sampling identifies the class.
 
 \begin{acknowledgments}
