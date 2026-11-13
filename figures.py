@@ -247,10 +247,6 @@ def fig5():
             tri = np.mean([float(r['tri']) for r in v]); d = np.array([float(r['delta']) for r in v])
             ax.errorbar(tri, d.mean(), yerr=d.std(ddof=1) / np.sqrt(len(d)), fmt=mk, color=cc, mfc='none',
                         capsize=1.5, label=lbl if n == names[0] else None)
-            if n == 'SR':
-                ax.annotate('SR', (tri, d.mean()), xytext=(-12, -9), textcoords='offset points', fontsize=6)
-            if n == 'SR_q0':
-                ax.annotate('$q=0$', (tri, d.mean()), xytext=(4, 2), textcoords='offset points', fontsize=6)
     ax.set_xlabel('triangle-closing fraction'); ax.set_ylabel('$\\Delta\\langle\\ln\\mu\\rangle$')
     ax.set_ylim(0, 4.2); ax.legend(fontsize=6, loc='upper right', handletextpad=0.2, bbox_to_anchor=(1.02, 1.02))
     for a, s in zip(axs, 'ab'):
