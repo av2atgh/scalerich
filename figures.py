@@ -17,10 +17,10 @@ RES = os.path.join(ROOT, 'lng', 'results')
 
 C1, C2, C3, C4 = '#2a78d6', '#eb6834', '#1baf7a', '#eda100'
 INK, MUTED = '#262625', '#8a8980'
-plt.rcParams.update({'font.size': 8, 'axes.linewidth': 0.6, 'xtick.major.width': 0.6,
+plt.rcParams.update({'font.size': 9, 'axes.linewidth': 0.6, 'xtick.major.width': 0.6,
                      'ytick.major.width': 0.6, 'axes.spines.top': False,
                      'axes.spines.right': False, 'legend.frameon': False,
-                     'legend.fontsize': 7, 'lines.linewidth': 1.2, 'lines.markersize': 3.5,
+                     'legend.fontsize': 8, 'lines.linewidth': 1.2, 'lines.markersize': 3.5,
                      'savefig.dpi': 300, 'font.family': 'serif', 'mathtext.fontset': 'cm'})
 W1, W2 = 3.4, 7.0   # PRE column / page width (in)
 
@@ -45,7 +45,7 @@ def fig1():
     ax.plot([0, 1, 1, 0, 0], [0, 0, 1, 1, 0], color=INK, lw=1.5)
     segs = [[(e[0], e[1]), (e[2], e[3])] for e in o['ends']]
     ax.add_collection(LineCollection(segs, linewidths=lam / lam[0] * 3.2 + 0.3, colors=INK, capstyle='butt'))
-    ax.set_title('material', fontsize=8)
+    ax.set_title('material', fontsize=9)
     ax = axs[1]
     E = edges_from_hits(o['hit']); A = gs.adjacency(E, T); k = gs.degrees(A)
     ax.add_collection(LineCollection(segs, linewidths=0.5, colors='#c9c8c0'))
@@ -53,7 +53,7 @@ def fig1():
     m = o['mid']
     ax.add_collection(LineCollection([[m[i], m[j]] for i, j in E], linewidths=0.7, colors=C1))
     ax.scatter(m[:, 0], m[:, 1], s=6 + 5 * k, color=C1, edgecolor='white', linewidth=0.6, zorder=3)
-    ax.set_title('dual graph', fontsize=8)
+    ax.set_title('dual graph', fontsize=9)
     for a in axs[:2]:
         a.set_aspect('equal'); a.set_xlim(-0.02, 1.02); a.set_ylim(-0.02, 1.02); a.axis('off')
     for a, s in zip(axs, 'abc'):
@@ -66,7 +66,7 @@ def fig1():
         ax.plot(sq[:, 0], sq[:, 1], color=INK, lw=1.4)
         (ax_, ay), (bx, by) = chord
         ax.plot([x0 + ax_, x0 + bx], [ay, by], color=C2, lw=1.8)
-        ax.text(x0 + 0.5, -0.12, name, ha='center', va='top', fontsize=7)
+        ax.text(x0 + 0.5, -0.12, name, ha='center', va='top', fontsize=8)
         # dual nodes: side midpoints + chord midpoint
         sides = {'b': (x0 + .5, .0), 'r': (x0 + 1.0, .5), 't': (x0 + .5, 1.0), 'l': (x0 + .0, .5)}
         cyc = ['b', 'r', 't', 'l']
@@ -170,7 +170,7 @@ def fig3():
     nb = np.array([(np.exp(np.mean(np.log(kb[j:j + 2]))), kn[(k >= kb[j]) & (k < kb[j + 1])].mean())
                    for j in range(len(kb) - 1) if ((k >= kb[j]) & (k < kb[j + 1])).sum() > 5])
     ax.semilogx(nb[:, 0], nb[:, 1], 'o-', color=C1, mfc='none', lw=0.8)
-    ax.axhline(np.log(T), color=INK, lw=1, ls='--'); ax.text(2.2, np.log(T) - 0.9, '$\\ln T$', fontsize=7)
+    ax.axhline(np.log(T), color=INK, lw=1, ls='--'); ax.text(2.2, np.log(T) - 0.9, '$\\ln T$', fontsize=8)
     ax.set_xlabel('$k$'); ax.set_ylabel('$k_{nn}(k)$')
     for a, s in zip(axs.ravel(), 'abcd'):
         lab(a, f'({s})')
@@ -201,11 +201,11 @@ def fig4():
     col = [C2 if ('polar' in r[0] or '3D' in r[0]) else C1 for r in rows]
     ax.errorbar([r[1] for r in rows], y, xerr=[r[2] for r in rows], fmt='none', ecolor=MUTED, lw=0.8)
     ax.scatter([r[1] for r in rows], y, color=col, s=18, zorder=3)
-    ax.set_yticks(y); ax.set_yticklabels([r[0] for r in rows], fontsize=7)
+    ax.set_yticks(y); ax.set_yticklabels([r[0] for r in rows], fontsize=8)
     ax.axvline(3, color=INK, lw=0.8, ls='--'); ax.axvline(2.5, color=MUTED, lw=0.8, ls=':')
     for yy, r in zip(y, rows):
-        ax.text(3.14, yy, f'{r[3]:.2f}', va='center', fontsize=6.5, color=INK)
-    ax.text(3.14, len(rows) - 0.2, '$C$', fontsize=7)
+        ax.text(3.14, yy, f'{r[3]:.2f}', va='center', fontsize=7.5, color=INK)
+    ax.text(3.14, len(rows) - 0.2, '$C$', fontsize=8)
     ax.set_xlim(2.3, 3.26); ax.set_xlabel('$\\gamma_{\\rm MLE}$ ($k\\geq10$)')
     ax = axs[1]
     for field, cc, mk in (('circ', C2, 'o'), ('wave', C3, 's')):
@@ -217,7 +217,7 @@ def fig4():
         ax.errorbar(pf, gv, yerr=ge, fmt=mk + '-', color=cc, capsize=1.5,
                     label={'circ': 'circular field', 'wave': 'wave field'}[field])
     ax.axhline(3, color=INK, lw=0.8, ls='--')
-    ax.set_xlabel('fraction of ligaments following the field'); ax.set_ylabel('$\\gamma_{\\rm MLE}$')
+    ax.set_xlabel('fraction following the field'); ax.set_ylabel('$\\gamma_{\\rm MLE}$')
     ax.legend(loc='lower left')
     for a, s in zip(axs, 'ab'):
         lab(a, f'({s})')
@@ -237,7 +237,7 @@ def fig5():
         v = [np.array([float(r['meand']) for r in src if r['model'] == model and int(r['T']) == t]) for t in Ts]
         ax.errorbar(Ts, [x.mean() for x in v], yerr=[x.std(ddof=1) / np.sqrt(len(x)) for x in v],
                     fmt=mk + '-', color=cc, mfc='none', ms=4, label=lbl, capsize=1.5, lw=1)
-    ax.set_xscale('log'); ax.set_xlabel('$T$'); ax.set_ylabel('$\\langle d\\rangle$'); ax.set_ylim(4, 15); ax.legend(fontsize=6, loc='upper left', ncol=2, columnspacing=0.8, handletextpad=0.3, handlelength=1.5)
+    ax.set_xscale('log'); ax.set_xlabel('$T$'); ax.set_ylabel('$\\langle d\\rangle$'); ax.set_ylim(4, 15); ax.set_yticks(range(4, 16, 2)); ax.legend(fontsize=7.5, loc='upper left', ncol=2, columnspacing=0.8, handletextpad=0.3, handlelength=1.5)
     ax = axs[1]
     c = list(csv.DictReader(open(os.path.join(RES, 'paths2_control.csv'))))
     for fam, cc, mk, lbl in (('SR', C1, 'o', 'SR'), ('surr', C2, 's', 'surr.')):
@@ -247,8 +247,8 @@ def fig5():
             tri = np.mean([float(r['tri']) for r in v]); d = np.array([float(r['delta']) for r in v])
             ax.errorbar(tri, d.mean(), yerr=d.std(ddof=1) / np.sqrt(len(d)), fmt=mk, color=cc, mfc='none',
                         capsize=1.5, label=lbl if n == names[0] else None)
-    ax.set_xlabel('triangle-closing fraction'); ax.set_ylabel('$\\Delta\\langle\\ln\\mu\\rangle$')
-    ax.set_ylim(0, 3.2); ax.legend(fontsize=6, loc='upper right', handletextpad=0.2, bbox_to_anchor=(1.02, 1.02))
+    ax.set_xlabel('triangle fraction'); ax.set_ylabel('$\\Delta\\langle\\ln\\mu\\rangle$')
+    ax.set_ylim(0, 3.2); ax.legend(fontsize=7.5, loc='upper right', handletextpad=0.2, bbox_to_anchor=(1.02, 1.02))
     for a, s in zip(axs, 'ab'):
         lab(a, f'({s})')
     fig.tight_layout(pad=0.3); fig.savefig(os.path.join(FIG, 'fig5.pdf'), bbox_inches='tight', pad_inches=0.02); plt.close(fig)
