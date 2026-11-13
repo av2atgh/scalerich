@@ -6,7 +6,7 @@
 %Control: page (0) single
 %Control: year (1) truncated
 %Control: production of eprint (0) enabled
-\begin{thebibliography}{25}%
+\begin{thebibliography}{26}%
 \makeatletter
 \providecommand \@ifxundefined [1]{%
  \@ifx{#1\undefined}
@@ -169,13 +169,18 @@
   \bibfield  {author} {\bibinfo {author} {\bibfnamefont {C.}~\bibnamefont
   {Redenbach}}\ and\ \bibinfo {author} {\bibfnamefont {C.}~\bibnamefont
   {Jung}},\ }\bibfield  {title} {\bibinfo {title} {Random tessellations: an
-  overview of models},\ }in\ \href@noop {} {\emph {\bibinfo {booktitle}
-  {Stochastic Geometry: Percolation, Tessellations, Gaussian Fields and Point
+  overview of models},\ }in\ \href
+  {https://doi.org/10.1007/978-3-031-87264-8_2} {\emph {\bibinfo {booktitle}
+  {Stochastic Geometry: Percolation, Tesselations, Gaussian Fields and Point
   Processes}}},\ \bibinfo {series and number} {Lecture Notes in Mathematics},\
   \bibinfo {editor} {edited by\ \bibinfo {editor} {\bibfnamefont
   {H.}~\bibnamefont {Bierm{\'e}}}}\ (\bibinfo  {publisher} {Springer Nature
-  Switzerland},\ \bibinfo {address} {Cham},\ \bibinfo {year} {2025})\ \Eprint
-  {https://arxiv.org/abs/2501.05166} {2501.05166} \BibitemShut {NoStop}%
+  Switzerland},\ \bibinfo {address} {Cham},\ \bibinfo {year}
+  {2025})\BibitemShut {NoStop}%
+\bibitem [{red()}]{redenbach2025arxiv}%
+  \BibitemOpen
+  \href {https://arxiv.org/abs/2501.05166} {}\Eprint
+  {https://arxiv.org/abs/2501.05166} {arXiv:2501.05166} \BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Bohn}\ \emph
   {et~al.}(2005{\natexlab{a}})\citenamefont {Bohn}, \citenamefont {Pauchard},\
   and\ \citenamefont {Couder}}]{bohn2005}%
