@@ -113,7 +113,7 @@ def fig2():
     ax = axs[2]
     xl = d['x'][d['late']]
     ax.hist(xl, bins=40, range=(0, 10), density=True, color=C1, edgecolor='white', linewidth=0.5,
-            label='$\\ln(t/h)$, $t>2000$')
+            label='SR ligaments')
     xx = np.linspace(0, 10, 100); ax.plot(xx, 0.5 * np.exp(-xx / 2), color=INK, lw=1, label='$\\frac{1}{2}\\exp(-x/2)$')
     ax.set_xlabel('$\\ln(t/h)$, $h$ = host birth index'); ax.set_ylabel('density'); ax.legend()
     for a, s in zip(axs, 'abc'):
