@@ -231,16 +231,16 @@ def fig5():
     old = list(csv.DictReader(open(os.path.join(RES, 'paths_scaling.csv'))))
     fig, axs = plt.subplots(1, 2, figsize=(W1 * 1.02, 2.1))
     ax = axs[0]
-    for model, cc, mk, lbl, src in (('SR', C1, 'o', 'SR', rows), ('SR*', C4, 'v', 'SR rewired', rows),
-                                    ('DM', C3, '^', 'DM', rows), ('U-padj', C2, 's', 'surrogate', old)):
+    for model, cc, mk, lbl, src in (('SR', C1, 'o', 'SR', rows), ('SR*', C4, 'v', 'SR$^*$', rows),
+                                    ('DM', C3, '^', 'DM', rows), ('U-padj', C2, 's', 'surr.', old)):
         Ts = sorted({int(r['T']) for r in src if r['model'] == model and int(r['T']) <= 100000})
         v = [np.array([float(r['meand']) for r in src if r['model'] == model and int(r['T']) == t]) for t in Ts]
         ax.errorbar(Ts, [x.mean() for x in v], yerr=[x.std(ddof=1) / np.sqrt(len(x)) for x in v],
                     fmt=mk + '-', color=cc, mfc='none', ms=4, label=lbl, capsize=1.5, lw=1)
-    ax.set_xscale('log'); ax.set_xlabel('$T$'); ax.set_ylabel('$\\langle d\\rangle$'); ax.set_ylim(4, 15.5); ax.legend(fontsize=6, loc='upper left')
+    ax.set_xscale('log'); ax.set_xlabel('$T$'); ax.set_ylabel('$\\langle d\\rangle$'); ax.set_ylim(4, 15); ax.legend(fontsize=6, loc='upper left', ncol=2, columnspacing=0.8, handletextpad=0.3, handlelength=1.5)
     ax = axs[1]
     c = list(csv.DictReader(open(os.path.join(RES, 'paths2_control.csv'))))
-    for fam, cc, mk, lbl in (('SR', C1, 'o', 'SR'), ('surr', C2, 's', 'surrogate')):
+    for fam, cc, mk, lbl in (('SR', C1, 'o', 'SR'), ('surr', C2, 's', 'surr.')):
         names = [n for n in dict.fromkeys(r['variant'] for r in c) if n.startswith(fam)]
         for n in names:
             v = [r for r in c if r['variant'] == n]
@@ -248,7 +248,7 @@ def fig5():
             ax.errorbar(tri, d.mean(), yerr=d.std(ddof=1) / np.sqrt(len(d)), fmt=mk, color=cc, mfc='none',
                         capsize=1.5, label=lbl if n == names[0] else None)
     ax.set_xlabel('triangle-closing fraction'); ax.set_ylabel('$\\Delta\\langle\\ln\\mu\\rangle$')
-    ax.set_ylim(0, 4.2); ax.legend(fontsize=6, loc='upper right', handletextpad=0.2, bbox_to_anchor=(1.02, 1.02))
+    ax.set_ylim(0, 3.2); ax.legend(fontsize=6, loc='upper right', handletextpad=0.2, bbox_to_anchor=(1.02, 1.02))
     for a, s in zip(axs, 'ab'):
         lab(a, f'({s})')
     fig.tight_layout(pad=0.3); fig.savefig(os.path.join(FIG, 'fig5.pdf'), bbox_inches='tight', pad_inches=0.02); plt.close(fig)
