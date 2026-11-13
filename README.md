@@ -41,6 +41,16 @@ Secs. IV–VI and conclusions now lead with the local class, clustering as its e
 and preferential attachment as the mean-field outcome of local sampling. Results are
 unchanged. The submitted v1 is commit edc3328.
 
+## Revision v3 (2026-11-13): rate equation with a deduced kernel
+Sec. III follows the rate equation approach (Krapivsky, Redner & Leyvraz, PRL 85, 4629
+(2000)), intuition first: a ligament of degree k borders k typical cells, so the
+attachment rate is (a+bk)/t with b = 2/<n> = 1/2 and, from the sum rule
+a = <o>(1-2b), a = 0; p_k = 12/[k(k+1)(k+2)] with no free parameter. In d dimensions
+b = (d-1)/d, a = -(d-2)<o>/d (3D: b = 2/3, a = -<o>/3, gamma = 5/2). The kernel measured
+from the growth history (`lng/exp_kernel.py`, results in `lng/results/kernel.txt`) is
+-0.006 + 0.502 k (2D) and -1.477 + 0.660 k (3D); the rate-equation p_k is within 4%
+(2D) and 5% (3D) up to K = 256 (Fig. 3a,b). Table I removed; 10 pp.
+
 ### Notes behind v2
 1. **"Non-local closures" is a misnomer (raised 2026-11-12).** Every SR step is
    face-local: the new node joins two sides of the chosen face. The 0.048 of

@@ -67,8 +67,9 @@ rules, in which a new node attaches to an existing node and to some of its
 neighbours, produce a hierarchical clustering spectrum $C(k)\sim1/k$ and degree
 correlations~\cite{vazquez2003,holme2002,dorogovtsev2001,ravasz2003}. They also
 produce preferential attachment as an effective result: a link followed at random
-reaches a node with probability proportional to its degree, and a rate equation with
-a kernel deduced from the rule gives the degree distribution~\cite{krapivsky2000}. The geometric construction is itself not new: with
+reaches a node with probability proportional to its degree, and the rate equation
+approach~\cite{krapivsky2000}, with a kernel deduced from the rule, gives the degree
+distribution~\cite{vazquez2003}. The geometric construction is itself not new: with
 zero thickness it is Cowan's iterated cell division~\cite{cowan2010}, a member of the
 family of random tessellations that also contains the STIT
 model~\cite{nagel2005,redenbach2025} and related to hierarchical crack patterns formed
@@ -76,7 +77,7 @@ by successive domain divisions~\cite{bohn2005,bohn2005b}. We show that the SR du
 belongs to the local class: each new node joins two nodes on the boundary of one face,
 and this step produces both the clustering and the degree law. The attachment kernel
 follows from the face-local sampling, $b=2/\langle n\rangle=1/2$, and the rate equation
-of Ref.~\cite{krapivsky2000} then gives the degree distribution exactly in mean field. The
+approach~\cite{krapivsky2000} then gives the degree distribution exactly in mean field. The
 spatial preferential attachment of Ref.~\cite{both2026} is this mean-field outcome, not
 its explanation. Inside the face the geometry samples by length, assigned at birth by
 the cell hierarchy, so the effective preferential attachment carries no reinforcement,
@@ -165,8 +166,8 @@ simulations give a depth slope $1.983$, a variance slope $1.980$ and $\sum A^2=9
 at $T=2\times10^4$ against $9.999\times10^{-5}$ [Fig.~\ref{fig:bst}(a,b)]. The
 multiscaling of Krapivsky and Ben-Naim~\cite{krapivsky1994} arises with rectangular
 cuts and lives in the lengths, not in the areas. Axis-aligned chords reproduce their
-width exponents $\gamma(a)=(a-\sqrt{a^2+4})/2$ within $2\%$, while with isotropic
-angles the perimeter moments scale as $t^{1-a/2}$, without multiscaling.
+width exponents $\xi(s)=(s-\sqrt{s^2+4})/2$ within $2\%$, while with isotropic
+angles the perimeter moments of order $s$ scale as $t^{1-s/2}$, without multiscaling.
 
 \paragraph*{Lengths and the age of the host.}
 Cells at time $t$ have linear size $t^{-1/2}$, and the mean length of the ligament
@@ -214,7 +215,8 @@ $\lambda_0^*=0.232$, $0.363$, $0.643$ and $0.958$. Near $\alpha=1/2$ the free-ar
 converges slowly, its remainder beyond $T$ scaling as $T^{1/2-\alpha}$, and the threshold
 drifts: at $\alpha=0.6$ it falls to $0.214$ at $T=10^5$, while at $\alpha=0.75$ it is
 stable ($0.359$). The formula of Ref.~\cite{both2026} gives $0.189$, $0.405$, $0.643$ and
-$0.879$. The depletion recursion is within $11\%$ at $\alpha=0.75$ but overestimates the
+$0.879$. The depletion recursion lies below the drifting threshold at $\alpha=0.6$, is within
+$11\%$ at $\alpha=0.75$, and overestimates the
 threshold by $16$--$31\%$ at $\alpha\ge1$, where jamming is decided by the first few
 thick ligaments. The overlap-free estimate is too low by a factor of about $1.7$. Thickness removes area
 and stops growth in the jammed phase, but it does not change the rule by which cells
@@ -322,10 +324,10 @@ and $\gamma=3$.
 \paragraph*{Test against the growth history.}
 We measured the kernel directly. With $H_k$ the number of hits on nodes of degree $k$
 during $t\in[T/10,T]$ and $n_k(t)$ tracked exactly at every step,
-$\kappa(k)=H_k/\sum_tn_k(t)/t$ estimates $t\,r_k=a+bk$. At $T=10^6$ (three
-realisations) $\kappa(k)/k=0.494$, $0.507$, $0.509$, $0.505$ and $0.502$ at $k=2$, $3$,
-$4$, $6$ and $8$, and $0.492$--$0.510$ for $12\le k\le128$, with statistical errors
-from $0.0004$ to $0.016$. A linear fit for $k\le200$ gives
+$\kappa(k)=H_k/\sum_tn_k(t)/t$ estimates $t\,r_k=a+bk$, where $r_k$ is the rate at
+which a node of degree $k$ is hit. At $T=10^6$ (three
+realisations) $\kappa(k)/k=0.49$--$0.51$ for $2\le k\le128$, with statistical errors
+$0.0004$--$0.016$. A linear fit for $k\le200$ gives
 $\kappa=-0.006+0.502\,k$ (intercepts $-0.002$ to $-0.008$ over realisations) [Fig.~\ref{fig:degree}(a)].
 The stationary solution of Eq.~\eqref{eq:rec} with the deduced constants, and no free
 parameter, matches the simulated distribution: the ratio of simulated to predicted
@@ -334,8 +336,8 @@ $32$, $64$, $128$ and $256$ [Fig.~\ref{fig:degree}(b)]. The cohort born at $i$ h
 degree $\propto i^{-\beta}$ with $\beta=0.50$--$0.51$, as $k_i\propto t^b$ requires.
 
 \paragraph*{Beyond mean field: which ligament is hit.}
-The rate equation fixes the population. Count (ii) says more about the individual: a
-given ligament is hit at a rate set by its birth length, $2x_i/\sqrt{it}$, and not by the
+The rate equation fixes the population. Count (ii) also describes the individual
+ligament: it is hit at a rate set by its birth length, $x_i/\sqrt{it}$, and not by the
 links it has accumulated. Being hit splits a side but adds no length. Equation~\eqref{eq:kl}
 predicts the degree of each ligament with mean ratio $1.006$ and correlation $0.95$, and
 the deviations behave as independent rare events. (1) In bins of the predicted mean
@@ -626,7 +628,7 @@ ligaments following the field increases [Fig.~\ref{fig:gamma}(b)].
 With plates, the SR construction is the iterated division of convex polyhedra. A cell
 is selected with probability equal to its volume, and it is cut by the plane through a
 uniform point with an isotropic normal. The argument of Sec.~\ref{sec:model} carries over
-unchanged: for a fixed normal, the offset of the plane has density $A(s)/V_K$, with $A(s)$
+unchanged: for a fixed normal, the offset of the plane has density $w(s)/V_K$, with $w(s)$
 the section area, so the volume fraction of a daughter is uniform. The cell hierarchy is
 again a binary search tree, with exponential volumes and split depth $2\ln t$. We measure
 a daughter-fraction variance of $0.0833$ ($1/12$) and a depth slope of $2.01$. A plane that
@@ -635,29 +637,30 @@ two daughters. Hence the mean numbers of faces, vertices and edges per cell are
 $2+\bar m$, $2\bar m$ and $3\bar m$, the counterpart of $\langle n\rangle=4$ (measured
 $6.585$, $9.170$, $13.755$). Unlike in two dimensions, the number $m$ of plates met by a new
 plate is not fixed by topology. Its mean converges to $\bar m=4.577$ for plates away from
-the walls. Plate areas decay as $a_t\simeq c_at^{-2/3}$ with $c_a=1.23$, so the total area
-grows as $3c_at^{1/3}$ and the area distribution is $P(a)\sim a^{-5/2}$ (maximum-likelihood
-exponent $2.49$--$2.51$). The first plate has $\langle a_1\rangle=0.941$.
+the walls. Plate areas decay as $S_t\simeq c_St^{-2/3}$ with $c_S=1.23$, so the total area
+grows as $3c_St^{1/3}$ and the area distribution is $P(S)\sim S^{-5/2}$ (maximum-likelihood
+exponent $2.49$--$2.51$). The first plate has $\langle S_1\rangle=0.941$. Including plates
+that meet the walls, the mean number of links made at birth is $\langle o\rangle=4.538$.
 
 A plate is again reached through the cells it borders, and the two counts of the
 attachment rate in Sec.~\ref{sec:degree} now give different shapes.
 
-(i) \emph{By incidences.} A new plate creates $2+\bar m$ incidences and hands out $\bar m$
-links. If every incidence were equally likely to be hit, $b=\bar m/(2+\bar m)$ and
-$\gamma=2+2/\bar m=2.44$.
+(i) \emph{By incidences.} A new plate creates $2+\langle o\rangle$ incidences and hands out
+$\langle o\rangle$ links. If every incidence were equally likely to be hit,
+$b=\langle o\rangle/(2+\langle o\rangle)=0.694$ and $\gamma=2+2/\langle o\rangle=2.44$.
 
 (ii) \emph{By area.} A plate is hit at a rate proportional to its area, which is fixed at
-birth, $a_i=c_ax_ii^{-2/3}$. With a rate per unit area $\bar m/2A(t)$ on each side and
-$A(t)=3c_at^{1/3}$,
+birth, $S_i=c_Sx_ii^{-2/3}$. With a rate per unit area $\langle o\rangle/2A(t)$ on each side
+and $A(t)=3c_St^{1/3}$,
 \begin{equation}
-  k_i=o_i+\frac{\bar m}{2}\,x_i\Big[\Big(\frac{t}{i}\Big)^{2/3}-1\Big].
+  k_i=o_i+\frac{\langle o\rangle}{2}\,x_i\Big[\Big(\frac{t}{i}\Big)^{2/3}-1\Big].
   \label{eq:k3d}
 \end{equation}
-Differentiating gives $dk_i/dt=\tfrac23(k_i-o_i+\bar m x_i/2)/t$, which is
-$\tfrac23(k_i-\bar m/2)/t$ in mean field ($o_i\to\bar m$, $x_i\to1$). Under (ii) a hit
+Differentiating gives $dk_i/dt=\tfrac23(k_i-o_i+\langle o\rangle x_i/2)/t$, which is
+$\tfrac23(k_i-\langle o\rangle/2)/t$ in mean field ($o_i\to\langle o\rangle$, $x_i\to1$). Under (ii) a hit
 splits a face but adds no area, whereas under (i) every hit adds a face that is as
 likely to be hit as any other. The rate is still linear in $k$, now with a slope below
-the incidence value and a negative constant, $b=2/3$ and $a=-\bar m/3$, in agreement with the sum
+the incidence value and a negative constant, $b=2/3$ and $a=-\langle o\rangle/3$, in agreement with the sum
 rule~\eqref{eq:sumrule}. With this attachment rate the rate equation~\eqref{eq:rate}
 applies unchanged, with the plates met at birth as birth degrees $o$, and gives
 $\gamma=5/2$. In $d$ dimensions the same count gives
@@ -668,22 +671,22 @@ $\gamma=5/2$. In $d$ dimensions the same count gives
 \end{equation}
 the exponent of random Apollonian networks in $d$ dimensions~\cite{kolossvary2016}.
 Here $b$ is exact within mean field, because cell volumes scale exactly as $1/t$; the
-constant $a$ carries the one number we cannot deduce, the mean $\bar m$. The two counts
+constant $a$ carries the one number we cannot deduce, the mean $\langle o\rangle$, which
+equals $\bar m$ away from the walls. The two counts
 agree in two dimensions only because $m/(2+m)=(d-1)/d$ when $m=2$.
 
 The measured kernel selects count (ii). With the same estimator as in two dimensions
 (three realisations, $T=2\times10^6$), $\kappa(k)/k$ rises from $0.33$ at $k=4$ to
 $0.646$, $0.654$, $0.659$ and $0.657$ at $k=48$, $64$, $96$ and $128$, and a linear fit for
-$k\le200$ gives $\kappa=-1.477+0.660\,k$. The deduced kernel, with $\langle o\rangle=4.538$
-including plates that meet the walls, is $-1.513+0.667\,k$ [Fig.~\ref{fig:degree}(a)].
+$k\le200$ gives $\kappa=-1.477+0.660\,k$. The deduced kernel, with $\langle o\rangle=4.538$,
+is $-1.513+0.667\,k$ [Fig.~\ref{fig:degree}(a)].
 The stationary solution of Eq.~\eqref{eq:rec} with these constants and the measured
 law of birth degrees matches the simulated distribution, with ratios $0.994$, $0.972$,
 $0.984$, $1.001$, $1.022$ and $1.050$ at $K=8$, $16$, $32$, $64$, $128$ and $256$
 [Fig.~\ref{fig:degree}(b)]. Count (i) fails because the faces of a plate are not
 typical. An old plate is tiled by faces of linear size $t^{-1/3}$, so its number of
-faces grows as $t^{2/3}$, more slowly than the $t^{0.694}$ that uniform hitting per
-incidence requires. The faces of a fixed old plate grow as $t^{0.663\text{--}0.668}$
-(three realisations, three birth cohorts in $[10,10^4)$). A surrogate that hits
+faces grows as $t^{2/3}$, more slowly than the $t^{\langle o\rangle/(2+\langle o\rangle)}=t^{0.694}$
+that uniform hitting per incidence requires. The faces of a fixed old plate grow as $t^{0.663\text{--}0.668}$. A surrogate that hits
 incidences uniformly with the same birth degrees gives $0.688$--$0.690$, and one that
 hits by area gives $0.658$--$0.661$. Per unit area the rate is nearly uniform: in units
 of the mean it is $1.04$ for old plates and $0.93$--$0.95$ for young ones, a few-per-cent
@@ -696,18 +699,16 @@ $(i,2i]$ barely predict hits in $(2i,T]$ at fixed area (log--log slope
 $0.025$--$0.030$, against $0.55$ in the incidence surrogate). The dispersion around
 each plate's own prediction is $1.5$--$4$ times Poisson, against $100$--$380$ times in
 the incidence surrogate. The maximum-likelihood exponent of all plates is
-$2.48$--$2.51$ for $k_{\min}=80$--$640$, with standard errors per realisation of $0.014$,
-$0.023$, $0.038$ and $0.064$; the area and incidence surrogates, whose asymptotes are
-$2.5$ and $2.44$, read $2.48$--$2.53$ and $2.40$--$2.46$ at the same cuts. Restricting
-the fit to plates away from the walls biases it upward, to $2.67$--$3.18$: the oldest,
-largest plates touch the walls (only $18\%$ of plates born before $i=100$ are interior),
-and they are hit by area like the others. Three-dimensional SR materials therefore have
+$2.48$--$2.51$ for $k_{\min}=80$--$640$ (standard errors $0.014$--$0.064$); the area and incidence surrogates, whose asymptotes are
+$2.5$ and $2.44$, read $2.48$--$2.53$ and $2.40$--$2.46$ at the same cuts. Fits restricted
+to plates away from the walls are biased upward ($2.67$--$3.18$), because the oldest,
+largest plates touch the walls. Three-dimensional SR materials therefore have
 $\gamma=5/2$. The host of a
 new plate satisfies $h/t\to U^3$ (measured $P(h/t\le0.01)=0.217$, against $0.215$), so the
 thickness ratio to the host is $U^{3\alpha}$.
 
-A plate nucleated in free volume $F$ has area $a_t=c(t)(F/t)^{2/3}$, with
-$c(t)\to c_a=1.23$ measured in zero-thickness runs, so the free volume obeys
+A plate nucleated in free volume $F$ has area $S_t=c(t)(F/t)^{2/3}$, with
+$c(t)\to c_S=1.23$ measured in zero-thickness runs, so the free volume obeys
 \begin{equation}
   \begin{aligned}
   \frac{dF}{dt}&=-\lambda_0c(t)F^{2/3}t^{-\alpha-2/3},\\
@@ -718,9 +719,9 @@ $c(t)\to c_a=1.23$ measured in zero-thickness runs, so the free volume obeys
 It matches the simulated free volume to within $0.4\%$ in the tunable phase. The sum
 converges only for $\alpha>1/3$, which places the jamming boundary at $\alpha=1/3$ in three
 dimensions, and for $\alpha>1/3$ Eq.~\eqref{eq:F3d} predicts a second branch,
-$\lambda_0^*\simeq3/[c_a\zeta(\alpha+2/3)]$, the analogue of the $\lambda_0$ branch in two
+$\lambda_0^*\simeq3/[c_S\zeta(\alpha+2/3)]$, the analogue of the $\lambda_0$ branch in two
 dimensions; we have not located it in simulations. For small $\lambda_0$ in the tunable
-phase, $\rho\simeq\lambda_0c_a\zeta(\alpha+2/3)$.
+phase, $\rho\simeq\lambda_0c_S\zeta(\alpha+2/3)$.
 
 Clustering is high because a new plate's section polygon is a cycle of plates already in
 contact. Each newcomer closes $4.39$ triangles along its polygon and $2.52$ more through
@@ -745,9 +746,9 @@ and its degree and length both scale as $i^{-1/2}$ on average
 [Eq.~\eqref{eq:kl}]. The marginal laws reported in
 Ref.~\cite{both2026}, an energy that decays as $i^{-(3/4+\alpha/2)}$ with the
 introduction time and the corresponding powers of $k$, $\ell$ and $\lambda$, are one
-age law written in different variables. A product $U\sim k^a\lambda^b$ reproduces the
-age law for every $\alpha$ only if $a/2+\alpha b=3/4+\alpha/2$, that is $a=3/2$ and
-$b=1/2$, the reported exponents. Because $k\propto\ell$ at fixed age
+age law written in different variables. A product $U\sim k^u\lambda^v$ reproduces the
+age law for every $\alpha$ only if $u/2+\alpha v=3/4+\alpha/2$, that is $u=3/2$ and
+$v=1/2$, the reported exponents. Because $k\propto\ell$ at fixed age
 [Eq.~\eqref{eq:kl}], the same data are described equally well by
 $U\sim\ell^{3/2}\lambda^{1/2}f(\theta)$. Degree, length and age cannot be separated
 from cohort scaling alone.
@@ -775,7 +776,7 @@ is Cowan's recursive division of cells~\cite{cowan2010}; as a graph each new nod
 two nodes on the boundary of one face. This single face-local step produces the
 hierarchical clustering spectrum through corner cuts, the excess of shortest paths
 through square-closing splits, and the degree law. The degree law follows from the
-rate equation~\cite{krapivsky2000} with a kernel deduced from the rule:
+rate equation approach~\cite{krapivsky2000} with a kernel deduced from the rule:
 a ligament of degree $k$ borders $k$ cells, so $b=2/\langle n\rangle=1/2$, the sum rule
 gives $a=0$, and $p_k=12/[k(k+1)(k+2)]$ follows with no free parameter. The measured
 kernel is $\kappa=0.50\,k$ and the predicted distribution is within $4\%$ of the
@@ -789,16 +790,17 @@ $\gamma=3$ (and $5/2$ for plates in three dimensions) and the equality $\langle 
 are fixed, and in mean field so are
 the host-age law $h/t\to U^2$ and the stationarity of the thickness ratio. Clustering
 is designable through the angle set and the selection weight. The degree exponent is
-designable only through rules that make the hit rate grow faster than length.
+designable only through $b$: rules that make the hit rate grow faster than length, or a
+change of dimension.
 
 Several points remain open. The rate $2/L(t)$ per unit length is a mean-field rate:
-old ligaments receive about $2\%$ more hits than it predicts, in two and in three
-dimensions, which sets the tail amplitude; we have no theory of this correction. The per-hit triangle probability, which rises from $0.41$ to $0.57$ with the
+old ligaments receive a few per cent more hits than it predicts ($2\%$ in two
+dimensions, $4\%$ in three), which sets the tail amplitude; we have no theory of this correction. The per-hit triangle probability, which rises from $0.41$ to $0.57$ with the
 degree, and the fraction $0.048$ of closures through a link off the face require the joint law of cell shapes
 next to long ligaments. Under coherent orientation fields we observe
 $\gamma\simeq2.4$--$2.5$ up to $T=10^6$; deducing $b$ from the length scalings gives the
 direction of the change but not its value. In three dimensions the mean number of plates met by a new plate,
-$\bar m=4.577$, has no closed form, and it enters the kernel through $a=-\bar m/3$. Beams need a capture rule. If a rod of radius $R_t=\lambda_t/2$ stops at first
+$\bar m=4.577$, has no closed form, and it enters the kernel through $a=-\langle o\rangle/3$. Beams need a capture rule. If a rod of radius $R_t=\lambda_t/2$ stops at first
 contact, its mean free path is $\ell_t\sim1/\sum_j\ell_jR_j$; self-consistency gives
 $\ell_t\sim t^{-(1-\alpha)/2}$, hits $\propto\ell_iR_i\propto i^{-(1+\alpha)/2}$ and, as a
 conjecture, $\gamma=(3+\alpha)/(1+\alpha)$, so thickness would tune $\gamma$. Our
