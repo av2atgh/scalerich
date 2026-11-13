@@ -68,7 +68,7 @@ neighbours, produce a hierarchical clustering spectrum $C(k)\sim1/k$ and degree
 correlations~\cite{vazquez2003,holme2002,dorogovtsev2001,ravasz2003}. They also
 produce preferential attachment as an effective result: a link followed at random
 reaches a node with probability proportional to its degree, and a rate equation with
-a kernel deduced from the rule gives the degree distribution~\cite{vazquezbook}. The geometric construction is itself not new: with
+a kernel deduced from the rule gives the degree distribution~\cite{krapivsky2000}. The geometric construction is itself not new: with
 zero thickness it is Cowan's iterated cell division~\cite{cowan2010}, a member of the
 family of random tessellations that also contains the STIT
 model~\cite{nagel2005,redenbach2025} and related to hierarchical crack patterns formed
@@ -76,7 +76,7 @@ by successive domain divisions~\cite{bohn2005,bohn2005b}. We show that the SR du
 belongs to the local class: each new node joins two nodes on the boundary of one face,
 and this step produces both the clustering and the degree law. The attachment kernel
 follows from the face-local sampling, $b=2/\langle n\rangle=1/2$, and the rate equation
-of Ref.~\cite{vazquezbook} then gives the degree distribution exactly in mean field. The
+of Ref.~\cite{krapivsky2000} then gives the degree distribution exactly in mean field. The
 spatial preferential attachment of Ref.~\cite{both2026} is this mean-field outcome, not
 its explanation. Inside the face the geometry samples by length, assigned at birth by
 the cell hierarchy, so the effective preferential attachment carries no reinforcement,
@@ -253,7 +253,7 @@ cells. Each step creates two hits and four incidences, so the total number of
 incidences is $4t$, in agreement with $\langle n\rangle=4$. This identity is exact.
 
 \paragraph*{Rate equation.}
-Following Ref.~\cite{vazquezbook}, let $n_k(t)$ be the expected number of nodes of
+Following Ref.~\cite{krapivsky2000}, let $n_k(t)$ be the expected number of nodes of
 degree $k$ after $t$ steps, let a node of degree $k$ be hit at rate $(a+bk)/t$, and let
 the newcomer arrive with degree $o$ drawn from $q_o$. Then
 \begin{equation}
@@ -787,7 +787,7 @@ is Cowan's recursive division of cells~\cite{cowan2010}; as a graph each new nod
 two nodes on the boundary of one face. This single face-local step produces the
 hierarchical clustering spectrum through corner cuts, the excess of shortest paths
 through square-closing splits, and the degree law. The degree law follows from the
-rate equation of local growth~\cite{vazquezbook} with a kernel deduced from the rule:
+rate equation~\cite{krapivsky2000} with a kernel deduced from the rule:
 a ligament of degree $k$ borders $k$ cells, so $b=2/\langle n\rangle=1/2$, the sum rule
 gives $a=0$, and $p_k=12/[k(k+1)(k+2)]$ follows with no free parameter. The measured
 kernel is $\kappa=0.50\,k$ and the predicted distribution is within $4\%$ of the
