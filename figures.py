@@ -134,29 +134,27 @@ def sim_main():
 def fig3():
     d = cached('main', sim_main)
     T = d['k'].shape[1]
+    k2 = np.load(os.path.join(RES, 'kernel_2D.npz')); k3 = np.load(os.path.join(RES, 'kernel_3D.npz'))
     fig, axs = plt.subplots(2, 2, figsize=(W1 * 1.02, 4.2))
     k = d['k'].ravel()
+    # (a) attachment kernel measured from the growth history vs the deduced (a + b k)
     ax = axs[0, 0]
-    K = np.unique(np.logspace(np.log10(2), np.log10(k.max()), 40).astype(int))
-    P = np.array([(k >= x).mean() for x in K])
-    ax.loglog(K, P, 'o', color=C1, mfc='none', label='SR')
-    ax.loglog(K, 6 / (K * (K + 1.0)) * (K > 2) + (K == 2), color=INK, lw=1, label='Eq. (3)')
-    ax.set_xlabel('$k$'); ax.set_ylabel('$P(\\geq k)$'); ax.legend(loc='lower left')
+    for g, col, lab_, mk in ((k2, C1, '2D', 'o'), (k3, C2, '3D', 's')):
+        kap, H = g['kappa'], g['H']
+        kk = np.arange(len(kap)); m = (H >= 30) & (kk >= 2)
+        sel = np.unique(np.logspace(np.log10(2), np.log10(kk[m].max()), 26).astype(int))
+        sel = sel[m[sel]]
+        ax.semilogx(sel, kap[sel] / sel, mk, color=col, mfc='none', label=lab_)
+        b = float(g['b']); a = float(g['obar']) * (1 - 2 * b)
+        xx = np.logspace(np.log10(2 if lab_ == '2D' else 3), np.log10(kk[m].max()), 60)
+        ax.semilogx(xx, (a + b * xx) / xx, color=col, lw=1)
+    ax.set_ylim(0, 0.8); ax.set_xlabel('$k$'); ax.set_ylabel('$\\kappa(k)/k$'); ax.legend(loc='lower right')
+    # (b) degree distributions vs the stationary solution of the rate equation
     ax = axs[0, 1]
-    i = np.arange(T)
-    x = 4 * d['L'] / 2.33 * (np.sqrt(T) - np.sqrt(i + 1)); y = d['k'] - 2
-    m = (i > 30) & (i < 0.8 * T)
-    xs, ys = x[:, m].ravel(), y[:, m].ravel()
-    sub = np.random.default_rng(0).choice(len(xs), 6000, replace=False)
-    ok = ys[sub] >= 1
-    ax.loglog(xs[sub][ok], ys[sub][ok], '.', color='#9ec5f4', ms=1.5, alpha=0.6)
-    xb = np.logspace(0, np.log10(xs.max()), 16)
-    mb = np.array([(np.sqrt(xb[j] * xb[j + 1]), ys[(xs >= xb[j]) & (xs < xb[j + 1])].mean())
-                   for j in range(15) if ((xs >= xb[j]) & (xs < xb[j + 1])).sum() > 5])
-    ax.loglog(mb[:, 0], mb[:, 1], 'o', color=C1, mfc='none', label='mean')
-    zz = np.logspace(0, 3, 10); ax.loglog(zz, zz, color=INK, lw=1, label='slope 1'); ax.legend(loc='upper left')
-    ax.set_xlim(0.8, 1.2e3); ax.set_ylim(0.8, 1.2e3)
-    ax.set_xlabel('$4\\ell_i(\\sqrt{T}-\\sqrt{i})/c_L$'); ax.set_ylabel('$k_i-2$')
+    for g, col, lab_, mk in ((k2, C1, '2D', 'o'), (k3, C2, '3D', 's')):
+        ax.loglog(g['K'], g['Psim'], mk, color=col, mfc='none', label=lab_)
+        ax.loglog(g['K'], g['Pre'], color=col, lw=1)
+    ax.set_xlabel('$k$'); ax.set_ylabel('$P(\\geq k)$'); ax.legend(loc='lower left')
     ax = axs[1, 0]
     kb = np.unique(np.logspace(np.log10(2), np.log10(k.max()), 18).astype(int))
     C = d['C'].ravel(); kk = np.arange(2, k.max() + 1)
@@ -165,8 +163,8 @@ def fig3():
     cb = np.array(cb)
     ax.loglog(cb[:, 0], cb[:, 1], 'o', color=C1, mfc='none', label='SR')
     ax.loglog(kk, 2 * (0.494 + 0.53 * (kk - 2)) / (kk * (kk - 1.0)), color=INK, lw=1,
-              label='Eq. (7)')
-    ax.set_xlabel('$k$'); ax.set_ylabel('$C(k)$'); ax.legend(loc='lower left')
+              label='triadic closure')
+    ax.set_xlabel('$k$'); ax.set_ylabel('$C(k)$'); ax.legend(loc='upper right')
     ax = axs[1, 1]
     kn = d['knn'].ravel()
     nb = np.array([(np.exp(np.mean(np.log(kb[j:j + 2]))), kn[(k >= kb[j]) & (k < kb[j + 1])].mean())

@@ -6,7 +6,7 @@
 %Control: page (0) single
 %Control: year (1) truncated
 %Control: production of eprint (0) enabled
-\begin{thebibliography}{27}%
+\begin{thebibliography}{25}%
 \makeatletter
 \providecommand \@ifxundefined [1]{%
  \@ifx{#1\undefined}
@@ -132,6 +132,12 @@
   {https://doi.org/10.1103/PhysRevE.67.026112} {\bibfield  {journal} {\bibinfo
   {journal} {Physical Review E}\ }\textbf {\bibinfo {volume} {67}},\ \bibinfo
   {pages} {026112} (\bibinfo {year} {2003})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Vazquez}(2026{\natexlab{a}})}]{vazquezbook}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {A.}~\bibnamefont
+  {Vazquez}},\ }\href@noop {} {\emph {\bibinfo {title} {Local network growth:
+  How simple rules drive network complexity}}}\ (\bibinfo  {publisher}
+  {Independently published},\ \bibinfo {year} {2026})\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Cowan}(2010)}]{cowan2010}%
   \BibitemOpen
   \bibfield  {author} {\bibinfo {author} {\bibfnamefont {R.}~\bibnamefont
@@ -237,36 +243,6 @@
   {\bibfield  {journal} {\bibinfo  {journal} {Science}\ }\textbf {\bibinfo
   {volume} {286}},\ \bibinfo {pages} {509} (\bibinfo {year}
   {1999})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Krapivsky}\ and\ \citenamefont
-  {Redner}(2001)}]{krapivsky2001}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {P.~L.}\ \bibnamefont
-  {Krapivsky}}\ and\ \bibinfo {author} {\bibfnamefont {S.}~\bibnamefont
-  {Redner}},\ }\bibfield  {title} {\bibinfo {title} {Organization of growing
-  random networks},\ }\href {https://doi.org/10.1103/PhysRevE.63.066123}
-  {\bibfield  {journal} {\bibinfo  {journal} {Physical Review E}\ }\textbf
-  {\bibinfo {volume} {63}},\ \bibinfo {pages} {066123} (\bibinfo {year}
-  {2001})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Dorogovtsev}\ and\ \citenamefont
-  {Mendes}(2002)}]{dorogovtsev2002}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {S.~N.}\ \bibnamefont
-  {Dorogovtsev}}\ and\ \bibinfo {author} {\bibfnamefont {J.~F.~F.}\
-  \bibnamefont {Mendes}},\ }\bibfield  {title} {\bibinfo {title} {Evolution of
-  networks},\ }\href {https://doi.org/10.1080/00018730110112519} {\bibfield
-  {journal} {\bibinfo  {journal} {Advances in Physics}\ }\textbf {\bibinfo
-  {volume} {51}},\ \bibinfo {pages} {1079} (\bibinfo {year}
-  {2002})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Bianconi}\ and\ \citenamefont
-  {Barab{\'a}si}(2001)}]{bianconi2001}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {G.}~\bibnamefont
-  {Bianconi}}\ and\ \bibinfo {author} {\bibfnamefont {A.-L.}\ \bibnamefont
-  {Barab{\'a}si}},\ }\bibfield  {title} {\bibinfo {title} {Competition and
-  multiscaling in evolving networks},\ }\href
-  {https://doi.org/10.1209/epl/i2001-00260-6} {\bibfield  {journal} {\bibinfo
-  {journal} {Europhysics Letters}\ }\textbf {\bibinfo {volume} {54}},\ \bibinfo
-  {pages} {436} (\bibinfo {year} {2001})}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Santal{\'o}}(1976)}]{santalo1976}%
   \BibitemOpen
   \bibfield  {author} {\bibinfo {author} {\bibfnamefont {L.~A.}\ \bibnamefont
@@ -311,13 +287,13 @@
   {https://doi.org/10.1103/PhysRevE.71.046141} {\bibfield  {journal} {\bibinfo
   {journal} {Physical Review E}\ }\textbf {\bibinfo {volume} {71}},\ \bibinfo
   {pages} {046141} (\bibinfo {year} {2005})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Vazquez}(2026)}]{vazquezpaths2026}%
+\bibitem [{\citenamefont {Vazquez}(2026{\natexlab{b}})}]{vazquezpaths2026}%
   \BibitemOpen
   \bibfield  {author} {\bibinfo {author} {\bibfnamefont {A.}~\bibnamefont
   {Vazquez}},\ }\bibfield  {title} {\bibinfo {title} {Local network evolution
   rules driving shortest path multiplicity},\ }\bibfield  {journal} {\bibinfo
   {journal} {Physical Review E}\ }\href {https://doi.org/10.1103/t1sg-qhhf}
-  {10.1103/t1sg-qhhf} (\bibinfo {year} {2026}),\ \Eprint
+  {10.1103/t1sg-qhhf} (\bibinfo {year} {2026}{\natexlab{b}}),\ \Eprint
   {https://arxiv.org/abs/2605.25237} {arXiv:2605.25237 [physics.soc-ph]}
   \BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Clauset}\ \emph {et~al.}(2009)\citenamefont
