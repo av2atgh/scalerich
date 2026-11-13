@@ -167,10 +167,14 @@
   {Jung}(2025)}]{redenbach2025}%
   \BibitemOpen
   \bibfield  {author} {\bibinfo {author} {\bibfnamefont {C.}~\bibnamefont
-  {Redenbach}}\ and\ \bibinfo {author} {\bibfnamefont {T.}~\bibnamefont
-  {Jung}},\ }\bibfield  {title} {\bibinfo {title} {Random tessellations -- an
-  overview of models},\ }\href@noop {} {\bibfield  {journal} {\bibinfo
-  {journal} {arXiv}\ } (\bibinfo {year} {2025})},\ \Eprint
+  {Redenbach}}\ and\ \bibinfo {author} {\bibfnamefont {C.}~\bibnamefont
+  {Jung}},\ }\bibfield  {title} {\bibinfo {title} {Random tessellations: an
+  overview of models},\ }in\ \href@noop {} {\emph {\bibinfo {booktitle}
+  {Stochastic Geometry: Percolation, Tessellations, Gaussian Fields and Point
+  Processes}}},\ \bibinfo {series and number} {Lecture Notes in Mathematics},\
+  \bibinfo {editor} {edited by\ \bibinfo {editor} {\bibfnamefont
+  {H.}~\bibnamefont {Bierm{\'e}}}}\ (\bibinfo  {publisher} {Springer Nature
+  Switzerland},\ \bibinfo {address} {Cham},\ \bibinfo {year} {2025})\ \Eprint
   {https://arxiv.org/abs/2501.05166} {2501.05166} \BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Bohn}\ \emph
   {et~al.}(2005{\natexlab{a}})\citenamefont {Bohn}, \citenamefont {Pauchard},\
