@@ -108,13 +108,13 @@ def fig2():
     ax = axs[1]
     xg = np.arange(0, 11, 0.5); cc = np.array([(d['TA'] > x).mean() for x in xg])
     ax.semilogy(xg[cc > 0], cc[cc > 0], 'o', color=C1, mfc='none', label='SR cells')
-    xx = np.linspace(0, 11, 50); ax.semilogy(xx, np.exp(-xx), color=INK, lw=1, label='$e^{-x}$')
+    xx = np.linspace(0, 11, 50); ax.semilogy(xx, np.exp(-xx), color=INK, lw=1, label='$\\exp(-x)$')
     ax.set_xlabel('$x=(T+1)A$'); ax.set_ylabel('$P(TA>x)$'); ax.set_ylim(1e-5, 1.5); ax.legend()
     ax = axs[2]
     xl = d['x'][d['late']]
     ax.hist(xl, bins=40, range=(0, 10), density=True, color=C1, edgecolor='white', linewidth=0.5,
             label='$\\ln(t/h)$, $t>2000$')
-    xx = np.linspace(0, 10, 100); ax.plot(xx, 0.5 * np.exp(-xx / 2), color=INK, lw=1, label='$\\frac{1}{2} e^{-x/2}$')
+    xx = np.linspace(0, 10, 100); ax.plot(xx, 0.5 * np.exp(-xx / 2), color=INK, lw=1, label='$\\frac{1}{2}\\exp(-x/2)$')
     ax.set_xlabel('$\\ln(t/h)$, $h$ = host birth index'); ax.set_ylabel('density'); ax.legend()
     for a, s in zip(axs, 'abc'):
         lab(a, f'({s})')
@@ -170,8 +170,8 @@ def fig3():
     nb = np.array([(np.exp(np.mean(np.log(kb[j:j + 2]))), kn[(k >= kb[j]) & (k < kb[j + 1])].mean())
                    for j in range(len(kb) - 1) if ((k >= kb[j]) & (k < kb[j + 1])).sum() > 5])
     ax.semilogx(nb[:, 0], nb[:, 1], 'o-', color=C1, mfc='none', lw=0.8)
-    ax.axhline(np.log(T), color=INK, lw=1, ls='--'); ax.text(2.2, np.log(T) - 0.9, '$\\ln T$', fontsize=8)
-    ax.set_xlabel('$k$'); ax.set_ylabel('$k_{nn}(k)$')
+    ax.axhline(np.log(T), color=INK, lw=1, ls='--', label='$\\ln T$')
+    ax.set_xlabel('$k$'); ax.set_ylabel('$k_{nn}(k)$'); ax.legend(loc='upper right')
     for a, s in zip(axs.ravel(), 'abcd'):
         lab(a, f'({s})')
     fig.tight_layout(pad=0.3); fig.savefig(os.path.join(FIG, 'fig3.pdf'), bbox_inches='tight', pad_inches=0.02); plt.close(fig)
@@ -237,7 +237,7 @@ def fig5():
         v = [np.array([float(r['meand']) for r in src if r['model'] == model and int(r['T']) == t]) for t in Ts]
         ax.errorbar(Ts, [x.mean() for x in v], yerr=[x.std(ddof=1) / np.sqrt(len(x)) for x in v],
                     fmt=mk + '-', color=cc, mfc='none', ms=4, label=lbl, capsize=1.5, lw=1)
-    ax.set_xscale('log'); ax.set_xlabel('$T$'); ax.set_ylabel('$\\langle d\\rangle$'); ax.set_ylim(4, 15); ax.set_yticks(range(4, 16, 2)); ax.legend(fontsize=7.5, loc='upper left', ncol=2, columnspacing=0.8, handletextpad=0.3, handlelength=1.5)
+    ax.set_xscale('log'); ax.set_xlabel('$T$'); ax.set_ylabel('$\\langle d\\rangle$'); ax.set_ylim(4, 15); ax.set_yticks(range(4, 16, 2))
     ax = axs[1]
     c = list(csv.DictReader(open(os.path.join(RES, 'paths2_control.csv'))))
     for fam, cc, mk, lbl in (('SR', C1, 'o', 'SR'), ('surr', C2, 's', 'surr.')):
@@ -248,7 +248,7 @@ def fig5():
             ax.errorbar(tri, d.mean(), yerr=d.std(ddof=1) / np.sqrt(len(d)), fmt=mk, color=cc, mfc='none',
                         capsize=1.5, label=lbl if n == names[0] else None)
     ax.set_xlabel('triangle fraction'); ax.set_ylabel('$\\Delta\\langle\\ln\\mu\\rangle$')
-    ax.set_ylim(0, 3.2); ax.legend(fontsize=7.5, loc='upper right', handletextpad=0.2, bbox_to_anchor=(1.02, 1.02))
+    ax.set_ylim(0, 3.2)
     for a, s in zip(axs, 'ab'):
         lab(a, f'({s})')
     fig.tight_layout(pad=0.3); fig.savefig(os.path.join(FIG, 'fig5.pdf'), bbox_inches='tight', pad_inches=0.02); plt.close(fig)
