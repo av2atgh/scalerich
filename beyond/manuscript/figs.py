@@ -84,10 +84,12 @@ def _logticks(ax, axis, ticks):
 def fig2():
     p = json.load(open(os.path.join(B, 'results', 'psweep_T1000.json')))
     vor = json.load(open(os.path.join(B, 'results', 'voronoi.json')))
-    f2 = os.path.join(B, 'results', 'bloch2_T1000.json')
-    bl = json.load(open(f2)) if os.path.exists(f2) else json.load(open(os.path.join(B, 'results', 'bloch_T1000.json')))
-    fig, a, b = _stack()
+    bl = json.load(open(os.path.join(B, 'results', 'bloch2_T1000.json')))
+    sp_ = json.load(open(os.path.join(B, 'results', 'spanmode_bloch2.json')))
+    fig, (a, b, c) = plt.subplots(3, 1, figsize=(3.4, 5.5))
+    fig.subplots_adjust(hspace=0.5, right=0.70)
     MAIN = ('SR', 'centroid', 'balanced', 'regular')
+    # (a) index vs density
     for r in MAIN:
         v = [x for x in p if x['rule'] == r and x['alpha'] == 0.0]
         qs = sorted({x['rho_t'] for x in v})
@@ -101,28 +103,54 @@ def fig2():
                mfc='white' if dashed else COL[r], label=LABEL[r])
     for name in ('honeycomb', 'triangular', 'square'):
         v = [x for x in p if x['rule'] == name]
-        c, m = REF[name]
-        a.plot([x['rho'] for x in v], [x['n_mean'] for x in v], color=c, marker=m, ms=3.5, lw=0.7, label=name)
+        cc, m = REF[name]
+        a.plot([x['rho'] for x in v], [x['n_mean'] for x in v], color=cc, marker=m, ms=3.5, lw=0.7, label=name)
     rv = sorted({x['rho_t'] for x in vor})
     a.plot([np.mean([x['rho'] for x in vor if x['rho_t'] == q]) for q in rv],
            [np.mean([x['n_mean_per'] for x in vor if x['rho_t'] == q]) for q in rv],
            color='#555555', marker='o', mfc='white', ms=3.5, lw=0.7, label='Voronoi')
     a.set_xlabel(r'$\bar\rho$'); a.set_ylabel(r'$\langle n\rangle$')
     _logticks(a, 'y', [1, 2, 3, 4, 6]); a.set_ylim(1.2, 7)
-    for r in MAIN:
-        v = [x for x in bl if x['rule'] == r and x.get('alpha', 0.0) == 0.0 and x['omega_h'] > 0
-             and x.get('resolved', x['k_h'] > 0.3)]
+    # (b) band edge vs index, one line per rule (geometric means over seeds and directions)
+    for r in ('SR', 'centroid', 'balanced'):
+        v = [x for x in bl if x['rule'] == r and x['resolved'] and x['omega_h'] > 0]
         if not v:
             continue
-        iso = np.array([x['eta_n'] >= 0.7 for x in v])
-        n0 = np.array([x['n0'] for x in v]); wh = np.array([x['omega_h'] for x in v])
-        b.scatter(n0[iso], wh[iso], s=10, marker=MK[r], color=COL[r], linewidths=0)
-        b.scatter(n0[~iso], wh[~iso], s=10, marker=MK[r], facecolors='none', edgecolors=COL[r], linewidths=0.6)
+        qs = sorted({x['rho_t'] for x in v})
+        N = []; W = []; lo = []; hi = []
+        for q in qs:
+            z = [x for x in v if x['rho_t'] == q]
+            N.append(np.exp(np.mean(np.log([x['n0'] for x in z]))))
+            w = np.log([x['omega_h'] for x in z])
+            W.append(np.exp(w.mean())); lo.append(np.exp(w.mean() - w.std())); hi.append(np.exp(w.mean() + w.std()))
+        N = np.array(N); o = np.argsort(N)
+        dashed = r == 'centroid'
+        if not dashed:
+            b.fill_between(N[o], np.array(lo)[o], np.array(hi)[o], color=COL[r], alpha=0.15, lw=0)
+        b.plot(N[o], np.array(W)[o], color=COL[r], marker=MK[r], ms=3.5, ls='--' if dashed else '-',
+               mfc='white' if dashed else COL[r])
+        if r in ('SR', 'balanced'):
+            for q, nx, wy in zip(qs, N, W):
+                if q in (0.05, 0.1, 0.2, 0.4):
+                    b.annotate('%g' % q, (nx, wy), xytext=(4, 2) if r == 'balanced' else (-4, -3),
+                               textcoords='offset points', fontsize=6.5, color=COL[r],
+                               ha='left' if r == 'balanced' else 'right', va='bottom' if r == 'balanced' else 'top')
     b.set_xlabel(r'$n$ (propagation direction)'); b.set_ylabel(r'$\omega_h$')
     _logticks(b, 'x', [2, 3, 4, 6, 8]); b.set_yscale('log')
-    b.yaxis.set_minor_formatter(matplotlib.ticker.NullFormatter())
+    # (c) band edge vs weakest-span prediction
+    for r in ('SR', 'centroid', 'balanced'):
+        v = [x for x in sp_ if x['rule'] == r and x['resolved'] and x['omega_h'] > 0]
+        c.scatter([x['omega_span'] for x in v], [x['omega_h'] for x in v], s=8, marker=MK[r],
+                  facecolors='none' if r == 'centroid' else COL[r], edgecolors=COL[r], linewidths=0.5)
+    allx = [x['omega_span'] for x in sp_ if x['resolved'] and x['omega_h'] > 0]
+    xx = np.array([0.7 * min(allx), 1.4 * max(allx)])
+    c.plot(xx, xx, color='#999999', lw=0.6, ls=':')
+    c.plot(xx, (np.pi / 4.730) ** 2 * xx, color='#999999', lw=0.6, ls=':')
+    c.set_xlim(*xx)
+    c.set_xscale('log'); c.set_yscale('log')
+    c.set_xlabel(r'$\omega_{\rm span}$ (weakest span)'); c.set_ylabel(r'$\omega_h$')
     _legend(fig, a, b)
-    _panel_labels(fig, (a, b), ('(a)', '(b)'))
+    _panel_labels(fig, (a, b, c), ('(a)', '(b)', '(c)'))
     fig.savefig(os.path.join(HERE, 'fig2.pdf'))
 
 
