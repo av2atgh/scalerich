@@ -86,7 +86,7 @@ def fig2():
     vor = json.load(open(os.path.join(B, 'results', 'voronoi.json')))
     bl = json.load(open(os.path.join(B, 'results', 'bloch2_T1000.json')))
     sp_ = json.load(open(os.path.join(B, 'results', 'spanmode_bloch2.json')))
-    fig, (a, b, c) = plt.subplots(3, 1, figsize=(3.4, 6.4))
+    fig, (a, b, c) = plt.subplots(3, 1, figsize=(3.4, 6.8))
     fig.subplots_adjust(hspace=0.45)
     MAIN = ('SR', 'centroid', 'balanced', 'regular')
     # (a) index vs density
