@@ -129,7 +129,7 @@ def fig2():
         if not dashed:
             b.fill_between(N[o], np.array(lo)[o], np.array(hi)[o], color=COL[r], alpha=0.15, lw=0)
         b.plot(N[o], np.array(W)[o], color=COL[r], marker=MK[r], ms=8 if MK[r] == '*' else 5.5, ls='--' if dashed else '-',
-               mfc='white' if dashed else COL[r])
+               mfc='white' if dashed else COL[r], label=LABEL[r])
         if r in ('SR', 'balanced'):
             for q, nx, wy in zip(qs, N, W):
                 if q in (0.05, 0.1, 0.2, 0.4):
@@ -137,6 +137,7 @@ def fig2():
                                textcoords='offset points', fontsize=6.5, color=COL[r],
                                ha='left' if r == 'balanced' else 'right', va='bottom' if r == 'balanced' else 'top')
     b.set_xlabel(r'$n$ (propagation direction)'); b.set_ylabel(r'$\omega_h$')
+    b.legend(loc='upper right', frameon=False, handlelength=2.2, borderaxespad=0.2)
     _logticks(b, 'x', [2, 3, 4, 6, 8]); b.set_yscale('log')
     # (c) band edge vs weakest-span prediction
     for r in ('SR', 'centroid', 'balanced'):
