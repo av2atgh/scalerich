@@ -142,22 +142,6 @@
   {https://doi.org/10.1038/s41598-022-04900-0} {\bibfield  {journal} {\bibinfo
   {journal} {Scientific Reports}\ }\textbf {\bibinfo {volume} {12}},\ \bibinfo
   {pages} {624} (\bibinfo {year} {2022})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Liu}\ \emph {et~al.}(2000)\citenamefont {Liu},
-  \citenamefont {Zhang}, \citenamefont {Mao}, \citenamefont {Zhu},
-  \citenamefont {Yang}, \citenamefont {Chan},\ and\ \citenamefont
-  {Sheng}}]{liu2000}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {Z.}~\bibnamefont
-  {Liu}}, \bibinfo {author} {\bibfnamefont {X.}~\bibnamefont {Zhang}}, \bibinfo
-  {author} {\bibfnamefont {Y.}~\bibnamefont {Mao}}, \bibinfo {author}
-  {\bibfnamefont {Y.~Y.}\ \bibnamefont {Zhu}}, \bibinfo {author} {\bibfnamefont
-  {Z.}~\bibnamefont {Yang}}, \bibinfo {author} {\bibfnamefont {C.~T.}\
-  \bibnamefont {Chan}},\ and\ \bibinfo {author} {\bibfnamefont
-  {P.}~\bibnamefont {Sheng}},\ }\bibfield  {title} {\bibinfo {title} {Locally
-  resonant sonic materials},\ }\href
-  {https://doi.org/10.1126/science.289.5485.1734} {\bibfield  {journal}
-  {\bibinfo  {journal} {Science}\ }\textbf {\bibinfo {volume} {289}},\ \bibinfo
-  {pages} {1734} (\bibinfo {year} {2000})}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Hill}(1952)}]{hill1952}%
   \BibitemOpen
   \bibfield  {author} {\bibinfo {author} {\bibfnamefont {R.}~\bibnamefont
@@ -255,4 +239,20 @@
   {https://doi.org/10.1002/adma.201803334} {\bibfield  {journal} {\bibinfo
   {journal} {Advanced Materials}\ }\textbf {\bibinfo {volume} {30}},\ \bibinfo
   {pages} {1803334} (\bibinfo {year} {2018})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Liu}\ \emph {et~al.}(2000)\citenamefont {Liu},
+  \citenamefont {Zhang}, \citenamefont {Mao}, \citenamefont {Zhu},
+  \citenamefont {Yang}, \citenamefont {Chan},\ and\ \citenamefont
+  {Sheng}}]{liu2000}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {Z.}~\bibnamefont
+  {Liu}}, \bibinfo {author} {\bibfnamefont {X.}~\bibnamefont {Zhang}}, \bibinfo
+  {author} {\bibfnamefont {Y.}~\bibnamefont {Mao}}, \bibinfo {author}
+  {\bibfnamefont {Y.~Y.}\ \bibnamefont {Zhu}}, \bibinfo {author} {\bibfnamefont
+  {Z.}~\bibnamefont {Yang}}, \bibinfo {author} {\bibfnamefont {C.~T.}\
+  \bibnamefont {Chan}},\ and\ \bibinfo {author} {\bibfnamefont
+  {P.}~\bibnamefont {Sheng}},\ }\bibfield  {title} {\bibinfo {title} {Locally
+  resonant sonic materials},\ }\href
+  {https://doi.org/10.1126/science.289.5485.1734} {\bibfield  {journal}
+  {\bibinfo  {journal} {Science}\ }\textbf {\bibinfo {volume} {289}},\ \bibinfo
+  {pages} {1734} (\bibinfo {year} {2000})}\BibitemShut {NoStop}%
 \end{thebibliography}%

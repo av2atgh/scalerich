@@ -7,7 +7,7 @@
 
 \begin{document}
 
-\title{Balanced recursive division yields isotropic broadband elastic-wave metamaterials}
+\title{Scale-rich and balanced divisions set the index--bandwidth limits of elastic-wave metamaterials}
 
 \author{Alexei Vazquez}
 \email{alexei@nodeslinks.com}
@@ -17,26 +17,28 @@
 
 \begin{abstract}
 % PRL limit: 600 characters
-Recursive division of cells generates network metamaterials, and its scale-rich version
-reaches an effective refractive index $n$ between 1.5 and 8.3. Across the family of recursive
-divisions, a balanced rule, which cuts each cell through its centroid perpendicular to its
-long axis, gives the better gradient-index material. At equal index $n$ its cells are more
-isotropic, and their lowest local resonance is up to three times higher in two dimensions
-and six times higher in three. Density sets the range of $n$.
+Recursive cell division generates network metamaterials with a wide range of effective
+refractive index $n$. Across division rules, the homogenised band closes at the flexural
+mode of the weakest span, and $n$ is capped by the pin-jointed architecture. Balanced
+divisions, with uniform spans, give the widest band at low $n$. Scale-rich divisions
+reach high $n$ at high density, with stubby ligaments, and give the widest band there.
+In three dimensions plate and strut divisions are near-affine and $n$ stays low.
 \end{abstract}
 
 \maketitle
 
 % ---------------------------------------------------------------------------
 \paragraph*{Introduction.}
-Scale-rich (SR) metamaterials~\cite{both2026}, a recent example of irregular metamaterial networks~\cite{wytock2026}, are grown one ligament at a time: a
-ligament nucleates at a uniform random point and angle and grows until it meets the
-existing structure, with thickness $\lambda_t=\lambda_0t^{-\alpha}$ for the $t$-th
-ligament. Their unit cells reach effective refractive indices $1.5\le n\le8.3$, against
+Scale-rich (SR) metamaterials~\cite{both2026}, a recent example of irregular
+metamaterial networks~\cite{wytock2026}, are grown one ligament at a time: a ligament
+nucleates at a uniform random point and angle and grows until it meets the existing
+structure, with thickness $\lambda_t=\lambda_0t^{-\alpha}$ for the $t$-th ligament.
+Their unit cells reach effective refractive indices $1.5\le n\le8.3$, against
 $1.0\le n\le1.9$ for square and hexagonal lattices, and an SR Luneburg lens focuses a
 plane wave~\cite{both2026}. Geometrically the SR construction is Cowan's iterated cell
 division: the cell holding the point, chosen in proportion to its area, is cut by a
-chord~\cite{cowan2010,vazquez2026sr}; with axis-parallel cuts and no thickness it is a STIT (Mondrian) tessellation~\cite{nagel2005}.
+chord~\cite{cowan2010,vazquez2026sr}; with axis-parallel cuts and no thickness it is a
+STIT (Mondrian) tessellation~\cite{nagel2005}.
 
 Cowan's construction defines a whole family of recursive divisions. A rule specifies
 which cell is cut, where the cut passes, and at what angle. Changing these choices
@@ -49,18 +51,17 @@ $v(\hat{\bm k})$, the largest eigenvalue of the Christoffel matrix
 $\Gamma_{ik}=C_{ijkl}\hat k_j\hat k_l$ divided by $\bar\rho$~\cite{auld1973}. The
 effective refractive index $n(\hat{\bm k})=c_0/v(\hat{\bm k})$, with $c_0$ the velocity
 in the constituent, is the design variable of gradient-index (GRIN) devices such as
-elastic Luneburg lenses~\cite{tol2017,aguzzi2022}. A GRIN designer needs three things from a family
-of unit cells: a wide range of $n$, isotropy of $n$, and a wide band of frequencies over
-which the homogenised $n$ holds. That band closes at the lowest local resonance
-$\omega_1$ of the cell~\cite{liu2000}.
+elastic Luneburg lenses~\cite{tol2017,aguzzi2022}. A GRIN designer needs three things
+from a family of unit cells: a wide range of $n$, isotropy of $n$, and a wide band of
+frequencies over which the homogenised $n$ holds.
 
 Here we ask a more general question: which structure among Cowan's recursive divisions
 is best for elastic-wave control? We compare six division rules, from scale-rich to
 nearly uniform, with the SR thickness hierarchy. In two dimensions they are ligament
-frames and in three dimensions closed-cell plate networks. For each rule we compute the
-range of $n$, its isotropy, and $\omega_1$, and compare the rules at equal $n$. The
-balanced division, which cuts each cell through its centroid perpendicular to its long
-axis, comes out best.
+frames and in three dimensions plate and strut networks. For each rule we compute $n$,
+its isotropy and the band over which it holds, from Bloch waves on periodic tilings. The
+answer depends on the target index: balanced divisions are best at low $n$, scale-rich
+divisions at high $n$.
 
 % ---------------------------------------------------------------------------
 \paragraph*{What sets the range of $n$.}
@@ -69,17 +70,26 @@ and what makes $n$ large. A porous material is at most as stiff as its constitue
 diluted by the density: this is the Voigt bound~\cite{hill1952}, $C\le\bar\rho\,C^{0}$.
 Waves are therefore never faster in the architecture than in the constituent, and
 $n\ge1$ for every design, with equality for ligaments aligned with the wave. There is no
-upper limit: $n$ diverges as the structure approaches a mechanism. A wide range of $n$
-alone is therefore not a useful figure of merit. Any rule that comes close to a mechanism
-reaches it, at the price of isotropy and bandwidth. This is why we compare rules at
-equal $n$.
+universal upper limit: $n$ diverges as the structure approaches a mechanism. A wide range
+of $n$ alone is therefore not a useful figure of merit, since any rule that comes close
+to a mechanism reaches it, at the price of isotropy and bandwidth. This is why we compare
+rules at equal $n$.
 
 A large $n$ needs a soft longitudinal modulus. A longitudinal wave compresses the
 material, so it probes $C_{11}\sim K+G$ rather than the Young modulus. A honeycomb, soft
-in $E$ but stiff in the bulk modulus $K$~\cite{deshpande2001}, keeps $n\simeq1.9$ at every
-density. A network of T-junctions is soft in both: with pin joints an SR network is a
-mechanism by Maxwell counting~\cite{maxwell1864,vazquez2026sr}, so, as in stiff fibre networks~\cite{wilhelm2003,head2003}, its stiffness comes
-from ligament bending, and $n$ grows as the ligaments become more slender.
+in $E$ but stiff in the bulk modulus $K$~\cite{deshpande2001}, keeps $n\simeq1.9$ at
+every density. A network of T-junctions is soft in both. Its stiffness has two parts.
+With pin joints the network carries load by stretching alone, with a modulus
+$C^{\rm pin}=\bar\rho\,s$ that vanishes for a mechanism~\cite{maxwell1864}. Rigid joints
+add the bending of the ligaments, as in stiff fibre networks~\cite{wilhelm2003,head2003},
+which grows with their thickness $\lambda$. Hence
+\begin{equation}
+n^{-2}=s+c\,(\lambda/\ell)^{q},\qquad n\le n_{\max}=s^{-1/2},
+\label{eq:ceiling}
+\end{equation}
+where $\ell$ is a typical span and $c$ and $q$ characterise the architecture. The
+pin-jointed architecture caps the index, and slender ligaments bring $n$ close to the
+cap.
 
 % ---------------------------------------------------------------------------
 \paragraph*{Recursive divisions.}
@@ -93,100 +103,107 @@ perpendicular to the major axis of the cell (\emph{balanced}, \emph{regular}). T
 \emph{balanced} and \emph{regular} rules produce nearly equal cells. Every rule uses the
 SR thickness $\lambda_t=\lambda_0t^{-\alpha}$, with $\lambda_0$ set by $\bar\rho$.
 
-Each realisation is a unit cell with $T=10^3$ ligaments, modelled as an
-Euler--Bernoulli frame with rigid joints ($E_0=\rho_0=1$). Affine displacements on the
-boundary give $C$. The Christoffel equation gives $n(\hat{\bm k})$ and the isotropy
-$\eta_n=\min n/\max n$. With the boundary clamped and lumped masses, the generalised
-eigenproblem gives $\omega_1$ in units of $c_0/L$, where $L$ is the cell size. We scan
-$\alpha\in[0,1]$ and $\bar\rho\in[0.1,0.4]$ with four realisations per point, and use
-square, triangular and honeycomb lattices as references.
+Each cell holds $T=10^3$ ligaments, modelled as an Euler--Bernoulli frame with rigid
+joints ($E_0=\rho_0=1$). The square boundary is generation zero of the division, so the
+material is a periodic tiling of cells whose frames are shared with their
+neighbours~\cite{both2026}; we tile by mirror images, which makes the tiling exactly
+periodic. Periodic homogenisation gives $C$, and the Christoffel equation gives
+$n(\hat{\bm k})$ and the isotropy $\eta_n=\min n/\max n$. Bloch waves along $x$ and $y$
+give the band edge $\omega_h$, the highest frequency at which the longitudinal branch
+keeps its plane-wave character and its index within $10\%$ of the static value. The
+clamped cell gives the lowest local resonance $\omega_1$. Frequencies are in units of
+$c_0/L$, with $L$ the cell size. We scan $\alpha\in[0,1]$ and $\bar\rho\in[0.03,0.4]$,
+and use square, triangular, honeycomb and Voronoi lattices as references.
 
 % ---------------------------------------------------------------------------
-\paragraph*{Two dimensions: density sets the range.}
-The SR cells span $1.66\le n_x\le7.60$, consistent with the reported
-$1.5$--$8.3$~\cite{both2026} (Fig.~\ref{fig:2d}a). The square, triangular and honeycomb
-lattices give $n_x=1.41$, $1.71$ and $1.9$--$2.1$. Density carries the range. At
-$\alpha=0$ the mean SR index falls from $n=5.4$ at $\bar\rho=0.1$ to $3.6$ at
-$\bar\rho=0.4$. At $\bar\rho=0.2$, $\alpha=0,0.25,0.5,0.75,1$ gives
-$n_x=4.12,3.06,2.60,2.56,2.68$, a weak and non-monotone dependence. Increasing $\alpha$
-mainly lowers $\omega_1$, from $0.44$ to $0.02$, and lowers $\eta_n$ from $0.56$ to
-$0.39$. A broader size hierarchy does not widen the range. The \emph{uniform} rule spans
-$1.81\le n_x\le6.43$, with $\eta_n=0.4$--$0.6$ and an $\omega_1$ three to five times
-below SR. The near-mechanism \emph{rect} rule reaches $n=18$ at $45^\circ$, with
-$\eta_n\simeq0.27$ and $\omega_1\le0.05$, as the bounds anticipate.
+\paragraph*{Index from density and architecture.}
+The SR cells span $1.70\le n_x\le6.76$, consistent with the reported
+$1.5$--$8.3$~\cite{both2026} (Fig.~\ref{fig:2d}a). The square, triangular, honeycomb and
+Voronoi lattices give $n_x=1.41$, $1.72$, $1.9$--$2.1$ and $2.1$. Two quantities set
+$n$. The first is density: at $\alpha=0$ the direction-averaged SR index falls from
+$\langle n\rangle=5.3$ at $\bar\rho=0.1$ to $3.7$ at $\bar\rho=0.4$. The hierarchy
+exponent matters less: at $\bar\rho=0.2$, $\alpha=0,0.25,0.5,0.75,1$ gives
+$n_x=4.04,2.84,2.31,2.24,2.36$. The second is the architecture. At equal density the
+scale-rich rules are softer: at $\bar\rho=0.4$, SR and \emph{centroid} give
+$\langle n\rangle=3.7$ and $3.5$, \emph{balanced} and \emph{regular} $2.4$ and $2.2$.
+The balanced rules are more isotropic, with $\eta_n=0.78$ against $0.67$ for SR at
+$\bar\rho=0.2$.
 
-\paragraph*{Equal index, unequal bandwidth.}
-A GRIN lens asks for a prescribed $n$, isotropic and over a wide band
-(Fig.~\ref{fig:2d}b). At $n\simeq4.3$, SR ($\bar\rho=0.2$, $\alpha=0$) has
-$\eta_n=0.56$ and $\omega_1=0.44$. The \emph{balanced} rule reaches the same $n$ at
-$\bar\rho=0.1$, with $\eta_n=0.77$ and $\omega_1=0.74$. Over the window $2.5\le n\le5$
-the best $\omega_1$ among cells with $\eta_n\ge0.7$ is $1.3$ to $3$ times higher for
-\emph{balanced} than for SR. The \emph{balanced} rule also yields more isotropic cells
-($\eta_n\ge0.8$ in 16 of 80 cells, against 9 for SR) and covers the same isotropic
-window, $2.4\le n\le4.8$ against $3.1\le n\le4.7$. SR has one advantage: it reaches a
-given $n$ at a higher density.
-
-The bandwidth has a geometric origin. The lowest local resonance is the flexural mode of
-the weakest span between junctions. A span of length $\ell_s$ and thickness $\lambda_s$
-has its lowest mode at $\omega_s=\beta^2(\lambda_s/\sqrt{12}\,\ell_s^2)\,c_0$, with
-$\beta=\pi$ for pinned ends and $\beta=4.730$ for clamped ends~\cite{aguzzi2022}. The prediction
-$\omega_{\rm span}=\min_s\omega_s$ with clamped ends has no free parameter. It tracks the
-computed $\omega_1$ over three decades, with a correlation of $0.979$ between
-$\ln\omega_1$ and $\ln\omega_{\rm span}$ over all 480 two-dimensional cells. The ratio
+\paragraph*{The weakest span sets the band.}
+The lowest local resonance is the flexural mode of the weakest span between junctions.
+A span of length $\ell_s$ and thickness $\lambda_s$ has its lowest mode at
+\begin{equation}
+\omega_s=\beta^2\frac{\lambda_s}{\sqrt{12}\,\ell_s^2}\,c_0 ,
+\label{eq:span}
+\end{equation}
+with $\beta=\pi$ for pinned ends and $\beta=4.730$ for clamped
+ends~\cite{aguzzi2022}. The prediction $\omega_{\rm span}=\min_s\omega_s$ with clamped
+ends has no free parameter. It tracks $\omega_1$ over three decades, with a correlation
+of $0.979$ between $\ln\omega_1$ and $\ln\omega_{\rm span}$ over all 480 cells. The ratio
 $\omega_1/\omega_{\rm span}$ lies between $0.44=(\pi/4.730)^2$, the pinned limit, and
-$0.70$: junctions rotate, so the weakest span is partly clamped. In a bending-dominated
-cell $n$ is set by the slenderness of the typical load-bearing ligament, whereas
-$\omega_1$ is set by the most slender span. A scale-rich division places long spans next
-to short ones and so lowers $\omega_1$ at fixed $n$; a balanced division keeps the spans
-uniform. Doubling the number of ligaments to $T=3000$ shifts $n$ by 5--10\% for every
-rule and leaves the ranking unchanged.
+$0.70$: junctions rotate, so the weakest span is partly clamped. The Bloch band edge
+follows, $\omega_h\simeq0.75\,\omega_1$ (median), so the long-wavelength description fails
+where the weakest span resonates. A scale-rich division places long spans next to short
+ones; a balanced division keeps them uniform.
+
+\paragraph*{Index from architecture keeps the band.}
+Equations~(\ref{eq:ceiling}) and (\ref{eq:span}) together fix the trade-off. A target
+$n$ requires a thickness $\lambda\propto[(n^{-2}-s)/c]^{1/q}$, and the band edge grows
+with $\lambda$. Pinning the joints of the periodic tilings gives the index ceiling of
+each rule: $n_{\max}=4.8$--$8.1$ for SR (depending on the realisation), $5.4$--$7.9$ for
+\emph{centroid}, and $5.6$--$5.8$ for \emph{balanced} and \emph{regular}. The coefficient
+$c$ differs more: at $\bar\rho=0.4$ the bending term of \emph{balanced} is six times that
+of SR. A balanced division therefore reaches a high index only with slender ligaments,
+close to its ceiling, where the band collapses. A scale-rich division reaches the same
+index at high density, far below its ceiling, with stubby ligaments and a high band edge.
+The measured exponent $q\simeq0.7$--$1.1$, smaller than the value $2$ of pure bending,
+shows that stretching and bending are coupled, as near the rigidity point of fibre
+networks.
+
+The Bloch band edges confirm the crossover (Fig.~\ref{fig:2d}b). At low index the
+balanced division wins: at $n\simeq2.7$, $\omega_h=1.04$ for \emph{balanced} against
+$0.45$ for SR. At high index the scale-rich division wins: at $n\simeq4.5$, $\omega_h=0.49$
+for SR at $\bar\rho=0.4$ against $0.11$ for \emph{balanced} at $\bar\rho=0.05$.
+\tbd{Dense sweep: crossover index $n^\ast$, ratios on each side with uncertainties,
+\emph{centroid}.}
 
 % ---------------------------------------------------------------------------
-\paragraph*{Three dimensions: plates are near-affine.}
+\paragraph*{Three dimensions: the ceiling is low.}
 A recursive division of the cube cuts convex polyhedra by planes, so the material is a
-closed-cell network of plates~\cite{both2026}. We use the same rules, with isotropic,
-axis-parallel or major-axis normals, and $T=300$ plates per cell. Each plate is meshed
-with triangles that conform across T-junction lines~\cite{shewchuk1996}. Constant-strain
-membranes and discrete hinges~\cite{grinspun2003} model the plates, with rigid joints and
-$\nu_0=0.3$; the moduli converge to 1--2\% under mesh refinement. We scan
-$\alpha\in\{0,1/2,1\}$ and $\bar\rho\in\{0.05,0.1,0.2\}$ with three realisations each.
-The \emph{uniform} rule is excluded: its plates are so small that, at these densities,
-they are thicker than they are wide.
+closed-cell network of plates~\cite{both2026}; its edges form an open-cell network of
+struts. We use the same rules, with isotropic, axis-parallel or major-axis normals, and
+$T=300$ plates per cell. Plates are meshed with triangles that conform across T-junction
+lines~\cite{shewchuk1996} and modelled by constant-strain membranes and discrete
+hinges~\cite{grinspun2003} ($\nu_0=0.3$); struts are three-dimensional Euler--Bernoulli
+beams. The moduli converge to 1--2\% under mesh refinement, change by less than $1\%$
+from $T=300$ to $600$, and agree within 1--3\% between affine and periodic boundaries. The
+\emph{uniform} rule is excluded: its plates are thicker than they are wide.
 
-The mechanics change qualitatively. A convex cell with rigid planar faces is rigid, so, as in periodic plate
-lattices~\cite{berger2017,tancogne2018}, membranes carry the load and the response is close to affine (Fig.~\ref{fig:3d}). The
-affine index is $n_{\rm aff}=1.30$--$1.32$ for every rule with isotropic normals.
-Non-affine relaxation lowers $C_{11}$ to $0.5$--$0.67$ of its affine value at
-$\alpha=0$, and to $0.9$--$1$ at $\alpha=1$, where the first plates carry most of the
-mass. The range of $n$ collapses. Over the full scan, SR gives
-$1.36\le\langle n\rangle\le1.73$, and all rules together give
-$1.32\le\langle n\rangle\le1.84$. Density barely matters: the SR index at $\alpha=0$
-goes from $1.71$ to $1.62$ as $\bar\rho$ rises fourfold, the signature of stretch
-dominance. Only \emph{rect}, through its anisotropy, reaches $n_x=3.1$, with
-$\eta_n\simeq0.44$.
-
-The comparison at equal $n$ is sharper than in two dimensions. No SR cell has
-$\eta_n\ge0.8$; \emph{balanced} has 9 of 27 and \emph{regular} 15 of 27. At
-$\langle n\rangle\simeq1.5$, SR ($\alpha=1/2$, $\bar\rho=0.1$) has $\eta_n=0.64$ and
-$\omega_1=0.20$, whereas \emph{balanced} ($\alpha=0$, $\bar\rho=0.1$) has $\eta_n=0.86$ and
-$\omega_1=1.30$.
+In three dimensions the ceiling of Eq.~(\ref{eq:ceiling}) is low (Fig.~\ref{fig:3d}). A
+convex cell with rigid planar faces is rigid, so, as in periodic plate
+lattices~\cite{berger2017,tancogne2018}, membranes alone carry the load. With bending
+switched off, SR plates give $n_{\max}=1.73$ and \emph{balanced} plates $1.58$; the full
+model gives $1.71$ and $1.54$ at $\bar\rho=0.05$. Over the scan, $\alpha\in\{0,1/2,1\}$
+and $\bar\rho\in\{0.05,0.1,0.2\}$, every rule stays within $1.32\le\langle n\rangle\le1.84$.
+The open-cell struts run straight through the junctions, which also makes them rigid:
+$2.3\le\langle n\rangle\le3.7$ for every rule, nearly independent of density. Without a
+high-index window, the uniform spans decide: at equal $n$ the balanced divisions have the
+higher band edge, $\omega_1=1.30$ against $0.20$ for SR plates at $\langle n\rangle\simeq1.5$
+and $0.22$ against $0.06$ for struts at $\langle n\rangle\simeq3.6$.
 
 % ---------------------------------------------------------------------------
 \paragraph*{Conclusions.}
-For the GRIN design problem, a prescribed isotropic $n$ over the widest band, the balanced
-division is the best member of the recursive family we explored. It reaches the same
-indices as SR with more isotropic cells and a higher first local resonance, because its
-spans are uniform and no long slender ligament sets $\omega_1$. The density, not the
-hierarchy exponent $\alpha$, tunes $n$. The two rules therefore complement each other: SR
-gives the most $n$ per unit density, and the balanced rule gives the most bandwidth and
-isotropy at a given $n$.
-In three dimensions the plate realisation of the same divisions is close to affine:
-$n$ stays within $1.3$--$1.8$ whatever the rule, $\alpha$ or $\bar\rho$. A wide range of
-$n$ is therefore a property of bending-dominated networks: two-dimensional ligaments,
-or open-cell skeletons in three dimensions. It is not a property of the recursive
-division. These conclusions concern the homogenised regime; the band structure above
-$\omega_1$, where local resonances open gaps~\cite{liu2000}, is a separate design problem,
-and there the broad spectrum of spans of a scale-rich division may be an asset.
+In recursively divided metamaterials, $n$ comes from two sources: slender ligaments and a
+soft architecture. The pin-jointed architecture caps the index, and the weakest span sets
+the band over which it holds. Index from slenderness costs bandwidth; index from
+architecture does not. Balanced divisions, with uniform spans, are the best choice at low
+index. Scale-rich divisions reach high index at high density and are the best choice
+there, which is the regime of the SR Luneburg lens~\cite{both2026}. In three dimensions
+plate and strut divisions are near-affine, the ceiling is low, and the balanced divisions
+keep the higher bandwidth. A wide index range is thus a property of two-dimensional
+networks of T-junctions. Above the band edge, local resonances open
+gaps~\cite{liu2000}, a separate design problem in which the broad span spectrum of a
+scale-rich division may be an asset.
 
 \begin{acknowledgments}
 All code is available at \url{https://github.com/av2atgh/scalerich/tree/master/beyond}.
@@ -210,18 +227,19 @@ the major axis. \emph{regular}: as \emph{balanced}, largest cell first.}
 
 \begin{figure}
 \includegraphics[width=\columnwidth]{fig2.pdf}
-\caption{\label{fig:2d}Two dimensions, $T=10^3$. (a) Index along $x$ against density.
-Faint symbols: every cell ($\alpha\in[0,1]$, four realisations); lines: geometric mean at
-$\alpha=0$; grey: reference lattices. (b) Lowest local resonance $\omega_1$ (units
-$c_0/L$) against the direction-averaged index $\langle n\rangle$. Filled symbols:
-$\eta_n\ge0.7$; open: $\eta_n<0.7$.}
+\caption{\label{fig:2d}Two dimensions, periodic tilings, $T=10^3$. (a) Index along $x$
+against density. Faint symbols: every cell ($\alpha\in[0,1]$, four realisations); lines:
+geometric mean at $\alpha=0$; grey: reference lattices. (b) Bloch band edge $\omega_h$
+(units $c_0/L$) against the index along the propagation direction, $\alpha=0$.
+\tbd{figure to be regenerated from the dense Bloch sweep}}
 \end{figure}
 
 \begin{figure}
 \includegraphics[width=\columnwidth]{fig3.pdf}
-\caption{\label{fig:3d}Three dimensions, plate divisions of the cube, $T=300$; axes as in
-Fig.~\ref{fig:2d}. (a) Index along $x$ against density; dotted: affine index
-$n_{\rm aff}$. (b) $\omega_1$ against $\langle n\rangle$; filled symbols $\eta_n\ge0.7$.}
+\caption{\label{fig:3d}Three dimensions, divisions of the cube, $T=300$; axes as in
+Fig.~\ref{fig:2d}. (a) Index along $x$ against density for plates; dotted: affine index.
+(b) $\omega_1$ against $\langle n\rangle$; filled symbols $\eta_n\ge0.7$.
+\tbd{add strut networks}}
 \end{figure}
 
 \end{document}
