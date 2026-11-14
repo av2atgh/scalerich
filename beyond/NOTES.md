@@ -134,3 +134,12 @@ omega_h vs weakest span: corr 0.97/0.94/0.97 (SR/centroid/balanced); prefactor 0
 (balanced below the pinned limit: uniform spans resonate collectively).
 Manuscript updated (abstract 494 chars, ~2270 words, 4 pp): random angles give index,
 centroid cut removes slender spans; mixing rules (fish-eye, waveguide) with impedance caveat.
+
+## Fish-eye device test (2026-11-14, `device/fisheye.py`, R = 40 cells) — NOT for the paper
+Homogenised continuum of rule cells (isotropised K, G, rho from psweep), point source on the rim,
+image gain at the antipode. Gains non-monotone 0.2-5 for all designs (interference, lens only
+3.5-4 background wavelengths). Mixed (balanced rim / centroid core, 2:1) max in-band gain 2.0;
+balanced alone (clipped 1.66:1) 5.3 at R/lambda0 = 3. Impedance step at the rule switch
+(balanced rho≈0.13 vs centroid ≈0.38 at n = 3.5) outweighs the contrast. Band edges 0.20-0.25 c0/L.
+User: fish-eye is not a real application of division lattices (existing fish-eyes: graded plates,
+Lefebvre 2015; microwave cells, Ma 2012). Searching for a real high-contrast lattice application.
