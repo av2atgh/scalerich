@@ -47,53 +47,93 @@ def _agg(rows, rule, key, by='rho_t', alpha=0.0):
     return np.array(xs), np.array([np.exp(np.mean(np.log([x[key] for x in v if x[by] == q]))) for q in xs])
 
 
-def panels(rows, rules, refs, fname, xlab_rho=r'$\bar\rho$', aff=False):
-    fig, (a, b) = plt.subplots(1, 2, figsize=(3.4, 1.75))
-    for r in rules:
-        v = [x for x in rows if x['rule'] == r]
-        a.scatter([x['rho'] for x in v], [x['n_x'] for x in v], s=6, marker=MK[r], color=COL[r],
-                  alpha=0.35, linewidths=0)
-        xs, ys = _agg(rows, r, 'n_x')
-        a.plot(xs, ys, color=COL[r], marker=MK[r], ms=3.5, label=LABEL[r])
-        iso = np.array([x['eta_n'] >= 0.7 for x in v])
-        nm = np.array([x['n_mean'] for x in v]); w1 = np.array([x['omega1'] for x in v])
-        b.scatter(nm[iso], w1[iso], s=10, marker=MK[r], color=COL[r], linewidths=0)
-        b.scatter(nm[~iso], w1[~iso], s=10, marker=MK[r], facecolors='none', edgecolors=COL[r], linewidths=0.6)
-    for name in refs:
-        v = [x for x in rows if x['rule'] == name]
-        if not v:
-            continue
-        c, m = REF[name]
-        a.plot([x['rho'] for x in v], [x['n_x'] for x in v], color=c, marker=m, ms=4, lw=0.8, label=name)
-        b.scatter([x['n_mean'] for x in v], [x['omega1'] for x in v], s=14, marker=m, color=c, linewidths=0.8)
-    if aff:
-        for r in rules:
-            xs, ys = _agg(rows, r, 'n_aff_mean')
-            a.plot(xs, ys, color=COL[r], lw=0.6, ls=':')
-    a.set_xlabel(xlab_rho); a.set_ylabel(r'$n_x$'); a.set_yscale('log')
-    b.set_xlabel(r'$\langle n\rangle$'); b.set_ylabel(r'$\omega_1$', labelpad=1); b.set_yscale('log'); b.set_xscale('log')
-    for ax in (a, b):
-        ax.yaxis.set_minor_formatter(matplotlib.ticker.NullFormatter())
-    a.set_yticks([1, 2, 5, 10, 20]); a.set_yticklabels(['1', '2', '5', '10', '20'])
-    b.set_xticks([2, 3, 5, 10]); b.set_xticklabels(['2', '3', '5', '10'])
-    b.xaxis.set_minor_formatter(matplotlib.ticker.NullFormatter())
-    lab(a, '(a)'); lab(b, '(b)')
+def _stack():
+    """two panels stacked vertically, legend outside on the right"""
+    fig, (a, b) = plt.subplots(2, 1, figsize=(3.4, 3.7))
+    fig.subplots_adjust(hspace=0.42, right=0.70)
+    return fig, a, b
+
+
+def _legend(fig, a, b):
     h, l = a.get_legend_handles_labels()
-    fig.legend(h, l, loc='lower center', ncol=5, frameon=False, bbox_to_anchor=(0.5, 0.93),
-               handlelength=1.4, columnspacing=0.8, handletextpad=0.3)
-    fig.subplots_adjust(wspace=0.55)
-    fig.savefig(os.path.join(HERE, fname))
+    h2, l2 = b.get_legend_handles_labels()
+    for hh, ll in zip(h2, l2):
+        if ll not in l:
+            h.append(hh); l.append(ll)
+    fig.legend(h, l, loc='center left', bbox_to_anchor=(0.71, 0.5), frameon=False,
+               handlelength=1.6, handletextpad=0.4, labelspacing=0.5)
+
+
+def _logticks(ax, axis, ticks):
+    getattr(ax, f'set_{axis}scale')('log')
+    getattr(ax, f'set_{axis}ticks')(ticks)
+    getattr(ax, f'set_{axis}ticklabels')([('%g' % t) for t in ticks])
+    getattr(ax, f'{axis}axis').set_minor_formatter(matplotlib.ticker.NullFormatter())
 
 
 def fig2():
-    rows = json.load(open(os.path.join(B, 'results', 'sweep_T1000.json')))
-    panels(rows, RULES, ['square', 'triangular', 'honeycomb'], 'fig2.pdf')
+    p = json.load(open(os.path.join(B, 'results', 'psweep_T1000.json')))
+    vor = json.load(open(os.path.join(B, 'results', 'voronoi.json')))
+    f2 = os.path.join(B, 'results', 'bloch2_T1000.json')
+    bl = json.load(open(f2)) if os.path.exists(f2) else json.load(open(os.path.join(B, 'results', 'bloch_T1000.json')))
+    fig, a, b = _stack()
+    for r in RULES:
+        v = [x for x in p if x['rule'] == r and x['alpha'] == 0.0]
+        a.scatter([x['rho'] for x in v], [x['n_x'] for x in v], s=5, marker=MK[r], color=COL[r], alpha=0.3, linewidths=0)
+        xs, ys = _agg(p, r, 'n_x')
+        rhos = [np.mean([x['rho'] for x in v if x['rho_t'] == q]) for q in xs]
+        a.plot(rhos, ys, color=COL[r], marker=MK[r], ms=3.5, label=LABEL[r])
+    for name in ('square', 'triangular', 'honeycomb'):
+        v = [x for x in p if x['rule'] == name]
+        c, m = REF[name]
+        a.plot([x['rho'] for x in v], [x['n_x'] for x in v], color=c, marker=m, ms=4, lw=0.8, label=name)
+    rv = sorted({x['rho_t'] for x in vor})
+    a.plot([np.mean([x['rho'] for x in vor if x['rho_t'] == q]) for q in rv],
+           [np.mean([x['n_x_per'] for x in vor if x['rho_t'] == q]) for q in rv],
+           color='#555555', marker='o', mfc='white', ms=3.5, lw=0.8, label='Voronoi')
+    a.set_xlabel(r'$\bar\rho$'); a.set_ylabel(r'$n_x$')
+    _logticks(a, 'y', [1, 2, 5, 10])
+    for r in RULES:
+        v = [x for x in bl if x['rule'] == r and x.get('alpha', 0.0) == 0.0 and x['omega_h'] > 0
+             and x.get('resolved', x['k_h'] > 0.3)]
+        if not v:
+            continue
+        iso = np.array([x['eta_n'] >= 0.7 for x in v])
+        n0 = np.array([x['n0'] for x in v]); wh = np.array([x['omega_h'] for x in v])
+        b.scatter(n0[iso], wh[iso], s=10, marker=MK[r], color=COL[r], linewidths=0)
+        b.scatter(n0[~iso], wh[~iso], s=10, marker=MK[r], facecolors='none', edgecolors=COL[r], linewidths=0.6)
+    b.set_xlabel(r'$n$ (propagation direction)'); b.set_ylabel(r'$\omega_h$')
+    _logticks(b, 'x', [2, 3, 4, 6, 8]); b.set_yscale('log')
+    b.yaxis.set_minor_formatter(matplotlib.ticker.NullFormatter())
+    lab(a, '(a)'); lab(b, '(b)')
+    _legend(fig, a, b)
+    fig.savefig(os.path.join(HERE, 'fig2.pdf'))
 
 
 def fig3():
-    rows = json.load(open(os.path.join(B, 'results', 'sweep3d_T300.json')))
-    # 'uniform' excluded: plates thicker than wide at matched density (thin-shell model invalid)
-    panels(rows, [r for r in RULES if r != 'uniform'], [], 'fig3.pdf', aff=True)
+    pl = json.load(open(os.path.join(B, 'results', 'sweep3d_T300.json')))
+    st = json.load(open(os.path.join(B, 'results', 'skel3d_T300.json')))
+    rules = [r for r in RULES if r != 'uniform']      # plates thicker than wide (thin-shell model invalid)
+    fig, a, b = _stack()
+    for r in rules:
+        for rows, ls, filled in ((pl, '-', True), (st, '--', False)):
+            xs, ys = _agg(rows, r, 'n_mean')
+            rhos = [np.mean([x['rho'] for x in rows if x['rule'] == r and x['alpha'] == 0 and x['rho_t'] == q]) for q in xs]
+            a.plot(rhos, ys, color=COL[r], marker=MK[r], ms=3.5, ls=ls,
+                   mfc=COL[r] if filled else 'white', label=LABEL[r] if filled else None)
+            v = [x for x in rows if x['rule'] == r]
+            b.scatter([x['n_mean'] for x in v], [x['omega1'] for x in v], s=10, marker=MK[r],
+                      facecolors=COL[r] if filled else 'none', edgecolors=COL[r], linewidths=0.6)
+    a.plot([], [], color='#555555', ls='-', label='plates'); a.plot([], [], color='#555555', ls='--', mfc='white', label='struts')
+    a.set_xlabel(r'$\bar\rho$'); a.set_ylabel(r'$\langle n\rangle$'); a.set_xscale('log')
+    a.xaxis.set_minor_formatter(matplotlib.ticker.NullFormatter())
+    a.set_xticks([0.01, 0.03, 0.1, 0.2]); a.set_xticklabels(['0.01', '0.03', '0.1', '0.2'])
+    _logticks(a, 'y', [1, 2, 3, 4])
+    b.set_xlabel(r'$\langle n\rangle$'); b.set_ylabel(r'$\omega_1$')
+    _logticks(b, 'x', [1.5, 2, 3, 4]); b.set_yscale('log')
+    lab(a, '(a)'); lab(b, '(b)')
+    _legend(fig, a, b)
+    fig.savefig(os.path.join(HERE, 'fig3.pdf'))
 
 
 if __name__ == '__main__':
