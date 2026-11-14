@@ -153,3 +153,11 @@ Mixing families practised in microwave GRIN (Qi, Tang & Cui, Sci. Rep. 5, 11732 
 to cross the substrate index) and in graded lattices for stiffness (Al-Ketan et al., JMBBM 102,
 103520 (2020)). Unchecked: 2025 MSSP SC/BCC/ABH graded lattice (S0888327025014074).
 Ma et al. NJP 14, 025001 (2012) RETRACTED (NJP 18, 059701 (2016)) — removed from refs.bib.
+
+## Cut-angle grading (2026-11-14, `anglegrade.py`, rule (area, centroid, ('perpmix', kappa)))
+kappa = 0 balanced ... 1 centroid; 4 seeds; framed periodic, isotropised n:
+  rho 0.1: 3.98 -> 5.45 (1.37x); rho 0.2: 2.94 -> 4.41 (1.50x); rho 0.4: 2.37 -> 3.57 (1.51x).
+  Monotone in kappa, seed spread 0.01-0.18. kappa x rho: 2.37-5.45 = 2.3x in ONE family
+  (vs 2.45x by mixing rules) -> no rule switch, no impedance jump. Isotropy peaks at
+  intermediate kappa (eta 0.94 at kappa 0.4, rho 0.4). Bloch edge at rho 0.2: 1.00, 0.87, 0.77,
+  0.77, 0.61, 0.29 for kappa 0 ... 1. Replaces the mixing material in the paper.
