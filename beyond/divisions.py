@@ -67,10 +67,11 @@ def _sample(poly, rng):
     return p0 + r1 * a[k] + r2 * b[k]
 
 
-def run(T, seed=0, rule='SR'):
+def run(T, seed=0, rule='SR', box=(1.0, 1.0)):
     pick, where, angle = RULES[rule] if isinstance(rule, str) else rule
     rng = np.random.default_rng(seed)
-    polys = [np.array([[0., 0.], [1., 0.], [1., 1.], [0., 1.]])]
+    Wb, Hb = box
+    polys = [np.array([[0., 0.], [Wb, 0.], [Wb, Hb], [0., Hb]])]
     labs = [[-1, -2, -3, -4]]
     areas = [1.0]
     leaves = [0]; pos = {0: 0}           # uniform pick: O(1) removal
@@ -82,7 +83,7 @@ def run(T, seed=0, rule='SR'):
     for t in range(T):
         # --- pick a cell
         if pick == 'area':
-            p = rng.random(2); c = 0
+            p = rng.random(2) * np.array([Wb, Hb]); c = 0
             while c in split_of:
                 q, nrm, k0, k1 = split_of[c]
                 c = k0 if (p - q) @ nrm >= 0 else k1
@@ -101,6 +102,12 @@ def run(T, seed=0, rule='SR'):
             th = rng.random() * np.pi
         elif angle == 'rect':
             th = 0.5 * np.pi * rng.integers(2)
+        elif isinstance(angle, tuple) and angle[0] == 'perpmix_field':
+            w, V = np.linalg.eigh(I2)
+            ax = V[:, 1]
+            kap = float(angle[1](p[0], p[1]))
+            th = math.atan2(ax[1], ax[0]) + 0.5 * np.pi + kap * np.pi * (rng.random() - 0.5) \
+                + 0.02 * rng.standard_normal()
         elif isinstance(angle, tuple) and angle[0] == 'perpmix':
             # perpendicular to the major axis plus a uniform tilt in [-kappa pi/2, kappa pi/2]:
             # kappa = 0 -> 'balanced', kappa = 1 -> uniform angle ('centroid')

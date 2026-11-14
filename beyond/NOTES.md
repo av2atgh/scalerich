@@ -172,3 +172,13 @@ safe homogenisation (cell-size gradients). Full-lattice check not done.
 Vibration (ABH) trap (`device/abh.py`): grading +30-60% absorption, capped by tip band edge; not used.
 Market/feasibility scan: helmets no (ms pulses, liner << wavelength); electronics drop/shock inserts
 and blast pads plausible; prior art Radi et al. TAML 14, 100553 (2024). Manuscript now 5 pp.
+
+## Full-lattice check of Fig. 4 FAILED the homogenised model (2026-11-14, `device/fulllattice.py`)
+Reduced device (40x20 cells, T = 100 per cell, shared grid-line frames): full lattice U/D/C peak
+1.00/0.71/0.73, impulse 1.00/0.66/0.86; homogenised (isotropised framed cells) 1.00/1.21/0.99,
+1.00/1.20/0.88; absolute U peak 1.38 (full) vs 0.59 (hom). Cause: the shared square frame forms
+straight vertical/horizontal load paths (strongly anisotropic), lost by isotropising K, G.
+Fig. 4 (homogenised, framed T = 1000 tables) is therefore not reliable.
+Replacement: `device/globalshock.py` — ONE division of the whole insert (rectangular domain,
+position-dependent cut-angle tilt 'perpmix_field'), outer skin only, full lattice, no homogenisation.
+Also fixed: Fig. 4(c) impulse was the tensile rebound; now compressive impulse.
