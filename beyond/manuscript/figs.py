@@ -49,7 +49,7 @@ def _agg(rows, rule, key, by='rho_t', alpha=0.0):
 
 def _stack():
     """two panels stacked vertically, full column width (symbols explained in the caption)"""
-    fig, (a, b) = plt.subplots(2, 1, figsize=(3.4, 3.9))
+    fig, (a, b) = plt.subplots(2, 1, figsize=(3.4, 4.4))
     fig.subplots_adjust(hspace=0.42)
     return fig, a, b
 
@@ -86,7 +86,7 @@ def fig2():
     vor = json.load(open(os.path.join(B, 'results', 'voronoi.json')))
     bl = json.load(open(os.path.join(B, 'results', 'bloch2_T1000.json')))
     sp_ = json.load(open(os.path.join(B, 'results', 'spanmode_bloch2.json')))
-    fig, (a, b, c) = plt.subplots(3, 1, figsize=(3.4, 5.6))
+    fig, (a, b, c) = plt.subplots(3, 1, figsize=(3.4, 6.4))
     fig.subplots_adjust(hspace=0.45)
     MAIN = ('SR', 'centroid', 'balanced', 'regular')
     # (a) index vs density

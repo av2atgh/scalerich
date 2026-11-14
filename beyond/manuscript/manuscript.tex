@@ -4,6 +4,10 @@
 \usepackage{bm}
 \usepackage[colorlinks=true,allcolors=blue]{hyperref}
 \newcommand{\tbd}[1]{\textcolor{red}{[#1]}}
+\renewcommand{\topfraction}{0.95}
+\renewcommand{\bottomfraction}{0.95}
+\renewcommand{\textfraction}{0.05}
+\renewcommand{\floatpagefraction}{0.85}
 
 \begin{document}
 
@@ -39,6 +43,15 @@ plane wave~\cite{both2026}. Geometrically the SR construction is Cowan's iterate
 division: the cell holding the point, chosen in proportion to its area, is cut by a
 chord~\cite{cowan2010,vazquez2026sr}; with axis-parallel cuts and no thickness it is a
 STIT (Mondrian) tessellation~\cite{nagel2005}.
+
+\begin{figure}[b]
+\includegraphics[width=\columnwidth]{fig1.pdf}
+\caption{\label{fig:rules}Recursive divisions of the square, $T=400$ ligaments, line
+width $\propto t^{-1/2}$ ($\alpha=1/2$). SR: cell $\propto$ area, uniform point, uniform
+angle. \emph{uniform}: cell chosen uniformly. \emph{rect}: axis-parallel cuts.
+\emph{centroid}: cut through the centroid. \emph{balanced}: centroid cut perpendicular to
+the major axis. \emph{regular}: as \emph{balanced}, largest cell first.}
+\end{figure}
 
 Cowan's construction defines a whole family of recursive divisions. A rule specifies
 which cell is cut, where the cut passes, and at what angle. Changing these choices
@@ -92,15 +105,6 @@ pin-jointed architecture caps the index, and slender ligaments bring $n$ close t
 cap.
 
 % ---------------------------------------------------------------------------
-\begin{figure}[tb]
-\includegraphics[width=\columnwidth]{fig1.pdf}
-\caption{\label{fig:rules}Recursive divisions of the square, $T=400$ ligaments, line
-width $\propto t^{-1/2}$ ($\alpha=1/2$). SR: cell $\propto$ area, uniform point, uniform
-angle. \emph{uniform}: cell chosen uniformly. \emph{rect}: axis-parallel cuts.
-\emph{centroid}: cut through the centroid. \emph{balanced}: centroid cut perpendicular to
-the major axis. \emph{regular}: as \emph{balanced}, largest cell first.}
-\end{figure}
-
 \paragraph*{Recursive divisions.}
 We compare six rules (Fig.~\ref{fig:rules}). Cells are picked in proportion to area
 (SR), uniformly among the cells (\emph{uniform}), or largest first (\emph{regular}). The
