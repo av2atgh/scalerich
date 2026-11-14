@@ -182,3 +182,12 @@ Fig. 4 (homogenised, framed T = 1000 tables) is therefore not reliable.
 Replacement: `device/globalshock.py` — ONE division of the whole insert (rectangular domain,
 position-dependent cut-angle tilt 'perpmix_field'), outer skin only, full lattice, no homogenisation.
 Also fixed: Fig. 4(c) impulse was the tensile rebound; now compressive impulse.
+
+## Global full-lattice shock result (2026-11-14, `device/globalshock.py`, 2 realisations)
+40x20 insert, 80k ligaments, one division, skin only, tau = 80. Relative to uniform kappa = 0:
+  D (diverging, X = 5): peak 0.79/0.94, impulse 0.82/0.82
+  C (converging):       peak 1.21/1.09, impulse 1.10/0.95
+  S (uniform kappa = 1): peak 0.84/0.92, impulse 0.84/0.83
+=> D ≈ S: the reduction comes from the softer/slower material, not routing; directional effect
+(D vs C) comparable to realisation scatter. Homogenised Fig. 4 (peak halved) not confirmed.
+Recommendation: drop the application section and Fig. 4; keep cut-angle n-tuning as physics.
