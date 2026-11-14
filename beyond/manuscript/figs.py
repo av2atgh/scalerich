@@ -113,6 +113,7 @@ def fig2():
     a.set_ylim(1, 6.5); a.set_yticks([1, 2, 3, 4, 5, 6])
     a.set_xticks([0.1, 0.2, 0.3, 0.4])
     # (b) band edge vs index, one line per rule (geometric means over seeds and directions)
+    nall = []
     for r in ('SR', 'centroid', 'balanced'):
         v = [x for x in bl if x['rule'] == r and x['resolved'] and x['omega_h'] > 0]
         if not v:
@@ -130,15 +131,11 @@ def fig2():
             b.fill_between(N[o], np.array(lo)[o], np.array(hi)[o], color=COL[r], alpha=0.15, lw=0)
         b.plot(N[o], np.array(W)[o], color=COL[r], marker=MK[r], ms=8 if MK[r] == '*' else 5.5, ls='--' if dashed else '-',
                mfc='white' if dashed else COL[r], label=LABEL[r])
-        if r in ('SR', 'balanced'):
-            for q, nx, wy in zip(qs, N, W):
-                if q in (0.05, 0.1, 0.2, 0.4):
-                    b.annotate('%g' % q, (nx, wy), xytext=(4, 2) if r == 'balanced' else (-4, -3),
-                               textcoords='offset points', fontsize=6.5, color=COL[r],
-                               ha='left' if r == 'balanced' else 'right', va='bottom' if r == 'balanced' else 'top')
+        nall.extend(N)
     b.set_xlabel(r'$n$ (propagation direction)'); b.set_ylabel(r'$\omega_h$')
     b.legend(loc='upper right', frameon=False, handlelength=2.2, borderaxespad=0.2)
-    b.set_yscale('log'); b.set_xticks([2, 3, 4, 5, 6, 7]); b.set_xlim(2, 7)
+    b.set_yscale('log'); b.set_xlim(min(nall) - 0.15, max(nall) + 0.15)
+    b.xaxis.set_major_locator(matplotlib.ticker.MultipleLocator(1))
     # (c) band edge vs weakest-span prediction
     for r in ('SR', 'centroid', 'balanced'):
         v = [x for x in sp_ if x['rule'] == r and x['resolved'] and x['omega_h'] > 0]
