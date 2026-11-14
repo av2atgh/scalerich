@@ -30,7 +30,7 @@ def kappa_field(design, x, X):
 
 
 def run(T, ratio, design, Wd=60.0, Hd=30.0, h=0.5, X=15.0, a=3.0, xc=4.0, tau=40.0, t_end=500.0,
-        dt=0.5, eta=0.03, w_ref=0.15, snaps=(60, 100, 140, 180)):
+        dt=0.5, eta=0.03, w_ref=0.15, snaps=(60, 100, 140, 180), fix_rot=None):
     Nx = int(round(Wd / h)); Ny = int(round(Hd / h))
     xc_e = (np.arange(Nx) + 0.5) * h - Wd / 2
     kap = kappa_field(design, xc_e, X)
@@ -100,7 +100,7 @@ if __name__ == '__main__':
         Fc = r['Fcomp']; pk = float(np.abs(Fc).max())
         if ref_peak is None: ref_peak = pk
         arr = float(r['t'][np.argmax(np.abs(Fc) > 0.1 * ref_peak)])
-        imp = float(np.trapezoid(np.clip(Fc, 0, None), r['t']))
+        imp = float(np.trapezoid(np.clip(-Fc, 0, None), r['t']))   # compressive impulse
         out[design] = dict(peak=pk, arrival=arr, impulse_pos=imp, band=r['band'], frac_out=r['frac_out'],
                            n_range=[r['n_min'], r['n_max']], mass=r['mass'],
                            t=r['t'][::4].tolist(), Fcomp=Fc[::4].tolist(), Fbase=r['Fbase'][::4].tolist())

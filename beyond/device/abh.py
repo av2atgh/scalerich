@@ -30,8 +30,8 @@ B = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
 KAPPAS = np.array([0.0, 0.2, 0.4, 0.6, 0.8, 1.0]); RHOS = np.array([0.1, 0.2, 0.4])
 
 
-def tables():
-    r = json.load(open(os.path.join(B, 'results', 'anglegrade.json')))
+def tables(fname='anglegrade.json'):
+    r = json.load(open(os.path.join(B, 'results', fname)))
     T = {}
     for q in ('K', 'G', 'rho', 'n_iso', 'omega1'):
         T[q] = np.array([[np.exp(np.mean(np.log([o[q] for o in r if o['kappa'] == k and o['rho_t'] == p])))
