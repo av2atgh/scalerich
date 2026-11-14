@@ -29,14 +29,14 @@ and six times higher in three. Density sets the range of $n$.
 
 % ---------------------------------------------------------------------------
 \paragraph*{Introduction.}
-Scale-rich (SR) metamaterials~\cite{both2026} are grown one ligament at a time: a
+Scale-rich (SR) metamaterials~\cite{both2026}, a recent example of irregular metamaterial networks~\cite{wytock2026}, are grown one ligament at a time: a
 ligament nucleates at a uniform random point and angle and grows until it meets the
 existing structure, with thickness $\lambda_t=\lambda_0t^{-\alpha}$ for the $t$-th
 ligament. Their unit cells reach effective refractive indices $1.5\le n\le8.3$, against
 $1.0\le n\le1.9$ for square and hexagonal lattices, and an SR Luneburg lens focuses a
 plane wave~\cite{both2026}. Geometrically the SR construction is Cowan's iterated cell
 division: the cell holding the point, chosen in proportion to its area, is cut by a
-chord~\cite{cowan2010,vazquez2026sr}.
+chord~\cite{cowan2010,vazquez2026sr}; with axis-parallel cuts and no thickness it is a STIT (Mondrian) tessellation~\cite{nagel2005}.
 
 Cowan's construction defines a whole family of recursive divisions. A rule specifies
 which cell is cut, where the cut passes, and at what angle. Changing these choices
@@ -49,7 +49,7 @@ $v(\hat{\bm k})$, the largest eigenvalue of the Christoffel matrix
 $\Gamma_{ik}=C_{ijkl}\hat k_j\hat k_l$ divided by $\bar\rho$~\cite{auld1973}. The
 effective refractive index $n(\hat{\bm k})=c_0/v(\hat{\bm k})$, with $c_0$ the velocity
 in the constituent, is the design variable of gradient-index (GRIN) devices such as
-elastic Luneburg lenses~\cite{tol2017}. A GRIN designer needs three things from a family
+elastic Luneburg lenses~\cite{tol2017,aguzzi2022}. A GRIN designer needs three things from a family
 of unit cells: a wide range of $n$, isotropy of $n$, and a wide band of frequencies over
 which the homogenised $n$ holds. That band closes at the lowest local resonance
 $\omega_1$ of the cell~\cite{liu2000}.
@@ -78,7 +78,7 @@ A large $n$ needs a soft longitudinal modulus. A longitudinal wave compresses th
 material, so it probes $C_{11}\sim K+G$ rather than the Young modulus. A honeycomb, soft
 in $E$ but stiff in the bulk modulus $K$~\cite{deshpande2001}, keeps $n\simeq1.9$ at every
 density. A network of T-junctions is soft in both: with pin joints an SR network is a
-mechanism by Maxwell counting~\cite{maxwell1864,vazquez2026sr}, so its stiffness comes
+mechanism by Maxwell counting~\cite{maxwell1864,vazquez2026sr}, so, as in stiff fibre networks~\cite{wilhelm2003,head2003}, its stiffness comes
 from ligament bending, and $n$ grows as the ligaments become more slender.
 
 % ---------------------------------------------------------------------------
@@ -129,7 +129,7 @@ given $n$ at a higher density.
 The bandwidth has a geometric origin. The lowest local resonance is the flexural mode of
 the weakest span between junctions. A span of length $\ell_s$ and thickness $\lambda_s$
 has its lowest mode at $\omega_s=\beta^2(\lambda_s/\sqrt{12}\,\ell_s^2)\,c_0$, with
-$\beta=\pi$ for pinned ends and $\beta=4.730$ for clamped ends. The prediction
+$\beta=\pi$ for pinned ends and $\beta=4.730$ for clamped ends~\cite{aguzzi2022}. The prediction
 $\omega_{\rm span}=\min_s\omega_s$ with clamped ends has no free parameter. It tracks the
 computed $\omega_1$ over three decades, with a correlation of $0.979$ between
 $\ln\omega_1$ and $\ln\omega_{\rm span}$ over all 480 two-dimensional cells. The ratio
@@ -153,8 +153,8 @@ $\alpha\in\{0,1/2,1\}$ and $\bar\rho\in\{0.05,0.1,0.2\}$ with three realisations
 The \emph{uniform} rule is excluded: its plates are so small that, at these densities,
 they are thicker than they are wide.
 
-The mechanics change qualitatively. A convex cell with rigid planar faces is rigid, so
-membranes carry the load and the response is close to affine (Fig.~\ref{fig:3d}). The
+The mechanics change qualitatively. A convex cell with rigid planar faces is rigid, so, as in periodic plate
+lattices~\cite{berger2017,tancogne2018}, membranes carry the load and the response is close to affine (Fig.~\ref{fig:3d}). The
 affine index is $n_{\rm aff}=1.30$--$1.32$ for every rule with isotropic normals.
 Non-affine relaxation lowers $C_{11}$ to $0.5$--$0.67$ of its affine value at
 $\alpha=0$, and to $0.9$--$1$ at $\alpha=1$, where the first plates carry most of the

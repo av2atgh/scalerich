@@ -6,7 +6,7 @@
 %Control: page (0) single
 %Control: year (1) truncated
 %Control: production of eprint (0) enabled
-\begin{thebibliography}{11}%
+\begin{thebibliography}{18}%
 \makeatletter
 \providecommand \@ifxundefined [1]{%
  \@ifx{#1\undefined}
@@ -67,6 +67,22 @@
   {https://doi.org/10.1038/s41586-026-11191-2} {\bibfield  {journal} {\bibinfo
   {journal} {Nature}\ }\textbf {\bibinfo {volume} {659}},\ \bibinfo {pages}
   {345} (\bibinfo {year} {2026})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Wytock}\ \emph {et~al.}(2026)\citenamefont {Wytock},
+  \citenamefont {Daraio}, \citenamefont {Jaeger}, \citenamefont {Schuh},
+  \citenamefont {Valdevit}, \citenamefont {Vitelli},\ and\ \citenamefont
+  {Motter}}]{wytock2026}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {T.~P.}\ \bibnamefont
+  {Wytock}}, \bibinfo {author} {\bibfnamefont {C.}~\bibnamefont {Daraio}},
+  \bibinfo {author} {\bibfnamefont {H.~M.}\ \bibnamefont {Jaeger}}, \bibinfo
+  {author} {\bibfnamefont {C.~A.}\ \bibnamefont {Schuh}}, \bibinfo {author}
+  {\bibfnamefont {L.}~\bibnamefont {Valdevit}}, \bibinfo {author}
+  {\bibfnamefont {V.}~\bibnamefont {Vitelli}},\ and\ \bibinfo {author}
+  {\bibfnamefont {A.~E.}\ \bibnamefont {Motter}},\ }\bibfield  {title}
+  {\bibinfo {title} {Irregular metamaterial networks},\ }\bibfield  {journal}
+  {\bibinfo  {journal} {Nature Reviews Materials}\ }\href
+  {https://doi.org/10.1038/s41578-026-00936-0} {10.1038/s41578-026-00936-0}
+  (\bibinfo {year} {2026})\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Cowan}(2010)}]{cowan2010}%
   \BibitemOpen
   \bibfield  {author} {\bibinfo {author} {\bibfnamefont {R.}~\bibnamefont
@@ -78,9 +94,21 @@
 \bibitem [{\citenamefont {Vazquez}(2026)}]{vazquez2026sr}%
   \BibitemOpen
   \bibfield  {author} {\bibinfo {author} {\bibfnamefont {A.}~\bibnamefont
-  {Vazquez}},\ }\href@noop {} {\bibinfo {title} {Scale-rich network
-  metamaterials grow by local rules on a recursive cell division}} (\bibinfo
-  {year} {2026}),\ \bibinfo {note} {submitted}\BibitemShut {NoStop}%
+  {Vazquez}},\ }\href {https://doi.org/10.48550/arXiv.2611.16513} {\bibinfo
+  {title} {Scale-rich network metamaterials grow by local rules on a recursive
+  cell division}} (\bibinfo {year} {2026}),\ \Eprint
+  {https://arxiv.org/abs/2611.16513} {arXiv:2611.16513} \BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Nagel}\ and\ \citenamefont
+  {Wei{\ss}}(2005)}]{nagel2005}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {W.}~\bibnamefont
+  {Nagel}}\ and\ \bibinfo {author} {\bibfnamefont {V.}~\bibnamefont
+  {Wei{\ss}}},\ }\bibfield  {title} {\bibinfo {title} {Crack {STIT}
+  tessellations: characterization of stationary random tessellations stable
+  with respect to iteration},\ }\href@noop {} {\bibfield  {journal} {\bibinfo
+  {journal} {Advances in Applied Probability}\ }\textbf {\bibinfo {volume}
+  {37}},\ \bibinfo {pages} {859} (\bibinfo {year} {2005})}\BibitemShut
+  {NoStop}%
 \bibitem [{\citenamefont {Auld}(1973)}]{auld1973}%
   \BibitemOpen
   \bibfield  {author} {\bibinfo {author} {\bibfnamefont {B.~A.}\ \bibnamefont
@@ -98,6 +126,22 @@
   harvesting},\ }\href@noop {} {\bibfield  {journal} {\bibinfo  {journal}
   {Applied Physics Letters}\ }\textbf {\bibinfo {volume} {111}},\ \bibinfo
   {pages} {013503} (\bibinfo {year} {2017})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Aguzzi}\ \emph {et~al.}(2022)\citenamefont {Aguzzi},
+  \citenamefont {Kanellopoulos}, \citenamefont {Wiltshaw}, \citenamefont
+  {Craster}, \citenamefont {Chatzi},\ and\ \citenamefont
+  {Colombi}}]{aguzzi2022}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {G.}~\bibnamefont
+  {Aguzzi}}, \bibinfo {author} {\bibfnamefont {C.}~\bibnamefont
+  {Kanellopoulos}}, \bibinfo {author} {\bibfnamefont {R.}~\bibnamefont
+  {Wiltshaw}}, \bibinfo {author} {\bibfnamefont {R.~V.}\ \bibnamefont
+  {Craster}}, \bibinfo {author} {\bibfnamefont {E.~N.}\ \bibnamefont
+  {Chatzi}},\ and\ \bibinfo {author} {\bibfnamefont {A.}~\bibnamefont
+  {Colombi}},\ }\bibfield  {title} {\bibinfo {title} {Octet lattice-based plate
+  for elastic wave control},\ }\href
+  {https://doi.org/10.1038/s41598-022-04900-0} {\bibfield  {journal} {\bibinfo
+  {journal} {Scientific Reports}\ }\textbf {\bibinfo {volume} {12}},\ \bibinfo
+  {pages} {624} (\bibinfo {year} {2022})}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Liu}\ \emph {et~al.}(2000)\citenamefont {Liu},
   \citenamefont {Zhang}, \citenamefont {Mao}, \citenamefont {Zhu},
   \citenamefont {Yang}, \citenamefont {Chan},\ and\ \citenamefont
@@ -142,6 +186,28 @@
   {\bibinfo  {journal} {Philosophical Magazine}\ }\textbf {\bibinfo {volume}
   {27}},\ \bibinfo {pages} {294} (\bibinfo {year} {1864})}\BibitemShut
   {NoStop}%
+\bibitem [{\citenamefont {Wilhelm}\ and\ \citenamefont
+  {Frey}(2003)}]{wilhelm2003}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {J.}~\bibnamefont
+  {Wilhelm}}\ and\ \bibinfo {author} {\bibfnamefont {E.}~\bibnamefont {Frey}},\
+  }\bibfield  {title} {\bibinfo {title} {Elasticity of stiff polymer
+  networks},\ }\href {https://doi.org/10.1103/PhysRevLett.91.108103} {\bibfield
+   {journal} {\bibinfo  {journal} {Physical Review Letters}\ }\textbf {\bibinfo
+  {volume} {91}},\ \bibinfo {pages} {108103} (\bibinfo {year}
+  {2003})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Head}\ \emph {et~al.}(2003)\citenamefont {Head},
+  \citenamefont {Levine},\ and\ \citenamefont {MacKintosh}}]{head2003}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {D.~A.}\ \bibnamefont
+  {Head}}, \bibinfo {author} {\bibfnamefont {A.~J.}\ \bibnamefont {Levine}},\
+  and\ \bibinfo {author} {\bibfnamefont {F.~C.}\ \bibnamefont {MacKintosh}},\
+  }\bibfield  {title} {\bibinfo {title} {Deformation of cross-linked
+  semiflexible polymer networks},\ }\href
+  {https://doi.org/10.1103/PhysRevLett.91.108102} {\bibfield  {journal}
+  {\bibinfo  {journal} {Physical Review Letters}\ }\textbf {\bibinfo {volume}
+  {91}},\ \bibinfo {pages} {108102} (\bibinfo {year} {2003})}\BibitemShut
+  {NoStop}%
 \bibitem [{\citenamefont {Shewchuk}(1996)}]{shewchuk1996}%
   \BibitemOpen
   \bibfield  {author} {\bibinfo {author} {\bibfnamefont {J.~R.}\ \bibnamefont
@@ -164,4 +230,29 @@
   {\emph {\bibinfo {booktitle} {Proceedings of the 2003 ACM
   SIGGRAPH/Eurographics Symposium on Computer Animation}}}\ (\bibinfo {year}
   {2003})\ pp.\ \bibinfo {pages} {62--67}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Berger}\ \emph {et~al.}(2017)\citenamefont {Berger},
+  \citenamefont {Wadley},\ and\ \citenamefont {McMeeking}}]{berger2017}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {J.~B.}\ \bibnamefont
+  {Berger}}, \bibinfo {author} {\bibfnamefont {H.~N.~G.}\ \bibnamefont
+  {Wadley}},\ and\ \bibinfo {author} {\bibfnamefont {R.~M.}\ \bibnamefont
+  {McMeeking}},\ }\bibfield  {title} {\bibinfo {title} {Mechanical
+  metamaterials at the theoretical limit of isotropic elastic stiffness},\
+  }\href {https://doi.org/10.1038/nature21075} {\bibfield  {journal} {\bibinfo
+  {journal} {Nature}\ }\textbf {\bibinfo {volume} {543}},\ \bibinfo {pages}
+  {533} (\bibinfo {year} {2017})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Tancogne-Dejean}\ \emph {et~al.}(2018)\citenamefont
+  {Tancogne-Dejean}, \citenamefont {Diamantopoulou}, \citenamefont {Gorji},
+  \citenamefont {Bonatti},\ and\ \citenamefont {Mohr}}]{tancogne2018}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {T.}~\bibnamefont
+  {Tancogne-Dejean}}, \bibinfo {author} {\bibfnamefont {M.}~\bibnamefont
+  {Diamantopoulou}}, \bibinfo {author} {\bibfnamefont {M.~B.}\ \bibnamefont
+  {Gorji}}, \bibinfo {author} {\bibfnamefont {C.}~\bibnamefont {Bonatti}},\
+  and\ \bibinfo {author} {\bibfnamefont {D.}~\bibnamefont {Mohr}},\ }\bibfield
+  {title} {\bibinfo {title} {{3D} plate-lattices: An emerging class of
+  low-density metamaterial exhibiting optimal isotropic stiffness},\ }\href
+  {https://doi.org/10.1002/adma.201803334} {\bibfield  {journal} {\bibinfo
+  {journal} {Advanced Materials}\ }\textbf {\bibinfo {volume} {30}},\ \bibinfo
+  {pages} {1803334} (\bibinfo {year} {2018})}\BibitemShut {NoStop}%
 \end{thebibliography}%
