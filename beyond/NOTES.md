@@ -81,7 +81,7 @@ distribution: the first local resonance is set by the longest slender member,
 n·ω1 at α = 0 ordered by G = ⟨ℓ⟩_w/ℓ_max² for isotropic-angle rules (uniform < SR <
 centroid < balanced), saturating for regular; no collapse (ratio drifts with ρ̄).
 
-## Manuscript (PRL draft, `manuscript/prl.tex`, 2026-11-14)
+## Manuscript (`manuscript/manuscript.tex`, 2026-11-14; formatted for PRL)
 revtex4-2 prl, pdflatex+bibtex, figs.py → fig1-3.pdf. 4 pp, ~1600 words, abstract 518 chars.
 Message: density (bending) sets the n range, not scale richness; at equal n a balanced
 division wins isotropy and bandwidth; in 3D plates are near-affine and n collapses to 1.3-1.8.

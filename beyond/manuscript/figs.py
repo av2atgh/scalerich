@@ -1,4 +1,4 @@
-"""Figures for prl.tex.  python figs.py [1 2 3]"""
+"""Figures for manuscript.tex.  python figs.py [1 2 3]"""
 import json, os, sys
 import numpy as np
 import matplotlib
