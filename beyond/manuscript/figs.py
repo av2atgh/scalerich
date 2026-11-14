@@ -183,6 +183,42 @@ def fig3():
     fig.savefig(os.path.join(HERE, 'fig3.pdf'))
 
 
+def fig4():
+    """shock routing in a lattice insert (homogenised, cut-angle grading at rho = 0.2)"""
+    d = json.load(open(os.path.join(B, 'results', 'shockfig_tau20.json')))
+    sU = np.load(os.path.join(B, 'results', 'shockfig_U.npz')); sD = np.load(os.path.join(B, 'results', 'shockfig_D5.npz'))
+    fig = plt.figure(figsize=(3.4, 4.9))
+    gs = fig.add_gridspec(3, 2, height_ratios=[0.62, 1.0, 1.0], hspace=0.5, wspace=0.08)
+    a1 = fig.add_subplot(gs[0, 0]); a2 = fig.add_subplot(gs[0, 1])
+    b = fig.add_subplot(gs[1, :]); c = fig.add_subplot(gs[2, :])
+    Wd, Hd = 60.0, 30.0
+    key = 's100'
+    vmax = max(sU[key].max(), sD[key].max())
+    for ax, S, ttl in ((a1, sU, 'uniform'), (a2, sD, 'graded')):
+        ax.imshow(S[key].T, origin='lower', extent=(-Wd / 2, Wd / 2, 0, Hd), cmap='magma', vmin=0, vmax=vmax, aspect='equal')
+        ax.plot([-4, 4], [0.3, 0.3], color='#2a78d6', lw=3)               # component
+        ax.annotate('', xy=(0, Hd - 0.5), xytext=(0, Hd + 6), arrowprops=dict(arrowstyle='->', color='k', lw=0.8), annotation_clip=False)
+        if ttl == 'graded':
+            for xx in (-5, 5):
+                ax.axvline(xx, color='white', lw=0.5, ls=':')
+        ax.set_title(ttl, fontsize=8, pad=8); ax.set_xticks([]); ax.set_yticks([])
+    t = np.array(d['U']['t'])
+    for name, col, lab_, ls in (('U', '#555555', 'uniform', '-'), ('D5', COL['centroid'], 'diverging', '-'), ('C5', COL['balanced'], 'converging', '--')):
+        b.plot(t, np.array(d[name]['F']), color=col, ls=ls, lw=1.2, label=lab_)
+    b.set_xlim(0, 300); b.set_xlabel(r'$t$ ($L/c_0$)'); b.set_ylabel('force on\ncomponent')
+    b.legend(frameon=False, loc='lower right', handlelength=2)
+    sc = d['scan']
+    for dsg, col, mk in (('D', COL['centroid'], 'o'), ('C', COL['balanced'], 'v')):
+        v = [x for x in sc if x['design'] == dsg]
+        X = [x['X'] for x in v]
+        c.plot(X, [x['peak'] for x in v], color=col, marker=mk, ms=5, ls='-', mfc=col)
+        c.plot(X, [x['impulse'] for x in v], color=col, marker=mk, ms=5, ls='--', mfc='white')
+    c.axhline(1, color='#999999', lw=0.6, ls=':')
+    c.set_xlabel(r'grading width $X$ (cells)'); c.set_ylabel('relative to uniform')
+    _panel_labels(fig, (a1, b, c), ('(a)', '(b)', '(c)'))
+    fig.savefig(os.path.join(HERE, 'fig4.pdf'))
+
+
 if __name__ == '__main__':
     which = sys.argv[1:] or ['1', '2', '3']
     for w in which:

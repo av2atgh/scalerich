@@ -161,3 +161,14 @@ kappa = 0 balanced ... 1 centroid; 4 seeds; framed periodic, isotropised n:
   (vs 2.45x by mixing rules) -> no rule switch, no impedance jump. Isotropy peaks at
   intermediate kappa (eta 0.94 at kappa 0.4, rho 0.4). Bloch edge at rho 0.2: 1.00, 0.87, 0.77,
   0.77, 0.61, 0.29 for kappa 0 ... 1. Replaces the mixing material in the paper.
+
+## Shock routing (2026-11-14, `device/shock.py`) — Fig. 4 of the manuscript
+Homogenised 60x30-cell insert on rigid base, half-sine pulse tau = 20 L/c0 above a component
+(|x| < 4); cut-angle grading at rho = 0.2 (n 2.94-4.41), polymer loss 0.03; <1% of the pulse
+spectrum above the band edge. Diverging grading (low-n column, high-n within X of the axis):
+peak force 0.96 (X 25) ... 0.54 (X 5) ... 0.49 (X 3) of uniform; impulse 0.69-0.79. Converging
+control: impulse 1.2-1.8x. Uniform high-n slab: arrival +50%, peak +16% (tau 40). X < 5 is beyond
+safe homogenisation (cell-size gradients). Full-lattice check not done.
+Vibration (ABH) trap (`device/abh.py`): grading +30-60% absorption, capped by tip band edge; not used.
+Market/feasibility scan: helmets no (ms pulses, liner << wavelength); electronics drop/shock inserts
+and blast pads plausible; prior art Radi et al. TAML 14, 100553 (2024). Manuscript now 5 pp.

@@ -6,7 +6,7 @@
 %Control: page (0) single
 %Control: year (1) truncated
 %Control: production of eprint (0) enabled
-\begin{thebibliography}{18}%
+\begin{thebibliography}{19}%
 \makeatletter
 \providecommand \@ifxundefined [1]{%
  \@ifx{#1\undefined}
@@ -192,6 +192,20 @@
   {\bibinfo  {journal} {Physical Review Letters}\ }\textbf {\bibinfo {volume}
   {91}},\ \bibinfo {pages} {108102} (\bibinfo {year} {2003})}\BibitemShut
   {NoStop}%
+\bibitem [{\citenamefont {Radi}\ \emph {et~al.}(2024)\citenamefont {Radi},
+  \citenamefont {Glaesener}, \citenamefont {Kumar},\ and\ \citenamefont
+  {Kochmann}}]{radi2024}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {K.}~\bibnamefont
+  {Radi}}, \bibinfo {author} {\bibfnamefont {R.}~\bibnamefont {Glaesener}},
+  \bibinfo {author} {\bibfnamefont {S.}~\bibnamefont {Kumar}},\ and\ \bibinfo
+  {author} {\bibfnamefont {D.~M.}\ \bibnamefont {Kochmann}},\ }\bibfield
+  {title} {\bibinfo {title} {Spatially-graded {3D}-printed viscoelastic truss
+  metamaterials for impact trajectory control and energy absorption},\ }\href
+  {https://doi.org/10.1016/j.taml.2024.100553} {\bibfield  {journal} {\bibinfo
+  {journal} {Theoretical and Applied Mechanics Letters}\ }\textbf {\bibinfo
+  {volume} {14}},\ \bibinfo {pages} {100553} (\bibinfo {year}
+  {2024})}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Shewchuk}(1996)}]{shewchuk1996}%
   \BibitemOpen
   \bibfield  {author} {\bibinfo {author} {\bibfnamefont {J.~R.}\ \bibnamefont
