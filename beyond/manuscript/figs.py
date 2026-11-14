@@ -94,8 +94,11 @@ def fig2():
         rh = np.array([np.mean([x['rho'] for x in v if x['rho_t'] == q]) for q in qs])
         nn = [np.array([x['n_mean'] for x in v if x['rho_t'] == q]) for q in qs]
         gm = np.array([np.exp(np.mean(np.log(z))) for z in nn])
-        a.fill_between(rh, [z.min() for z in nn], [z.max() for z in nn], color=COL[r], alpha=0.15, lw=0)
-        a.plot(rh, gm, color=COL[r], marker=MK[r], ms=3.5, label=LABEL[r])
+        dashed = r in ('centroid', 'regular')       # coincide with SR / balanced: same cut angles
+        if not dashed:
+            a.fill_between(rh, [z.min() for z in nn], [z.max() for z in nn], color=COL[r], alpha=0.15, lw=0)
+        a.plot(rh, gm, color=COL[r], marker=MK[r], ms=3.5, ls='--' if dashed else '-',
+               mfc='white' if dashed else COL[r], label=LABEL[r])
     for name in ('honeycomb', 'triangular', 'square'):
         v = [x for x in p if x['rule'] == name]
         c, m = REF[name]
