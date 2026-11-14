@@ -18,9 +18,9 @@
 \begin{abstract}
 % PRL limit: 600 characters
 Recursive division of cells generates network metamaterials, and its scale-rich version
-reaches effective refractive indices $n$ from 1.5 to 8.3. Across the family of recursive
+reaches an effective refractive index $n$, the ratio of the wave speed in the constituent to that in the material, between 1.5 and 8.3. Across the family of recursive
 divisions, a balanced rule, which cuts each cell through its centroid perpendicular to its
-long axis, gives the better gradient-index material. At equal $n$ its cells are more
+long axis, gives the better gradient-index material. At equal index $n$ its cells are more
 isotropic, and their lowest local resonance is up to three times higher in two dimensions
 and six times higher in three. Density sets the range of $n$.
 \end{abstract}
@@ -167,7 +167,7 @@ $\omega_1=0.20$, whereas \emph{balanced} ($\alpha=0$, $\bar\rho=0.1$) has $\eta_
 $\omega_1=1.30$.
 
 % ---------------------------------------------------------------------------
-\paragraph*{Discussion.}
+\paragraph*{Conclusions.}
 For the GRIN design problem, a prescribed isotropic $n$ over the widest band, the balanced
 division is the best member of the recursive family we explored. It reaches the same
 indices as SR with more isotropic cells and a higher first local resonance, because its
@@ -184,13 +184,18 @@ $\omega_1$, where local resonances open gaps~\cite{liu2000}, is a separate desig
 and there the broad spectrum of spans of a scale-rich division may be an asset.
 
 \begin{acknowledgments}
+All code is available at \url{https://github.com/av2atgh/scalerich} (folder \texttt{beyond}).
+The calculations were assisted by Claude Opus~5.5, an AI assistant developed by Anthropic.
+Nodes \& Links Ltd provided support in the form of salary for Alexei Vazquez but did not
+have any additional role in the conceptualization of the study, the analysis, the decision
+to publish or the preparation of the manuscript.
 \end{acknowledgments}
 
 \bibliography{refs}
 
 % ---------------------------------------------------------------------------
 \begin{figure}
-\includegraphics[width=0.9\columnwidth]{fig1.pdf}
+\includegraphics[width=\columnwidth]{fig1.pdf}
 \caption{\label{fig:rules}Recursive divisions of the square, $T=400$ ligaments, line
 width $\propto t^{-1/2}$ ($\alpha=1/2$). SR: cell $\propto$ area, uniform point, uniform
 angle. \emph{uniform}: cell chosen uniformly. \emph{rect}: axis-parallel cuts.
