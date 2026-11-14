@@ -68,3 +68,25 @@ def honeycomb(n=8):
     idx = -np.ones(len(P), int); idx[used] = np.arange(len(used))
     bnd = idx[np.intersect1d(bnd, used)]
     return P[used], idx[seg], bnd
+
+
+def voronoi(n=300, seed=0):
+    """Poisson-Voronoi tessellation of the unit square (seeds mirrored in the four sides,
+    so the tessellation is cut exactly by the sides, which become edges)."""
+    from scipy.spatial import Voronoi
+    rng = np.random.default_rng(seed)
+    p = rng.random((n, 2))
+    allp = np.vstack([p, p * [-1, 1], p * [-1, 1] + [2, 0], p * [1, -1], p * [1, -1] + [0, 2]])
+    vor = Voronoi(allp)
+    V = vor.vertices
+    seg = []
+    for (a, b) in vor.ridge_vertices:
+        if a < 0 or b < 0:
+            continue
+        pa, pb = V[a], V[b]
+        if np.all((pa > -1e-9) & (pa < 1 + 1e-9)) and np.all((pb > -1e-9) & (pb < 1 + 1e-9)):
+            seg.append((a, b))
+    seg = np.array(seg)
+    P = V.copy()
+    P[np.abs(P) < 1e-9] = 0; P[np.abs(P - 1) < 1e-9] = 1
+    return _finish(P, seg)
