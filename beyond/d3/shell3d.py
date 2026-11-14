@@ -20,7 +20,7 @@ NU = 0.3
 VOIGT = {(0, 0): 0, (1, 1): 1, (2, 2): 2, (1, 2): 3, (2, 1): 3, (0, 2): 4, (2, 0): 4, (0, 1): 5, (1, 0): 5}
 
 
-def assemble(X, tri, lam_tri):
+def assemble(X, tri, lam_tri, bend=1.0):
     N = len(X); M = len(tri)
     x1, x2, x3 = X[tri[:, 0]], X[tri[:, 1]], X[tri[:, 2]]
     e1 = x2 - x1; e1 /= np.linalg.norm(e1, axis=1)[:, None]
@@ -77,7 +77,7 @@ def assemble(X, tri, lam_tri):
     g2 = -s3[:, None] * g3 - s4[:, None] * g4
     g = np.concatenate([g1, g2, g3, g4], axis=1)
     lam_h = np.minimum(lam_tri[TA], lam_tri[TB])
-    kh = 3 * Le ** 2 / (A[TA] + A[TB]) * lam_h ** 3 / (12 * (1 - NU ** 2))
+    kh = bend * 3 * Le ** 2 / (A[TA] + A[TB]) * lam_h ** 3 / (12 * (1 - NU ** 2))
     hd = np.concatenate([3 * P1[:, None] + np.arange(3), 3 * P2[:, None] + np.arange(3),
                          3 * P3[:, None] + np.arange(3), 3 * P4[:, None] + np.arange(3)], axis=1)
     Kh = kh[:, None, None] * g[:, :, None] * g[:, None, :]

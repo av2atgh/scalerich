@@ -92,7 +92,7 @@ def mass_vector(X, seg, lam_s):
     return M, L
 
 
-def build(g, lam, frame_lam=None):
+def build(g, lam, frame_lam=None, bend=1.0):
     """frame_lam: thickness of the square frame (generation 0), shared between neighbouring
     tiles; None = no frame (ligament ends meet their mirror images at bare kinks)."""
     if frame_lam is None:
@@ -109,7 +109,7 @@ def build(g, lam, frame_lam=None):
         on2 = lambda ax: (np.abs(X[S[:, 0], ax] - 2) < 1e-9) & (np.abs(X[S[:, 1], ax] - 2) < 1e-9)
         keep &= ~on2(0) & ~on2(1)
         S, Ls = S[keep], Ls[keep]
-    K = frame.assemble(X, S, Ls)[0]
+    K = frame.assemble(X, S, Ls, bend=bend)[0]
     master, shift = pairing(X)
     M, L = mass_vector(X, S, Ls)
     rho = float((Ls * L).sum() / 4.0)

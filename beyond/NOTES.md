@@ -110,3 +110,15 @@ per rule 0.44 (uniform, rect, regular) to 0.70 (SR, centroid). 0.44 = (π/4.730)
 - Lens (`lens.py`, `lens_calib.py`): at R = 4 tiles of T = 200, both lenses sit outside the
   homogenised band (D/lambda ≈ 0.9 at the band edge); no decisive result; paused.
 - Framing decided by the user: report both regimes as they are (balanced at low n, SR at high n).
+
+## Analytical picture (2026-11-14, `twoterm.py`, shell3d bend flag)
+1. omega1 = weakest-span flexural mode (parameter-free; corr 0.979; Bloch edge = 0.75 omega1).
+2. Index ceiling n <= n_max = (rho/C_pin)^1/2, C_pin with bending off (pinned 2D / membranes 3D).
+   3D plates: n_max 1.731 (SR) vs n 1.709 (rho .05), 1.624 (rho .2); balanced 1.580 vs 1.536, 1.454.
+   2D pinned framed tilings: n_max_x SR 4.75-8.09 (seed), centroid 5.4-7.9, balanced 5.60-5.70,
+   regular 5.73-5.78, uniform 3.3-4.7 (results/twoterm.json).
+3. n^-2 = s + c (lam/l)^q with s = n_max^-2: measured q ≈ 0.7-1.1 (not 2: stretching-bending
+   coupling, sub-isostatic regime); balanced c ≈ 6x SR at rho 0.4 -> balanced needs low rho for
+   high n -> near ceiling -> small band. Fits omega1(n) tight for balanced/regular (scatter
+   0.01-0.09), loose for SR/centroid (0.3). omega1 ~ rho^0.79 (SR), rho^0.51 (balanced).
+   Crossover: scaling argument only, no closed form.
