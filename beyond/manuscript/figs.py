@@ -15,8 +15,8 @@ plt.rcParams.update({'font.size': 9, 'axes.linewidth': 0.6, 'xtick.major.width':
                      'savefig.bbox': 'tight', 'savefig.pad_inches': 0.02})
 RULES = ['SR', 'uniform', 'rect', 'centroid', 'balanced', 'regular']
 COL = dict(zip(RULES, ['#2a78d6', '#eb6834', '#1baf7a', '#eda100', '#e87ba4', '#008300']))
-MK = dict(zip(RULES, ['o', 'v', 's', '^', 'D', 'P']))
-REF = {'square': ('#555555', 'x'), 'triangular': ('#555555', '+'), 'honeycomb': ('#555555', '*')}
+MK = {'SR': '*', 'uniform': 'X', 'rect': 's', 'centroid': 'o', 'balanced': 'D', 'regular': 'p'}
+REF = {'square': ('#555555', 's'), 'triangular': ('#555555', '^'), 'honeycomb': ('#555555', 'h'), 'voronoi': ('#555555', 'v')}
 LABEL = {'SR': 'SR', 'uniform': 'uniform', 'rect': 'rect', 'centroid': 'centroid',
          'balanced': 'balanced', 'regular': 'regular'}
 
@@ -48,9 +48,9 @@ def _agg(rows, rule, key, by='rho_t', alpha=0.0):
 
 
 def _stack():
-    """two panels stacked vertically, legend outside on the right"""
-    fig, (a, b) = plt.subplots(2, 1, figsize=(3.4, 3.7))
-    fig.subplots_adjust(hspace=0.42, right=0.70)
+    """two panels stacked vertically, full column width (symbols explained in the caption)"""
+    fig, (a, b) = plt.subplots(2, 1, figsize=(3.4, 3.9))
+    fig.subplots_adjust(hspace=0.42)
     return fig, a, b
 
 
@@ -86,8 +86,8 @@ def fig2():
     vor = json.load(open(os.path.join(B, 'results', 'voronoi.json')))
     bl = json.load(open(os.path.join(B, 'results', 'bloch2_T1000.json')))
     sp_ = json.load(open(os.path.join(B, 'results', 'spanmode_bloch2.json')))
-    fig, (a, b, c) = plt.subplots(3, 1, figsize=(3.4, 5.5))
-    fig.subplots_adjust(hspace=0.5, right=0.70)
+    fig, (a, b, c) = plt.subplots(3, 1, figsize=(3.4, 5.6))
+    fig.subplots_adjust(hspace=0.45)
     MAIN = ('SR', 'centroid', 'balanced', 'regular')
     # (a) index vs density
     for r in MAIN:
@@ -99,7 +99,7 @@ def fig2():
         dashed = r in ('centroid', 'regular')       # coincide with SR / balanced: same cut angles
         if not dashed:
             a.fill_between(rh, [z.min() for z in nn], [z.max() for z in nn], color=COL[r], alpha=0.15, lw=0)
-        a.plot(rh, gm, color=COL[r], marker=MK[r], ms=3.5, ls='--' if dashed else '-',
+        a.plot(rh, gm, color=COL[r], marker=MK[r], ms=5 if MK[r] == '*' else 3.5, ls='--' if dashed else '-',
                mfc='white' if dashed else COL[r], label=LABEL[r])
     for name in ('honeycomb', 'triangular', 'square'):
         v = [x for x in p if x['rule'] == name]
@@ -108,9 +108,10 @@ def fig2():
     rv = sorted({x['rho_t'] for x in vor})
     a.plot([np.mean([x['rho'] for x in vor if x['rho_t'] == q]) for q in rv],
            [np.mean([x['n_mean_per'] for x in vor if x['rho_t'] == q]) for q in rv],
-           color='#555555', marker='o', mfc='white', ms=3.5, lw=0.7, label='Voronoi')
+           color='#555555', marker='v', ms=3.5, lw=0.7, label='Voronoi')
     a.set_xlabel(r'$\bar\rho$'); a.set_ylabel(r'$\langle n\rangle$')
     _logticks(a, 'y', [1, 2, 3, 4, 6]); a.set_ylim(1.2, 7)
+    a.set_xticks([0.1, 0.2, 0.3, 0.4])
     # (b) band edge vs index, one line per rule (geometric means over seeds and directions)
     for r in ('SR', 'centroid', 'balanced'):
         v = [x for x in bl if x['rule'] == r and x['resolved'] and x['omega_h'] > 0]
@@ -127,7 +128,7 @@ def fig2():
         dashed = r == 'centroid'
         if not dashed:
             b.fill_between(N[o], np.array(lo)[o], np.array(hi)[o], color=COL[r], alpha=0.15, lw=0)
-        b.plot(N[o], np.array(W)[o], color=COL[r], marker=MK[r], ms=3.5, ls='--' if dashed else '-',
+        b.plot(N[o], np.array(W)[o], color=COL[r], marker=MK[r], ms=5 if MK[r] == '*' else 3.5, ls='--' if dashed else '-',
                mfc='white' if dashed else COL[r])
         if r in ('SR', 'balanced'):
             for q, nx, wy in zip(qs, N, W):
@@ -140,7 +141,7 @@ def fig2():
     # (c) band edge vs weakest-span prediction
     for r in ('SR', 'centroid', 'balanced'):
         v = [x for x in sp_ if x['rule'] == r and x['resolved'] and x['omega_h'] > 0]
-        c.scatter([x['omega_span'] for x in v], [x['omega_h'] for x in v], s=8, marker=MK[r],
+        c.scatter([x['omega_span'] for x in v], [x['omega_h'] for x in v], s=16 if MK[r] == '*' else 8, marker=MK[r],
                   facecolors='none' if r == 'centroid' else COL[r], edgecolors=COL[r], linewidths=0.5)
     allx = [x['omega_span'] for x in sp_ if x['resolved'] and x['omega_h'] > 0]
     xx = np.array([0.7 * min(allx), 1.4 * max(allx)])
@@ -149,7 +150,6 @@ def fig2():
     c.set_xlim(*xx)
     c.set_xscale('log'); c.set_yscale('log')
     c.set_xlabel(r'$\omega_{\rm span}$ (weakest span)'); c.set_ylabel(r'$\omega_h$')
-    _legend(fig, a, b)
     _panel_labels(fig, (a, b, c), ('(a)', '(b)', '(c)'))
     fig.savefig(os.path.join(HERE, 'fig2.pdf'))
 
@@ -175,7 +175,6 @@ def fig3():
     _logticks(a, 'y', [1, 2, 3, 4])
     b.set_xlabel(r'$\langle n\rangle$'); b.set_ylabel(r'$\omega_1$')
     _logticks(b, 'x', [1.5, 2, 3, 4]); b.set_yscale('log')
-    _legend(fig, a, b)
     _panel_labels(fig, (a, b), ('(a)', '(b)'))
     fig.savefig(os.path.join(HERE, 'fig3.pdf'))
 
