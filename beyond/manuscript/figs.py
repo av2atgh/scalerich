@@ -15,8 +15,8 @@ plt.rcParams.update({'font.size': 9, 'axes.linewidth': 0.6, 'xtick.major.width':
                      'savefig.bbox': 'tight', 'savefig.pad_inches': 0.02})
 RULES = ['SR', 'uniform', 'rect', 'centroid', 'balanced', 'regular']
 COL = dict(zip(RULES, ['#2a78d6', '#eb6834', '#1baf7a', '#eda100', '#e87ba4', '#008300']))
-MK = {'SR': '*', 'uniform': 'X', 'rect': 's', 'centroid': 'o', 'balanced': 'D', 'regular': 'p'}
-REF = {'square': ('#555555', 's'), 'triangular': ('#555555', '^'), 'honeycomb': ('#555555', 'h'), 'voronoi': ('#555555', 'v')}
+MK = {'SR': '*', 'uniform': 'X', 'rect': 's', 'centroid': 'o', 'balanced': 'v', 'regular': 'p'}
+REF = {'square': ('#555555', 's'), 'triangular': ('#555555', '^'), 'honeycomb': ('#555555', 'h'), 'voronoi': ('#555555', 'D')}
 LABEL = {'SR': 'SR', 'uniform': 'uniform', 'rect': 'rect', 'centroid': 'centroid',
          'balanced': 'balanced', 'regular': 'regular'}
 
@@ -99,16 +99,16 @@ def fig2():
         dashed = r in ('centroid', 'regular')       # coincide with SR / balanced: same cut angles
         if not dashed:
             a.fill_between(rh, [z.min() for z in nn], [z.max() for z in nn], color=COL[r], alpha=0.15, lw=0)
-        a.plot(rh, gm, color=COL[r], marker=MK[r], ms=5 if MK[r] == '*' else 3.5, ls='--' if dashed else '-',
+        a.plot(rh, gm, color=COL[r], marker=MK[r], ms=8 if MK[r] == '*' else 5.5, ls='--' if dashed else '-',
                mfc='white' if dashed else COL[r], label=LABEL[r])
     for name in ('honeycomb', 'triangular', 'square'):
         v = [x for x in p if x['rule'] == name]
         cc, m = REF[name]
-        a.plot([x['rho'] for x in v], [x['n_mean'] for x in v], color=cc, marker=m, ms=3.5, lw=0.7, label=name)
+        a.plot([x['rho'] for x in v], [x['n_mean'] for x in v], color=cc, marker=m, ms=5, lw=0.7, label=name)
     rv = sorted({x['rho_t'] for x in vor})
     a.plot([np.mean([x['rho'] for x in vor if x['rho_t'] == q]) for q in rv],
            [np.mean([x['n_mean_per'] for x in vor if x['rho_t'] == q]) for q in rv],
-           color='#555555', marker='v', ms=3.5, lw=0.7, label='Voronoi')
+           color='#555555', marker='D', ms=4.5, lw=0.7, label='Voronoi')
     a.set_xlabel(r'$\bar\rho$'); a.set_ylabel(r'$\langle n\rangle$')
     _logticks(a, 'y', [1, 2, 3, 4, 6]); a.set_ylim(1.2, 7)
     a.set_xticks([0.1, 0.2, 0.3, 0.4])
@@ -128,7 +128,7 @@ def fig2():
         dashed = r == 'centroid'
         if not dashed:
             b.fill_between(N[o], np.array(lo)[o], np.array(hi)[o], color=COL[r], alpha=0.15, lw=0)
-        b.plot(N[o], np.array(W)[o], color=COL[r], marker=MK[r], ms=5 if MK[r] == '*' else 3.5, ls='--' if dashed else '-',
+        b.plot(N[o], np.array(W)[o], color=COL[r], marker=MK[r], ms=8 if MK[r] == '*' else 5.5, ls='--' if dashed else '-',
                mfc='white' if dashed else COL[r])
         if r in ('SR', 'balanced'):
             for q, nx, wy in zip(qs, N, W):
@@ -141,7 +141,7 @@ def fig2():
     # (c) band edge vs weakest-span prediction
     for r in ('SR', 'centroid', 'balanced'):
         v = [x for x in sp_ if x['rule'] == r and x['resolved'] and x['omega_h'] > 0]
-        c.scatter([x['omega_span'] for x in v], [x['omega_h'] for x in v], s=16 if MK[r] == '*' else 8, marker=MK[r],
+        c.scatter([x['omega_span'] for x in v], [x['omega_h'] for x in v], s=40 if MK[r] == '*' else 18, marker=MK[r],
                   facecolors='none' if r == 'centroid' else COL[r], edgecolors=COL[r], linewidths=0.5)
     allx = [x['omega_span'] for x in sp_ if x['resolved'] and x['omega_h'] > 0]
     xx = np.array([0.7 * min(allx), 1.4 * max(allx)])
@@ -163,10 +163,10 @@ def fig3():
         for rows, ls, filled in ((pl, '-', True), (st, '--', False)):
             xs, ys = _agg(rows, r, 'n_mean')
             rhos = [np.mean([x['rho'] for x in rows if x['rule'] == r and x['alpha'] == 0 and x['rho_t'] == q]) for q in xs]
-            a.plot(rhos, ys, color=COL[r], marker=MK[r], ms=3.5, ls=ls,
+            a.plot(rhos, ys, color=COL[r], marker=MK[r], ms=8 if MK[r] == '*' else 5.5, ls=ls,
                    mfc=COL[r] if filled else 'white', label=LABEL[r] if filled else None)
             v = [x for x in rows if x['rule'] == r]
-            b.scatter([x['n_mean'] for x in v], [x['omega1'] for x in v], s=10, marker=MK[r],
+            b.scatter([x['n_mean'] for x in v], [x['omega1'] for x in v], s=36 if MK[r] == '*' else 16, marker=MK[r],
                       facecolors=COL[r] if filled else 'none', edgecolors=COL[r], linewidths=0.6)
     a.plot([], [], color='#555555', ls='-', label='plates'); a.plot([], [], color='#555555', ls='--', mfc='white', label='struts')
     a.set_xlabel(r'$\bar\rho$'); a.set_ylabel(r'$\langle n\rangle$'); a.set_xscale('log')
