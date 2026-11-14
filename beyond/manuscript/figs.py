@@ -87,24 +87,26 @@ def fig2():
     f2 = os.path.join(B, 'results', 'bloch2_T1000.json')
     bl = json.load(open(f2)) if os.path.exists(f2) else json.load(open(os.path.join(B, 'results', 'bloch_T1000.json')))
     fig, a, b = _stack()
-    for r in RULES:
+    MAIN = ('SR', 'centroid', 'balanced', 'regular')
+    for r in MAIN:
         v = [x for x in p if x['rule'] == r and x['alpha'] == 0.0]
-        a.scatter([x['rho'] for x in v], [x['n_x'] for x in v], s=9, marker=MK[r], facecolors='none',
-                  edgecolors=COL[r], alpha=0.8, linewidths=0.5)
-        xs, ys = _agg(p, r, 'n_x')
-        rhos = [np.mean([x['rho'] for x in v if x['rho_t'] == q]) for q in xs]
-        a.plot(rhos, ys, color=COL[r], marker=MK[r], ms=3.5, label=LABEL[r])
-    for name in ('square', 'triangular', 'honeycomb'):
+        qs = sorted({x['rho_t'] for x in v})
+        rh = np.array([np.mean([x['rho'] for x in v if x['rho_t'] == q]) for q in qs])
+        nn = [np.array([x['n_mean'] for x in v if x['rho_t'] == q]) for q in qs]
+        gm = np.array([np.exp(np.mean(np.log(z))) for z in nn])
+        a.fill_between(rh, [z.min() for z in nn], [z.max() for z in nn], color=COL[r], alpha=0.15, lw=0)
+        a.plot(rh, gm, color=COL[r], marker=MK[r], ms=3.5, label=LABEL[r])
+    for name in ('honeycomb', 'triangular', 'square'):
         v = [x for x in p if x['rule'] == name]
         c, m = REF[name]
-        a.plot([x['rho'] for x in v], [x['n_x'] for x in v], color=c, marker=m, ms=4, lw=0.8, label=name)
+        a.plot([x['rho'] for x in v], [x['n_mean'] for x in v], color=c, marker=m, ms=3.5, lw=0.7, label=name)
     rv = sorted({x['rho_t'] for x in vor})
     a.plot([np.mean([x['rho'] for x in vor if x['rho_t'] == q]) for q in rv],
-           [np.mean([x['n_x_per'] for x in vor if x['rho_t'] == q]) for q in rv],
-           color='#555555', marker='o', mfc='white', ms=3.5, lw=0.8, label='Voronoi')
-    a.set_xlabel(r'$\bar\rho$'); a.set_ylabel(r'$n_x$')
-    _logticks(a, 'y', [1, 2, 5, 10]); a.set_ylim(1, 13)
-    for r in RULES:
+           [np.mean([x['n_mean_per'] for x in vor if x['rho_t'] == q]) for q in rv],
+           color='#555555', marker='o', mfc='white', ms=3.5, lw=0.7, label='Voronoi')
+    a.set_xlabel(r'$\bar\rho$'); a.set_ylabel(r'$\langle n\rangle$')
+    _logticks(a, 'y', [1, 2, 3, 4, 6]); a.set_ylim(1.2, 7)
+    for r in MAIN:
         v = [x for x in bl if x['rule'] == r and x.get('alpha', 0.0) == 0.0 and x['omega_h'] > 0
              and x.get('resolved', x['k_h'] > 0.3)]
         if not v:
