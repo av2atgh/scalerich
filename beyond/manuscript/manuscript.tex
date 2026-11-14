@@ -7,7 +7,7 @@
 
 \begin{document}
 
-\title{Scale richness costs bandwidth in recursively divided elastic-wave metamaterials}
+\title{Balanced recursive division yields isotropic broadband elastic-wave metamaterials}
 
 \author{Alexei Vazquez}
 \email{alexei@nodeslinks.com}
@@ -17,47 +17,52 @@
 
 \begin{abstract}
 % PRL limit: 600 characters
-Scale-rich metamaterials, grown by recursive random division of a square, reach effective
-refractive indices $n$ from 1.5 to 8.3. We compare them with other recursive divisions in
-the long-wavelength limit. In two dimensions density, not scale richness, sets the range
-of $n$. At equal $n$ a balanced division is more isotropic and its lowest local resonance
-is up to three times higher, because the longest slender ligament sets it. In three
-dimensions plate cells are near-affine and $n$ stays within 1.3--1.8 for every rule.
+Recursive division of cells generates network metamaterials, and its scale-rich version
+reaches effective refractive indices $n$ from 1.5 to 8.3. Across the family of recursive
+divisions, a balanced rule, which cuts each cell through its centroid perpendicular to its
+long axis, gives the better gradient-index material. At equal $n$ its cells are more
+isotropic, and their lowest local resonance is up to three times higher in two dimensions
+and six times higher in three. Density sets the range of $n$.
 \end{abstract}
 
 \maketitle
 
 % ---------------------------------------------------------------------------
 \paragraph*{Introduction.}
-Architected materials control elastic waves through their effective stiffness and
-density. In the long-wavelength regime a cellular solid of relative density $\bar\rho$
-and effective stiffness tensor $C$ carries quasi-longitudinal waves with velocity
+Scale-rich (SR) metamaterials~\cite{both2026} are grown one ligament at a time: a
+ligament nucleates at a uniform random point and angle and grows until it meets the
+existing structure, with thickness $\lambda_t=\lambda_0t^{-\alpha}$ for the $t$-th
+ligament. Their unit cells reach effective refractive indices $1.5\le n\le8.3$, against
+$1.0\le n\le1.9$ for square and hexagonal lattices, and an SR Luneburg lens focuses a
+plane wave~\cite{both2026}. Geometrically the SR construction is Cowan's iterated cell
+division: the cell holding the point, chosen in proportion to its area, is cut by a
+chord~\cite{cowan2010,vazquez2026sr}.
+
+Cowan's construction defines a whole family of recursive divisions. A rule specifies
+which cell is cut, where the cut passes, and at what angle. Changing these choices
+produces materials that range from scale-rich hierarchies to nearly uniform cells. All
+of them are generated just as simply, and all accept the same thickness hierarchy. We
+explore this family, in two and three dimensions, for elastic-wave control.
+
+In the long-wavelength regime a cellular solid of relative density $\bar\rho$ and
+effective stiffness tensor $C$ carries quasi-longitudinal waves with velocity
 $v(\hat{\bm k})$, the largest eigenvalue of the Christoffel matrix
-$\Gamma_{ik}=C_{ijkl}\hat k_j\hat k_l$ divided by $\bar\rho$~\cite{auld1973}. Its
-effective refractive index $n(\hat{\bm k})=c_0/v(\hat{\bm k})$, with $c_0$ the
-velocity in the constituent, is the design variable of gradient-index (GRIN) devices
-such as elastic Luneburg lenses~\cite{tol2017}. A GRIN designer needs three things
-from a family of unit cells: a wide range of $n$, isotropy of $n$, and a wide band of
-frequencies over which the homogenised $n$ holds. That band closes at the lowest local
-resonance $\omega_1$ of the cell~\cite{liu2000}.
+$\Gamma_{ik}=C_{ijkl}\hat k_j\hat k_l$ divided by $\bar\rho$~\cite{auld1973}. The
+effective refractive index $n(\hat{\bm k})=c_0/v(\hat{\bm k})$, with $c_0$ the velocity
+in the constituent, is the design variable of gradient-index (GRIN) devices such as
+elastic Luneburg lenses~\cite{tol2017}. A GRIN designer needs three things from a family
+of unit cells: a wide range of $n$, isotropy of $n$, and a wide band of frequencies over
+which the homogenised $n$ holds. That band closes at the lowest local resonance
+$\omega_1$ of the cell~\cite{liu2000}.
 
-Both \textit{et al.}~\cite{both2026} introduced scale-rich (SR) metamaterials: a ligament
-nucleates at a uniform random point and angle and grows until it meets the existing
-structure, with thickness $\lambda_t=\lambda_0t^{-\alpha}$ for the $t$-th ligament. The
-SR construction is Cowan's iterated division of the cell that contains the point, with
-the cell chosen in proportion to its area~\cite{cowan2010,vazquez2026sr}. Its unit cells
-reach $1.5\le n\le8.3$ for $20\%\le\bar\rho\le75\%$, against $1.0\le n\le1.9$ for
-square and hexagonal lattices, and an SR Luneburg lens focuses a plane
-wave~\cite{both2026}. The range was attributed to the scale-rich hierarchy tuned by
-$(\alpha,\lambda_0)$.
-
-Cowan's construction is one member of a family of recursive divisions. Each rule is set
-by which cell is cut, where the cut passes, and at what angle. Here we ask whether SR is
-the best member of the family for elastic-wave control, in two and three dimensions. It
-is not. The range of $n$ follows from the density through bending, not from scale
-richness. At equal $n$ the scale-rich length distribution lowers $\omega_1$. In three
-dimensions the plate cells of every recursive division are close to affine, and the
-range of $n$ collapses.
+A balanced division meets these needs best: it cuts the chosen cell through its centroid,
+perpendicular to its major axis. At equal $n$ its cells are more isotropic, and $\omega_1$
+is up to three times higher than for SR in two dimensions and six times higher in three.
+The reason is geometric. The density sets the range of $n$ through ligament bending,
+whereas $\omega_1$ is set by the longest slender span. A balanced division keeps the spans
+uniform. In three dimensions every division yields near-affine plate cells, so the index
+range narrows to $1.3\le n\le1.8$, and the balanced rule again gives the most isotropic,
+highest-bandwidth cells.
 
 % ---------------------------------------------------------------------------
 \paragraph*{Bounds.}
@@ -162,13 +167,14 @@ $\omega_1=1.30$.
 
 % ---------------------------------------------------------------------------
 \paragraph*{Discussion.}
-Within the family of recursive divisions, the SR rule maximises $n$ per unit density,
-and that is its distinctive property. At the level of the GRIN design problem, a
-prescribed isotropic $n$ over the widest band, a balanced division reaches the same
-indices with more isotropic cells and a higher first local resonance. Scale richness
-is a cost there: the hierarchy of spans puts long slender ligaments into the cell, and
-these set $\omega_1$. The density, not the hierarchy exponent $\alpha$, is the knob
-that tunes $n$. In three dimensions the plate realisation of the same divisions is close to affine:
+For the GRIN design problem, a prescribed isotropic $n$ over the widest band, the balanced
+division is the best member of the recursive family we explored. It reaches the same
+indices as SR with more isotropic cells and a higher first local resonance, because its
+spans are uniform and no long slender ligament sets $\omega_1$. The density, not the
+hierarchy exponent $\alpha$, tunes $n$. The two rules therefore complement each other: SR
+gives the most $n$ per unit density, and the balanced rule gives the most bandwidth and
+isotropy at a given $n$.
+In three dimensions the plate realisation of the same divisions is close to affine:
 $n$ stays within $1.3$--$1.8$ whatever the rule, $\alpha$ or $\bar\rho$. A wide range of
 $n$ is therefore a property of bending-dominated networks: two-dimensional ligaments,
 or open-cell skeletons in three dimensions. It is not a property of the recursive

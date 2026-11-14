@@ -50,6 +50,37 @@
 \providecommand \BibitemShut  [1]{\csname bibitem#1\endcsname}%
 \let\auto@bib@innerbib\@empty
 %</preamble>
+\bibitem [{\citenamefont {Both}\ \emph {et~al.}(2026)\citenamefont {Both},
+  \citenamefont {Chen}, \citenamefont {Gao}, \citenamefont {Mooij},
+  \citenamefont {Charara}, \citenamefont {Wadhwa}, \citenamefont {Portela},\
+  and\ \citenamefont {Barab{\'a}si}}]{both2026}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {C.}~\bibnamefont
+  {Both}}, \bibinfo {author} {\bibfnamefont {A.~Y.-J.}\ \bibnamefont {Chen}},
+  \bibinfo {author} {\bibfnamefont {T.-T.}\ \bibnamefont {Gao}}, \bibinfo
+  {author} {\bibfnamefont {N.}~\bibnamefont {Mooij}}, \bibinfo {author}
+  {\bibfnamefont {M.}~\bibnamefont {Charara}}, \bibinfo {author} {\bibfnamefont
+  {J.}~\bibnamefont {Wadhwa}}, \bibinfo {author} {\bibfnamefont {C.~M.}\
+  \bibnamefont {Portela}},\ and\ \bibinfo {author} {\bibfnamefont {A.-L.}\
+  \bibnamefont {Barab{\'a}si}},\ }\bibfield  {title} {\bibinfo {title}
+  {Scale-rich network-based metamaterials},\ }\href
+  {https://doi.org/10.1038/s41586-026-11191-2} {\bibfield  {journal} {\bibinfo
+  {journal} {Nature}\ }\textbf {\bibinfo {volume} {659}},\ \bibinfo {pages}
+  {345} (\bibinfo {year} {2026})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Cowan}(2010)}]{cowan2010}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {R.}~\bibnamefont
+  {Cowan}},\ }\bibfield  {title} {\bibinfo {title} {New classes of random
+  tessellations arising from iterative division of cells},\ }\href@noop {}
+  {\bibfield  {journal} {\bibinfo  {journal} {Advances in Applied Probability}\
+  }\textbf {\bibinfo {volume} {42}},\ \bibinfo {pages} {26} (\bibinfo {year}
+  {2010})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Vazquez}(2026)}]{vazquez2026sr}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {A.}~\bibnamefont
+  {Vazquez}},\ }\href@noop {} {\bibinfo {title} {Scale-rich network
+  metamaterials grow by local rules on a recursive cell division}} (\bibinfo
+  {year} {2026}),\ \bibinfo {note} {submitted}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Auld}(1973)}]{auld1973}%
   \BibitemOpen
   \bibfield  {author} {\bibinfo {author} {\bibfnamefont {B.~A.}\ \bibnamefont
@@ -83,37 +114,6 @@
   {https://doi.org/10.1126/science.289.5485.1734} {\bibfield  {journal}
   {\bibinfo  {journal} {Science}\ }\textbf {\bibinfo {volume} {289}},\ \bibinfo
   {pages} {1734} (\bibinfo {year} {2000})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Both}\ \emph {et~al.}(2026)\citenamefont {Both},
-  \citenamefont {Chen}, \citenamefont {Gao}, \citenamefont {Mooij},
-  \citenamefont {Charara}, \citenamefont {Wadhwa}, \citenamefont {Portela},\
-  and\ \citenamefont {Barab{\'a}si}}]{both2026}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {C.}~\bibnamefont
-  {Both}}, \bibinfo {author} {\bibfnamefont {A.~Y.-J.}\ \bibnamefont {Chen}},
-  \bibinfo {author} {\bibfnamefont {T.-T.}\ \bibnamefont {Gao}}, \bibinfo
-  {author} {\bibfnamefont {N.}~\bibnamefont {Mooij}}, \bibinfo {author}
-  {\bibfnamefont {M.}~\bibnamefont {Charara}}, \bibinfo {author} {\bibfnamefont
-  {J.}~\bibnamefont {Wadhwa}}, \bibinfo {author} {\bibfnamefont {C.~M.}\
-  \bibnamefont {Portela}},\ and\ \bibinfo {author} {\bibfnamefont {A.-L.}\
-  \bibnamefont {Barab{\'a}si}},\ }\bibfield  {title} {\bibinfo {title}
-  {Scale-rich network-based metamaterials},\ }\href
-  {https://doi.org/10.1038/s41586-026-11191-2} {\bibfield  {journal} {\bibinfo
-  {journal} {Nature}\ }\textbf {\bibinfo {volume} {659}},\ \bibinfo {pages}
-  {345} (\bibinfo {year} {2026})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Cowan}(2010)}]{cowan2010}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {R.}~\bibnamefont
-  {Cowan}},\ }\bibfield  {title} {\bibinfo {title} {New classes of random
-  tessellations arising from iterative division of cells},\ }\href@noop {}
-  {\bibfield  {journal} {\bibinfo  {journal} {Advances in Applied Probability}\
-  }\textbf {\bibinfo {volume} {42}},\ \bibinfo {pages} {26} (\bibinfo {year}
-  {2010})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Vazquez}(2026)}]{vazquez2026sr}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {A.}~\bibnamefont
-  {Vazquez}},\ }\href@noop {} {\bibinfo {title} {Scale-rich network
-  metamaterials grow by local rules on a recursive cell division}} (\bibinfo
-  {year} {2026}),\ \bibinfo {note} {submitted}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Hill}(1952)}]{hill1952}%
   \BibitemOpen
   \bibfield  {author} {\bibinfo {author} {\bibfnamefont {R.}~\bibnamefont
