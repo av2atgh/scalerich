@@ -85,3 +85,8 @@ centroid < balanced), saturating for regular; no collapse (ratio drifts with ρ�
 revtex4-2 prl, pdflatex+bibtex, figs.py → fig1-3.pdf. 4 pp, ~1600 words, abstract 518 chars.
 Message: density (bending) sets the n range, not scale richness; at equal n a balanced
 division wins isotropy and bandwidth; in 3D plates are near-affine and n collapses to 1.3-1.8.
+
+## Span-mode prediction of ω1 (`spanmode.py`, 2026-11-14)
+ω_span = min over spans of 4.730² λ_s/(√12 ℓ_s²) (clamped-clamped, no free parameter).
+corr(ln ω1, ln ω_span) = 0.979 over 480 2D cells; ω1/ω_span median 0.48, IQR 0.44-0.80;
+per rule 0.44 (uniform, rect, regular) to 0.70 (SR, centroid). 0.44 = (π/4.730)², the pinned limit.
