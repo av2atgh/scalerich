@@ -1,0 +1,167 @@
+%apsrev4-2.bst 2019-01-14 (MD) hand-edited version of apsrev4-1.bst
+%Control: key (0)
+%Control: author (8) initials jnrlst
+%Control: editor formatted (1) identically to author
+%Control: production of article title (0) allowed
+%Control: page (0) single
+%Control: year (1) truncated
+%Control: production of eprint (0) enabled
+\begin{thebibliography}{11}%
+\makeatletter
+\providecommand \@ifxundefined [1]{%
+ \@ifx{#1\undefined}
+}%
+\providecommand \@ifnum [1]{%
+ \ifnum #1\expandafter \@firstoftwo
+ \else \expandafter \@secondoftwo
+ \fi
+}%
+\providecommand \@ifx [1]{%
+ \ifx #1\expandafter \@firstoftwo
+ \else \expandafter \@secondoftwo
+ \fi
+}%
+\providecommand \natexlab [1]{#1}%
+\providecommand \enquote  [1]{``#1''}%
+\providecommand \bibnamefont  [1]{#1}%
+\providecommand \bibfnamefont [1]{#1}%
+\providecommand \citenamefont [1]{#1}%
+\providecommand \href@noop [0]{\@secondoftwo}%
+\providecommand \href [0]{\begingroup \@sanitize@url \@href}%
+\providecommand \@href[1]{\@@startlink{#1}\@@href}%
+\providecommand \@@href[1]{\endgroup#1\@@endlink}%
+\providecommand \@sanitize@url [0]{\catcode `\\12\catcode `\$12\catcode
+  `\&12\catcode `\#12\catcode `\^12\catcode `\_12\catcode `\%12\relax}%
+\providecommand \@@startlink[1]{}%
+\providecommand \@@endlink[0]{}%
+\providecommand \url  [0]{\begingroup\@sanitize@url \@url }%
+\providecommand \@url [1]{\endgroup\@href {#1}{\urlprefix }}%
+\providecommand \urlprefix  [0]{URL }%
+\providecommand \Eprint [0]{\href }%
+\providecommand \doibase [0]{https://doi.org/}%
+\providecommand \selectlanguage [0]{\@gobble}%
+\providecommand \bibinfo  [0]{\@secondoftwo}%
+\providecommand \bibfield  [0]{\@secondoftwo}%
+\providecommand \translation [1]{[#1]}%
+\providecommand \BibitemOpen [0]{}%
+\providecommand \bibitemStop [0]{}%
+\providecommand \bibitemNoStop [0]{.\EOS\space}%
+\providecommand \EOS [0]{\spacefactor3000\relax}%
+\providecommand \BibitemShut  [1]{\csname bibitem#1\endcsname}%
+\let\auto@bib@innerbib\@empty
+%</preamble>
+\bibitem [{\citenamefont {Auld}(1973)}]{auld1973}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {B.~A.}\ \bibnamefont
+  {Auld}},\ }\href@noop {} {\emph {\bibinfo {title} {Acoustic Fields and Waves
+  in Solids}}}\ (\bibinfo  {publisher} {Wiley},\ \bibinfo {address} {New
+  York},\ \bibinfo {year} {1973})\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Tol}\ \emph {et~al.}(2017)\citenamefont {Tol},
+  \citenamefont {Degertekin},\ and\ \citenamefont {Erturk}}]{tol2017}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {S.}~\bibnamefont
+  {Tol}}, \bibinfo {author} {\bibfnamefont {F.~L.}\ \bibnamefont
+  {Degertekin}},\ and\ \bibinfo {author} {\bibfnamefont {A.}~\bibnamefont
+  {Erturk}},\ }\bibfield  {title} {\bibinfo {title} {Phononic crystal
+  {Luneburg} lens for omnidirectional elastic wave focusing and energy
+  harvesting},\ }\href@noop {} {\bibfield  {journal} {\bibinfo  {journal}
+  {Applied Physics Letters}\ }\textbf {\bibinfo {volume} {111}},\ \bibinfo
+  {pages} {013503} (\bibinfo {year} {2017})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Liu}\ \emph {et~al.}(2000)\citenamefont {Liu},
+  \citenamefont {Zhang}, \citenamefont {Mao}, \citenamefont {Zhu},
+  \citenamefont {Yang}, \citenamefont {Chan},\ and\ \citenamefont
+  {Sheng}}]{liu2000}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {Z.}~\bibnamefont
+  {Liu}}, \bibinfo {author} {\bibfnamefont {X.}~\bibnamefont {Zhang}}, \bibinfo
+  {author} {\bibfnamefont {Y.}~\bibnamefont {Mao}}, \bibinfo {author}
+  {\bibfnamefont {Y.~Y.}\ \bibnamefont {Zhu}}, \bibinfo {author} {\bibfnamefont
+  {Z.}~\bibnamefont {Yang}}, \bibinfo {author} {\bibfnamefont {C.~T.}\
+  \bibnamefont {Chan}},\ and\ \bibinfo {author} {\bibfnamefont
+  {P.}~\bibnamefont {Sheng}},\ }\bibfield  {title} {\bibinfo {title} {Locally
+  resonant sonic materials},\ }\href
+  {https://doi.org/10.1126/science.289.5485.1734} {\bibfield  {journal}
+  {\bibinfo  {journal} {Science}\ }\textbf {\bibinfo {volume} {289}},\ \bibinfo
+  {pages} {1734} (\bibinfo {year} {2000})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Both}\ \emph {et~al.}(2026)\citenamefont {Both},
+  \citenamefont {Chen}, \citenamefont {Gao}, \citenamefont {Mooij},
+  \citenamefont {Charara}, \citenamefont {Wadhwa}, \citenamefont {Portela},\
+  and\ \citenamefont {Barab{\'a}si}}]{both2026}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {C.}~\bibnamefont
+  {Both}}, \bibinfo {author} {\bibfnamefont {A.~Y.-J.}\ \bibnamefont {Chen}},
+  \bibinfo {author} {\bibfnamefont {T.-T.}\ \bibnamefont {Gao}}, \bibinfo
+  {author} {\bibfnamefont {N.}~\bibnamefont {Mooij}}, \bibinfo {author}
+  {\bibfnamefont {M.}~\bibnamefont {Charara}}, \bibinfo {author} {\bibfnamefont
+  {J.}~\bibnamefont {Wadhwa}}, \bibinfo {author} {\bibfnamefont {C.~M.}\
+  \bibnamefont {Portela}},\ and\ \bibinfo {author} {\bibfnamefont {A.-L.}\
+  \bibnamefont {Barab{\'a}si}},\ }\bibfield  {title} {\bibinfo {title}
+  {Scale-rich network-based metamaterials},\ }\href
+  {https://doi.org/10.1038/s41586-026-11191-2} {\bibfield  {journal} {\bibinfo
+  {journal} {Nature}\ }\textbf {\bibinfo {volume} {659}},\ \bibinfo {pages}
+  {345} (\bibinfo {year} {2026})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Cowan}(2010)}]{cowan2010}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {R.}~\bibnamefont
+  {Cowan}},\ }\bibfield  {title} {\bibinfo {title} {New classes of random
+  tessellations arising from iterative division of cells},\ }\href@noop {}
+  {\bibfield  {journal} {\bibinfo  {journal} {Advances in Applied Probability}\
+  }\textbf {\bibinfo {volume} {42}},\ \bibinfo {pages} {26} (\bibinfo {year}
+  {2010})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Vazquez}(2026)}]{vazquez2026sr}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {A.}~\bibnamefont
+  {Vazquez}},\ }\href@noop {} {\bibinfo {title} {Scale-rich network
+  metamaterials grow by local rules on a recursive cell division}} (\bibinfo
+  {year} {2026}),\ \bibinfo {note} {submitted}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Hill}(1952)}]{hill1952}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {R.}~\bibnamefont
+  {Hill}},\ }\bibfield  {title} {\bibinfo {title} {The elastic behaviour of a
+  crystalline aggregate},\ }\href {https://doi.org/10.1088/0370-1298/65/5/307}
+  {\bibfield  {journal} {\bibinfo  {journal} {Proceedings of the Physical
+  Society A}\ }\textbf {\bibinfo {volume} {65}},\ \bibinfo {pages} {349}
+  (\bibinfo {year} {1952})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Deshpande}\ \emph {et~al.}(2001)\citenamefont
+  {Deshpande}, \citenamefont {Ashby},\ and\ \citenamefont
+  {Fleck}}]{deshpande2001}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {V.~S.}\ \bibnamefont
+  {Deshpande}}, \bibinfo {author} {\bibfnamefont {M.~F.}\ \bibnamefont
+  {Ashby}},\ and\ \bibinfo {author} {\bibfnamefont {N.~A.}\ \bibnamefont
+  {Fleck}},\ }\bibfield  {title} {\bibinfo {title} {Foam topology: bending
+  versus stretching dominated architectures},\ }\href
+  {https://doi.org/10.1016/S1359-6454(00)00379-7} {\bibfield  {journal}
+  {\bibinfo  {journal} {Acta Materialia}\ }\textbf {\bibinfo {volume} {49}},\
+  \bibinfo {pages} {1035} (\bibinfo {year} {2001})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Maxwell}(1864)}]{maxwell1864}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {J.~C.}\ \bibnamefont
+  {Maxwell}},\ }\bibfield  {title} {\bibinfo {title} {On the calculation of the
+  equilibrium and stiffness of frames},\ }\href@noop {} {\bibfield  {journal}
+  {\bibinfo  {journal} {Philosophical Magazine}\ }\textbf {\bibinfo {volume}
+  {27}},\ \bibinfo {pages} {294} (\bibinfo {year} {1864})}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Shewchuk}(1996)}]{shewchuk1996}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {J.~R.}\ \bibnamefont
+  {Shewchuk}},\ }\bibfield  {title} {\bibinfo {title} {Triangle: Engineering a
+  {2D} quality mesh generator and {Delaunay} triangulator},\ }in\ \href@noop {}
+  {\emph {\bibinfo {booktitle} {Applied Computational Geometry: Towards
+  Geometric Engineering}}},\ \bibinfo {series} {Lecture Notes in Computer
+  Science}, Vol.\ \bibinfo {volume} {1148}\ (\bibinfo  {publisher} {Springer},\
+  \bibinfo {year} {1996})\ pp.\ \bibinfo {pages} {203--222}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Grinspun}\ \emph {et~al.}(2003)\citenamefont
+  {Grinspun}, \citenamefont {Hirani}, \citenamefont {Desbrun},\ and\
+  \citenamefont {Schr{\"o}der}}]{grinspun2003}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {E.}~\bibnamefont
+  {Grinspun}}, \bibinfo {author} {\bibfnamefont {A.~N.}\ \bibnamefont
+  {Hirani}}, \bibinfo {author} {\bibfnamefont {M.}~\bibnamefont {Desbrun}},\
+  and\ \bibinfo {author} {\bibfnamefont {P.}~\bibnamefont {Schr{\"o}der}},\
+  }\bibfield  {title} {\bibinfo {title} {Discrete shells},\ }in\ \href@noop {}
+  {\emph {\bibinfo {booktitle} {Proceedings of the 2003 ACM
+  SIGGRAPH/Eurographics Symposium on Computer Animation}}}\ (\bibinfo {year}
+  {2003})\ pp.\ \bibinfo {pages} {62--67}\BibitemShut {NoStop}%
+\end{thebibliography}%

@@ -1,0 +1,210 @@
+\documentclass[aps,prl,twocolumn,superscriptaddress,amsmath,amssymb,floatfix]{revtex4-2}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{bm}
+\usepackage[colorlinks=true,allcolors=blue]{hyperref}
+\newcommand{\tbd}[1]{\textcolor{red}{[#1]}}
+
+\begin{document}
+
+\title{Scale richness costs bandwidth in recursively divided elastic-wave metamaterials}
+
+\author{Alexei Vazquez}
+\email{alexei@nodeslinks.com}
+\affiliation{Nodes \& Links Ltd, Salisbury House, Station Road, Cambridge, CB1 2LA, UK}
+
+\date{\today}
+
+\begin{abstract}
+% PRL limit: 600 characters
+Scale-rich metamaterials, grown by recursive random division of a square, reach effective
+refractive indices $n$ from 1.5 to 8.3. We compare them with other recursive divisions in
+the long-wavelength limit. In two dimensions density, not scale richness, sets the range
+of $n$. At equal $n$ a balanced division is more isotropic and its lowest local resonance
+is up to three times higher, because the longest slender ligament sets it. In three
+dimensions plate cells are near-affine and $n$ stays within 1.3--1.8 for every rule.
+\end{abstract}
+
+\maketitle
+
+% ---------------------------------------------------------------------------
+\paragraph*{Introduction.}
+Architected materials control elastic waves through their effective stiffness and
+density. In the long-wavelength regime a cellular solid of relative density $\bar\rho$
+and effective stiffness tensor $C$ carries quasi-longitudinal waves with velocity
+$v(\hat{\bm k})$, the largest eigenvalue of the Christoffel matrix
+$\Gamma_{ik}=C_{ijkl}\hat k_j\hat k_l$ divided by $\bar\rho$~\cite{auld1973}. Its
+effective refractive index $n(\hat{\bm k})=c_0/v(\hat{\bm k})$, with $c_0$ the
+velocity in the constituent, is the design variable of gradient-index (GRIN) devices
+such as elastic Luneburg lenses~\cite{tol2017}. A GRIN designer needs three things
+from a family of unit cells: a wide range of $n$, isotropy of $n$, and a wide band of
+frequencies over which the homogenised $n$ holds. That band closes at the lowest local
+resonance $\omega_1$ of the cell~\cite{liu2000}.
+
+Both \textit{et al.}~\cite{both2026} introduced scale-rich (SR) metamaterials: a ligament
+nucleates at a uniform random point and angle and grows until it meets the existing
+structure, with thickness $\lambda_t=\lambda_0t^{-\alpha}$ for the $t$-th ligament. The
+SR construction is Cowan's iterated division of the cell that contains the point, with
+the cell chosen in proportion to its area~\cite{cowan2010,vazquez2026sr}. Its unit cells
+reach $1.5\le n\le8.3$ for $20\%\le\bar\rho\le75\%$, against $1.0\le n\le1.9$ for
+square and hexagonal lattices, and an SR Luneburg lens focuses a plane
+wave~\cite{both2026}. The range was attributed to the scale-rich hierarchy tuned by
+$(\alpha,\lambda_0)$.
+
+Cowan's construction is one member of a family of recursive divisions. Each rule is set
+by which cell is cut, where the cut passes, and at what angle. Here we ask whether SR is
+the best member of the family for elastic-wave control, in two and three dimensions. It
+is not. The range of $n$ follows from the density through bending, not from scale
+richness. At equal $n$ the scale-rich length distribution lowers $\omega_1$. In three
+dimensions the plate cells of every recursive division are close to affine, and the
+range of $n$ collapses.
+
+% ---------------------------------------------------------------------------
+\paragraph*{Bounds.}
+The Voigt bound~\cite{hill1952}, $C\le\bar\rho\,C^{0}$ as quadratic forms, gives
+$\Gamma\le\bar\rho\,\Gamma^{0}$ and hence $v\le c_0$ in every direction. Any architecture
+made of the constituent therefore has $n\ge1$, with equality for ligaments aligned with
+$\hat{\bm k}$. There is no
+upper bound: $n\to\infty$ as $C\to0$. A wide range of $n$ is therefore not by itself an
+optimum, since a rule that approaches a mechanism maximises it. The longitudinal wave
+probes $C_{11}\sim K+G$ rather than the Young modulus. A honeycomb, bending-dominated in
+$E$ but stretch-dominated in the bulk modulus $K$~\cite{deshpande2001}, keeps
+$n\simeq1.9$ at every density. A large $n$ needs a soft bulk modulus, which a network
+of T-junctions provides: a pin-jointed SR network is floppy by Maxwell
+counting~\cite{maxwell1864,vazquez2026sr}, so its stiffness comes from bending.
+
+% ---------------------------------------------------------------------------
+\paragraph*{Recursive divisions.}
+We compare six rules (Fig.~\ref{fig:rules}). Cells are picked in proportion to area
+(SR), uniformly among the cells (\emph{uniform}), or largest first (\emph{regular}). The
+cut passes through a uniform point of the cell (SR, \emph{uniform}, \emph{rect}) or
+through its centroid (\emph{centroid}, \emph{balanced}, \emph{regular}). Its direction is
+uniform (SR, \emph{uniform}, \emph{centroid}), axis-parallel (\emph{rect}), or
+perpendicular to the major axis of the cell (\emph{balanced}, \emph{regular}). The
+\emph{uniform} rule produces a broader distribution of cell sizes than SR. The
+\emph{balanced} and \emph{regular} rules produce nearly equal cells. Every rule uses the
+SR thickness $\lambda_t=\lambda_0t^{-\alpha}$, with $\lambda_0$ set by $\bar\rho$.
+
+Each realisation is a unit cell with $T=10^3$ ligaments, modelled as an
+Euler--Bernoulli frame with rigid joints ($E_0=\rho_0=1$). Affine displacements on the
+boundary give $C$. The Christoffel equation gives $n(\hat{\bm k})$ and the isotropy
+$\eta_n=\min n/\max n$. With the boundary clamped and lumped masses, the generalised
+eigenproblem gives $\omega_1$ in units of $c_0/L$, where $L$ is the cell size. We scan
+$\alpha\in[0,1]$ and $\bar\rho\in[0.1,0.4]$ with four realisations per point, and use
+square, triangular and honeycomb lattices as references.
+
+% ---------------------------------------------------------------------------
+\paragraph*{Two dimensions: density sets the range.}
+The SR cells span $1.66\le n_x\le7.60$, consistent with the reported
+$1.5$--$8.3$~\cite{both2026} (Fig.~\ref{fig:2d}a). The square, triangular and honeycomb
+lattices give $n_x=1.41$, $1.71$ and $1.9$--$2.1$. Density carries the range. At
+$\alpha=0$ the mean SR index falls from $n=5.4$ at $\bar\rho=0.1$ to $3.6$ at
+$\bar\rho=0.4$. At $\bar\rho=0.2$, $\alpha=0,0.25,0.5,0.75,1$ gives
+$n_x=4.12,3.06,2.60,2.56,2.68$, a weak and non-monotone dependence. Increasing $\alpha$
+mainly lowers $\omega_1$, from $0.44$ to $0.02$, and lowers $\eta_n$ from $0.56$ to
+$0.39$. A broader size hierarchy does not widen the range. The \emph{uniform} rule spans
+$1.81\le n_x\le6.43$, with $\eta_n=0.4$--$0.6$ and an $\omega_1$ three to five times
+below SR. The near-mechanism \emph{rect} rule reaches $n=18$ at $45^\circ$, with
+$\eta_n\simeq0.27$ and $\omega_1\le0.05$, as the bounds anticipate.
+
+\paragraph*{Equal index, unequal bandwidth.}
+A GRIN lens asks for a prescribed $n$, isotropic and over a wide band
+(Fig.~\ref{fig:2d}b). At $n\simeq4.3$, SR ($\bar\rho=0.2$, $\alpha=0$) has
+$\eta_n=0.56$ and $\omega_1=0.44$. The \emph{balanced} rule reaches the same $n$ at
+$\bar\rho=0.1$, with $\eta_n=0.77$ and $\omega_1=0.74$. Over the window $2.5\le n\le5$
+the best $\omega_1$ among cells with $\eta_n\ge0.7$ is $1.3$ to $3$ times higher for
+\emph{balanced} than for SR. The \emph{balanced} rule also yields more isotropic cells
+($\eta_n\ge0.8$ in 16 of 80 cells, against 9 for SR) and covers the same isotropic
+window, $2.4\le n\le4.8$ against $3.1\le n\le4.7$. SR has one advantage: it reaches a
+given $n$ at a higher density.
+
+The cost has a geometric origin. In a bending-dominated cell, $n$ is set by the
+slenderness of the typical load-bearing ligament. The lowest local resonance is the
+flexural mode of the longest free span, $\omega_1\sim c_0\lambda/\ell_{\max}^2$. A
+scale-rich division carries long spans next to short ones, which lowers $\omega_1$ at
+fixed $n$. The product $n\,\omega_1$ at $\alpha=0$ follows the length ratio
+$G=\langle\ell\rangle_w/\ell_{\max}^2$ (with $\langle\ell\rangle_w$ the mass-weighted
+mean span) across the isotropic-angle rules. At $\bar\rho=0.1$, \emph{uniform}, SR,
+\emph{centroid} and \emph{balanced} have $G=0.52,1.26,1.68,4.13$ and
+$n\,\omega_1=0.40,1.34,1.61,3.16$. The \emph{regular} rule ($G=7.3$, $n\,\omega_1=3.1$)
+saturates. Doubling the number of ligaments to $T=3000$ shifts $n$ by 5--10\% for every
+rule and leaves the ranking unchanged.
+
+% ---------------------------------------------------------------------------
+\paragraph*{Three dimensions: plates are near-affine.}
+A recursive division of the cube cuts convex polyhedra by planes, so the material is a
+closed-cell network of plates~\cite{both2026}. We use the same rules, with isotropic,
+axis-parallel or major-axis normals, and $T=300$ plates per cell. Each plate is meshed
+with triangles that conform across T-junction lines~\cite{shewchuk1996}. Constant-strain
+membranes and discrete hinges~\cite{grinspun2003} model the plates, with rigid joints and
+$\nu_0=0.3$; the moduli converge to 1--2\% under mesh refinement. We scan
+$\alpha\in\{0,1/2,1\}$ and $\bar\rho\in\{0.05,0.1,0.2\}$ with three realisations each.
+The \emph{uniform} rule is excluded: its plates are so small that, at these densities,
+they are thicker than they are wide.
+
+The mechanics change qualitatively. A convex cell with rigid planar faces is rigid, so
+membranes carry the load and the response is close to affine (Fig.~\ref{fig:3d}). The
+affine index is $n_{\rm aff}=1.30$--$1.32$ for every rule with isotropic normals.
+Non-affine relaxation lowers $C_{11}$ to $0.5$--$0.67$ of its affine value at
+$\alpha=0$, and to $0.9$--$1$ at $\alpha=1$, where the first plates carry most of the
+mass. The range of $n$ collapses. Over the full scan, SR gives
+$1.36\le\langle n\rangle\le1.73$, and all rules together give
+$1.32\le\langle n\rangle\le1.84$. Density barely matters: the SR index at $\alpha=0$
+goes from $1.71$ to $1.62$ as $\bar\rho$ rises fourfold, the signature of stretch
+dominance. Only \emph{rect}, through its anisotropy, reaches $n_x=3.1$, with
+$\eta_n\simeq0.44$.
+
+The comparison at equal $n$ is sharper than in two dimensions. No SR cell has
+$\eta_n\ge0.8$; \emph{balanced} has 9 of 27 and \emph{regular} 15 of 27. At
+$\langle n\rangle\simeq1.5$, SR ($\alpha=1/2$, $\bar\rho=0.1$) has $\eta_n=0.64$ and
+$\omega_1=0.20$, whereas \emph{balanced} ($\alpha=0$, $\bar\rho=0.1$) has $\eta_n=0.86$ and
+$\omega_1=1.30$.
+
+% ---------------------------------------------------------------------------
+\paragraph*{Discussion.}
+Within the family of recursive divisions, the SR rule maximises $n$ per unit density,
+and that is its distinctive property. At the level of the GRIN design problem, a
+prescribed isotropic $n$ over the widest band, a balanced division reaches the same
+indices with more isotropic cells and a higher first local resonance. Scale richness
+is a cost there: the hierarchy of spans puts long slender ligaments into the cell, and
+these set $\omega_1$. The density, not the hierarchy exponent $\alpha$, is the knob
+that tunes $n$. In three dimensions the plate realisation of the same divisions is close to affine:
+$n$ stays within $1.3$--$1.8$ whatever the rule, $\alpha$ or $\bar\rho$. A wide range of
+$n$ is therefore a property of bending-dominated networks: two-dimensional ligaments,
+or open-cell skeletons in three dimensions. It is not a property of the recursive
+division. These conclusions concern the homogenised regime; the band structure above
+$\omega_1$, where local resonances open gaps~\cite{liu2000}, is a separate design problem,
+and there the broad spectrum of spans of a scale-rich division may be an asset.
+
+\begin{acknowledgments}
+\end{acknowledgments}
+
+\bibliography{refs}
+
+% ---------------------------------------------------------------------------
+\begin{figure}
+\includegraphics[width=0.9\columnwidth]{fig1.pdf}
+\caption{\label{fig:rules}Recursive divisions of the square, $T=400$ ligaments, line
+width $\propto t^{-1/2}$ ($\alpha=1/2$). SR: cell $\propto$ area, uniform point, uniform
+angle. \emph{uniform}: cell chosen uniformly. \emph{rect}: axis-parallel cuts.
+\emph{centroid}: cut through the centroid. \emph{balanced}: centroid cut perpendicular to
+the major axis. \emph{regular}: as \emph{balanced}, largest cell first.}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=\columnwidth]{fig2.pdf}
+\caption{\label{fig:2d}Two dimensions, $T=10^3$. (a) Index along $x$ against density.
+Faint symbols: every cell ($\alpha\in[0,1]$, four realisations); lines: geometric mean at
+$\alpha=0$; grey: reference lattices. (b) Lowest local resonance $\omega_1$ (units
+$c_0/L$) against the direction-averaged index $\langle n\rangle$. Filled symbols:
+$\eta_n\ge0.7$; open: $\eta_n<0.7$.}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=\columnwidth]{fig3.pdf}
+\caption{\label{fig:3d}Three dimensions, plate divisions of the cube, $T=300$; axes as in
+Fig.~\ref{fig:2d}. (a) Index along $x$ against density; dotted: affine index
+$n_{\rm aff}$. (b) $\omega_1$ against $\langle n\rangle$; filled symbols $\eta_n\ge0.7$.}
+\end{figure}
+
+\end{document}

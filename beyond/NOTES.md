@@ -57,6 +57,31 @@ distribution: the first local resonance is set by the longest slender member,
 - 2D Euler–Bernoulli beams; kinematic BCs (upper bound on C, so n is a lower
   estimate; boundary layer ~ largest cell, larger for SR). Periodic RVEs would be cleaner.
 - Long-wavelength only: no band structure, no band gaps (the other "wave control" route).
-- D = 3 not done (d3/beams3d.py is the starting point).
 - Not tried: rules designed for the GRIN merit directly (e.g. balanced backbone +
   painted thickness by depth), or density-at-fixed-n optimisation.
+
+## 3D: plate divisions of the cube (2026-11-14, `d3/`)
+- `d3/div3d.py` — same six rules on convex polyhedra (normals iso / axes / major axis);
+  SR checks: m̄ = 4.57, total area 20.9 at T = 300 (d3/NOTES: 4.58, 3.3 T^{1/3}).
+- `d3/mesh3d.py` — conforming triangle mesh across T-junction lines (Triangle 'pYY').
+- `d3/shell3d.py` — CST membranes + discrete hinges (rigid joints), ν0 = 0.3, 6x6 C from
+  kinematic tests, Christoffel on the sphere, clamped ω1. Rigid-body energy 1e-13;
+  h = 0.07/0.05/0.035 → n within 1-2% (`d3/check.py`).
+- `d3/sweep3d.py` T = 300, α ∈ {0, .5, 1}, ρ̄ ∈ {0.05, 0.1, 0.2}, 3 seeds → results/sweep3d_T300.json.
+- 'uniform' invalid in 3D: plates tiny (total area ≈ 2), λ/√a up to 157 → excluded.
+- Near-affine for every rule: n_aff = 1.30-1.32 (isotropic normals); C11/C11_aff = 0.5-0.67
+  at α = 0, 0.9-1 at α = 1. SR ⟨n⟩ 1.36-1.73 over the scan; all valid rules 1.32-1.84;
+  rect n_x up to 3.1 (η 0.44). SR at α = 0: n 1.71 → 1.62 for ρ̄ 0.05 → 0.2 (stretch-dominated).
+- Isotropic (η ≥ 0.8): SR 0/27, centroid 2/27, balanced 9/27, regular 15/27.
+- Equal n ≈ 1.5: SR (α .5, ρ̄ .1) η .64, ω1 0.20; balanced (α 0, ρ̄ .1) η .86, ω1 1.30.
+- Hinge joints add energy under affine shear, so C can exceed the membrane Voigt value
+  slightly (rect α = 1: n_x min 0.89 < 0.954).
+
+## Length-spread check (2D, `lengthspread.py`)
+n·ω1 at α = 0 ordered by G = ⟨ℓ⟩_w/ℓ_max² for isotropic-angle rules (uniform < SR <
+centroid < balanced), saturating for regular; no collapse (ratio drifts with ρ̄).
+
+## Manuscript (PRL draft, `manuscript/prl.tex`, 2026-11-14)
+revtex4-2 prl, pdflatex+bibtex, figs.py → fig1-3.pdf. 4 pp, ~1600 words, abstract 518 chars.
+Message: density (bending) sets the n range, not scale richness; at equal n a balanced
+division wins isotropy and bandwidth; in 3D plates are near-affine and n collapses to 1.3-1.8.
