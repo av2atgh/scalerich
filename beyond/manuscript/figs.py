@@ -54,6 +54,16 @@ def _stack():
     return fig, a, b
 
 
+def _panel_labels(fig, axes, labels):
+    """panel labels left-aligned with the y-axis labels, at the top of each axes"""
+    fig.canvas.draw()
+    inv = fig.transFigure.inverted()
+    x0 = min(inv.transform(ax.yaxis.label.get_window_extent())[0, 0] for ax in axes)
+    for ax, s in zip(axes, labels):
+        y1 = inv.transform(ax.get_window_extent())[1, 1]
+        fig.text(x0, y1 + 0.012, s, fontweight='bold', ha='left', va='bottom')
+
+
 def _legend(fig, a, b):
     h, l = a.get_legend_handles_labels()
     h2, l2 = b.get_legend_handles_labels()
@@ -105,8 +115,8 @@ def fig2():
     b.set_xlabel(r'$n$ (propagation direction)'); b.set_ylabel(r'$\omega_h$')
     _logticks(b, 'x', [2, 3, 4, 6, 8]); b.set_yscale('log')
     b.yaxis.set_minor_formatter(matplotlib.ticker.NullFormatter())
-    lab(a, '(a)'); lab(b, '(b)')
     _legend(fig, a, b)
+    _panel_labels(fig, (a, b), ('(a)', '(b)'))
     fig.savefig(os.path.join(HERE, 'fig2.pdf'))
 
 
@@ -131,8 +141,8 @@ def fig3():
     _logticks(a, 'y', [1, 2, 3, 4])
     b.set_xlabel(r'$\langle n\rangle$'); b.set_ylabel(r'$\omega_1$')
     _logticks(b, 'x', [1.5, 2, 3, 4]); b.set_yscale('log')
-    lab(a, '(a)'); lab(b, '(b)')
     _legend(fig, a, b)
+    _panel_labels(fig, (a, b), ('(a)', '(b)'))
     fig.savefig(os.path.join(HERE, 'fig3.pdf'))
 
 
