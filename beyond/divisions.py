@@ -93,7 +93,7 @@ def run(T, seed=0, rule='SR'):
             _, c = heapq.heappop(heap)
             p = _sample(polys[c], rng)
         poly = polys[c]; lab = labs[c]; m = len(poly)
-        if where == 'centroid' or angle == 'perp':
+        if where == 'centroid' or angle == 'perp' or isinstance(angle, tuple):
             _, cen, I2 = _moments(poly)
             if where == 'centroid':
                 p = cen
@@ -101,6 +101,13 @@ def run(T, seed=0, rule='SR'):
             th = rng.random() * np.pi
         elif angle == 'rect':
             th = 0.5 * np.pi * rng.integers(2)
+        elif isinstance(angle, tuple) and angle[0] == 'perpmix':
+            # perpendicular to the major axis plus a uniform tilt in [-kappa pi/2, kappa pi/2]:
+            # kappa = 0 -> 'balanced', kappa = 1 -> uniform angle ('centroid')
+            w, V = np.linalg.eigh(I2)
+            ax = V[:, 1]
+            th = math.atan2(ax[1], ax[0]) + 0.5 * np.pi + angle[1] * np.pi * (rng.random() - 0.5) \
+                + 0.02 * rng.standard_normal()
         else:
             w, V = np.linalg.eigh(I2)          # I2 ~ ∫(x-c)(x-c)^T, largest eig = major axis
             ax = V[:, 1]
