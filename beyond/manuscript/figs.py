@@ -110,7 +110,7 @@ def fig2():
            [np.mean([x['n_mean_per'] for x in vor if x['rho_t'] == q]) for q in rv],
            color='#555555', marker='D', ms=4.5, lw=0.7, label='Voronoi')
     a.set_xlabel(r'$\bar\rho$'); a.set_ylabel(r'$\langle n\rangle$')
-    _logticks(a, 'y', [1, 2, 3, 4, 6]); a.set_ylim(1.2, 7)
+    a.set_ylim(1, 6.5); a.set_yticks([1, 2, 3, 4, 5, 6])
     a.set_xticks([0.1, 0.2, 0.3, 0.4])
     # (b) band edge vs index, one line per rule (geometric means over seeds and directions)
     for r in ('SR', 'centroid', 'balanced'):
@@ -138,7 +138,7 @@ def fig2():
                                ha='left' if r == 'balanced' else 'right', va='bottom' if r == 'balanced' else 'top')
     b.set_xlabel(r'$n$ (propagation direction)'); b.set_ylabel(r'$\omega_h$')
     b.legend(loc='upper right', frameon=False, handlelength=2.2, borderaxespad=0.2)
-    _logticks(b, 'x', [2, 3, 4, 6, 8]); b.set_yscale('log')
+    b.set_yscale('log'); b.set_xticks([2, 3, 4, 5, 6, 7]); b.set_xlim(2, 7)
     # (c) band edge vs weakest-span prediction
     for r in ('SR', 'centroid', 'balanced'):
         v = [x for x in sp_ if x['rule'] == r and x['resolved'] and x['omega_h'] > 0]
@@ -173,9 +173,9 @@ def fig3():
     a.set_xlabel(r'$\bar\rho$'); a.set_ylabel(r'$\langle n\rangle$'); a.set_xscale('log')
     a.xaxis.set_minor_formatter(matplotlib.ticker.NullFormatter())
     a.set_xticks([0.01, 0.03, 0.1, 0.2]); a.set_xticklabels(['0.01', '0.03', '0.1', '0.2'])
-    _logticks(a, 'y', [1, 2, 3, 4])
+    a.set_ylim(1, 4); a.set_yticks([1, 2, 3, 4])
     b.set_xlabel(r'$\langle n\rangle$'); b.set_ylabel(r'$\omega_1$')
-    _logticks(b, 'x', [1.5, 2, 3, 4]); b.set_yscale('log')
+    b.set_xticks([1.5, 2, 2.5, 3, 3.5, 4]); b.set_yscale('log')
     _panel_labels(fig, (a, b), ('(a)', '(b)'))
     fig.savefig(os.path.join(HERE, 'fig3.pdf'))
 
