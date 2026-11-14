@@ -143,3 +143,13 @@ balanced alone (clipped 1.66:1) 5.3 at R/lambda0 = 3. Impedance step at the rule
 (balanced rho≈0.13 vs centroid ≈0.38 at n = 3.5) outweighs the contrast. Band edges 0.20-0.25 c0/L.
 User: fish-eye is not a real application of division lattices (existing fish-eyes: graded plates,
 Lefebvre 2015; microwave cells, Ma 2012). Searching for a real high-contrast lattice application.
+
+## Real high-contrast lattice application? (search 2026-11-14) — none found
+No elastic/acoustic lattice device mixes cell families to exceed ~1.6x index contrast. Built lattice
+GRIN devices: one family, n <= 2 (Luneburg 1.41; Su et al. JASA 2017 pentamode ~2x, unverified).
+High-n devices avoided: Fu et al., Phys. Rev. Materials 2, 105202 (2018), mirrored Luneburg
+retroreflector chosen because the Eaton lens needs "extremely high" index (to verify before citing).
+Mixing families practised in microwave GRIN (Qi, Tang & Cui, Sci. Rep. 5, 11732 (2015): 3 cell kinds,
+to cross the substrate index) and in graded lattices for stiffness (Al-Ketan et al., JMBBM 102,
+103520 (2020)). Unchecked: 2025 MSSP SC/BCC/ABH graded lattice (S0888327025014074).
+Ma et al. NJP 14, 025001 (2012) RETRACTED (NJP 18, 059701 (2016)) — removed from refs.bib.
