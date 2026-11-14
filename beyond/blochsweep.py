@@ -5,21 +5,26 @@ Homogenisation edge omega_h: first k at which the plane-wave projection p_L < 0.
 -> results/bloch_T1000.json"""
 import json, time, numpy as np, divisions, periodic, waves
 
-RULES = ('SR', 'balanced', 'regular', 'centroid', 'uniform')
-out = []; t0 = time.time()
+RULES = ('SR', 'balanced', 'centroid', 'regular')
+import os
+out = json.load(open('results/bloch_T1000.json')) if os.path.exists('results/bloch_T1000.json') else []
+done = {(o['rule'], o['seed'], o['alpha'], o['rho_t']) for o in out}
+t0 = time.time()
 for rule in RULES:
     for s in (0, 1):
         g = divisions.run(1000, 100 + s, rule)
         L = np.linalg.norm(g['B'] - g['A'], axis=1)
-        for a in (0.0, 0.5):
+        for a in (0.0,):
             base = np.arange(1, 1001.) ** -a
             for r in (0.05, 0.1, 0.2, 0.4):
+                if (rule, s, a, r) in done:
+                    continue
                 lam = base * r / np.sum(base * L)
                 sc = periodic.build(g, lam, frame_lam=lam[0])
                 C = periodic.periodic_C(sc)
                 th, n = waves.christoffel_n(C, sc['rho'])
                 n0 = float(n[0])
-                b = periodic.bloch_x(sc, n0, nk=48, nev=12)
+                b = periodic.bloch_x(sc, n0, nk=24, nev=10)
                 k, w, p = b[:, 0], b[:, 1], b[:, 2]
                 nk = k / w
                 bad = (p < 0.3) | (np.abs(nk / n0 - 1) > 0.1) | ~np.isfinite(w)

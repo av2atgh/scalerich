@@ -5,9 +5,10 @@ tile edges; every tile carries its frame (generation 0), shared edges take the m
 two tiles' thicknesses. Tile (i, j) has uniform ligament thickness set by the density that
 gives n(r) = n_b sqrt(2 - (r/R)^2) inside the lens (r = distance of the tile centre) and n_b
 outside, by log-interpolation of the calibration n(rho).
-Drive: u_x = 1 on the left boundary nodes (plane longitudinal wave), harmonic omega.
+Drive: line force F_x ∝ mass on a strip at x = xs (plane longitudinal wave), harmonic omega.
 Absorbing layers: mass-proportional damping eta(d) = eta_max (d/W)^2 in the W outer tiles
-on the right, top and bottom. Output: |u|^2 per node and the focal gain
+on all four sides. Field measured as the mass-weighted mean complex displacement in
+half-tile bins (the effective wave, local ligament motion averaged out). Output: |u|^2 per node and the focal gain
 G = I(lens)/I(no lens) at the focus (the back edge of the lens on its axis).
 Units: E0 = rho0 = 1, lengths in tiles; omega in c0 / tile.
 """
@@ -74,11 +75,13 @@ def build_domain(rule, cal, TT, Nx, Ny, xc, yc, R, lens=True):
     return X, uk, lam_u, rho_map
 
 
-def solve(X, S, lam, omega, Nx, Ny, W=2.5, eta_max=None):
+def solve(X, S, lam, omega, Nx, Ny, xs, W=2.5, eta_max=None):
+    """line force F_x ∝ mass on the strip |x - xs| < 0.25 (plane wave both ways);
+    absorbing layers (mass-proportional damping, quadratic ramp) on all four sides."""
     K = frame.assemble(X, S, lam)[0]
     M, L = periodic.mass_vector(X, S, lam)
-    N = len(X)
-    d = np.zeros(N)
+    d = np.zeros(len(X))
+    d = np.maximum(d, (W - X[:, 0]) / W)
     d = np.maximum(d, (X[:, 0] - (Nx - W)) / W)
     d = np.maximum(d, (W - X[:, 1]) / W)
     d = np.maximum(d, (X[:, 1] - (Ny - W)) / W)
@@ -87,25 +90,37 @@ def solve(X, S, lam, omega, Nx, Ny, W=2.5, eta_max=None):
         eta_max = 2.0 * omega
     eta = np.repeat(eta_max * d ** 2, 3)
     A = (K - omega ** 2 * sp.diags(M) + 1j * omega * sp.diags(eta * M)).tocsc()
-    left = np.where(X[:, 0] < 1e-9)[0]
-    fixed = np.zeros(3 * N, bool); fixed[3 * left] = True
-    u = np.zeros(3 * N, complex); u[3 * left] = 1.0
-    free = ~fixed
-    Aff = A[free][:, free].tocsc()
-    rhs = -(A[free][:, fixed] @ u[fixed])
-    u[free] = spl.spsolve(Aff, rhs)
-    return u
+    f = np.zeros(3 * len(X), complex)
+    src = np.abs(X[:, 0] - xs) < 0.25
+    f[3 * np.where(src)[0]] = M[3 * np.where(src)[0]]
+    return spl.spsolve(A, f)
 
 
 def intensity(X, u):
     return np.abs(u[0::3]) ** 2 + np.abs(u[1::3]) ** 2
 
 
+def coarse(X, u, m, Nx, Ny, b=0.5):
+    """mass-weighted mean complex displacement in b x b bins -> effective-wave intensity map"""
+    ix = np.minimum((X[:, 0] / b).astype(int), int(Nx / b) - 1)
+    iy = np.minimum((X[:, 1] / b).astype(int), int(Ny / b) - 1)
+    nb = (int(Nx / b), int(Ny / b))
+    idx = ix * nb[1] + iy
+    W = np.bincount(idx, weights=m, minlength=nb[0] * nb[1])
+    ux = np.bincount(idx, weights=m * u[0::3].real, minlength=W.size) + 1j * np.bincount(idx, weights=m * u[0::3].imag, minlength=W.size)
+    uy = np.bincount(idx, weights=m * u[1::3].real, minlength=W.size) + 1j * np.bincount(idx, weights=m * u[1::3].imag, minlength=W.size)
+    W = np.where(W > 0, W, 1)
+    I = (np.abs(ux / W) ** 2 + np.abs(uy / W) ** 2).reshape(nb)
+    return I
+
+
 if __name__ == '__main__':
     TT = 200
     cal = json.load(open('results/lens_calib.json'))
-    Nx, Ny, R = 12, 12, 3.0
-    xc, yc = 1.5 + R, Ny / 2
+    R = float(sys.argv[1]) if len(sys.argv) > 1 else 4.0
+    Nx, Ny = int(2 * R + 9), int(2 * R + 7)
+    xs = 3.0                       # source line, just inside the left absorbing layer
+    xc, yc = xs + 1.0 + R, Ny / 2
     out = {}
     for rule in ('SR', 'balanced'):
         nb = NB[rule]
@@ -113,21 +128,24 @@ if __name__ == '__main__':
         Xr, Sr, lr, _ = build_domain(rule, cal[rule], TT, Nx, Ny, xc, yc, R, False)
         print(rule, 'nodes', len(Xl), 'rho range %.3f-%.3f' % (rmap.min(), rmap.max()), flush=True)
         res = []
-        for lamb in (8.0, 6.0, 4.5, 3.5, 2.75, 2.25, 1.85, 1.5):     # background wavelength in tiles
+        for Dl in (0.75, 1.0, 1.25, 1.5, 1.75, 2.0, 2.25, 2.5, 2.75, 3.0, 3.5, 4.0):
+            lamb = 2 * R / Dl     # background wavelength in tiles
             om = 2 * np.pi / (nb * lamb)
             t0 = time.time()
-            ul = solve(Xl, Sl, ll, om, Nx, Ny); ur = solve(Xr, Sr, lr, om, Nx, Ny)
-            Il = intensity(Xl, ul); Ir = intensity(Xr, ur)
-            fx, fy = xc + R, yc
-            sel_l = np.hypot(Xl[:, 0] - fx, Xl[:, 1] - fy) < 0.5
-            sel_r = np.hypot(Xr[:, 0] - fx, Xr[:, 1] - fy) < 0.5
-            G = float(np.mean(Il[sel_l]) / np.mean(Ir[sel_r]))
-            # transverse profile on the focal line
-            line = np.abs(Xl[:, 0] - fx) < 0.5
-            ys = np.arange(2.75, Ny - 2.75, 0.5)
-            prof = [float(np.mean(Il[line & (np.abs(Xl[:, 1] - y) < 0.25)])) for y in ys]
-            res.append(dict(lambda_b=lamb, omega=om, D_over_lambda=2 * R / lamb, gain=G, ys=ys.tolist(), profile=prof))
-            np.savez_compressed(f'results/lens_{rule}_{lamb}.npz', X=Xl, I=Il, Xr=Xr, Ir=Ir)
-            print(rule, 'lambda_b %.2f omega %.3f D/lambda %.2f gain %.2f %.0fs' % (lamb, om, 2 * R / lamb, G, time.time() - t0), flush=True)
+            ul = solve(Xl, Sl, ll, om, Nx, Ny, xs); ur = solve(Xr, Sr, lr, om, Nx, Ny, xs)
+            ml = periodic.mass_vector(Xl, Sl, ll)[0][0::3]; mr = periodic.mass_vector(Xr, Sr, lr)[0][0::3]
+            Il = coarse(Xl, ul, ml, Nx, Ny); Ir = coarse(Xr, ur, mr, Nx, Ny)
+            bx = int((xc + R) / 0.5)                      # focal column (bins of 0.5 tile)
+            by0, by1 = int((yc - 0.5) / 0.5), int((yc + 0.5) / 0.5)
+            col = slice(int(3.0 / 0.5), int((Ny - 3.0) / 0.5))
+            I_f = float(Il[bx, by0:by1].mean())
+            G = I_f / float(Ir[bx, col].mean())
+            contrast = I_f / float(Il[bx, col].mean())
+            ys = (np.arange(Il.shape[1]) + 0.5) * 0.5
+            prof = Il[bx].tolist()
+            res.append(dict(lambda_b=lamb, omega=om, D_over_lambda=2 * R / lamb, gain=G, contrast=contrast,
+                            ys=ys.tolist(), profile=prof, profile_ref=Ir[bx].tolist()))
+            np.savez_compressed(f'results/lens_R{R:g}_{rule}_{Dl}.npz', Il=Il, Ir=Ir)
+            print(rule, 'lambda_b %.2f omega %.3f D/lambda %.2f gain %.2f contrast %.2f %.0fs' % (lamb, om, 2 * R / lamb, G, contrast, time.time() - t0), flush=True)
         out[rule] = dict(nb=nb, R=R, Nx=Nx, Ny=Ny, xc=xc, yc=yc, rho_map=rmap.tolist(), runs=res)
-        json.dump(out, open('results/lens.json', 'w'))
+        json.dump(out, open(f'results/lens_R{R:g}.json', 'w'))

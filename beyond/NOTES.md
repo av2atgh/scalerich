@@ -90,3 +90,23 @@ division wins isotropy and bandwidth; in 3D plates are near-affine and n collaps
 ω_span = min over spans of 4.730² λ_s/(√12 ℓ_s²) (clamped-clamped, no free parameter).
 corr(ln ω1, ln ω_span) = 0.979 over 480 2D cells; ω1/ω_span median 0.48, IQR 0.44-0.80;
 per rule 0.44 (uniform, rect, regular) to 0.70 (SR, centroid). 0.44 = (π/4.730)², the pinned limit.
+
+## Periodic BCs, Bloch, 3D checks, lens (2026-11-14 evening)
+- Bare mirror tiling (no frame) is an artefact: ligament ends meet their images at bare kinks
+  (SR n_x up to 33, rect 189). Physical reference = framed periodic tiling (square frame =
+  generation 0, thickness lambda0, shared between tiles): `periodic.build(g, lam, frame_lam)`.
+- Framed periodic / kinematic n_mean: median 0.92 (10-90%: 0.82-1.00); `psweep.py` -> psweep_T1000.json.
+  Periodic n_x ranges: SR 1.70-6.76, centroid 1.75-5.83, balanced 1.68-4.04, regular 1.64-3.28.
+  eta>=0.8: SR 9/80, balanced 12/80. Voronoi reference n ≈ 2.1, eta ≈ 0.95 (results/voronoi.json).
+- Bloch (`blochsweep.py`, 2 seeds, alpha 0): band edge omega_h vs clamped omega1: corr(ln) 0.82,
+  omega_h/omega1 median 0.75. Index-bandwidth curves CROSS: balanced wins at low n (n≈2.7:
+  1.04 vs SR 0.45), SR at high n (n≈4.5: SR 0.49 at rho 0.4 vs balanced 0.11 at rho 0.05).
+  Index from architecture (SR, high density) keeps bandwidth; index from slenderness loses it.
+  Dense sweep `blochsweep2.py` (SR/centroid/balanced, 4 seeds, 8 rho, x and y) running.
+- 3D plates periodic (symmetry BCs on framed cell, `periodic3d.symmetric_normal`) vs kinematic:
+  within 1-3% at alpha 0, 5-15% lower at alpha 0.5. T = 600 vs 300: n within 1%.
+- 3D open-cell skeleton (`skeleton3d.py`, `skelsweep.py`): n 2.3-3.7 for every rule, weak rho
+  dependence (near-affine); at equal n balanced/regular omega1 ≈ 3.4x SR. No high-n window in 3D.
+- Lens (`lens.py`, `lens_calib.py`): at R = 4 tiles of T = 200, both lenses sit outside the
+  homogenised band (D/lambda ≈ 0.9 at the band edge); no decisive result; paused.
+- Framing decided by the user: report both regimes as they are (balanced at low n, SR at high n).
