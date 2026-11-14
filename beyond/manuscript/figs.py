@@ -89,7 +89,8 @@ def fig2():
     fig, a, b = _stack()
     for r in RULES:
         v = [x for x in p if x['rule'] == r and x['alpha'] == 0.0]
-        a.scatter([x['rho'] for x in v], [x['n_x'] for x in v], s=5, marker=MK[r], color=COL[r], alpha=0.3, linewidths=0)
+        a.scatter([x['rho'] for x in v], [x['n_x'] for x in v], s=9, marker=MK[r], facecolors='none',
+                  edgecolors=COL[r], alpha=0.8, linewidths=0.5)
         xs, ys = _agg(p, r, 'n_x')
         rhos = [np.mean([x['rho'] for x in v if x['rho_t'] == q]) for q in xs]
         a.plot(rhos, ys, color=COL[r], marker=MK[r], ms=3.5, label=LABEL[r])
@@ -102,7 +103,7 @@ def fig2():
            [np.mean([x['n_x_per'] for x in vor if x['rho_t'] == q]) for q in rv],
            color='#555555', marker='o', mfc='white', ms=3.5, lw=0.8, label='Voronoi')
     a.set_xlabel(r'$\bar\rho$'); a.set_ylabel(r'$n_x$')
-    _logticks(a, 'y', [1, 2, 5, 10])
+    _logticks(a, 'y', [1, 2, 5, 10]); a.set_ylim(1, 13)
     for r in RULES:
         v = [x for x in bl if x['rule'] == r and x.get('alpha', 0.0) == 0.0 and x['omega_h'] > 0
              and x.get('resolved', x['k_h'] > 0.3)]
