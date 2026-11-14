@@ -21,7 +21,8 @@ def _frame(P):
     return P[0], e1, np.cross(n, e1), n
 
 
-def mesh(g, h=0.05, qmin=25):
+def segment_splits(g):
+    """plate-edge segments, the PSLG membership of each plate, and split parameters."""
     P, H, T = g['P'], g['host'], g['T']
     segs = []                                   # (plate, edge) -> endpoints
     owner = {}
@@ -54,6 +55,12 @@ def mesh(g, h=0.05, qmin=25):
         I, J = np.nonzero(ok)
         for i_, j_ in zip(I, J):
             split[ids[i_]].append(float(np.clip(u[i_, j_], 0, 1)))
+    return segs, S, split, frames
+
+
+def mesh(g, h=0.05, qmin=25):
+    P, H, T = g['P'], g['host'], g['T']
+    segs, S, split, frames = segment_splits(g)
     # subdivide
     pts = []; seg_pts = []
     for k, (p0, p1) in enumerate(segs):
