@@ -112,26 +112,32 @@ def fig2():
     a.set_xlabel(r'$\bar\rho$'); a.set_ylabel(r'$\langle n\rangle$')
     a.set_ylim(1, 6.5); a.set_yticks([1, 2, 3, 4, 5, 6])
     a.set_xticks([0.1, 0.2, 0.3, 0.4])
-    # (b) band edge vs index, one line per rule (geometric means over seeds and directions)
+    # (b) band edge at fixed index: each (realisation, direction) density curve is interpolated in
+    # ln(omega_h) at fixed n; mean and standard error over the curves that reach that n (>= 3)
     nall = []
+    curves = {}
+    for x in bl:
+        if x['resolved'] and x['omega_h'] > 0:
+            curves.setdefault((x['rule'], x['seed'], x['dir']), []).append((x['n0'], x['omega_h']))
+    grid = np.arange(2.0, 8.01, 0.25)
     for r in ('SR', 'centroid', 'balanced'):
-        v = [x for x in bl if x['rule'] == r and x['resolved'] and x['omega_h'] > 0]
-        if not v:
-            continue
-        qs = sorted({x['rho_t'] for x in v})
-        N = []; W = []; lo = []; hi = []
-        for q in qs:
-            z = [x for x in v if x['rho_t'] == q]
-            N.append(np.exp(np.mean(np.log([x['n0'] for x in z]))))
-            w = np.log([x['omega_h'] for x in z])
-            W.append(np.exp(w.mean())); lo.append(np.exp(w.mean() - w.std())); hi.append(np.exp(w.mean() + w.std()))
-        N = np.array(N); o = np.argsort(N)
+        M = []; E = []; G = []
+        for n in grid:
+            v = []
+            for (rr, _, _), cv in curves.items():
+                if rr != r:
+                    continue
+                cv = sorted(cv); xx = np.array([q[0] for q in cv]); yy = np.log([q[1] for q in cv])
+                if xx.min() <= n <= xx.max():
+                    v.append(np.interp(n, xx, yy))
+            if len(v) >= 3:
+                v = np.array(v); G.append(n); M.append(v.mean()); E.append(v.std() / np.sqrt(len(v)))
+        G = np.array(G); M = np.array(M); E = np.array(E)
+        nall.extend(G)
         dashed = r == 'centroid'
-        if not dashed:
-            b.fill_between(N[o], np.array(lo)[o], np.array(hi)[o], color=COL[r], alpha=0.15, lw=0)
-        b.plot(N[o], np.array(W)[o], color=COL[r], marker=MK[r], ms=8 if MK[r] == '*' else 5.5, ls='--' if dashed else '-',
-               mfc='white' if dashed else COL[r], label=LABEL[r])
-        nall.extend(N)
+        b.fill_between(G, np.exp(M - E), np.exp(M + E), color=COL[r], alpha=0.18, lw=0)
+        b.plot(G, np.exp(M), color=COL[r], marker=MK[r], ms=8 if MK[r] == '*' else 5.5, ls='--' if dashed else '-',
+               mfc='white' if dashed else COL[r], label=LABEL[r], markevery=2)
     b.set_xlabel(r'$n$ (propagation direction)'); b.set_ylabel(r'$\omega_h$')
     b.legend(loc='upper right', frameon=False, handlelength=2.2, borderaxespad=0.2)
     b.set_yscale('log'); b.set_xlim(min(nall) - 0.15, max(nall) + 0.15)

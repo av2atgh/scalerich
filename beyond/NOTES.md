@@ -122,3 +122,15 @@ per rule 0.44 (uniform, rect, regular) to 0.70 (SR, centroid). 0.44 = (π/4.730)
    high n -> near ceiling -> small band. Fits omega1(n) tight for balanced/regular (scatter
    0.01-0.09), loose for SR/centroid (0.3). omega1 ~ rho^0.79 (SR), rho^0.51 (balanced).
    Crossover: scaling argument only, no closed form.
+
+## Dense Bloch sweep, final (2026-11-14, `blochsweep2.py`, 192 runs, 188 resolved)
+Direction-resolved interpolation at fixed n (mean ln omega_h, SE 15-25%):
+  n=3.0: balanced 0.65, centroid 0.65, SR 0.37 | n=3.5: centroid 0.50, balanced 0.35, SR 0.22
+  n=4.0: centroid 0.33, balanced 0.25, SR 0.15 | n=5.0: SR 0.22, centroid 0.20, balanced 0.11
+  n=5.5: centroid 0.23, SR 0.17, balanced 0.09. Coverage: balanced 2.06-6.3, SR/centroid 2.7-7.8.
+=> balanced below n≈2.7 (and ties centroid at 3); centroid best from 3.5 up; SR > balanced only
+above n≈4.5, ≈ centroid near 5. Per-density averaging over x/y (earlier fig) was misleading.
+omega_h vs weakest span: corr 0.97/0.94/0.97 (SR/centroid/balanced); prefactor 0.63/0.79/0.31
+(balanced below the pinned limit: uniform spans resonate collectively).
+Manuscript updated (abstract 494 chars, ~2270 words, 4 pp): random angles give index,
+centroid cut removes slender spans; mixing rules (fish-eye, waveguide) with impedance caveat.

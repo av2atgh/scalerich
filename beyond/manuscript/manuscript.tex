@@ -22,11 +22,11 @@
 \begin{abstract}
 % PRL limit: 600 characters
 Recursive cell division generates network metamaterials with a wide range of effective
-refractive index $n$. Across division rules, the homogenised band closes at the flexural
-mode of the weakest span, and $n$ is capped by the pin-jointed architecture. Balanced
-divisions, with uniform spans, give the widest band at low $n$. Scale-rich divisions
-reach high $n$ at high density, with stubby ligaments, and give the widest band there.
-In three dimensions plate and strut divisions are near-affine and $n$ stays low.
+refractive index $n$. Across division rules, $n$ is capped by the pin-jointed
+architecture and the homogenised band closes at the resonance of the weakest span. Random
+cut angles give high $n$ at high density; cutting through the cell centroid removes
+slender spans and gives the widest band at high $n$. Balanced divisions reach low $n$. In
+three dimensions plate and strut divisions are near-affine and $n$ stays low.
 \end{abstract}
 
 \maketitle
@@ -75,7 +75,8 @@ is best for elastic-wave control? We compare six division rules, from scale-rich
 nearly uniform, with the SR thickness hierarchy. In two dimensions they are ligament
 frames and in three dimensions plate and strut networks. For each rule we compute $n$,
 its isotropy and the band over which it holds, from Bloch waves on periodic tilings, and
-compare the rules at equal $n$. \tbd{answer sentence after the dense Bloch sweep}
+compare the rules at equal $n$. Random cut angles through the cell centroid give the
+widest band over most of the index range, and balanced divisions extend it to low index.
 
 % ---------------------------------------------------------------------------
 \paragraph*{What sets the range of $n$.}
@@ -139,12 +140,12 @@ lattices. (a)
 Direction-averaged index against density (frame included). Lines: geometric mean over
 four realisations; bands: their range (SR, \emph{balanced}); grey: reference lattices.
 \emph{Centroid} coincides with SR and \emph{regular} with \emph{balanced}: the cut angle,
-not the cut position, sets the index. (b) Bloch band edge $\omega_h$ (units $c_0/L$) against the index along the
-propagation direction; geometric means over four realisations and the $x$ and $y$
-directions, band: $\pm$ one standard deviation. (c) $\omega_h$
+not the cut position, sets the index. (b) Bloch band edge $\omega_h$ (units $c_0/L$) at fixed index along the
+propagation direction: each density scan (four realisations, $x$ and $y$) is interpolated
+at fixed $n$; lines: mean of $\ln\omega_h$, bands: $\pm$ one standard error. (c) $\omega_h$
 against the weakest-span prediction $\omega_{\rm span}$ of Eq.~(\ref{eq:span}), every
 cell; dotted lines: clamped ($\omega_h=\omega_{\rm span}$) and pinned
-($\omega_h=(\pi/4.730)^2\omega_{\rm span}$) spans. \tbd{balanced to be added}}
+($\omega_h=(\pi/4.730)^2\omega_{\rm span}$) spans.}
 \end{figure}
 
 \paragraph*{Index from density and architecture.}
@@ -176,9 +177,12 @@ ends has no free parameter. It tracks $\omega_1$ over three decades, with a corr
 of $0.979$ between $\ln\omega_1$ and $\ln\omega_{\rm span}$ over all 480 cells. The ratio
 $\omega_1/\omega_{\rm span}$ lies between $0.44=(\pi/4.730)^2$, the pinned limit, and
 $0.70$: junctions rotate, so the weakest span is partly clamped. The Bloch band edge
-follows, $\omega_h\simeq0.75\,\omega_1$ (median), so the long-wavelength description fails
-where the weakest span resonates. A scale-rich division places long spans next to short
-ones; a balanced division keeps them uniform.
+follows the same prediction (Fig.~\ref{fig:2d}c), with correlations $0.97$, $0.94$ and
+$0.97$ for SR, \emph{centroid} and \emph{balanced}: the long-wavelength description fails
+where the weakest span resonates. The prefactor $\omega_h/\omega_{\rm span}$ is $0.63$ for
+SR and $0.79$ for \emph{centroid}, between the pinned and clamped limits, but $0.31$ for
+\emph{balanced}. In a balanced division many spans have nearly the same length; resonating
+together, they form a band whose lower edge lies below the frequency of a single span.
 
 \paragraph*{Index from architecture keeps the band.}
 Equations~(\ref{eq:ceiling}) and (\ref{eq:span}) together fix the trade-off. A target
@@ -188,18 +192,23 @@ each rule: $n_{\max}=4.8$--$8.1$ for SR (depending on the realisation), $5.4$--$
 \emph{centroid}, and $5.6$--$5.8$ for \emph{balanced} and \emph{regular}. The coefficient
 $c$ differs more: at $\bar\rho=0.4$ the bending term of \emph{balanced} is six times that
 of SR. A balanced division therefore reaches a high index only with slender ligaments,
-close to its ceiling, where the band collapses. A scale-rich division reaches the same
-index at high density, far below its ceiling, with stubby ligaments and a high band edge.
-The measured exponent $q\simeq0.7$--$1.1$, smaller than the value $2$ of pure bending,
-shows that stretching and bending are coupled, as near the rigidity point of fibre
-networks.
+close to its ceiling, where the band collapses. The random-angle divisions reach the same
+index at high density, far below their ceiling, with stubby ligaments. The measured
+exponent $q\simeq0.7$--$1.1$, smaller than the value $2$ of pure bending, shows that
+stretching and bending are coupled, as near the rigidity point of fibre networks.
 
-The Bloch band edges confirm the crossover (Fig.~\ref{fig:2d}b). At low index the
-balanced division wins: at $n\simeq2.7$, $\omega_h=1.04$ for \emph{balanced} against
-$0.45$ for SR. At high index the scale-rich division wins: at $n\simeq4.5$, $\omega_h=0.49$
-for SR at $\bar\rho=0.4$ against $0.11$ for \emph{balanced} at $\bar\rho=0.05$.
-\tbd{Dense sweep: crossover index $n^\ast$, ratios on each side with uncertainties,
-\emph{centroid}.}
+The Bloch band edges at fixed index (Fig.~\ref{fig:2d}b) give the answer. Below
+$n\simeq2.7$ only the balanced divisions are available, with $\omega_h$ up to $1.5$. At
+$n=3$, \emph{balanced} and \emph{centroid} tie ($\omega_h=0.65$) and SR trails ($0.37$).
+From $n\simeq3.5$ upwards \emph{centroid} gives the widest band: $\omega_h=0.50$, $0.33$
+and $0.23$ at $n=3.5$, $4$ and $5.5$, against $0.35$, $0.25$ and $0.09$ for
+\emph{balanced} and $0.22$, $0.15$ and $0.17$ for SR, with standard errors of
+$15$--$25\%$. SR overtakes \emph{balanced} only above $n\simeq4.5$ and matches
+\emph{centroid} only near $n=5$. The two random-angle rules have the same index at a
+given density (Fig.~\ref{fig:2d}a) and differ in where the cut passes. A cut through a
+uniform point often removes a sliver, leaving a short span next to a long one; a cut
+through the centroid does not. The random angles provide the index, and the centroid cut
+removes the slender spans that close the band.
 
 % ---------------------------------------------------------------------------
 \begin{figure}[tb]
@@ -236,17 +245,22 @@ and $0.22$ against $0.06$ for struts at $\langle n\rangle\simeq3.6$.
 
 % ---------------------------------------------------------------------------
 \paragraph*{Conclusions.}
-In recursively divided metamaterials, $n$ comes from two sources: slender ligaments and a
-soft architecture. The pin-jointed architecture caps the index, and the weakest span sets
-the band over which it holds. Index from slenderness costs bandwidth; index from
-architecture does not. Balanced divisions, with uniform spans, are the best choice at low
-index. Scale-rich divisions reach high index at high density and are the best choice
-there, which is the regime of the SR Luneburg lens~\cite{both2026}. In three dimensions
-plate and strut divisions are near-affine, the ceiling is low, and the balanced divisions
-keep the higher bandwidth. A wide index range is thus a property of two-dimensional
-networks of T-junctions. Above the band edge, local resonances open
-gaps~\cite{liu2000}, a separate design problem in which the broad span spectrum of a
-scale-rich division may be an asset.
+The family of recursive divisions is richer than its scale-rich member. The index comes
+from two sources, slender ligaments and a soft architecture; the pin-jointed architecture
+caps it, and the weakest span sets the band over which it holds. Index from slenderness
+costs bandwidth; index from architecture does not. Random cut angles make the
+architecture soft, so the scale-rich division reaches high index at high density, which
+is the regime of the SR Luneburg lens~\cite{both2026}. Cutting through the centroid
+instead of a random point keeps that index and removes the slender spans, giving the
+widest band from $n\simeq3.5$ upwards; balanced divisions reach the low-index range.
+Since each rule covers an index contrast of only $1.5$--$1.6$ over $0.1\le\bar\rho\le0.4$,
+devices with a larger contrast, such as a Maxwell fish-eye lens or a core--cladding
+waveguide, need cells from different rules, at the price of an impedance step where the
+rule changes; grading the distribution of cut angles would tune $n$ at fixed density
+instead. In three dimensions plate and strut divisions are near-affine, the ceiling is
+low, and the uniform spans of balanced divisions keep the higher bandwidth. Above the
+band edge, local resonances open gaps~\cite{liu2000}, a separate design problem in which
+the broad span spectrum of a scale-rich division may be an asset.
 
 \begin{acknowledgments}
 All code is available at \url{https://github.com/av2atgh/scalerich/tree/master/beyond}.
