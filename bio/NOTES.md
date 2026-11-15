@@ -67,3 +67,30 @@ no X crossings, all tips land on their targets, Pi -> 0 reproduces SR).
    Lifeact network is a mesh of long curved bundles crossing at shallow angles, not a
    T-partition. First pass says: not SR in COS-7 ventral actin at this resolution.
    Segmentation untuned (fragmentation), so not a final negative.
+
+### 2026-11-15 literature (bio/lit/LIT.md)
+- No junction census or dual degree law published for flat-cell actin; no power-law degree
+  reported for any image-derived cytoskeletal network; Gilbert/STIT/Cowan never applied.
+- Caution: SOAX tracing *creates* T-junctions (tips stop on hit, Xu 2015) — biased toward SR.
+- Closest prior art: Sadegh 2017 PRX 7, 011031 — cortical actin compartments (HEK, STORM)
+  log-normal, explained as compartments split by growing filaments; never tested vs STIT.
+- Actin: Arp2/3 = one-sided Y (70°); dorsal fibres grow unidirectionally from adhesions;
+  arcs thicken by lateral fusion (older = thicker, as in SR); stress-fibre actin t1/2 ~ 1 min
+  => turnover regime, where our model says the tail is cut unless loaded bundles are stabilised.
+- Keratin mean vertex degree 3.5-4.2 (Lück 2010): not T-dominated — negative control.
+- Plant cytokinesis is literally "grow both ways, stop at first wall", 4-way junctions avoided;
+  angle = Errera/Gibbs rule (our 'balanced': gamma ~ 3, C ~ 0.05). Leaf venation: T-junctions +
+  radius hierarchy (Bohn 2002, Couder 2002); segmented data Ronellenfitsch 2015, Blonder 2020.
+- Rock-fracture dual graph already built (Andresen 2013): broad degree, no T/X split.
+- Cheap first test: mean sides per face = 4 for successive division without reorganisation
+  (vs 6 Voronoi-like; Bohn, Douady & Couder PRL 94, 054503).
+- Ranked targets: leaf minor venation > meristem time-lapse > stress fibres > crocodile
+  scales > cortical actin > keratin (control). Order of tests: T/Y/X share, sides/face,
+  width vs age, then dual p_k and C(k).
+
+## Next
+1. Leaf venation (Blonder 2020 / Ronellenfitsch 2015 data): T share, sides/face, dual p_k,
+   C(k), width vs degree at fixed length — the best biological SR candidate.
+2. Meristem lineage time-lapse: divisions as Errera-rule iterated partition; test clustering ~0.05.
+3. Actin: retune segmentation on nonlinear SIM; stress-fibre/arc regions; request U2OS/RPE1
+   images (SFEX, Vignaud 2021). Cortical-compartment sizes (Sadegh 2017) vs model cell-area law.
