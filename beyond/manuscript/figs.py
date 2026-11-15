@@ -21,6 +21,32 @@ LABEL = {'SR': 'SR', 'uniform': 'uniform', 'rect': 'rect', 'centroid': 'centroid
          'balanced': 'balanced', 'regular': 'regular'}
 
 
+OPEN = ('centroid', 'regular')                       # open markers, same everywhere
+from matplotlib.lines import Line2D
+
+
+def sty(r, **kw):
+    """one style per structure, used in every figure (lines with markers)"""
+    d = dict(color=COL[r], marker=MK[r], ms=8.5 if MK[r] == '*' else 5.5, mec=COL[r], mew=0.9,
+             mfc='white' if r in OPEN else COL[r], ls='-')
+    d.update(kw); return d
+
+
+def sct(r, scale=1.0):
+    """the same symbols for scatter plots"""
+    return dict(marker=MK[r], s=(46 if MK[r] == '*' else 20) * scale, edgecolors=COL[r], linewidths=0.8,
+                facecolors='white' if r in OPEN else COL[r])
+
+
+def _top_legend(fig, axes_top, rules, extra=(), ncol=3):
+    """the structure key, repeated at the top of every figure"""
+    h = [Line2D([], [], **sty(r)) for r in rules] + [e[0] for e in extra]
+    l = [LABEL[r] for r in rules] + [e[1] for e in extra]
+    y = axes_top.get_position().y1 + 0.035
+    fig.legend(h, l, loc='lower center', bbox_to_anchor=(0.5, y), ncol=ncol, frameon=False,
+               handlelength=2.0, columnspacing=1.0, handletextpad=0.4)
+
+
 def lab(ax, s):
     ax.text(-0.02, 1.02, s, transform=ax.transAxes, fontweight='bold', va='bottom', ha='right')
 
@@ -36,8 +62,10 @@ def fig1():
         ax.add_collection(LineCollection(segs, linewidths=lw, colors='#222222', capstyle='butt'))
         ax.plot([0, 1, 1, 0, 0], [0, 0, 1, 1, 0], color='#999999', lw=0.4)
         ax.set_xlim(0, 1); ax.set_ylim(0, 1); ax.set_aspect('equal'); ax.axis('off')
-        ax.set_title(LABEL[r], fontsize=8, pad=2)
-    fig.subplots_adjust(wspace=0.08, hspace=0.18)
+        ax.text(0.5, 1.04, LABEL[r], transform=ax.transAxes, ha='center', va='bottom', fontsize=8)
+        ax.plot([0.5 - 0.075 * len(LABEL[r]) / 2 - 0.1], [1.10], transform=ax.transAxes, clip_on=False,
+                **sty(r, ls='none', ms=7.5 if MK[r] == '*' else 4.5))
+    fig.subplots_adjust(wspace=0.08, hspace=0.24)
     fig.savefig(os.path.join(HERE, 'fig1.pdf'))
 
 
@@ -99,11 +127,9 @@ def fig3():
         rh = np.array([np.mean([x['rho'] for x in v if x['rho_t'] == q]) for q in qs])
         nn = [np.array([x['n_mean'] for x in v if x['rho_t'] == q]) for q in qs]
         gm = np.array([np.exp(np.mean(np.log(z))) for z in nn])
-        dashed = r in ('centroid', 'regular')       # coincide with SR / balanced: same cut angles
         if r in ('SR', 'balanced'):
             a.fill_between(rh, [z.min() for z in nn], [z.max() for z in nn], color=COL[r], alpha=0.15, lw=0)
-        a.plot(rh, gm, color=COL[r], marker=MK[r], ms=8 if MK[r] == '*' else 5.5, ls='--' if dashed else '-',
-               mfc='white' if dashed else COL[r], label=LABEL[r])
+        a.plot(rh, gm, **sty(r))
     for name in ('honeycomb', 'triangular', 'square'):
         v = [x for x in p if x['rule'] == name]
         cc, m = REF[name]
@@ -139,19 +165,15 @@ def fig3():
         nall.extend(G)
         if len(G) == 0:
             continue
-        dashed = r in ('centroid', 'regular')
         b.fill_between(G, np.exp(M - E), np.exp(M + E), color=COL[r], alpha=0.18, lw=0)
-        b.plot(G, np.exp(M), color=COL[r], marker=MK[r], ms=8 if MK[r] == '*' else 5.5, ls='--' if dashed else '-',
-               mfc='white' if dashed else COL[r], label=LABEL[r], markevery=2)
+        b.plot(G, np.exp(M), markevery=2, **sty(r))
     b.set_xlabel(r'$n$ (propagation direction)'); b.set_ylabel(r'$\omega_h$')
-    b.legend(loc='upper right', frameon=False, handlelength=2.2, borderaxespad=0.2)
     b.set_yscale('log'); b.set_xlim(min(nall) - 0.15, max(nall) + 0.15)
     b.xaxis.set_major_locator(matplotlib.ticker.MultipleLocator(1))
     # (c) band edge vs weakest-span prediction
     for r in ('SR', 'centroid', 'balanced'):
         v = [x for x in sp_ if x['rule'] == r and x['resolved'] and x['omega_h'] > 0]
-        c.scatter([x['omega_span'] for x in v], [x['omega_h'] for x in v], s=40 if MK[r] == '*' else 18, marker=MK[r],
-                  facecolors='none' if r == 'centroid' else COL[r], edgecolors=COL[r], linewidths=0.5)
+        c.scatter([x['omega_span'] for x in v], [x['omega_h'] for x in v], **sct(r, 0.8))
     allx = [x['omega_span'] for x in sp_ if x['resolved'] and x['omega_h'] > 0]
     xx = np.array([0.7 * min(allx), 1.4 * max(allx)])
     c.plot(xx, xx, color='#999999', lw=0.6, ls=':')
@@ -160,6 +182,12 @@ def fig3():
     c.set_xscale('log'); c.set_yscale('log')
     c.set_xlabel(r'$\omega_{\rm span}$ (weakest span)'); c.set_ylabel(r'$\omega_h$')
     _panel_labels(fig, (a, b, c), ('(a)', '(b)', '(c)'))
+    lat = [(Line2D([], [], color='#555555', marker=REF[k][1], ms=4.5, lw=0.7), k) for k in ('square', 'triangular', 'honeycomb')]
+    lat.append((Line2D([], [], color='#555555', marker='D', ms=4, lw=0.7), 'Voronoi'))
+    _top_legend(fig, a, MAIN)
+    y = a.get_position().y1 + 0.035
+    fig.legend([e[0] for e in lat], [e[1] for e in lat], loc='upper center', bbox_to_anchor=(0.5, y + 0.002), ncol=4,
+               frameon=False, handlelength=1.6, columnspacing=0.8, handletextpad=0.3)
     fig.savefig(os.path.join(HERE, 'fig3.pdf'))
 
 
@@ -169,15 +197,12 @@ def fig5():
     rules = [r for r in RULES if r != 'uniform']      # plates thicker than wide (thin-shell model invalid)
     fig, a, b = _stack()
     for r in rules:
-        for rows, ls, filled in ((pl, '-', True), (st, '--', False)):
+        for rows, ls in ((pl, '-'), (st, ':')):
             xs, ys = _agg(rows, r, 'n_mean')
             rhos = [np.mean([x['rho'] for x in rows if x['rule'] == r and x['alpha'] == 0 and x['rho_t'] == q]) for q in xs]
-            a.plot(rhos, ys, color=COL[r], marker=MK[r], ms=8 if MK[r] == '*' else 5.5, ls=ls,
-                   mfc=COL[r] if filled else 'white', label=LABEL[r] if filled else None)
+            a.plot(rhos, ys, **sty(r, ls=ls))
             v = [x for x in rows if x['rule'] == r]
-            b.scatter([x['n_mean'] for x in v], [x['omega1'] for x in v], s=36 if MK[r] == '*' else 16, marker=MK[r],
-                      facecolors=COL[r] if filled else 'none', edgecolors=COL[r], linewidths=0.6)
-    a.plot([], [], color='#555555', ls='-', label='plates'); a.plot([], [], color='#555555', ls='--', mfc='white', label='struts')
+            b.scatter([x['n_mean'] for x in v], [x['omega1'] for x in v], **sct(r, 0.8))
     a.set_xlabel(r'$\bar\rho$'); a.set_ylabel(r'$\langle n\rangle$'); a.set_xscale('log')
     a.xaxis.set_minor_formatter(matplotlib.ticker.NullFormatter())
     a.set_xticks([0.01, 0.03, 0.1, 0.2]); a.set_xticklabels(['0.01', '0.03', '0.1', '0.2'])
@@ -185,6 +210,8 @@ def fig5():
     b.set_xlabel(r'$\langle n\rangle$'); b.set_ylabel(r'$\omega_1$')
     b.set_xticks([1.5, 2, 2.5, 3, 3.5, 4]); b.set_yscale('log')
     _panel_labels(fig, (a, b), ('(a)', '(b)'))
+    _top_legend(fig, a, rules, extra=[(Line2D([], [], color='#555555', ls='-'), 'plates'),
+                                      (Line2D([], [], color='#555555', ls=':'), 'struts')], ncol=4)
     fig.savefig(os.path.join(HERE, 'fig5.pdf'))
 
 
@@ -238,7 +265,7 @@ def fig2():
     for r in ('SR', 'centroid', 'balanced', 'regular'):
         h = np.sum([x['frac_hist'] for x in A if x['rule'] == r], axis=0).astype(float)
         h /= h.sum() * (edges[1] - edges[0])
-        a.plot(mid, h, ls='-' if r != 'regular' else '--', mfc='white' if r == 'regular' else COL[r], markevery=1, **_style(r))
+        a.plot(mid, h, **sty(r))
     a.axvline(4 / 9, color='#999999', lw=0.6, ls=':')
     a.set_xlabel(r'smaller daughter area fraction $f$'); a.set_ylabel(r'$p(f)$'); a.set_yscale('log')
     a.set_xlim(0, 0.5); a.set_ylim(0.5, 200)
@@ -246,18 +273,18 @@ def fig2():
     for r in RULES:
         cc = np.mean([[x['ccdf'][str(K)] for K in Ks] for x in A if x['rule'] == r], axis=0)
         m = cc * 4 * 20000 >= 20
-        b.plot(Ks[m], (Ks ** 2 * cc)[m], ls='-', mfc='white' if r in ('centroid', 'regular') else COL[r], **_style(r))
+        b.plot(Ks[m], (Ks ** 2 * cc)[m], **sty(r))
     KK = np.geomspace(3, 128, 50)
     b.axhline(6, color='#555555', lw=0.8, ls=':')
     b.set_xscale('log'); b.set_xlabel(r'degree $K$'); b.set_ylabel(r'$K^2P(k\geq K)$'); b.set_ylim(0, 9)
     _logticks(b, 'x', [3, 10, 30, 100])
     for r in RULES:
         d = F[r]; g = np.array(d['elong_grid']); y = np.array(d['elong_ccdf']); m = y > 0
-        c.plot(g[m], y[m], ls='-', markevery=6, mfc='white' if r in ('centroid', 'regular') else COL[r], **_style(r), label=LABEL[r])
+        c.plot(g[m], y[m], markevery=6, **sty(r))
     c.set_xscale('log'); c.set_yscale('log'); c.set_xlim(1, 1e4); c.set_ylim(1e-5, 1.5)
     c.set_xlabel(r'cell elongation $e$'); c.set_ylabel(r'$P(e\geq x)$')
-    c.legend(loc='upper right', frameon=False, ncol=2, handlelength=2.0, borderaxespad=0.2)
     _panel_labels(fig, (a, b, c), ('(a)', '(b)', '(c)'))
+    _top_legend(fig, a, RULES)
     fig.savefig(os.path.join(HERE, 'fig2.pdf'))
 
 
@@ -269,19 +296,18 @@ def fig4():
     fig.subplots_adjust(hspace=0.45)
     for r in RULES:
         d = F['dist'][r]; g = np.array(d['span_grid']); y = np.array(d['span_ccdf']); m = (y > 0) & (g >= 0.3)
-        a.plot(g[m], y[m], ls='-', markevery=8, mfc='white' if r in ('centroid', 'regular') else COL[r], **_style(r), label=LABEL[r])
+        a.plot(g[m], y[m], markevery=8, **sty(r))
     a.set_xscale('log'); a.set_yscale('log'); a.set_ylim(1e-5, 1.5); a.set_xlim(0.3, 300)
     a.set_xlabel(r'span length $\ell\sqrt{T}$'); a.set_ylabel(r'$P(\ell\sqrt{T}\geq x)$')
-    a.legend(loc='upper right', frameon=False, ncol=2, handlelength=2.0, borderaxespad=0.2)
-    kcol = plt.get_cmap('viridis')
+    kcol = plt.get_cmap('Greys')
     for p in Cl['pts']:
         r = p['rule']
         if r == 'uniform':
             continue
         if r.startswith('k'):
-            kv = float(r[1:]); b.scatter(p['x'], p['n'] ** -2, s=10, marker='o', facecolors='none', edgecolors=kcol(0.15 + 0.7 * kv), linewidths=0.5)
+            kv = float(r[1:]); b.scatter(p['x'], p['n'] ** -2, s=9, marker='.', color=kcol(0.95 - 0.6 * kv), linewidths=0)
         else:
-            b.scatter(p['x'], p['n'] ** -2, s=40 if MK[r] == '*' else 16, marker=MK[r], color=COL[r], linewidths=0)
+            b.scatter(p['x'], p['n'] ** -2, **sct(r, 0.8))
     xx = np.geomspace(min(p['x'] for p in Cl['pts']) * 0.8, max(p['x'] for p in Cl['pts']) * 1.2, 100)
     b.plot(xx, Cl['s'] + Cl['c'] * xx ** Cl['q'], color='#333333', lw=0.8)
     b.axhline(Cl['s'], color='#999999', lw=0.6, ls=':')
@@ -289,15 +315,16 @@ def fig4():
     b.set_xlabel(r'$\lambda/\ell_*$'); b.set_ylabel(r'$\langle n\rangle^{-2}$')
     K = F['kappa']; ks = sorted({x['kappa'] for x in K})
     mean = lambda f: np.array([np.mean([x[f] for x in K if x['kappa'] == k]) for k in ks])
-    c.plot(ks, mean('n') / mean('n')[0], color='#333333', marker='o', ms=5, label=r'$\langle n\rangle$')
-    c.plot(ks, mean('l_star') / mean('l_star')[0], color='#333333', marker='s', ms=5, ls='--', mfc='white', label=r'$\ell_*$')
-    c.plot(ks, mean('eta'), color=COL['SR'], marker='^', ms=5, label=r'$\eta_n$')
-    c.plot(ks, mean('eta_aff'), color=COL['SR'], marker='^', ms=5, ls='--', mfc='white', label=r'$\eta_{\rm aff}$')
-    c.plot(ks, mean('fabric4'), color=COL['uniform'], marker='D', ms=4.5, ls=':', label=r'$a_4$')
+    c.plot(ks, mean('n') / mean('n')[0], color='#222222', marker='^', ms=5, label=r'$\langle n\rangle$')
+    c.plot(ks, mean('l_star') / mean('l_star')[0], color='#222222', marker='^', ms=5, ls='--', mfc='white', label=r'$\ell_*$')
+    c.plot(ks, mean('eta'), color='#777777', marker='>', ms=5, label=r'$\eta_n$')
+    c.plot(ks, mean('eta_aff'), color='#777777', marker='>', ms=5, ls='--', mfc='white', label=r'$\eta_{\rm aff}$')
+    c.plot(ks, mean('fabric4'), color='#aaaaaa', marker='d', ms=5, ls=':', label=r'$a_4$')
     c.set_xlabel(r'cut-angle spread $\kappa$'); c.set_ylabel('value')
     c.legend(loc='upper left', frameon=False, ncol=3, handlelength=2.0, borderaxespad=0.2, columnspacing=0.8)
     c.set_ylim(0, 2.3)
     _panel_labels(fig, (a, b, c), ('(a)', '(b)', '(c)'))
+    _top_legend(fig, a, RULES)
     fig.savefig(os.path.join(HERE, 'fig4.pdf'))
 
 
