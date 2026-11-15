@@ -191,3 +191,27 @@ Also fixed: Fig. 4(c) impulse was the tensile rebound; now compressive impulse.
 => D ≈ S: the reduction comes from the softer/slower material, not routing; directional effect
 (D vs C) comparable to realisation scatter. Homogenised Fig. 4 (peak halved) not confirmed.
 Recommendation: drop the application section and Fig. 4; keep cut-angle n-tuning as physics.
+
+## Regular article: network mappings per rule (2026-11-15, `network/`)
+User: drop the application; characterise the networks behind each Cowan division; for each structure
+network mapping / physics / relation; network matters only where it explains a physical difference.
+- `network/netstats.py` (T=2e4 asym, T=1e3 phys): cell tree (split fraction, depth, areas), corners,
+  elongation, dual graph (degree, C, r, paths), frame spans, fabric, junction angle, host age.
+- SAME for all rules: <corners>=4, <k>->4, K^2P(k>=K) flat 3.2-6.1 (gamma=3, b=1/2), h/t ~ U^2
+  (moments within 0.06), <d> 7.1-8.3. => cannot explain physics.
+- DIFFERENT: split law (uniform for SR/uniform/rect; [4/9,1/2] for centroid cuts = Grunbaum, min 0.4444),
+  leaf-depth var 15-16 vs 0.9 vs 0.23, triangles 30/28/0/20/5/4 %, C .38/.45/0/.28/.06/.05,
+  elongation e95 9.4/10.6/918/6.2/2.0/1.9, longest span*sqrt(T) 8.1/41/127/6.6/3.1/2.2 (T=2e4).
+- KEY RELATION (`network/collapse.py`, results/collapse.json): with l_* = (sum l^11/sum l)^(1/10)
+  (frame spans), n^-2 = s + c (lam/l_*)^q fits every frame rule + kappa family at every density with
+  one (s=0.023, q=1.12): rms ln n 0.10 vs 0.087 per-rule fits; rule offsets <= 0.06 (mean span: 0.24,
+  none: 0.28). uniform excluded (89% spans < 2 lam at rho .2: frame model invalid).
+- Within-rule (`network/seedvar.py`, 16 seeds): n spread follows total length (mean span) for
+  balanced/regular (corr .94/.97); SR/centroid spread too small.
+- Quasi-crossings (`network/crossing.py`, `breakx.py`): correlate with low n but moving them changes
+  n < 0.01 (moves ~ thickness) -> not used.
+- Isotropy: kappa family eta peaks at 0.4 where fabric a4 -> 0 while cells compact; eta_aff .81/.97/.89.
+  rect anisotropy = fabric (eta_aff .60).
+- omega_h * l_max at fixed n NOT universal: centroid ~1.6x SR; balanced ~ SR (collective prefactor).
+- Bloch for regular, rect running (`blochsweep2.py regular rect`, log results/bloch2b.log).
+- Manuscript rewritten as regular article (revtex pre), 9 pp, figs 1-5; tbd: regular/rect Bloch.

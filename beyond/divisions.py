@@ -80,6 +80,8 @@ def run(T, seed=0, rule='SR', box=(1.0, 1.0)):
     A = np.zeros((T, 2)); B = np.zeros((T, 2))
     hostA = np.zeros(T, int); hostB = np.zeros(T, int)
     split_of = {}
+    depth = {0: 0}
+    frac = np.zeros(T); cut_depth = np.zeros(T, int); parent_n = np.zeros(T, int)
     for t in range(T):
         # --- pick a cell
         if pick == 'area':
@@ -130,6 +132,8 @@ def run(T, seed=0, rule='SR', box=(1.0, 1.0)):
         l1 = [lab[j]] + [lab[k] for k in idx1] + [t]
         a0 = _moments(p0)[0]; a1 = _moments(p1)[0]
         n0 = len(polys); n1 = n0 + 1
+        frac[t] = a0 / (a0 + a1); cut_depth[t] = depth[c]; parent_n[t] = m
+        depth[n0] = depth[n1] = depth[c] + 1
         polys += [p0, p1]; labs += [l0, l1]; areas += [a0, a1]
         nrm = np.array([-d[1], d[0]])
         if (p0.mean(axis=0) - p) @ nrm < 0:
@@ -145,4 +149,6 @@ def run(T, seed=0, rule='SR', box=(1.0, 1.0)):
         A[t] = P; B[t] = Q; hostA[t] = lab[i]; hostB[t] = lab[j]
     return dict(T=T, seed=seed, A=A, B=B, hostA=hostA, hostB=hostB,
                 leaf_area=np.array([areas[c] for c in leaves]),
-                leaf_polys=[polys[c] for c in leaves])
+                leaf_polys=[polys[c] for c in leaves],
+                leaf_depth=np.array([depth[c] for c in leaves]),
+                frac=frac, cut_depth=cut_depth, parent_n=parent_n)

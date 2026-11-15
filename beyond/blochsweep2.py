@@ -8,7 +8,9 @@ OUT = 'results/bloch2_T1000.json'
 out = json.load(open(OUT)) if os.path.exists(OUT) else []
 done = {(o['rule'], o['seed'], o['rho_t'], o['dir']) for o in out}
 t0 = time.time()
-for rule in ('SR', 'centroid', 'balanced'):
+import sys
+RULES = sys.argv[1:] or ['SR', 'centroid', 'balanced']
+for rule in RULES:
     for s in range(4):
         g = divisions.run(1000, 100 + s, rule)
         L = np.linalg.norm(g['B'] - g['A'], axis=1)

@@ -81,14 +81,14 @@ def _logticks(ax, axis, ticks):
     getattr(ax, f'{axis}axis').set_minor_formatter(matplotlib.ticker.NullFormatter())
 
 
-def fig2():
+def fig3():
     p = json.load(open(os.path.join(B, 'results', 'psweep_T1000.json')))
     vor = json.load(open(os.path.join(B, 'results', 'voronoi.json')))
     bl = json.load(open(os.path.join(B, 'results', 'bloch2_T1000.json')))
     sp_ = json.load(open(os.path.join(B, 'results', 'spanmode_bloch2.json')))
     fig, (a, b, c) = plt.subplots(3, 1, figsize=(3.4, 6.8))
     fig.subplots_adjust(hspace=0.45)
-    MAIN = ('SR', 'centroid', 'balanced', 'regular')
+    MAIN = ('SR', 'uniform', 'rect', 'centroid', 'balanced', 'regular')
     # (a) index vs density
     for r in MAIN:
         v = [x for x in p if x['rule'] == r and x['alpha'] == 0.0]
@@ -110,7 +110,7 @@ def fig2():
            [np.mean([x['n_mean_per'] for x in vor if x['rho_t'] == q]) for q in rv],
            color='#555555', marker='D', ms=4.5, lw=0.7, label='Voronoi')
     a.set_xlabel(r'$\bar\rho$'); a.set_ylabel(r'$\langle n\rangle$')
-    a.set_ylim(1, 6.5); a.set_yticks([1, 2, 3, 4, 5, 6])
+    a.set_ylim(1, 8); a.set_yticks([1, 2, 3, 4, 5, 6, 7, 8])
     a.set_xticks([0.1, 0.2, 0.3, 0.4])
     # (b) band edge at fixed index: each (realisation, direction) density curve is interpolated in
     # ln(omega_h) at fixed n; mean and standard error over the curves that reach that n (>= 3)
@@ -155,10 +155,10 @@ def fig2():
     c.set_xscale('log'); c.set_yscale('log')
     c.set_xlabel(r'$\omega_{\rm span}$ (weakest span)'); c.set_ylabel(r'$\omega_h$')
     _panel_labels(fig, (a, b, c), ('(a)', '(b)', '(c)'))
-    fig.savefig(os.path.join(HERE, 'fig2.pdf'))
+    fig.savefig(os.path.join(HERE, 'fig3.pdf'))
 
 
-def fig3():
+def fig5():
     pl = json.load(open(os.path.join(B, 'results', 'sweep3d_T300.json')))
     st = json.load(open(os.path.join(B, 'results', 'skel3d_T300.json')))
     rules = [r for r in RULES if r != 'uniform']      # plates thicker than wide (thin-shell model invalid)
@@ -180,10 +180,10 @@ def fig3():
     b.set_xlabel(r'$\langle n\rangle$'); b.set_ylabel(r'$\omega_1$')
     b.set_xticks([1.5, 2, 2.5, 3, 3.5, 4]); b.set_yscale('log')
     _panel_labels(fig, (a, b), ('(a)', '(b)'))
-    fig.savefig(os.path.join(HERE, 'fig3.pdf'))
+    fig.savefig(os.path.join(HERE, 'fig5.pdf'))
 
 
-def fig4():
+def fig_shock_unused():
     """shock routing in a lattice insert (homogenised, cut-angle grading at rho = 0.2)"""
     d = json.load(open(os.path.join(B, 'results', 'shockfig_tau20.json')))
     sU = np.load(os.path.join(B, 'results', 'shockfig_U.npz')); sD = np.load(os.path.join(B, 'results', 'shockfig_D5.npz'))
@@ -219,7 +219,84 @@ def fig4():
     fig.savefig(os.path.join(HERE, 'fig4.pdf'))
 
 
+def _style(r):
+    return dict(color=COL[r], marker=MK[r], ms=8 if MK[r] == '*' else 5.5)
+
+
+def fig2():
+    """network mappings: split fraction, dual degree law, cell elongation"""
+    A = json.load(open(os.path.join(B, 'results', 'net_asym_T20000.json')))
+    F = json.load(open(os.path.join(B, 'results', 'net_fig.json')))['dist']
+    fig, (a, b, c) = plt.subplots(3, 1, figsize=(3.4, 6.8))
+    fig.subplots_adjust(hspace=0.45)
+    edges = np.linspace(0, 0.5, 21); mid = 0.5 * (edges[1:] + edges[:-1])
+    for r in ('SR', 'centroid', 'balanced', 'regular'):
+        h = np.sum([x['frac_hist'] for x in A if x['rule'] == r], axis=0).astype(float)
+        h /= h.sum() * (edges[1] - edges[0])
+        a.plot(mid, h, ls='-' if r != 'regular' else '--', mfc='white' if r == 'regular' else COL[r], markevery=1, **_style(r))
+    a.axvline(4 / 9, color='#999999', lw=0.6, ls=':')
+    a.set_xlabel(r'smaller daughter area fraction $f$'); a.set_ylabel(r'$p(f)$'); a.set_yscale('log')
+    a.set_xlim(0, 0.5); a.set_ylim(0.5, 200)
+    Ks = np.array([3, 4, 6, 8, 12, 16, 24, 32, 48, 64, 96, 128])
+    for r in RULES:
+        cc = np.mean([[x['ccdf'][str(K)] for K in Ks] for x in A if x['rule'] == r], axis=0)
+        m = cc * 4 * 20000 >= 20
+        b.plot(Ks[m], (Ks ** 2 * cc)[m], ls='-', mfc='white' if r in ('centroid', 'regular') else COL[r], **_style(r))
+    KK = np.geomspace(3, 128, 50)
+    b.axhline(6, color='#555555', lw=0.8, ls=':')
+    b.set_xscale('log'); b.set_xlabel(r'degree $K$'); b.set_ylabel(r'$K^2P(k\geq K)$'); b.set_ylim(0, 9)
+    _logticks(b, 'x', [3, 10, 30, 100])
+    for r in RULES:
+        d = F[r]; g = np.array(d['elong_grid']); y = np.array(d['elong_ccdf']); m = y > 0
+        c.plot(g[m], y[m], ls='-', markevery=6, mfc='white' if r in ('centroid', 'regular') else COL[r], **_style(r), label=LABEL[r])
+    c.set_xscale('log'); c.set_yscale('log'); c.set_xlim(1, 1e4); c.set_ylim(1e-5, 1.5)
+    c.set_xlabel(r'cell elongation $e$'); c.set_ylabel(r'$P(e\geq x)$')
+    c.legend(loc='upper right', frameon=False, ncol=2, handlelength=2.0, borderaxespad=0.2)
+    _panel_labels(fig, (a, b, c), ('(a)', '(b)', '(c)'))
+    fig.savefig(os.path.join(HERE, 'fig2.pdf'))
+
+
+def fig4():
+    """from network to physics: span tail, index collapse, cut-angle family"""
+    F = json.load(open(os.path.join(B, 'results', 'net_fig.json')))
+    Cl = json.load(open(os.path.join(B, 'results', 'collapse.json')))
+    fig, (a, b, c) = plt.subplots(3, 1, figsize=(3.4, 6.8))
+    fig.subplots_adjust(hspace=0.45)
+    for r in RULES:
+        d = F['dist'][r]; g = np.array(d['span_grid']); y = np.array(d['span_ccdf']); m = (y > 0) & (g >= 0.3)
+        a.plot(g[m], y[m], ls='-', markevery=8, mfc='white' if r in ('centroid', 'regular') else COL[r], **_style(r), label=LABEL[r])
+    a.set_xscale('log'); a.set_yscale('log'); a.set_ylim(1e-5, 1.5); a.set_xlim(0.3, 300)
+    a.set_xlabel(r'span length $\ell\sqrt{T}$'); a.set_ylabel(r'$P(\ell\sqrt{T}\geq x)$')
+    a.legend(loc='upper right', frameon=False, ncol=2, handlelength=2.0, borderaxespad=0.2)
+    kcol = plt.get_cmap('viridis')
+    for p in Cl['pts']:
+        r = p['rule']
+        if r == 'uniform':
+            continue
+        if r.startswith('k'):
+            kv = float(r[1:]); b.scatter(p['x'], p['n'] ** -2, s=10, marker='o', facecolors='none', edgecolors=kcol(0.15 + 0.7 * kv), linewidths=0.5)
+        else:
+            b.scatter(p['x'], p['n'] ** -2, s=40 if MK[r] == '*' else 16, marker=MK[r], color=COL[r], linewidths=0)
+    xx = np.geomspace(min(p['x'] for p in Cl['pts']) * 0.8, max(p['x'] for p in Cl['pts']) * 1.2, 100)
+    b.plot(xx, Cl['s'] + Cl['c'] * xx ** Cl['q'], color='#333333', lw=0.8)
+    b.axhline(Cl['s'], color='#999999', lw=0.6, ls=':')
+    b.set_xscale('log'); b.set_yscale('log')
+    b.set_xlabel(r'$\lambda/\ell_*$'); b.set_ylabel(r'$\langle n\rangle^{-2}$')
+    K = F['kappa']; ks = sorted({x['kappa'] for x in K})
+    mean = lambda f: np.array([np.mean([x[f] for x in K if x['kappa'] == k]) for k in ks])
+    c.plot(ks, mean('n') / mean('n')[0], color='#333333', marker='o', ms=5, label=r'$\langle n\rangle$')
+    c.plot(ks, mean('l_star') / mean('l_star')[0], color='#333333', marker='s', ms=5, ls='--', mfc='white', label=r'$\ell_*$')
+    c.plot(ks, mean('eta'), color=COL['SR'], marker='^', ms=5, label=r'$\eta_n$')
+    c.plot(ks, mean('eta_aff'), color=COL['SR'], marker='^', ms=5, ls='--', mfc='white', label=r'$\eta_{\rm aff}$')
+    c.plot(ks, mean('fabric4'), color=COL['uniform'], marker='D', ms=4.5, ls=':', label=r'$a_4$')
+    c.set_xlabel(r'cut-angle spread $\kappa$'); c.set_ylabel('value')
+    c.legend(loc='upper left', frameon=False, ncol=3, handlelength=2.0, borderaxespad=0.2, columnspacing=0.8)
+    c.set_ylim(0, 2.3)
+    _panel_labels(fig, (a, b, c), ('(a)', '(b)', '(c)'))
+    fig.savefig(os.path.join(HERE, 'fig4.pdf'))
+
+
 if __name__ == '__main__':
-    which = sys.argv[1:] or ['1', '2', '3']
+    which = sys.argv[1:] or ['1', '2', '3', '4', '5']
     for w in which:
         globals()['fig' + w]()
