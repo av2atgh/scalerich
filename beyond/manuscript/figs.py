@@ -38,11 +38,11 @@ def sct(r, scale=1.0):
                 facecolors='white' if r in OPEN else COL[r])
 
 
-def _top_legend(fig, axes_top, rules, extra=(), ncol=3):
+def _top_legend(fig, axes_top, rules, extra=(), ncol=3, lift=0.0):
     """the structure key, repeated at the top of every figure"""
     h = [Line2D([], [], **sty(r)) for r in rules] + [e[0] for e in extra]
     l = [LABEL[r] for r in rules] + [e[1] for e in extra]
-    y = axes_top.get_position().y1 + 0.035
+    y = axes_top.get_position().y1 + 0.035 + lift
     fig.legend(h, l, loc='lower center', bbox_to_anchor=(0.5, y), ncol=ncol, frameon=False,
                handlelength=2.0, columnspacing=1.0, handletextpad=0.4)
 
@@ -184,10 +184,10 @@ def fig3():
     _panel_labels(fig, (a, b, c), ('(a)', '(b)', '(c)'))
     lat = [(Line2D([], [], color='#555555', marker=REF[k][1], ms=4.5, lw=0.7), k) for k in ('square', 'triangular', 'honeycomb')]
     lat.append((Line2D([], [], color='#555555', marker='D', ms=4, lw=0.7), 'Voronoi'))
-    _top_legend(fig, a, MAIN)
     y = a.get_position().y1 + 0.035
-    fig.legend([e[0] for e in lat], [e[1] for e in lat], loc='upper center', bbox_to_anchor=(0.5, y + 0.002), ncol=4,
+    fig.legend([e[0] for e in lat], [e[1] for e in lat], loc='lower center', bbox_to_anchor=(0.5, y), ncol=4,
                frameon=False, handlelength=1.6, columnspacing=0.8, handletextpad=0.3)
+    _top_legend(fig, a, MAIN, lift=0.03)
     fig.savefig(os.path.join(HERE, 'fig3.pdf'))
 
 
