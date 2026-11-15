@@ -1,0 +1,327 @@
+{
+ "agg": {
+  "tol": 25.0,
+  "leaves": 44,
+  "node_degree_counts": [
+   0,
+   83538,
+   610,
+   160179,
+   365,
+   1,
+   0,
+   0
+  ],
+  "free_end_fraction_of_nodes": 0.3413992226994642,
+  "interior_free_ends": 83324,
+  "T": 47257,
+  "Y": 102600,
+  "X": 116,
+  "T_frac": 0.31534729775719517,
+  "T_stem_thinnest": 0.7750386186173477,
+  "interior_lines": 223479,
+  "kmean": 0.43787559457488173,
+  "ccdf": {
+   "1": 0.3388416808738181,
+   "2": 0.06749180012439647,
+   "4": 0.006184026239601932,
+   "8": 0.0006085582985425924,
+   "16": 7.606978731782405e-05,
+   "32": 8.949386743273416e-06,
+   "64": 0.0
+  },
+  "kmax": 37,
+  "C_mean_per_leaf": 0.01958049430044448,
+  "gamma4": 3.894476498876379,
+  "corr_k_L": 0.6243566590921121,
+  "partial_logk_logW_given_logL": 0.09238711476241734,
+  "slope_logk_logL": 0.1747432361873236,
+  "HLD_splits": {
+   "n": 20112,
+   "mean": 0.28221234919453836,
+   "quartiles": [
+    0.16,
+    0.301,
+    0.413
+   ],
+   "hist_0_05": [
+    1545,
+    1588,
+    1559,
+    1642,
+    1783,
+    1914,
+    2131,
+    2304,
+    2668,
+    2978
+   ]
+  }
+ },
+ "per": [
+  {
+   "leaf": "SLF-T111-B2SH-CLAHEm",
+   "lines": 5723,
+   "C": 0.01557305336832896,
+   "kmax": 16
+  },
+  {
+   "leaf": "SLF-T113-B2S (R)-CLAHEm",
+   "lines": 6661,
+   "C": 0.00797031415923924,
+   "kmax": 22
+  },
+  {
+   "leaf": "SLF-T114-B2S-CLAHEm",
+   "lines": 1840,
+   "C": 0.041025641025641026,
+   "kmax": 8
+  },
+  {
+   "leaf": "SLF-T115-B2S-CLAHEm",
+   "lines": 7880,
+   "C": 0.00326797385620915,
+   "kmax": 7
+  },
+  {
+   "leaf": "SLF-T116-B2S-CLAHEm",
+   "lines": 6199,
+   "C": 0.0345175107079869,
+   "kmax": 10
+  },
+  {
+   "leaf": "SLF-T117-B2S (R)-CLAHEm",
+   "lines": 10953,
+   "C": 0.018569655600372322,
+   "kmax": 24
+  },
+  {
+   "leaf": "SLF-T118-B2SH-CLAHEm",
+   "lines": 2834,
+   "C": 0.0171898355754858,
+   "kmax": 15
+  },
+  {
+   "leaf": "SLF-T119-B2S-CLAHEm",
+   "lines": 3649,
+   "C": 0.012552301255230125,
+   "kmax": 6
+  },
+  {
+   "leaf": "SLF-T120-B2S-CLAHEm",
+   "lines": 2206,
+   "C": 0.0,
+   "kmax": 11
+  },
+  {
+   "leaf": "SLF-T121-B2SH-CLAHEm",
+   "lines": 2334,
+   "C": 0.027195767195767197,
+   "kmax": 9
+  },
+  {
+   "leaf": "SLF-T122-B2S (R)-CLAHEm",
+   "lines": 6430,
+   "C": 0.008701854493580598,
+   "kmax": 19
+  },
+  {
+   "leaf": "SLF-T122-B2SH-CLAHEm",
+   "lines": 4731,
+   "C": 0.034657848611336986,
+   "kmax": 11
+  },
+  {
+   "leaf": "SLF-T123-B2SH-CLAHEm",
+   "lines": 2794,
+   "C": 0.0,
+   "kmax": 13
+  },
+  {
+   "leaf": "SLF-T124-B2S-CLAHEm",
+   "lines": 4732,
+   "C": 0.008426415833823241,
+   "kmax": 7
+  },
+  {
+   "leaf": "SLF-T159-B2SH-CLAHEm",
+   "lines": 5921,
+   "C": 0.026546453147594556,
+   "kmax": 10
+  },
+  {
+   "leaf": "SLF-T182-B2S-CLAHEm",
+   "lines": 3720,
+   "C": 0.0,
+   "kmax": 6
+  },
+  {
+   "leaf": "SLF-T183-B2SH (R)BIS-CLAHEm",
+   "lines": 1136,
+   "C": 0.0,
+   "kmax": 6
+  },
+  {
+   "leaf": "SLF-T184-B2SH-CLAHEm",
+   "lines": 3530,
+   "C": 0.0,
+   "kmax": 9
+  },
+  {
+   "leaf": "SLF-T185-B2SH-CLAHEm",
+   "lines": 4460,
+   "C": 0.02613756613756614,
+   "kmax": 10
+  },
+  {
+   "leaf": "SLF-T187-B2S (R)-CLAHEm",
+   "lines": 7655,
+   "C": 0.04021765824893699,
+   "kmax": 21
+  },
+  {
+   "leaf": "SLF-T188-B2SH-CLAHEm",
+   "lines": 3609,
+   "C": 0.01825396825396825,
+   "kmax": 5
+  },
+  {
+   "leaf": "SLF-T189-B2SH-CLAHEm",
+   "lines": 5318,
+   "C": 0.03140815178692644,
+   "kmax": 11
+  },
+  {
+   "leaf": "SLF-T193-B1SH-CLAHEm",
+   "lines": 911,
+   "C": 0.018817204301075266,
+   "kmax": 6
+  },
+  {
+   "leaf": "SLF-T194-B2SH-CLAHEm",
+   "lines": 6244,
+   "C": 0.05770925110132159,
+   "kmax": 18
+  },
+  {
+   "leaf": "SLF-T195-B2S-CLAHEm",
+   "lines": 5519,
+   "C": 0.02823691460055096,
+   "kmax": 9
+  },
+  {
+   "leaf": "SLF-T197-B2S-CLAHEm",
+   "lines": 6292,
+   "C": 0.0448087431693989,
+   "kmax": 10
+  },
+  {
+   "leaf": "SLF-T2138-B2SH-CLAHEm",
+   "lines": 14840,
+   "C": 0.011126844771704584,
+   "kmax": 16
+  },
+  {
+   "leaf": "SLF-T2139-B2S (R)-CLAHEm",
+   "lines": 9132,
+   "C": 0.011055236270753513,
+   "kmax": 37
+  },
+  {
+   "leaf": "SLF-T2142-B2S-CLAHEm",
+   "lines": 4121,
+   "C": 0.029260935143288085,
+   "kmax": 6
+  },
+  {
+   "leaf": "SLF-T246-B2S-CLAHEm",
+   "lines": 5382,
+   "C": 0.025641025641025644,
+   "kmax": 8
+  },
+  {
+   "leaf": "SLF-T3694-B2SH (R)-CLAHEm",
+   "lines": 3156,
+   "C": 0.045579204308112596,
+   "kmax": 36
+  },
+  {
+   "leaf": "SLF-T3706-B2SH-CLAHEm",
+   "lines": 6526,
+   "C": 0.007444168734491315,
+   "kmax": 7
+  },
+  {
+   "leaf": "SLF-T51-B2S-CLAHEm",
+   "lines": 5773,
+   "C": 0.0404659717964439,
+   "kmax": 9
+  },
+  {
+   "leaf": "SLF-T52-B2S-CLAHEm",
+   "lines": 4431,
+   "C": 0.015228426395939087,
+   "kmax": 8
+  },
+  {
+   "leaf": "SLF-T53-B2SH-CLAHEm",
+   "lines": 7134,
+   "C": 0.010606060606060605,
+   "kmax": 8
+  },
+  {
+   "leaf": "SLF-T54-B2SH-CLAHEm",
+   "lines": 4528,
+   "C": 0.01496408619313647,
+   "kmax": 9
+  },
+  {
+   "leaf": "SLF-T55-B2SH-CLAHEm",
+   "lines": 4672,
+   "C": 0.02986663246986407,
+   "kmax": 13
+  },
+  {
+   "leaf": "SLF-T56-B2SH (R)-CLAHEm",
+   "lines": 4769,
+   "C": 0.023978265096158517,
+   "kmax": 14
+  },
+  {
+   "leaf": "SLF-T57-B2S-CLAHEm",
+   "lines": 2969,
+   "C": 0.0,
+   "kmax": 7
+  },
+  {
+   "leaf": "SLF-T58-B2S-CLAHEm",
+   "lines": 6191,
+   "C": 0.021167027417027414,
+   "kmax": 21
+  },
+  {
+   "leaf": "SLF-T59-B2SH-CLAHEm",
+   "lines": 2272,
+   "C": 0.045720720720720726,
+   "kmax": 11
+  },
+  {
+   "leaf": "SLF-T60-B2S-CLAHEm",
+   "lines": 5623,
+   "C": 0.0,
+   "kmax": 10
+  },
+  {
+   "leaf": "SLF-T61-B2S (R)-CLAHEm",
+   "lines": 5795,
+   "C": 0.007653061224489796,
+   "kmax": 8
+  },
+  {
+   "leaf": "SLF-T62-B2S-CLAHEm",
+   "lines": 2884,
+   "C": 0.0,
+   "kmax": 8
+  }
+ ]
+}

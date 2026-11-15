@@ -37,6 +37,11 @@ def classify(V, E, r1=3.0, r2=10.0, tol=25.0):
             arms.setdefault(u, []).append((e, a))
         if b is not None:
             arms.setdefault(v, []).append((e, b))
+    return classify_arms(arms, tol)
+
+
+def classify_arms(arms, tol=25.0):
+    """arms: {vertex: [(edge id, unit direction), ...]}"""
     cos_t = np.cos(np.radians(180 - tol))
     recs = []
     for j, a in arms.items():
