@@ -138,10 +138,10 @@
   {Nagel}}\ and\ \bibinfo {author} {\bibfnamefont {V.}~\bibnamefont
   {Wei{\ss}}},\ }\bibfield  {title} {\bibinfo {title} {Crack {STIT}
   tessellations: characterization of stationary random tessellations stable
-  with respect to iteration},\ }\href@noop {} {\bibfield  {journal} {\bibinfo
-  {journal} {Advances in Applied Probability}\ }\textbf {\bibinfo {volume}
-  {37}},\ \bibinfo {pages} {859} (\bibinfo {year} {2005})}\BibitemShut
-  {NoStop}%
+  with respect to iteration},\ }\href {https://doi.org/10.1239/aap/1134587744}
+  {\bibfield  {journal} {\bibinfo  {journal} {Advances in Applied Probability}\
+  }\textbf {\bibinfo {volume} {37}},\ \bibinfo {pages} {859} (\bibinfo {year}
+  {2005})}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Bohn}\ \emph
   {et~al.}(2005{\natexlab{a}})\citenamefont {Bohn}, \citenamefont {Pauchard},\
   and\ \citenamefont {Couder}}]{bohn2005}%
