@@ -167,3 +167,17 @@ T(a) = 1-(1-t0)exp(-a/tau); force balance at a fresh junction theta = 2 arccos(t
 Reading: plant walls = iterated division in the SR degree class (gamma ~ 3) but with a
 corner-free rule (Errera) that kills dual clustering; junction relaxation by tension maturation
 (t0 ~ 0.7, tau ~ Tcc) re-creates clustering ~0.2 — a prediction for longer films.
+
+### 2026-11-15 flower meristems (Refahi 2021; images/refahi.py, refahi_stats.py; model/refahi_model.py)
+6 films (FM1 0-132 h, FM5 16-173 h, others 55-69 h), 3008 new L1 walls with host relations.
+- Corner cuts: 4/252 decidable 2-daughter divisions (1.6%) (shoot meristem 0/672; SR 0.21).
+- Tcc = 31.4 h (sum of intervals / sum of log2 daughters).
+- Through-angle vs age: [0,8) 135.7, [8,16) 131.4, [16,24) 129.9, [24,36) 126.9, [36,48) 125.3,
+  [48,72) 126.0, [72,120) 124.3 deg (n 3130 ... 135).
+- Host-linked fraction (both hosts film-born, born before the new wall, hosts' own hosts known):
+  0.19 +- 0.06 (n = 47). Model with Willis-fitted tension (t0 0.7, tau 36 h), Tcc = 31 h, same
+  restriction (150 h window): relaxed 0.19 (K 20 and 100), unrelaxed 0.002. Parameter-free match.
+  Model angles (K 20): 139.3, 135.0, 131.8, 128.5, 125.8, 123.2, 121.2 (data plateau ~125).
+- Degree vs line age (film-born, own hosts known): data mean k 2.38 / 3.07 / 3.84 / 3.14 / 2.84 for
+  ages 0-20 / 20-40 / 40-70 / 70-110 / 110-200 h; model 2.04 / 2.69 / 3.5 / 5.0 / 8.2. Agreement to
+  70 h; older data lines censored (hosts outside tracked L1). Degree law still untestable (max k 12).
