@@ -117,7 +117,9 @@ images/venation*.py, results/venation_*):
 **Shoot apical meristem L1** (Willis et al. 2016, 6 plants, 4 h steps, 76 h; images/meristem.py,
 results/meristem_*.json): 1117 divisions, 672 with both hosts identified.
 - Corner cuts (new wall on two adjacent sides of the mother): 0/672 (95% upper bound 0.45%).
-  SR 0.50, uniform clocks 0.63, centroid 0.41, balanced/Errera 0.07 (model refs). Detector checked:
+  Model refs on the same topological definition (sides adjacent around the mother, T-points
+  counted as vertices; model/plantdiv.py): SR 0.21, Errera shortest-wall 0. [Earlier refs SR 0.50,
+  uniform 0.63, centroid 0.41, balanced 0.07 used dual-linked hosts — a different quantity.] Detector checked:
   44% of neighbour pairs of a cell are adjacent around it (~2/(n-1)).
 - New junctions are not T at birth: through-angle median 143 deg (quartiles 135/143/151; >165: 3.6%),
   relaxing to 125-134 deg by 32-36 h in all six plants (toward Y).
@@ -136,3 +138,32 @@ balanced bias, but their dual degree law cannot be separated from the line const
 - Refahi 2021 flower meristems (173 h, all layers) for more generations and a degree law.
 - Model: iterated division with zero corner cuts + junction relaxation, to give plant-specific
   predictions (C ~ 0, gamma ~ 3, sides distribution).
+
+### 2026-11-15 plant model (model/plantdiv.py)
+Vertex model of iterated division in the unit square. Rule: wall through the centroid, shortest of
+36 directions, ends >= 0.15 wall-length from vertices (no 4-way); no-corner-cut constraint optional.
+Mechanics: quasi-static E = sum T_e l_e + sum (K/2)(A-A0)^2/A0^1.5, new-wall tension matures
+T(a) = 1-(1-t0)exp(-a/tau); force balance at a fresh junction theta = 2 arccos(t/2) (checked: t0=0.6 -> 145).
+- Errera's shortest wall never cuts a corner by itself (0 with or without the constraint).
+  Exact consequences (no neighbour exchange in plants): P(3) = 0; n1 + n2 = n + 4 at each division.
+- Data (images/meristem_topo.py, ~12k cell observations): P(3..9) = .002/.04/.27/.41/.23/.045/.002;
+  n1+n2-n mode 4 in all 6 plants (5, 6 from neighbour divisions in the same 4 h); 6-12% of cells
+  divide per 4 h -> Tcc ~ 26-45 h (median ~36 h).
+- Tension fit to the through-angle vs age curve (model/fit_tension.py, Tcc = 36 h): valley
+  (t0, tau) = (0.6, 24 h) rms 1.9 deg, (0.75, 48 h) rms 1.7 deg: a new wall starts at ~2/3 of
+  mature tension and matures over ~1 cell cycle.
+- P(n) predictions (model/predict_plant.py, N = 2000 x 2): Errera without relaxation
+  .043/.272/.417/.201/.051/.013 (TV 0.03 from data); Errera + fitted tension (K = 20)
+  .014/.26/.51/.16/.043/.010 (TV 0.10; too many hexagons); K = 100: TV 0.05 but angle rms 3.9
+  (model/stiff.py; K >= 500 not converged at this step size). SR: P(3) = .09, broad.
+  => the division geometry alone gives the meristem P(n); an equal-tension vertex model that
+  reproduces the junction angles over-regularises the cells. Prior art for P(n) under division
+  rules: Gibson 2006, Sahlin & Jonsson 2010 — P(n) is not new; the dual/wall-line results are.
+- Wall-line dual: gamma6 = 2.84-3.01 for every variant (rule-independent, as in percell.py);
+  clustering 0.0008 (Errera, no relaxation) vs 0.20-0.23 with relaxation (C(k) ~ 1/k) vs SR 0.36.
+  Host-linked fraction per division: model 0.27-0.31 (relaxed), ~0 (unrelaxed).
+  Data: only 4 divisions with both hosts dated in the 76 h films (1 linked): untestable here;
+  needs Refahi 2021 (173 h).
+Reading: plant walls = iterated division in the SR degree class (gamma ~ 3) but with a
+corner-free rule (Errera) that kills dual clustering; junction relaxation by tension maturation
+(t0 ~ 0.7, tau ~ Tcc) re-creates clustering ~0.2 — a prediction for longer films.

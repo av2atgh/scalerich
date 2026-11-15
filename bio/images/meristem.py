@@ -158,7 +158,7 @@ def run(plant, slope_max=0.7):
                 x1, x2 = hl[0][1], hl[1][1]
                 corner = any({M, x1, x2} <= set(l) for l in Fa['vl'].values())
                 hosts[new] = [hl[0][0], hl[1][0]]
-            divs.append(dict(t=tb, M=int(M), area=int(mpix.sum()), nends=len(ends),
+            divs.append(dict(t=tb, M=int(M), new=int(new), area=int(mpix.sum()), nends=len(ends),
                              hosts=[int(h) for h, _ in hl], corner=corner, Tangle=tang))
     # T-angle relaxation: at every frame, vertices where a dated new line ends on a host
     relax = []
