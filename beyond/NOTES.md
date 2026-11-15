@@ -269,3 +269,9 @@ s = s_pin per cell -> c 1.18, q 0.97, rms .059 (same as common s); LOO .057-.084
 Thin frame: pure power law n^-2 = 1.6 (lam/l*)^1.11, rms .11. Fig 4(b) now bending term vs lam/l*.
 Affine single-cell <n> within 4% of periodic. Intro ends with section outline (user request).
 Appendix A: kernel table. Manuscript 11 pp.
+
+## Submission package (2026-11-15)
+~/Downloads/scalerich_divisions_pre.zip (manuscript.tex/.bbl/.pdf, refs.bib, fig1-5.pdf; compiles standalone,
+10 pp) and ~/Downloads/cover_letter_pre_networks.md (PRE, Networks section). References checked against PDFs:
+Shewchuk, Zhu, Nagel & Weiss, Silva, Tol, Heussinger & Frey, Broedersz & MacKintosh, Connelly; Graff replaced
+by Rao Sec. 8.5 (preview lacks Sec. 8.5 text; 4.730 root to be confirmed in the full book).
