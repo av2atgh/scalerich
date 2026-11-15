@@ -112,9 +112,10 @@
   {Degertekin}},\ and\ \bibinfo {author} {\bibfnamefont {A.}~\bibnamefont
   {Erturk}},\ }\bibfield  {title} {\bibinfo {title} {Phononic crystal
   {Luneburg} lens for omnidirectional elastic wave focusing and energy
-  harvesting},\ }\href@noop {} {\bibfield  {journal} {\bibinfo  {journal}
-  {Applied Physics Letters}\ }\textbf {\bibinfo {volume} {111}},\ \bibinfo
-  {pages} {013503} (\bibinfo {year} {2017})}\BibitemShut {NoStop}%
+  harvesting},\ }\href {https://doi.org/10.1063/1.4991684} {\bibfield
+  {journal} {\bibinfo  {journal} {Applied Physics Letters}\ }\textbf {\bibinfo
+  {volume} {111}},\ \bibinfo {pages} {013503} (\bibinfo {year}
+  {2017})}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Aguzzi}\ \emph {et~al.}(2022)\citenamefont {Aguzzi},
   \citenamefont {Kanellopoulos}, \citenamefont {Wiltshaw}, \citenamefont
   {Craster}, \citenamefont {Chatzi},\ and\ \citenamefont
