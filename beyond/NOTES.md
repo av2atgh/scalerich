@@ -215,3 +215,22 @@ network mapping / physics / relation; network matters only where it explains a p
 - omega_h * l_max at fixed n NOT universal: centroid ~1.6x SR; balanced ~ SR (collective prefactor).
 - Bloch for regular, rect running (`blochsweep2.py regular rect`, log results/bloch2b.log).
 - Manuscript rewritten as regular article (revtex pre), 9 pp, figs 1-5; tbd: regular/rect Bloch.
+
+## Potential applications beyond GRIN (discussion 2026-11-15; logged on user request, untested unless stated)
+- Stiffness per weight: n^-2 = C11/(rho E0) is a normalised specific modulus. balanced/regular ~2.2x
+  stiffer than SR at rho=0.2 (set by l_*) -> lightweight cores; 3D plates near-affine.
+  SR/centroid/rect bending-dominated, soft at equal weight -> cushioning, packaging, impact absorption;
+  rect: anisotropic compliance.
+- Vibration: rect/uniform very low local resonances (rect w1 ~100x lower) -> low-frequency isolation;
+  SR broad span spectrum -> broadband damping with lossy constituent (untested); balanced uniform spans
+  -> narrow clean local-resonance gap (untested).
+- Damage tolerance: path multiplicity <ln mu> 2.8-3.6 (rect, balanced) vs 1.9 (SR) -> redundant load
+  paths; test with rg/failure.py (buckling cascades) across rules.
+- Transport: conduction through ligaments (rg/conductance.py, exact); crack-templated transparent
+  metal-mesh electrodes are T-junction divisions -> rule choice may matter for uniformity/transparency.
+  Pore space: scale-rich pore sizes (SR, uniform) -> multiscale filtration, wicking, broadband porous
+  absorbers; regular -> narrow pore window (scaffolds, catalyst supports).
+- Biology: Errera's rule (shortest wall through the centre) ~ balanced; balanced maximises stiffness per
+  weight and isotropy with compact cells. Wing venation and crack patterns elsewhere in the family.
+- Proposed: "Beyond wave control" paragraph (stiffness reading + Errera); optional quick checks of
+  conductance and buckling across the six rules (~1 h each), after the Bloch runs.

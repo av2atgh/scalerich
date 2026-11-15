@@ -4,7 +4,7 @@ k_max = min(2 pi, 3 n0 omega1) with 24 points (resolves the band edge at high n)
 Band edge omega_h as in blochsweep.py (p_L < 0.3 or |n/n0 - 1| > 0.1).
 -> results/bloch2_T1000.json (resumable)"""
 import json, os, time, numpy as np, divisions, periodic, waves
-OUT = 'results/bloch2_T1000.json'
+OUT = os.environ.get('BLOCH_OUT', 'results/bloch2_T1000.json')
 out = json.load(open(OUT)) if os.path.exists(OUT) else []
 done = {(o['rule'], o['seed'], o['rho_t'], o['dir']) for o in out}
 t0 = time.time()

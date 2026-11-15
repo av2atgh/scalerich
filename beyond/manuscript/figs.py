@@ -85,6 +85,9 @@ def fig3():
     p = json.load(open(os.path.join(B, 'results', 'psweep_T1000.json')))
     vor = json.load(open(os.path.join(B, 'results', 'voronoi.json')))
     bl = json.load(open(os.path.join(B, 'results', 'bloch2_T1000.json')))
+    fr = os.path.join(B, 'results', 'bloch2_rect.json')
+    if os.path.exists(fr):
+        bl = [x for x in bl if x['rule'] != 'rect'] + json.load(open(fr))
     sp_ = json.load(open(os.path.join(B, 'results', 'spanmode_bloch2.json')))
     fig, (a, b, c) = plt.subplots(3, 1, figsize=(3.4, 6.8))
     fig.subplots_adjust(hspace=0.45)
@@ -120,7 +123,7 @@ def fig3():
         if x['resolved'] and x['omega_h'] > 0:
             curves.setdefault((x['rule'], x['seed'], x['dir']), []).append((x['n0'], x['omega_h']))
     grid = np.arange(2.0, 8.01, 0.25)
-    for r in ('SR', 'centroid', 'balanced'):
+    for r in ('SR', 'rect', 'centroid', 'balanced', 'regular'):
         M = []; E = []; G = []
         for n in grid:
             v = []
@@ -134,7 +137,9 @@ def fig3():
                 v = np.array(v); G.append(n); M.append(v.mean()); E.append(v.std() / np.sqrt(len(v)))
         G = np.array(G); M = np.array(M); E = np.array(E)
         nall.extend(G)
-        dashed = r == 'centroid'
+        if len(G) == 0:
+            continue
+        dashed = r in ('centroid', 'regular')
         b.fill_between(G, np.exp(M - E), np.exp(M + E), color=COL[r], alpha=0.18, lw=0)
         b.plot(G, np.exp(M), color=COL[r], marker=MK[r], ms=8 if MK[r] == '*' else 5.5, ls='--' if dashed else '-',
                mfc='white' if dashed else COL[r], label=LABEL[r], markevery=2)
