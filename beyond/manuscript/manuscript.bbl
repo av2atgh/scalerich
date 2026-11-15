@@ -286,7 +286,8 @@
   {Zhu}}, \bibinfo {author} {\bibfnamefont {J.~R.}\ \bibnamefont {Hobdell}},\
   and\ \bibinfo {author} {\bibfnamefont {A.~H.}\ \bibnamefont {Windle}},\
   }\bibfield  {title} {\bibinfo {title} {Effects of cell irregularity on the
-  elastic properties of open-cell foams},\ }\href@noop {} {\bibfield  {journal}
+  elastic properties of open-cell foams},\ }\href
+  {https://doi.org/10.1016/S1359-6454(00)00282-2} {\bibfield  {journal}
   {\bibinfo  {journal} {Acta Materialia}\ }\textbf {\bibinfo {volume} {48}},\
   \bibinfo {pages} {4893} (\bibinfo {year} {2000})}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Shewchuk}(1996)}]{shewchuk1996}%
