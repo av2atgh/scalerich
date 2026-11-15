@@ -319,13 +319,14 @@
 \bibitem [{\citenamefont {Connelly}(1993)}]{connelly1993}%
   \BibitemOpen
   \bibfield  {author} {\bibinfo {author} {\bibfnamefont {R.}~\bibnamefont
-  {Connelly}},\ }\bibfield  {title} {\bibinfo {title} {Rigidity},\ }in\
-  \href@noop {} {\emph {\bibinfo {booktitle} {Handbook of Convex Geometry}}},\
-  Vol.~\bibinfo {volume} {A},\ \bibinfo {editor} {edited by\ \bibinfo {editor}
-  {\bibfnamefont {P.~M.}\ \bibnamefont {Gruber}}\ and\ \bibinfo {editor}
-  {\bibfnamefont {J.~M.}\ \bibnamefont {Wills}}}\ (\bibinfo  {publisher}
-  {North-Holland},\ \bibinfo {address} {Amsterdam},\ \bibinfo {year} {1993})\
-  pp.\ \bibinfo {pages} {223--271}\BibitemShut {NoStop}%
+  {Connelly}},\ }\bibfield  {title} {\bibinfo {title} {Rigidity},\ }in\ \href
+  {https://doi.org/10.1016/B978-0-444-89596-7.50012-2} {\emph {\bibinfo
+  {booktitle} {Handbook of Convex Geometry}}},\ Vol.~\bibinfo {volume} {A},\
+  \bibinfo {editor} {edited by\ \bibinfo {editor} {\bibfnamefont {P.~M.}\
+  \bibnamefont {Gruber}}\ and\ \bibinfo {editor} {\bibfnamefont {J.~M.}\
+  \bibnamefont {Wills}}}\ (\bibinfo  {publisher} {North-Holland},\ \bibinfo
+  {address} {Amsterdam},\ \bibinfo {year} {1993})\ pp.\ \bibinfo {pages}
+  {223--271}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Berger}\ \emph {et~al.}(2017)\citenamefont {Berger},
   \citenamefont {Wadley},\ and\ \citenamefont {McMeeking}}]{berger2017}%
   \BibitemOpen
