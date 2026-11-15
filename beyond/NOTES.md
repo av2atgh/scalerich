@@ -275,3 +275,7 @@ Appendix A: kernel table. Manuscript 11 pp.
 10 pp) and ~/Downloads/cover_letter_pre_networks.md (PRE, Networks section). References checked against PDFs:
 Shewchuk, Zhu, Nagel & Weiss, Silva, Tol, Heussinger & Frey, Broedersz & MacKintosh, Connelly; Graff replaced
 by Rao Sec. 8.5 (preview lacks Sec. 8.5 text; 4.730 root to be confirmed in the full book).
+- 2026-11-15 (before push): extra Bloch realisations had been read at 32/64 rows; recomputed with all 8
+  realisations (results/bloch_fixed_n.json). balanced and centroid agree within SE for n = 3-4
+  (.71/.55, .40/.46, .27/.31); centroid clearly ahead from n = 4.5 (.29/.18, .20/.11). Text, Table II,
+  Fig 3(b), round-1 response updated.
