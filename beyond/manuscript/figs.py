@@ -92,8 +92,8 @@ def _schematic(ax):
 
 def fig1():
     import divisions
-    fig = plt.figure(figsize=(3.4, 4.5))
-    outer = fig.add_gridspec(2, 1, height_ratios=[1.05, 2.0], hspace=0.28)
+    fig = plt.figure(figsize=(3.4, 4.6))
+    outer = fig.add_gridspec(2, 1, height_ratios=[1.05, 2.0], hspace=0.26, left=0.0, right=1.0, top=0.95, bottom=0.0)
     top = outer[0].subgridspec(1, 2, width_ratios=[1.0, 1.15], wspace=0.0)
     a0 = fig.add_subplot(top[0]); _schematic(a0)
     tb = fig.add_subplot(top[1]); tb.axis('off'); tb.set_xlim(0, 1); tb.set_ylim(0, 1)
@@ -126,10 +126,11 @@ def fig1():
                 **sty(r, ls='none', ms=7.5 if MK[r] == '*' else 4.5))
     fig.canvas.draw()
     inv = fig.transFigure.inverted()
-    ya = inv.transform(a0.get_window_extent())[1, 1]
-    yb = inv.transform(axs[0].get_window_extent())[1, 1] + 0.05
-    fig.text(0.02, ya, '(a)', fontweight='bold', ha='left', va='top')
-    fig.text(0.02, yb, '(b)', fontweight='bold', ha='left', va='top')
+    # panel labels on their own rows, above each panel, so the panels use the full width
+    ya = max(inv.transform(a0.get_window_extent())[1, 1], inv.transform(tb.get_window_extent())[1, 1])
+    yb = inv.transform(axs[0].get_window_extent())[1, 1] + 0.045
+    fig.text(0.0, ya + 0.012, '(a)', fontweight='bold', ha='left', va='bottom')
+    fig.text(0.0, yb + 0.012, '(b)', fontweight='bold', ha='left', va='bottom')
     fig.savefig(os.path.join(HERE, 'fig1.pdf'))
 
 
