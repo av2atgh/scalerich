@@ -275,10 +275,10 @@
   and\ \bibinfo {author} {\bibfnamefont {L.~J.}\ \bibnamefont {Gibson}},\
   }\bibfield  {title} {\bibinfo {title} {The effects of non-periodic
   microstructure on the elastic properties of two-dimensional cellular
-  solids},\ }\href@noop {} {\bibfield  {journal} {\bibinfo  {journal}
-  {International Journal of Mechanical Sciences}\ }\textbf {\bibinfo {volume}
-  {37}},\ \bibinfo {pages} {1161} (\bibinfo {year} {1995})}\BibitemShut
-  {NoStop}%
+  solids},\ }\href {https://doi.org/10.1016/0020-7403(94)00018-F} {\bibfield
+  {journal} {\bibinfo  {journal} {International Journal of Mechanical
+  Sciences}\ }\textbf {\bibinfo {volume} {37}},\ \bibinfo {pages} {1161}
+  (\bibinfo {year} {1995})}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Zhu}\ \emph {et~al.}(2000)\citenamefont {Zhu},
   \citenamefont {Hobdell},\ and\ \citenamefont {Windle}}]{zhu2000}%
   \BibitemOpen
