@@ -293,12 +293,15 @@
   \BibitemOpen
   \bibfield  {author} {\bibinfo {author} {\bibfnamefont {J.~R.}\ \bibnamefont
   {Shewchuk}},\ }\bibfield  {title} {\bibinfo {title} {Triangle: Engineering a
-  {2D} quality mesh generator and {Delaunay} triangulator},\ }in\ \href@noop {}
-  {\emph {\bibinfo {booktitle} {Applied Computational Geometry: Towards
-  Geometric Engineering}}},\ \bibinfo {series} {Lecture Notes in Computer
-  Science}, Vol.\ \bibinfo {volume} {1148}\ (\bibinfo  {publisher} {Springer},\
-  \bibinfo {year} {1996})\ pp.\ \bibinfo {pages} {203--222}\BibitemShut
-  {NoStop}%
+  {2D} quality mesh generator and {Delaunay} triangulator},\ }in\ \href
+  {https://doi.org/10.1007/BFb0014497} {\emph {\bibinfo {booktitle} {Applied
+  Computational Geometry: Towards Geometric Engineering (WACG 1996)}}},\
+  \bibinfo {series} {Lecture Notes in Computer Science}, Vol.\ \bibinfo
+  {volume} {1148},\ \bibinfo {editor} {edited by\ \bibinfo {editor}
+  {\bibfnamefont {M.~C.}\ \bibnamefont {Lin}}\ and\ \bibinfo {editor}
+  {\bibfnamefont {D.}~\bibnamefont {Manocha}}}\ (\bibinfo  {publisher}
+  {Springer},\ \bibinfo {address} {Berlin, Heidelberg},\ \bibinfo {year}
+  {1996})\ pp.\ \bibinfo {pages} {203--222}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Grinspun}\ \emph {et~al.}(2003)\citenamefont
   {Grinspun}, \citenamefont {Hirani}, \citenamefont {Desbrun},\ and\
   \citenamefont {Schr{\"o}der}}]{grinspun2003}%
