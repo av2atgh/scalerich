@@ -234,3 +234,11 @@ network mapping / physics / relation; network matters only where it explains a p
   weight and isotropy with compact cells. Wing venation and crack patterns elsewhere in the family.
 - Proposed: "Beyond wave control" paragraph (stiffness reading + Errera); optional quick checks of
   conductance and buckling across the six rules (~1 h each), after the Bloch runs.
+
+## Bloch for regular and rect (2026-11-15, results/bloch2_T1000.json, results/bloch2_rect.json)
+- regular omega_h at n = 2.5/3/3.5/4: 0.89/0.42/0.27/0.16, below balanced (1.08/0.65/0.35/0.25):
+  most uniform spans -> strongest collective resonance; most uniform division is not the best.
+- rect: n from 1.7 to 12.8 across realisations and x/y at the same densities; omega_h < 0.1 everywhere,
+  at the k-grid resolution limit (identical values across seeds) -> upper bounds only.
+- Note: the first blochsweep2 process (regular rect) went on to rect after regular, writing into
+  bloch2_T1000.json; figs.py replaces those rect rows by bloch2_rect.json.

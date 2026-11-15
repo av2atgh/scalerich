@@ -98,17 +98,6 @@
   {title} {Scale-rich network metamaterials grow by local rules on a recursive
   cell division}} (\bibinfo {year} {2026}),\ \Eprint
   {https://arxiv.org/abs/2611.16513} {arXiv:2611.16513} \BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Nagel}\ and\ \citenamefont
-  {Wei{\ss}}(2005)}]{nagel2005}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {W.}~\bibnamefont
-  {Nagel}}\ and\ \bibinfo {author} {\bibfnamefont {V.}~\bibnamefont
-  {Wei{\ss}}},\ }\bibfield  {title} {\bibinfo {title} {Crack {STIT}
-  tessellations: characterization of stationary random tessellations stable
-  with respect to iteration},\ }\href@noop {} {\bibfield  {journal} {\bibinfo
-  {journal} {Advances in Applied Probability}\ }\textbf {\bibinfo {volume}
-  {37}},\ \bibinfo {pages} {859} (\bibinfo {year} {2005})}\BibitemShut
-  {NoStop}%
 \bibitem [{\citenamefont {Auld}(1973)}]{auld1973}%
   \BibitemOpen
   \bibfield  {author} {\bibinfo {author} {\bibfnamefont {B.~A.}\ \bibnamefont
@@ -192,20 +181,25 @@
   {\bibinfo  {journal} {Physical Review Letters}\ }\textbf {\bibinfo {volume}
   {91}},\ \bibinfo {pages} {108102} (\bibinfo {year} {2003})}\BibitemShut
   {NoStop}%
-\bibitem [{\citenamefont {Radi}\ \emph {et~al.}(2024)\citenamefont {Radi},
-  \citenamefont {Glaesener}, \citenamefont {Kumar},\ and\ \citenamefont
-  {Kochmann}}]{radi2024}%
+\bibitem [{\citenamefont {Krapivsky}\ and\ \citenamefont
+  {Ben-Naim}(1994)}]{krapivsky1994}%
   \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {K.}~\bibnamefont
-  {Radi}}, \bibinfo {author} {\bibfnamefont {R.}~\bibnamefont {Glaesener}},
-  \bibinfo {author} {\bibfnamefont {S.}~\bibnamefont {Kumar}},\ and\ \bibinfo
-  {author} {\bibfnamefont {D.~M.}\ \bibnamefont {Kochmann}},\ }\bibfield
-  {title} {\bibinfo {title} {Spatially-graded {3D}-printed viscoelastic truss
-  metamaterials for impact trajectory control and energy absorption},\ }\href
-  {https://doi.org/10.1016/j.taml.2024.100553} {\bibfield  {journal} {\bibinfo
-  {journal} {Theoretical and Applied Mechanics Letters}\ }\textbf {\bibinfo
-  {volume} {14}},\ \bibinfo {pages} {100553} (\bibinfo {year}
-  {2024})}\BibitemShut {NoStop}%
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {P.~L.}\ \bibnamefont
+  {Krapivsky}}\ and\ \bibinfo {author} {\bibfnamefont {E.}~\bibnamefont
+  {Ben-Naim}},\ }\bibfield  {title} {\bibinfo {title} {Scaling and multiscaling
+  in models of fragmentation},\ }\href
+  {https://doi.org/10.1103/PhysRevE.50.3502} {\bibfield  {journal} {\bibinfo
+  {journal} {Physical Review E}\ }\textbf {\bibinfo {volume} {50}},\ \bibinfo
+  {pages} {3502} (\bibinfo {year} {1994})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Gr{\"u}nbaum}(1960)}]{grunbaum1960}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {B.}~\bibnamefont
+  {Gr{\"u}nbaum}},\ }\bibfield  {title} {\bibinfo {title} {Partitions of
+  mass-distributions and of convex bodies by hyperplanes},\ }\href
+  {https://doi.org/10.2140/pjm.1960.10.1257} {\bibfield  {journal} {\bibinfo
+  {journal} {Pacific Journal of Mathematics}\ }\textbf {\bibinfo {volume}
+  {10}},\ \bibinfo {pages} {1257} (\bibinfo {year} {1960})}\BibitemShut
+  {NoStop}%
 \bibitem [{\citenamefont {Shewchuk}(1996)}]{shewchuk1996}%
   \BibitemOpen
   \bibfield  {author} {\bibinfo {author} {\bibfnamefont {J.~R.}\ \bibnamefont

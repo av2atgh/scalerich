@@ -265,10 +265,10 @@ rule & $\langle n\rangle$ & $\eta_n$ & $\omega_1$ & $n_{\max}$ & $\omega_h(n{=}3
 \hline
 SR       & 4.43 & 0.67 & 0.44   & 4.8--8.1 & 0.37 & 0.15\\
 uniform  & 3.37 & 0.66 & 0.20   & 3.3--4.7 & -- & --\\
-rect     & 6.49 & 0.41 & 0.0071 & --       & \tbd{} & \tbd{}\\
+rect     & 6.49 & 0.41 & 0.0071 & --       & $<0.1$ & $<0.1$\\
 centroid & 4.34 & 0.69 & 0.52   & 5.4--7.9 & 0.65 & 0.33\\
 balanced & 2.97 & 0.78 & 1.14   & 5.6--5.7 & 0.65 & 0.25\\
-regular  & 2.68 & 0.75 & 1.23   & 5.7--5.8 & \tbd{} & \tbd{}\\
+regular  & 2.68 & 0.75 & 1.23   & 5.7--5.8 & 0.42 & 0.16\\
 \end{tabular}
 \end{ruledtabular}
 \end{table}
@@ -286,7 +286,8 @@ honeycomb and Voronoi lattices. (a) Direction-averaged index against density (fr
 included). Lines: geometric mean over four realisations; bands: their range (SR,
 \emph{balanced}). (b) Bloch band edge $\omega_h$ (units $c_0/L$) at fixed index along the
 propagation direction: each density scan (four realisations, $x$ and $y$) is interpolated
-at fixed $n$; lines: mean of $\ln\omega_h$, bands: $\pm$ one standard error. (c)
+at fixed $n$; lines: mean of $\ln\omega_h$, bands: $\pm$ one standard error. \emph{rect} is omitted: its realisations do not overlap in $n$, and
+its band edge is below $0.1$. (c)
 $\omega_h$ against the weakest-span prediction $\omega_{\rm span}$ of
 Eq.~(\ref{eq:span}), every cell; dotted lines: clamped ($\omega_h=\omega_{\rm span}$) and
 pinned ($\omega_h=(\pi/4.730)^2\omega_{\rm span}$) spans.}
@@ -352,7 +353,10 @@ $\langle\ln\mu\rangle=3.55$.
 
 \emph{Physics.} The \emph{rect} cells have the highest index, $\langle n\rangle=6.49$ at
 $\bar\rho=0.2$, the lowest isotropy, $\eta_n=0.41$, and a resonance two orders of
-magnitude below the others, $\omega_1=0.0071$.
+magnitude below the others, $\omega_1=0.0071$. The index is not a property of the rule but of
+the realisation and the direction: along $x$ and $y$ the four realisations give $n$ between
+$1.7$ and $12.8$ at the same densities, and the Bloch band edge stays below $0.1$ at every
+index, at the resolution limit of the wavenumber grid.
 
 \emph{Link.} The unbounded elongation gives the longest spans and therefore both the
 high index and the low band (Sec.~\ref{sec:collapse}). The anisotropy follows from the
@@ -420,10 +424,15 @@ shortest of the family, $2.2\,T^{-1/2}$.
 
 \emph{Physics.} The \emph{regular} cells have the lowest index of the family,
 $\langle n\rangle=2.68$ at $\bar\rho=0.2$, isotropy $\eta_n=0.75$, and the highest
-resonance, $\omega_1=1.23$. \tbd{Bloch band edge at fixed $n$.}
+resonance, $\omega_1=1.23$. At fixed index, however, its band edge lies below that of
+\emph{balanced}: $\omega_h=0.89$, $0.42$, $0.27$ and $0.16$ at $n=2.5$, $3$, $3.5$ and $4$,
+against $1.08$, $0.65$, $0.35$ and $0.25$.
 
 \emph{Link.} Removing the remaining area spread of \emph{balanced} shortens the longest
-span further, which lowers the index by another $10\%$ and raises the resonance by $8\%$.
+span further, which lowers the index by another $10\%$ and raises the resonance by $8\%$
+at fixed density. At fixed index the more uniform spans resonate together even more
+strongly than in \emph{balanced}, and the band edge falls: the most uniform division is not
+the best one.
 
 % ===========================================================================
 \section{From the frame graph to the physics}
@@ -516,7 +525,8 @@ anisotropic. The most isotropic cells combine an isotropic fabric with compact c
 
 Equations~(\ref{eq:ceiling})--(\ref{eq:tradeoff}) and the network properties that set
 $\ell_*$ give the ranking at equal index [Fig.~\ref{fig:phys}(b)]. Below $n\simeq2.7$ only
-the balanced divisions are available, with $\omega_h$ up to $1.5$. At $n=3$
+the balanced divisions are available, with $\omega_h$ up to $1.5$; \emph{balanced} keeps a wider
+band than \emph{regular} at every index, $1.08$ against $0.89$ at $n=2.5$. At $n=3$
 \emph{balanced} and \emph{centroid} tie ($\omega_h=0.65$) and SR trails ($0.37$). From
 $n\simeq3.5$ upwards \emph{centroid} gives the widest band, and SR overtakes
 \emph{balanced} only above $n\simeq4.5$ and matches \emph{centroid} only near $n=5$.
