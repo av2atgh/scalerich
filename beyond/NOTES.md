@@ -242,3 +242,20 @@ network mapping / physics / relation; network matters only where it explains a p
   at the k-grid resolution limit (identical values across seeds) -> upper bounds only.
 - Note: the first blochsweep2 process (regular rect) went on to rect after regular, writing into
   bloch2_T1000.json; figs.py replaces those rect rows by bloch2_rect.json.
+
+## Referee report (PRE Polymers, 2026-11-15; ~/Downloads/pre_polymers_review.md) — response ~/Downloads/response_pre_polymers.md
+User: disagree with point 1 (collapse holds); address the rest, hold back where correct.
+New scripts/results (network/): collapse_checks.py (LOO 0.057-0.085, rms(p) saturates p>=6,
+per-rule pinned s fixed rms .055 vs common .056), collapse refit WITHOUT rect: n_max 7.8 (= direction-
+averaged pinned 6.7-8.3), q .97, c 1.2, rms .060 (per-rule .047, mean span .131, lambda only .152);
+rect half within 15%, no common ceiling (pinned <n> 5.7-10.4). kinematic_eta.py: single-cell isotropy
+keeps the kappa maximum (.77/.90/.90/.88/.75/.52); SR/centroid drop to .56/.55 (off-axis .3-.4).
+kernel.py: slope b .47-.50 all but regular (non-stationary); balanced flat k<=4. tsize.py: n rises with
+T (balanced 2.68/2.97/3.10 at T 300/1e3/3e3), ranking unchanged, law predicts T=3000 rms .05-.10.
+beamcheck.py: Timoshenko +2-6%, +rigid joints -10-12%; balanced/SR ratio .64-.68.
+Bloch: 8 realisations SR/centroid/balanced (results/bloch2_more_*.json, bloch_fixed_n.json);
+grid step 15-18% of omega_h; zone folding not setting omega_h (20/247 near pi/2n).
+Error found: rect band edges saturated in half the scans (k_h = k_max = 3 omega1): lower bounds only.
+Pinned regulariser 1e-7..1e-11: no change; z = 3, 1/2 floppy mode per junction.
+Manuscript 10 pp. Title kept. New refs (from memory, please double-check): heussinger2006,
+broedersz2014, silva1995, zhu2000, graff1975, connelly1993.

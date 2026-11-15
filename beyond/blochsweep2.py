@@ -11,7 +11,7 @@ t0 = time.time()
 import sys
 RULES = sys.argv[1:] or ['SR', 'centroid', 'balanced']
 for rule in RULES:
-    for s in range(4):
+    for s in [int(x) for x in os.environ.get('SEEDS', '0 1 2 3').split()]:
         g = divisions.run(1000, 100 + s, rule)
         L = np.linalg.norm(g['B'] - g['A'], axis=1)
         for r in (0.03, 0.05, 0.07, 0.1, 0.14, 0.2, 0.28, 0.4):

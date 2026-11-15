@@ -6,7 +6,7 @@
 %Control: page (0) single
 %Control: year (1) truncated
 %Control: production of eprint (0) enabled
-\begin{thebibliography}{19}%
+\begin{thebibliography}{28}%
 \makeatletter
 \providecommand \@ifxundefined [1]{%
  \@ifx{#1\undefined}
@@ -131,6 +131,46 @@
   {https://doi.org/10.1038/s41598-022-04900-0} {\bibfield  {journal} {\bibinfo
   {journal} {Scientific Reports}\ }\textbf {\bibinfo {volume} {12}},\ \bibinfo
   {pages} {624} (\bibinfo {year} {2022})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Nagel}\ and\ \citenamefont
+  {Wei{\ss}}(2005)}]{nagel2005}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {W.}~\bibnamefont
+  {Nagel}}\ and\ \bibinfo {author} {\bibfnamefont {V.}~\bibnamefont
+  {Wei{\ss}}},\ }\bibfield  {title} {\bibinfo {title} {Crack {STIT}
+  tessellations: characterization of stationary random tessellations stable
+  with respect to iteration},\ }\href@noop {} {\bibfield  {journal} {\bibinfo
+  {journal} {Advances in Applied Probability}\ }\textbf {\bibinfo {volume}
+  {37}},\ \bibinfo {pages} {859} (\bibinfo {year} {2005})}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Bohn}\ \emph
+  {et~al.}(2005{\natexlab{a}})\citenamefont {Bohn}, \citenamefont {Pauchard},\
+  and\ \citenamefont {Couder}}]{bohn2005}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {S.}~\bibnamefont
+  {Bohn}}, \bibinfo {author} {\bibfnamefont {L.}~\bibnamefont {Pauchard}},\
+  and\ \bibinfo {author} {\bibfnamefont {Y.}~\bibnamefont {Couder}},\
+  }\bibfield  {title} {\bibinfo {title} {Hierarchical crack pattern as formed
+  by successive domain divisions. {I}. {T}emporal and geometrical hierarchy},\
+  }\href {https://doi.org/10.1103/PhysRevE.71.046214} {\bibfield  {journal}
+  {\bibinfo  {journal} {Physical Review E}\ }\textbf {\bibinfo {volume} {71}},\
+  \bibinfo {pages} {046214} (\bibinfo {year} {2005}{\natexlab{a}})}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Bohn}\ \emph
+  {et~al.}(2005{\natexlab{b}})\citenamefont {Bohn}, \citenamefont
+  {Platkiewicz}, \citenamefont {Andreotti}, \citenamefont {Adda-Bedia},\ and\
+  \citenamefont {Couder}}]{bohn2005b}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {S.}~\bibnamefont
+  {Bohn}}, \bibinfo {author} {\bibfnamefont {J.}~\bibnamefont {Platkiewicz}},
+  \bibinfo {author} {\bibfnamefont {B.}~\bibnamefont {Andreotti}}, \bibinfo
+  {author} {\bibfnamefont {M.}~\bibnamefont {Adda-Bedia}},\ and\ \bibinfo
+  {author} {\bibfnamefont {Y.}~\bibnamefont {Couder}},\ }\bibfield  {title}
+  {\bibinfo {title} {Hierarchical crack pattern as formed by successive domain
+  divisions. {II}. {F}rom disordered to deterministic behavior},\ }\href
+  {https://doi.org/10.1103/PhysRevE.71.046215} {\bibfield  {journal} {\bibinfo
+  {journal} {Physical Review E}\ }\textbf {\bibinfo {volume} {71}},\ \bibinfo
+  {pages} {046215} (\bibinfo {year} {2005}{\natexlab{b}})}\BibitemShut
+  {NoStop}%
 \bibitem [{\citenamefont {Hill}(1952)}]{hill1952}%
   \BibitemOpen
   \bibfield  {author} {\bibinfo {author} {\bibfnamefont {R.}~\bibnamefont
@@ -181,6 +221,33 @@
   {\bibinfo  {journal} {Physical Review Letters}\ }\textbf {\bibinfo {volume}
   {91}},\ \bibinfo {pages} {108102} (\bibinfo {year} {2003})}\BibitemShut
   {NoStop}%
+\bibitem [{\citenamefont {Heussinger}\ and\ \citenamefont
+  {Frey}(2006)}]{heussinger2006}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {C.}~\bibnamefont
+  {Heussinger}}\ and\ \bibinfo {author} {\bibfnamefont {E.}~\bibnamefont
+  {Frey}},\ }\bibfield  {title} {\bibinfo {title} {Floppy modes and nonaffine
+  deformations in random fiber networks},\ }\href
+  {https://doi.org/10.1103/PhysRevLett.97.105501} {\bibfield  {journal}
+  {\bibinfo  {journal} {Physical Review Letters}\ }\textbf {\bibinfo {volume}
+  {97}},\ \bibinfo {pages} {105501} (\bibinfo {year} {2006})}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Broedersz}\ and\ \citenamefont
+  {MacKintosh}(2014)}]{broedersz2014}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {C.~P.}\ \bibnamefont
+  {Broedersz}}\ and\ \bibinfo {author} {\bibfnamefont {F.~C.}\ \bibnamefont
+  {MacKintosh}},\ }\bibfield  {title} {\bibinfo {title} {Modeling semiflexible
+  polymer networks},\ }\href {https://doi.org/10.1103/RevModPhys.86.995}
+  {\bibfield  {journal} {\bibinfo  {journal} {Reviews of Modern Physics}\
+  }\textbf {\bibinfo {volume} {86}},\ \bibinfo {pages} {995} (\bibinfo {year}
+  {2014})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Graff}(1975)}]{graff1975}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {K.~F.}\ \bibnamefont
+  {Graff}},\ }\href@noop {} {\emph {\bibinfo {title} {Wave Motion in Elastic
+  Solids}}}\ (\bibinfo  {publisher} {Ohio State University Press},\ \bibinfo
+  {address} {Columbus},\ \bibinfo {year} {1975})\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Krapivsky}\ and\ \citenamefont
   {Ben-Naim}(1994)}]{krapivsky1994}%
   \BibitemOpen
@@ -200,6 +267,28 @@
   {journal} {Pacific Journal of Mathematics}\ }\textbf {\bibinfo {volume}
   {10}},\ \bibinfo {pages} {1257} (\bibinfo {year} {1960})}\BibitemShut
   {NoStop}%
+\bibitem [{\citenamefont {Silva}\ \emph {et~al.}(1995)\citenamefont {Silva},
+  \citenamefont {Hayes},\ and\ \citenamefont {Gibson}}]{silva1995}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {M.~J.}\ \bibnamefont
+  {Silva}}, \bibinfo {author} {\bibfnamefont {W.~C.}\ \bibnamefont {Hayes}},\
+  and\ \bibinfo {author} {\bibfnamefont {L.~J.}\ \bibnamefont {Gibson}},\
+  }\bibfield  {title} {\bibinfo {title} {The effects of non-periodic
+  microstructure on the elastic properties of two-dimensional cellular
+  solids},\ }\href@noop {} {\bibfield  {journal} {\bibinfo  {journal}
+  {International Journal of Mechanical Sciences}\ }\textbf {\bibinfo {volume}
+  {37}},\ \bibinfo {pages} {1161} (\bibinfo {year} {1995})}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Zhu}\ \emph {et~al.}(2000)\citenamefont {Zhu},
+  \citenamefont {Hobdell},\ and\ \citenamefont {Windle}}]{zhu2000}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {H.~X.}\ \bibnamefont
+  {Zhu}}, \bibinfo {author} {\bibfnamefont {J.~R.}\ \bibnamefont {Hobdell}},\
+  and\ \bibinfo {author} {\bibfnamefont {A.~H.}\ \bibnamefont {Windle}},\
+  }\bibfield  {title} {\bibinfo {title} {Effects of cell irregularity on the
+  elastic properties of open-cell foams},\ }\href@noop {} {\bibfield  {journal}
+  {\bibinfo  {journal} {Acta Materialia}\ }\textbf {\bibinfo {volume} {48}},\
+  \bibinfo {pages} {4893} (\bibinfo {year} {2000})}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Shewchuk}(1996)}]{shewchuk1996}%
   \BibitemOpen
   \bibfield  {author} {\bibinfo {author} {\bibfnamefont {J.~R.}\ \bibnamefont
@@ -222,6 +311,16 @@
   {\emph {\bibinfo {booktitle} {Proceedings of the 2003 ACM
   SIGGRAPH/Eurographics Symposium on Computer Animation}}}\ (\bibinfo {year}
   {2003})\ pp.\ \bibinfo {pages} {62--67}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Connelly}(1993)}]{connelly1993}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {R.}~\bibnamefont
+  {Connelly}},\ }\bibfield  {title} {\bibinfo {title} {Rigidity},\ }in\
+  \href@noop {} {\emph {\bibinfo {booktitle} {Handbook of Convex Geometry}}},\
+  Vol.~\bibinfo {volume} {A},\ \bibinfo {editor} {edited by\ \bibinfo {editor}
+  {\bibfnamefont {P.~M.}\ \bibnamefont {Gruber}}\ and\ \bibinfo {editor}
+  {\bibfnamefont {J.~M.}\ \bibnamefont {Wills}}}\ (\bibinfo  {publisher}
+  {North-Holland},\ \bibinfo {address} {Amsterdam},\ \bibinfo {year} {1993})\
+  pp.\ \bibinfo {pages} {223--271}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Berger}\ \emph {et~al.}(2017)\citenamefont {Berger},
   \citenamefont {Wadley},\ and\ \citenamefont {McMeeking}}]{berger2017}%
   \BibitemOpen

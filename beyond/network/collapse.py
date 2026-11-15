@@ -60,7 +60,9 @@ if __name__ == '__main__':
 
 
 def dump(p=10):
-    frame_rules = ['SR', 'centroid', 'balanced', 'regular', 'rect'] + ['k%g' % k for k in (0, 0.2, 0.4, 0.6, 0.8, 1)]
+    # fitted on the rules with a common finite ceiling; rect (no common ceiling) and uniform (frame
+    # model invalid) are shown but not fitted
+    frame_rules = ['SR', 'centroid', 'balanced', 'regular'] + ['k%g' % k for k in (0, 0.2, 0.4, 0.6, 0.8, 1)]
     rms, th, D, fun = fit(p, frame_rules)
     lp = lambda ls: ((ls ** (p + 1)).sum() / ls.sum()) ** (1 / p)
     pts = [dict(rule=d[0], rho=d[1], n=d[2], x=float(d[4] / lp(d[3]))) for d in data]
