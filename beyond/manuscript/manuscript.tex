@@ -277,10 +277,11 @@ proportional to the number of cell sides it carries, which equals its degree. Th
 the linear attachment kernel $\kappa(k)=a+bk$ with $b=1/2$, and $p_k=12/[k(k+1)(k+2)]$,
 $\gamma=3$, for SR~\cite{vazquez2026sr}. What is shared by all rules is the exponent, not
 the full distribution. The measured kernel, $t$ times the hit rate of a ligament of degree
-$k$, is linear with slope $b=0.47$--$0.50$ for SR, \emph{uniform}, \emph{rect},
-\emph{centroid} and \emph{balanced}; for \emph{balanced} it is flat up to $k=4$, because a
+$k$ (steps $t>2000$, $2\le k\le20$), is $a+bk$ with $b=0.48$, $0.48$, $0.50$, $0.49$ and
+$0.47$ for SR, \emph{uniform}, \emph{rect}, \emph{centroid} and \emph{balanced}, and
+$|a|\le0.16$; for \emph{balanced} it is flat up to $k=4$, because a
 cut across the long axis avoids the short sides. \emph{regular} cuts its cells generation by
-generation, and its kernel is not stationary in time (Appendix~\ref{app:kernel}). In every case
+generation, and its kernel is not stationary in time. In every case
 $K^2P(k\ge K)$ is flat between $K=8$ and $128$ [Fig.~\ref{fig:net}(b)], so $\gamma=3$, with
 an amplitude of $3.2$--$6.1$ against $6$ for the SR law; \emph{balanced} lies lowest, near
 $4$. The birth index $h$ of the ligament hit by
@@ -725,30 +726,6 @@ Nodes \& Links Ltd provided support in the form of salary for Alexei Vazquez but
 have any additional role in the conceptualization of the study, the analysis, the decision
 to publish or the preparation of the manuscript.
 \end{acknowledgments}
-
-\appendix
-\section{Attachment kernels}
-\label{app:kernel}
-The kernel $\kappa(k)$ is $t$ times the rate at which a ligament of degree $k$ is hit by a
-new ligament, measured over steps $t>2000$ of two realisations with $T=2\times10^4$, and fitted
-by $a+bk$ for $2\le k\le20$ (Table~\ref{tab:kernel}). The slope $b=1/2$ of the SR rate
-equation~\cite{vazquez2026sr} holds for every rule with a stationary kernel.
-
-\begin{table}[h]
-\caption{\label{tab:kernel}Measured attachment kernels $\kappa(k)=a+bk$.}
-\begin{ruledtabular}
-\begin{tabular}{lccl}
-rule & $a$ & $b$ & remark\\
-\hline
-SR       & $0.16$  & $0.48$ & \\
-uniform  & $0.13$  & $0.48$ & \\
-rect     & $0.01$  & $0.50$ & \\
-centroid & $0.02$  & $0.49$ & \\
-balanced & $-0.11$ & $0.47$ & flat for $k\le4$\\
-regular  & --      & --     & not stationary\\
-\end{tabular}
-\end{ruledtabular}
-\end{table}
 
 \bibliography{refs}
 
