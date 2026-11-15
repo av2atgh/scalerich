@@ -304,19 +304,20 @@ def fig4():
     a.set_xscale('log'); a.set_yscale('log'); a.set_ylim(1e-5, 1.5); a.set_xlim(0.3, 300)
     a.set_xlabel(r'span length $\ell\sqrt{T}$'); a.set_ylabel(r'$P(\ell\sqrt{T}\geq x)$')
     kcol = plt.get_cmap('Greys')
-    for p in Cl['pts']:
+    Cp = json.load(open(os.path.join(B, 'results', 'collapse_pin.json')))['fig']
+    for p in Cp['pts']:
         r = p['rule']
-        if r == 'uniform':
+        if p['T'] != 1000 or p['b'] <= 0:
             continue
-        if r.startswith('k'):
-            kv = float(r[1:]); b.scatter(p['x'], p['n'] ** -2, s=9, marker='.', color=kcol(0.95 - 0.6 * kv), linewidths=0)
+        if r == 'kappa':
+            b.scatter(p['x'], p['b'], s=9, marker='.', color='#888888', linewidths=0)
         else:
-            b.scatter(p['x'], p['n'] ** -2, **sct(r, 0.8))
-    xx = np.geomspace(min(p['x'] for p in Cl['pts']) * 0.8, max(p['x'] for p in Cl['pts']) * 1.2, 100)
-    b.plot(xx, Cl['s'] + Cl['c'] * xx ** Cl['q'], color='#333333', lw=0.8)
-    b.axhline(Cl['s'], color='#999999', lw=0.6, ls=':')
+            b.scatter(p['x'], p['b'], **sct(r, 0.8))
+    xs = [p['x'] for p in Cp['pts'] if p['T'] == 1000]
+    xx = np.geomspace(min(xs) * 0.8, max(xs) * 1.2, 100)
+    b.plot(xx, Cp['c'] * xx ** Cp['q'], color='#333333', lw=0.8)
     b.set_xscale('log'); b.set_yscale('log')
-    b.set_xlabel(r'$\lambda/\ell_*$'); b.set_ylabel(r'$\langle n\rangle^{-2}$')
+    b.set_xlabel(r'$\lambda/\ell_*$'); b.set_ylabel(r'$\langle n\rangle^{-2}-s_{\rm pin}$')
     K = F['kappa']; ks = sorted({x['kappa'] for x in K})
     mean = lambda f: np.array([np.mean([x[f] for x in K if x['kappa'] == k]) for k in ks])
     c.plot(ks, mean('n') / mean('n')[0], color='#222222', marker='^', ms=5, label=r'$\langle n\rangle$')

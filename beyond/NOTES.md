@@ -259,3 +259,13 @@ Error found: rect band edges saturated in half the scans (k_h = k_max = 3 omega1
 Pinned regulariser 1e-7..1e-11: no change; z = 3, 1/2 floppy mode per junction.
 Manuscript 10 pp. Title kept. New refs (from memory, please double-check): heussinger2006,
 broedersz2014, silva1995, zhu2000, graff1975, connelly1993.
+
+## Referee round 2 (2026-11-15; ~/Downloads/pre_polymers_review_round2.md) — response ~/Downloads/response_pre_polymers_round2.md
+Item A correct: pinned stiffness = m lam E0 with m = 1.5-1.9 straight spanning lines (frame + first full-
+width cut), T-independent; thin frame (x1e-3): m 0.01-0.14 random angles, 0.4 balanced/regular, 3-4 rect.
+s = m/L_tot, n_max ~ T^(1/4) (balanced 5.5/7.5/9.8). network/pinned_all.py, collapse_pin.py:
+s = s_pin per cell -> c 1.18, q 0.97, rms .059 (same as common s); LOO .057-.084; out-of-sample T=3000
+.04-.07, T=300 .05-.12 (common s .11-.18 at T=300). No cell above own pinned ceiling (incl. rect).
+Thin frame: pure power law n^-2 = 1.6 (lam/l*)^1.11, rms .11. Fig 4(b) now bending term vs lam/l*.
+Affine single-cell <n> within 4% of periodic. Intro ends with section outline (user request).
+Appendix A: kernel table. Manuscript 11 pp.

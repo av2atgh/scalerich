@@ -30,8 +30,10 @@ holds. The dual-graph degree law, the mean degree and the age law of the ligamen
 new ones are the same for every rule, so they cannot distinguish the materials. The cell
 tree and the cell shapes do differ, and one consequence of them explains the physics: the
 tail of long spans in the frame graph. With the longest spans as the length scale, the
-index follows a single law across rules, densities and numbers of ligaments, and the same
-spans set the lowest local resonance and the band edge. Random cut angles produce elongated cells and long spans, hence high index and
+bending part of the inverse squared index follows a single power law across rules,
+densities and numbers of ligaments, and the same spans set the lowest local resonance and
+the band edge. The stretching part, which caps the index, is carried by the straight frame
+lines of the tiling rather than by the division. Random cut angles produce elongated cells and long spans, hence high index and
 a narrow band; cuts perpendicular to the long axis of the cell keep the cells compact,
 giving low index and a wide band. Cutting through the centroid instead of a random point
 bounds the split fraction between $4/9$ and $5/9$, which removes the area hierarchy without
@@ -87,8 +89,20 @@ the differences between the physical properties. Balanced divisions, which cut e
 cell through its centroid and perpendicular to its long axis, are best at low index, and
 centroid divisions with random cut angles are best at high index.
 
+Section~\ref{sec:div} defines the division rules, the three network mappings and the
+mechanical model. Section~\ref{sec:laws} introduces the two relations that organise the
+physics: the split of the index into a stretching ceiling and a bending term, and the
+resonance of the weakest span. Section~\ref{sec:shared} shows which network properties are
+the same for every rule. Section~\ref{sec:rules} characterises each of the six structures,
+its network, its physics and the link between them. Section~\ref{sec:collapse} shows that
+the long-span tail of the frame graph sets the index and the resonance of every rule, and
+follows the cut angle continuously. Section~\ref{sec:best} ranks the structures at equal
+index, Sec.~\ref{sec:3d} extends the comparison to three dimensions, and the Conclusions
+summarise the results.
+
 % ===========================================================================
 \section{Recursive divisions and their mappings}
+\label{sec:div}
 
 \begin{figure}[tb]
 \includegraphics[width=\columnwidth]{fig1.pdf}
@@ -195,15 +209,22 @@ pin-jointed reference is the same periodic frame with the bending stiffness mult
 $10^{-9}$; $n_{\max}$ changes by less than $0.01$ between factors $10^{-7}$ and
 $10^{-11}$. Every junction joins a stem to a host that runs straight through it, so the
 pinned frame has mean coordination $z=3$ and, by Maxwell counting, $1/2$ floppy mode per
-junction for every rule. It still resists longitudinal strain, because each ligament is a
-straight chain of collinear bars between its two ends. The direction-averaged pinned index
-is $6.7$--$8.3$ for SR, $7.1$--$8.3$ for \emph{centroid}, $7.4$--$7.5$ for \emph{balanced},
-$7.6$ for \emph{regular}, $4.1$--$5.4$ for \emph{uniform} and $5.7$--$10.4$ for \emph{rect}
-(along $x$: $4.8$--$8.1$, $5.4$--$7.9$, $5.6$--$5.7$, $5.7$--$5.8$, $3.3$--$4.7$ and
-$2.7$--$11.6$). Fitted per rule, $q\simeq0.7$--$1.1$, smaller than the value $2$ of pure
-bending, so stretching and bending are coupled. Section~\ref{sec:collapse} identifies the
-span length $\ell$ that makes $s$, $c$ and $q$ the same for every rule with a common
-ceiling.
+junction for every rule. What it retains is the stiffness of straight lines that cross the
+whole tiling. Under mirror tiling the edges of the square frame become such lines, and in
+the \emph{balanced}, \emph{regular} and \emph{rect} divisions so do the first full-width
+cuts. The pinned modulus is a fixed number of such lines: $\tfrac12(C_{11}+C_{22})^{\rm
+pin}=m\lambda E_0$ with $m=1.5$--$1.9$ for SR, \emph{centroid}, \emph{balanced} and
+\emph{regular} at $T=300$, $10^3$ and $3000$ alike. Making the frame $1000$ times thinner
+leaves $m=0.01$--$0.14$ for the random-angle rules, $0.4$ for \emph{balanced} and
+\emph{regular}, the share of their first cuts, and $3$--$4$ for \emph{rect}. Since
+$\lambda=\bar\rho/L_{\rm tot}$ at $\alpha=0$, $s=m/L_{\rm tot}$, and the pinned index
+$n_{\max}\propto L_{\rm tot}^{1/2}\propto T^{1/4}$ grows with the number of ligaments: the
+direction-averaged pinned index of \emph{balanced} is $5.5$, $7.5$ and $9.8$ at $T=300$,
+$10^3$ and $3000$. The ceiling is therefore a property of the tiling and its spanning
+lines, not of the division network. Fitted per rule, $q\simeq0.7$--$1.1$, smaller than the
+value $2$ of pure bending, so stretching and bending are coupled.
+Section~\ref{sec:collapse} identifies the span length $\ell$ that makes the bending term,
+$c$ and $q$, the same for every rule.
 
 \paragraph*{The weakest span sets the band.}
 The lowest local resonance is the flexural mode of the weakest span between junctions.
@@ -256,7 +277,7 @@ the full distribution. The measured kernel, $t$ times the hit rate of a ligament
 $k$, is linear with slope $b=0.47$--$0.50$ for SR, \emph{uniform}, \emph{rect},
 \emph{centroid} and \emph{balanced}; for \emph{balanced} it is flat up to $k=4$, because a
 cut across the long axis avoids the short sides. \emph{regular} cuts its cells generation by
-generation, and its kernel is not stationary in time. In every case
+generation, and its kernel is not stationary in time (Appendix~\ref{app:kernel}). In every case
 $K^2P(k\ge K)$ is flat between $K=8$ and $128$ [Fig.~\ref{fig:net}(b)], so $\gamma=3$, with
 an amplitude of $3.2$--$6.1$ against $6$ for the SR law; \emph{balanced} lies lowest, near
 $4$. The birth index $h$ of the ligament hit by
@@ -343,8 +364,9 @@ tail, with $0.1\%$ of the cells longer than $66$ times their width, and this tai
 with $T$ ($e_{99.9}=35$ at $T=10^3$). The longest span, in units of the mean cell size
 $T^{-1/2}$, grows from $5.8$ at $T=10^3$ to $8.1$ at $T=2\times10^4$.
 
-\emph{Physics.} The SR cells span $1.70\le n_x\le6.76$ over the scan, consistent with
-the reported $1.5$--$8.3$~\cite{both2026} [Fig.~\ref{fig:phys}(a)]. At $\alpha=0$ the
+\emph{Physics.} The SR cells span $1.70\le n_x\le6.76$ over the scan (with a systematic
+uncertainty of about $\pm10\%$ from the beam model, Sec.~\ref{sec:balanced}), consistent
+with the reported $1.5$--$8.3$~\cite{both2026} [Fig.~\ref{fig:phys}(a)]. At $\alpha=0$ the
 direction-averaged index falls from $\langle n\rangle=5.3$ at $\bar\rho=0.1$ to $3.7$ at
 $\bar\rho=0.4$. The hierarchy exponent matters less: at $\bar\rho=0.2$,
 $\alpha=0,0.25,0.5,0.75,1$ gives $n_x=4.04,2.84,2.31,2.24,2.36$. The isotropy is
@@ -428,6 +450,7 @@ not what gives it its index. What the centroid cut removes are the slivers and t
 slender spans next to them, which raises the band.
 
 \subsection{Balanced divisions}
+\label{sec:balanced}
 \emph{Network.} Cutting through the centroid perpendicular to the major axis keeps the
 split fraction close to $1/2$ ($\langle f\rangle=0.484$) and, in addition, controls the
 shape. A rectangle of aspect ratio $a\ge1$ cut across its long side gives two rectangles
@@ -490,10 +513,10 @@ the best one.
 in units of the mean cell size, $T=2\times10^4$; symbols as in Fig.~\ref{fig:rules}. (b)
 Index of every cell ($T=10^3$, $\alpha=0$, $\bar\rho=0.1$--$0.4$, four realisations)
 against the slenderness of its long spans, $\lambda/\ell_*$ with $\ell_*$ from
-Eq.~(\ref{eq:lstar}); large symbols: the five frame rules; small grey dots: the
-cut-angle family, darker for smaller $\kappa$; line: Eq.~(\ref{eq:ceiling}) with one set of
-parameters, fitted to SR, \emph{centroid}, \emph{balanced}, \emph{regular} and the
-cut-angle family (\emph{rect} shown, not fitted); dotted: the ceiling $s$. (c) The cut-angle family at $\bar\rho=0.2$: index and
+Eq.~(\ref{eq:lstar}); the stretching term $s_{\rm pin}$ of each cell is subtracted, leaving
+the bending term. Large symbols: the five frame rules; small grey dots: the cut-angle
+family; line: $c\,(\lambda/\ell_*)^q$ fitted to SR, \emph{centroid}, \emph{balanced},
+\emph{regular} and the cut-angle family (\emph{rect} shown, not fitted). (c) The cut-angle family at $\bar\rho=0.2$: index and
 $\ell_*$ relative to $\kappa=0$, isotropy $\eta_n$, affine isotropy $\eta_{\rm aff}$ of the
 span fabric, and fabric $a_4$.}
 \end{figure}
@@ -507,18 +530,20 @@ Eq.~(\ref{eq:ceiling}) a high moment of the length-weighted span distribution,
 \ell_*=\left(\frac{\sum_s\ell_s^{p+1}}{\sum_s\ell_s}\right)^{1/p},\qquad p=10,
 \label{eq:lstar}
 \end{equation}
-which approaches the longest span as $p$ grows. With $\ell=\ell_*$, Eq.~(\ref{eq:ceiling})
-with one set of parameters describes the index of SR, \emph{centroid}, \emph{balanced},
-\emph{regular} and the cut-angle family at every density [Fig.~\ref{fig:link}(b)]:
-$n_{\max}=s^{-1/2}=7.8$, $c=1.2$ and $q=0.97$. The fitted ceiling lies within the
-direction-averaged pinned indices of these rules, $6.7$--$8.3$ (Sec.~\ref{sec:laws}), and
-fixing $s$ at the pinned value of each rule gives the same quality of fit (rms $0.055$
-against $0.056$ on the four rules), so the common $s$ is the pin-jointed ceiling and not an
-extra parameter. The root-mean-square deviation in $\ln n$ is $0.060$, against $0.047$ for
-separate three-parameter fits to each rule and a total spread of $0.26$. The law also
-predicts rules it has not seen: fitted without one rule, it predicts that rule with rms
-$0.057$--$0.085$ in $\ln n$. The residuals of each rule depend little on density (mean
-offsets $\le0.09$ at every density). The choice of $\ell$ is what makes the law
+which approaches the longest span as $p$ grows. We fit the rules whose long-span tail is
+bounded, that is, whose elongation and $\ell_*\sqrt T$ stay finite as $T$ grows: SR,
+\emph{centroid}, \emph{balanced}, \emph{regular} and the cut-angle family. We fix $s$ at
+the pinned value $s_{\rm pin}$ of each cell (Sec.~\ref{sec:laws}), so that only the bending
+term is fitted. With $\ell=\ell_*$ it is a single power law,
+$n^{-2}-s_{\rm pin}=c\,(\lambda/\ell_*)^q$ with $c=1.18$ and $q=0.97$, for every rule and
+density [Fig.~\ref{fig:link}(b)]. The root-mean-square deviation in $\ln n$ is $0.059$,
+against $0.047$ for separate three-parameter fits to each rule and a total spread of
+$0.26$, and the mean offset of each rule is at most $0.055$. A common fitted $s$ instead of
+$s_{\rm pin}$ gives the same $c$, $q$ and rms, because at $T=10^3$ the rules have similar
+$L_{\rm tot}$; the bending term does not depend on how the ceiling is handled. The law
+also predicts rules it has not seen: fitted without one rule, it predicts that rule with
+rms $0.057$--$0.084$ in $\ln n$. The residuals of each rule depend little on density
+(mean offsets $\le0.09$ at every density). The choice of $\ell$ is what makes the law
 universal. With the mean span instead of $\ell_*$ the rms is $0.131$, and with $\lambda$
 alone as the abscissa, no network length at all, it is $0.152$. The rms falls with $p$ and
 saturates for $p\ge6$ ($0.106$, $0.094$, $0.076$, $0.066$, $0.060$ and $0.061$ for
@@ -531,23 +556,24 @@ here is that one moment of the span distribution places divisions generated by d
 rules on one curve, and that the division rule sets this moment through the cell shapes.
 
 Two rules are outside the fit. The \emph{uniform} rule is left out because its frame model
-fails (Sec.~\ref{sec:rules}). The \emph{rect} cells follow the same trend, with $n$
-rising as $\lambda/\ell_*$ falls [Fig.~\ref{fig:link}(b)], but they scatter widely: half of
-them lie within $15\%$ of the law. Their pinned frames have no common ceiling ($5.7$ to
-$10.4$ between realisations), and their index varies by up to $7\times$ between
-directions, so a direction average is a poor summary.
+fails (Sec.~\ref{sec:rules}). The long-span tail of \emph{rect} is unbounded, its index varies
+by up to $7\times$ between directions, and a direction average is a poor summary. Its cells
+stay below their own pinned ceilings and follow the trend of the law
+[Fig.~\ref{fig:link}(b)], but they scatter by a factor of about $4$ in the bending term.
 
 The law also follows the number of ligaments per cell. At fixed density the index rises with
 $T$ for every rule: at $\bar\rho=0.2$, $T=300$, $10^3$ and $3000$ give $3.80$, $4.43$ and
 $4.80$ for SR, $3.94$, $4.34$ and $4.73$ for \emph{centroid}, $2.68$, $2.97$ and $3.10$ for
 \emph{balanced} and $2.43$, $2.68$ and $2.84$ for \emph{regular}. The ranking of the rules
-is the same at every $T$. Without refitting, the law fitted at $T=10^3$ predicts the cells at
-$T=3000$ with rms $0.05$ (\emph{balanced}, \emph{regular}) to $0.10$ (SR,
-\emph{centroid}). At $T=300$ it overestimates the index by $2$--$15\%$, as expected where
-the square frame, which is fixed, carries $11\%$ of the ligament length. The index of a
-rule is therefore not a single number; it is fixed by $\lambda/\ell_*$, which depends on
-$\bar\rho$, on $T$ and, for SR and \emph{rect}, on the growth of the long-span tail
-with $T$.
+is the same at every $T$. Part of this drift is the frame ceiling, which rises as $T^{1/4}$.
+With the pinned ceiling of each cell, the bending law fitted at $T=10^3$ predicts the cells
+at $T=3000$ with rms $0.04$--$0.07$ in $\ln n$ and at $T=300$ with rms $0.05$--$0.12$,
+without refitting; a common fixed $s$ does worse at $T=300$ ($0.11$--$0.18$). The index of a
+rule is therefore not a single number. The bending term is fixed by $\lambda/\ell_*$, which
+depends on $\bar\rho$, on $T$ and, for SR and \emph{rect}, on the growth of the long-span
+tail with $T$, and the ceiling by the frame of the tiling. The bending collapse does not
+need the frame: with a frame $1000$ times thinner, the index follows a pure power law,
+$n^{-2}=1.6\,(\lambda/\ell_*)^{1.11}$, with rms $0.11$ and rule offsets $\le0.10$.
 
 Within one rule the realisations differ less, and the total ligament length matters
 more. At $\bar\rho=0.2$ and $\alpha=0$ the thickness is $\lambda=\bar\rho/L_{\rm tot}$, so
@@ -598,8 +624,9 @@ $\kappa\simeq0.6$ the fabric stays isotropic but the elongation tail and $\ell_*
 the long spans, few and differently oriented in each realisation, make the cell
 anisotropic. The most isotropic cells combine an isotropic fabric with compact cells. The
 maximum is not produced by the mirror symmetry of the tiling. For the single cell with its
-off-axis terms, $\eta_n=0.77$, $0.90$, $0.90$, $0.88$, $0.75$ and $0.52$ for
-$\kappa=0$, $0.2$, \dots, $1$; the off-axis terms grow from $0.02$ to $0.39$ of
+off-axis terms, whose $\langle n\rangle$ agrees with the periodic value within $4\%$,
+$\eta_n=0.77$, $0.90$, $0.90$, $0.88$, $0.75$ and $0.52$ for $\kappa=0$, $0.2$, \dots, $1$,
+a plateau between $\kappa=0.2$ and $0.6$; the off-axis terms grow from $0.02$ to $0.39$ of
 $\sqrt{C_{11}C_{22}}$, so the mirror tiling overstates the isotropy of the random-angle cells
 and makes the maximum less pronounced, not more.
 
@@ -622,7 +649,8 @@ The random cut angle provides the index through elongated cells and long spans; 
 centroid cut removes the slivers that make the weakest spans slender. Neither the area
 hierarchy nor the extra scales of the \emph{uniform} rule help, and the unbounded
 elongation of \emph{rect} gives a high index at the price of the band and of the
-isotropy. The reference lattices stay below $n=2.1$ [Fig.~\ref{fig:phys}(a)]: square
+isotropy. The reference lattices stay below $n=2.1$, well apart from the divisions even
+allowing for the $\pm10\%$ uncertainty of the beam model [Fig.~\ref{fig:phys}(a)]: square
 $1.41$, triangular $1.72$, honeycomb $1.9$--$2.1$ and Voronoi $2.1$ along $x$.
 
 % ===========================================================================
@@ -672,8 +700,10 @@ mean degree, mean corner number and host-age law, and differ in their cell trees
 shapes and span distributions. The scale-rich area hierarchy of the SR rule, and the
 still broader one of uniform cell selection, are not what sets the physics. The physics
 follows the tail of long spans in the frame graph. With these spans as the length scale,
-the index of the rules with a common pin-jointed ceiling follows one law at every density
-and number of ligaments, and the same spans set the lowest local resonance. The cut angle controls the tail: random angles elongate the cells and give a high
+the bending part of the inverse squared index follows one power law for every rule with a
+bounded tail, at every density and number of ligaments, and the same spans set the lowest
+local resonance. The ceiling of the index is set by the straight frame lines of the tiling,
+not by the division. The cut angle controls the tail: random angles elongate the cells and give a high
 index and a narrow band, perpendicular cuts keep the cells compact and give a low index
 and a wide band, and axis-parallel cuts let the elongation grow without bound. The cut
 position controls the slivers: a centroid cut bounds the split fraction between $4/9$ and
@@ -692,6 +722,30 @@ Nodes \& Links Ltd provided support in the form of salary for Alexei Vazquez but
 have any additional role in the conceptualization of the study, the analysis, the decision
 to publish or the preparation of the manuscript.
 \end{acknowledgments}
+
+\appendix
+\section{Attachment kernels}
+\label{app:kernel}
+The kernel $\kappa(k)$ is $t$ times the rate at which a ligament of degree $k$ is hit by a
+new ligament, measured over steps $t>2000$ of two realisations with $T=2\times10^4$, and fitted
+by $a+bk$ for $2\le k\le20$ (Table~\ref{tab:kernel}). The slope $b=1/2$ of the SR rate
+equation~\cite{vazquez2026sr} holds for every rule with a stationary kernel.
+
+\begin{table}[h]
+\caption{\label{tab:kernel}Measured attachment kernels $\kappa(k)=a+bk$.}
+\begin{ruledtabular}
+\begin{tabular}{lccl}
+rule & $a$ & $b$ & remark\\
+\hline
+SR       & $0.16$  & $0.48$ & \\
+uniform  & $0.13$  & $0.48$ & \\
+rect     & $0.01$  & $0.50$ & \\
+centroid & $0.02$  & $0.49$ & \\
+balanced & $-0.11$ & $0.47$ & flat for $k\le4$\\
+regular  & --      & --     & not stationary\\
+\end{tabular}
+\end{ruledtabular}
+\end{table}
 
 \bibliography{refs}
 
