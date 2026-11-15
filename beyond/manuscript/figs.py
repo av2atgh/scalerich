@@ -92,8 +92,8 @@ def _schematic(ax):
 
 def fig1():
     import divisions
-    fig = plt.figure(figsize=(3.4, 4.35))
-    outer = fig.add_gridspec(2, 1, height_ratios=[1.05, 2.0], hspace=0.12)
+    fig = plt.figure(figsize=(3.4, 4.5))
+    outer = fig.add_gridspec(2, 1, height_ratios=[1.05, 2.0], hspace=0.28)
     top = outer[0].subgridspec(1, 2, width_ratios=[1.0, 1.15], wspace=0.0)
     a0 = fig.add_subplot(top[0]); _schematic(a0)
     tb = fig.add_subplot(top[1]); tb.axis('off'); tb.set_xlim(0, 1); tb.set_ylim(0, 1)
@@ -111,8 +111,6 @@ def fig1():
         tb.plot([0.04], [y], **sty(r, ls='none', ms=6.5 if MK[r] == '*' else 4.2))
         for xx, t in zip(X[1:], (c1, c2, c3)):
             tb.text(xx, y, t, fontsize=5.8, ha='center', va='center')
-    tb.text(0.0, y0 - 7 * dy - 0.04, r'thickness $\lambda_t=\lambda_0t^{-\alpha}$; $\kappa$ tilts the $\perp$ cut',
-            fontsize=5.6, va='center')
     inner = outer[1].subgridspec(2, 3, hspace=0.28, wspace=0.08)
     T = 400
     axs = [fig.add_subplot(inner[i // 3, i % 3]) for i in range(6)]
