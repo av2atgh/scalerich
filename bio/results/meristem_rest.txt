@@ -1,0 +1,159 @@
+plant2 0 cells 292 walls 749
+plant2 4 cells 241 walls 659
+plant2 8 cells 214 walls 598
+plant2 12 cells 233 walls 640
+plant2 16 cells 263 walls 715
+plant2 20 cells 303 walls 802
+plant2 24 cells 343 walls 898
+plant2 28 cells 379 walls 976
+plant2 32 cells 296 walls 797
+plant2 36 cells 335 walls 878
+plant2 40 cells 358 walls 918
+plant2 44 cells 369 walls 950
+plant2 48 cells 271 walls 749
+plant2 52 cells 344 walls 909
+plant2 56 cells 295 walls 755
+plant2 60 cells 291 walls 757
+plant2 64 cells 274 walls 736
+plant2 68 cells 279 walls 763
+plant2 72 cells 300 walls 805
+plant2 76 cells 363 walls 933
+plant2 divisions 180 with two hosts 120 corner-cut 0.000 new-T angle median 144.5
+   age 0 h  n 240  through-angle median 144.5
+   age 4 h  n 195  through-angle median 142.2
+   age 8 h  n 162  through-angle median 138.6
+   age 12 h  n 141  through-angle median 136.6
+   age 16 h  n 110  through-angle median 133.9
+   age 20 h  n 91  through-angle median 128.1
+   age 24 h  n 85  through-angle median 131.2
+   age 28 h  n 76  through-angle median 127.8
+   age 32 h  n 55  through-angle median 126.2
+   age 36 h  n 42  through-angle median 125.5
+plant4 0 cells 248 walls 682
+plant4 4 cells 252 walls 688
+plant4 8 cells 298 walls 808
+plant4 12 cells 261 walls 725
+plant4 16 cells 202 walls 559
+plant4 20 cells 175 walls 483
+plant4 24 cells 218 walls 591
+plant4 28 cells 193 walls 537
+plant4 32 cells 194 walls 531
+plant4 36 cells 239 walls 634
+plant4 40 cells 256 walls 672
+plant4 44 cells 235 walls 621
+plant4 48 cells 245 walls 645
+plant4 52 cells 237 walls 628
+plant4 56 cells 221 walls 601
+plant4 60 cells 235 walls 618
+plant4 64 cells 261 walls 678
+plant4 68 cells 243 walls 647
+plant4 72 cells 255 walls 682
+plant4 76 cells 309 walls 790
+plant4 divisions 129 with two hosts 81 corner-cut 0.000 new-T angle median 142.3
+   age 0 h  n 162  through-angle median 142.3
+   age 4 h  n 133  through-angle median 138.3
+   age 8 h  n 107  through-angle median 136.0
+   age 12 h  n 89  through-angle median 134.3
+   age 16 h  n 75  through-angle median 134.1
+   age 20 h  n 63  through-angle median 130.2
+   age 24 h  n 57  through-angle median 130.5
+   age 28 h  n 44  through-angle median 131.2
+   age 32 h  n 38  through-angle median 127.0
+   age 36 h  n 27  through-angle median 131.7
+plant13 0 cells 304 walls 827
+plant13 4 cells 335 walls 914
+plant13 8 cells 331 walls 904
+plant13 12 cells 323 walls 880
+plant13 16 cells 294 walls 811
+plant13 20 cells 392 walls 1049
+plant13 24 cells 425 walls 1117
+plant13 28 cells 378 walls 999
+plant13 32 cells 344 walls 904
+plant13 36 cells 314 walls 833
+plant13 40 cells 317 walls 832
+plant13 44 cells 272 walls 721
+plant13 48 cells 261 walls 694
+plant13 52 cells 261 walls 699
+plant13 56 cells 296 walls 724
+plant13 60 cells 269 walls 706
+plant13 64 cells 292 walls 750
+plant13 68 cells 292 walls 771
+plant13 72 cells 336 walls 845
+plant13 76 cells 359 walls 889
+plant13 80 cells 307 walls 825
+plant13 84 cells 320 walls 855
+plant13 divisions 191 with two hosts 104 corner-cut 0.000 new-T angle median 143.5
+   age 0 h  n 208  through-angle median 143.5
+   age 4 h  n 189  through-angle median 138.1
+   age 8 h  n 163  through-angle median 139.9
+   age 12 h  n 149  through-angle median 138.0
+   age 16 h  n 130  through-angle median 133.0
+   age 20 h  n 113  through-angle median 131.7
+   age 24 h  n 98  through-angle median 129.3
+   age 28 h  n 80  through-angle median 129.7
+   age 32 h  n 57  through-angle median 128.7
+   age 36 h  n 45  through-angle median 129.4
+plant15 0 cells 302 walls 825
+plant15 4 cells 331 walls 919
+plant15 8 cells 313 walls 861
+plant15 12 cells 329 walls 909
+plant15 16 cells 345 walls 930
+plant15 20 cells 378 walls 1004
+plant15 24 cells 343 walls 910
+plant15 28 cells 341 walls 903
+plant15 32 cells 336 walls 897
+plant15 36 cells 321 walls 842
+plant15 40 cells 394 walls 1036
+plant15 44 cells 370 walls 975
+plant15 48 cells 236 walls 630
+plant15 52 cells 206 walls 555
+plant15 56 cells 197 walls 526
+plant15 60 cells 184 walls 498
+plant15 64 cells 209 walls 539
+plant15 68 cells 208 walls 555
+plant15 72 cells 249 walls 639
+plant15 76 cells 275 walls 672
+plant15 80 cells 241 walls 635
+plant15 84 cells 251 walls 663
+plant15 divisions 123 with two hosts 74 corner-cut 0.000 new-T angle median 143.1
+   age 0 h  n 148  through-angle median 142.6
+   age 4 h  n 111  through-angle median 140.0
+   age 8 h  n 93  through-angle median 139.6
+   age 12 h  n 72  through-angle median 137.9
+   age 16 h  n 61  through-angle median 133.9
+   age 20 h  n 46  through-angle median 133.2
+   age 24 h  n 42  through-angle median 132.4
+   age 28 h  n 37  through-angle median 130.5
+   age 32 h  n 29  through-angle median 126.2
+   age 36 h  n 24  through-angle median 127.7
+plant18 0 cells 260 walls 717
+plant18 4 cells 291 walls 795
+plant18 8 cells 325 walls 863
+plant18 12 cells 269 walls 754
+plant18 16 cells 267 walls 745
+plant18 20 cells 339 walls 915
+plant18 24 cells 340 walls 908
+plant18 28 cells 339 walls 894
+plant18 32 cells 324 walls 867
+plant18 36 cells 299 walls 814
+plant18 44 cells 357 walls 957
+plant18 48 cells 316 walls 870
+plant18 52 cells 286 walls 797
+plant18 56 cells 351 walls 943
+plant18 60 cells 321 walls 879
+plant18 64 cells 376 walls 994
+plant18 68 cells 367 walls 986
+plant18 72 cells 353 walls 947
+plant18 76 cells 417 walls 1087
+plant18 80 cells 387 walls 1006
+plant18 84 cells 344 walls 915
+plant18 divisions 114 with two hosts 76 corner-cut 0.000 new-T angle median 143.5
+   age 0 h  n 152  through-angle median 142.4
+   age 4 h  n 133  through-angle median 140.9
+   age 8 h  n 101  through-angle median 139.3
+   age 12 h  n 84  through-angle median 136.3
+   age 16 h  n 66  through-angle median 136.0
+   age 20 h  n 59  through-angle median 133.3
+   age 24 h  n 35  through-angle median 134.3
+   age 28 h  n 20  through-angle median 133.1
+   age 32 h  n 11  through-angle median 129.2

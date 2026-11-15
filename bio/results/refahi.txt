@@ -1,0 +1,65 @@
+FM1 0 cells 210
+FM1 10 cells 202
+FM1 18 cells 320
+FM1 24 cells 253
+FM1 32 cells 189
+FM1 40 cells 199
+FM1 48 cells 189
+FM1 57 cells 176
+FM1 64 cells 168
+FM1 72 cells 183
+FM1 81 cells 155
+FM1 88 cells 149
+FM1 96 cells 172
+FM1 104 cells 175
+FM1 112 cells 234
+FM1 120 cells 312
+FM1 128 cells 431
+FM1 132 cells 487
+FM1 new walls 627 2-daughter divisions 81 corner-decidable 41 corner cuts 0
+FM5 16 cells 167
+FM5 32 cells 182
+FM5 40 cells 238
+FM5 48 cells 204
+FM5 64 cells 256
+FM5 72 cells 212
+FM5 88 cells 284
+FM5 94 cells 299
+FM5 108 cells 292
+FM5 116 cells 309
+FM5 124 cells 249
+FM5 140 cells 280
+FM5 149 cells 295
+FM5 163 cells 312
+FM5 173 cells 334
+FM5 new walls 463 2-daughter divisions 95 corner-decidable 51 corner cuts 2
+FM2 0 cells 213
+FM2 10 cells 242
+FM2 23 cells 304
+FM2 33 cells 357
+FM2 45 cells 447
+FM2 55 cells 621
+FM2 new walls 529 2-daughter divisions 106 corner-decidable 55 corner cuts 0
+FM3 10 cells 261
+FM3 23 cells 291
+FM3 33 cells 307
+FM3 45 cells 323
+FM3 50 cells 329
+FM3 55 cells 409
+FM3 65 cells 524
+FM3 new walls 290 2-daughter divisions 64 corner-decidable 15 corner cuts 0
+FM4 0 cells 327
+FM4 10 cells 383
+FM4 23 cells 437
+FM4 33 cells 472
+FM4 45 cells 539
+FM4 50 cells 569
+FM4 55 cells 647
+FM4 new walls 346 2-daughter divisions 61 corner-decidable 26 corner cuts 0
+FM6 0 cells 245
+FM6 26 cells 253
+FM6 44 cells 378
+FM6 56 cells 524
+FM6 69 cells 740
+FM6 new walls 753 2-daughter divisions 103 corner-decidable 64 corner cuts 2
+ALLDONE

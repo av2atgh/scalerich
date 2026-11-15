@@ -181,3 +181,16 @@ corner-free rule (Errera) that kills dual clustering; junction relaxation by ten
 - Degree vs line age (film-born, own hosts known): data mean k 2.38 / 3.07 / 3.84 / 3.14 / 2.84 for
   ages 0-20 / 20-40 / 40-70 / 70-110 / 110-200 h; model 2.04 / 2.69 / 3.5 / 5.0 / 8.2. Agreement to
   70 h; older data lines censored (hosts outside tracked L1). Degree law still untestable (max k 12).
+
+### 2026-11-15 fixes and manuscript
+- Bug fixed in pargrow.py (found while drafting): the idle-jump removal drew from all segments ever
+  made and skipped removed ones, lowering the removal rate (stabilised runs sat at n 1700-3850).
+  Fixed; delta rescaled per s to keep n ~ 1500 (turnover.py). Results (results/turnover_fixed.txt):
+  uniform P(k>=16) 0.003, kmax 22 (nss 1500; kmax 18/22/27 at nss 300/1500/4000); s = 1,2,3:
+  0.016/0.016/0.020, kmax 60/75/67; SR 0.021/82. Conclusion unchanged.
+- Printed-only numbers now saved in results/*.txt (percell, pipeline_validation, validate_tissue,
+  width_lines_null, venation_angles, corner_detector_check, stiff).
+- fit_tension.py uses hard-coded data medians that differ by <= 1 deg from the pooled medians in
+  figures.py (143.1, 140.0, 138.5, ...); fit valley unaffected at this resolution.
+- bio/manuscript.tex (revtex PRE, 7 pp, figures.py -> figs/fig1-4), drafted by a forked agent;
+  Refahi parameter-free test is the plant headline.

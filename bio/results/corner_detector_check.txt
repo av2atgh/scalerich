@@ -1,0 +1,1 @@
+neighbour pairs adjacent around M: 0.4415  mean neighbours 5.128

@@ -8,7 +8,7 @@ nss=int(sys.argv[1]); seeds=int(sys.argv[2]); Pis=[float(x) for x in sys.argv[3]
 stab=float(sys.argv[4]) if len(sys.argv)>4 else 0.0
 res={}
 for Pi in Pis:
-    R=Pi; delta=R/nss*(1+3*stab); Tend=8/(R/nss); N=int(R*Tend*1.05)+10
+    R=Pi; delta=R/nss*{0:1.0,1:1.45,2:1.70,3:1.71}.get(int(stab),1.0); Tend=8/(R/nss); N=int(R*Tend*1.05)+10
     rows=[]
     for sd in range(seeds):
         t=time.time(); r=run(N,Pi,seed=sd,delta=delta,Tmax=Tend,stab=stab)

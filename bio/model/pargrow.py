@@ -161,8 +161,13 @@ def _sim(N, R, seed, kappa, delta, Tmax, G, maxent, cap, stab):
                 if trem < tnext and trem < Tmax:
                     # one removal, then continue (memoryless)
                     t = trem
-                    j = np.random.randint(0, n)
-                    if present[j] and np.random.random() < (2.0 / max(kdeg[j], 2)) ** stab:
+                    # uniform present segment (rejection over all ever made), then
+                    # stabilisation thinning: removal rate per segment = delta (2/k)^stab
+                    while True:
+                        j = np.random.randint(0, n)
+                        if present[j]:
+                            break
+                    if np.random.random() < (2.0 / max(kdeg[j], 2)) ** stab:
                         tend[j] = t; npresent -= 1; nrem_total += 1
                         nalive += _remove(j, n, present, alive, hit, ext, bnd, lastcell, kdeg)
                     continue
