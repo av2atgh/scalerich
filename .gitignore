@@ -10,3 +10,5 @@ figs/fig*-1.png
 *.out
 manuscriptNotes.bib
 private/
+bio/.venv/
+bio/data/raw/
