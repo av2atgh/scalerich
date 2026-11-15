@@ -94,3 +94,45 @@ no X crossings, all tips land on their targets, Pi -> 0 reproduces SR).
 2. Meristem lineage time-lapse: divisions as Errera-rule iterated partition; test clustering ~0.05.
 3. Actin: retune segmentation on nonlinear SIM; stress-fibre/arc regions; request U2OS/RPE1
    images (SFEX, Vignaud 2021). Cortical-compartment sizes (Sadegh 2017) vs model cell-area law.
+
+### 2026-11-15 plants (data: bio/data/VENATION.md, bio/data/PLANT_WALLS.md)
+Tools: images/planar.py (label image / vein graph -> junction classes, lines, dual), validated on
+rasterised model tissues (images/validate_tissue.py: dual p_k and C recovered, corners 3.97-3.99).
+
+**Leaf venation** (LeafVeinCNN, Xu et al. 2021; 44 SLF leaf segments, 25 species, 283k vein edges;
+images/venation*.py, results/venation_*):
+- 3-way nodes: max arm angle median ~147 deg (T > 155 deg: 31%); 34% of nodes are free ends
+  (free-ending veinlets: not in SR).
+- At geometric T's the stem is the thinnest arm 0.78 (random 0.33); at all loop 3-way nodes,
+  the arm opposite the widest gap is thinnest 0.71. Geometry and width hierarchy agree.
+- HLD (width-ordered loop fusion) split fraction, 20k fusions: mean 0.28, quartiles .16/.30/.41,
+  histogram rising toward 0.5 with no small-split spike. SR exact: flat, .12/.25/.37; SR with width
+  noise and Voronoi with random widths: spike at 0 (images/hld_null.py); centroid/balanced: all > 0.45.
+  => nested sequential subdivision, mildly biased to even splits.
+- Dual via width continuation, loop network: P(k>=4,8,16) = .31/.066/.008, C(k) .43,.24,.15,.09,.05,.03,
+  pc(log k, log W | log L) = 0.40. BUT the same construction on Voronoi with random widths gives
+  P(k>=4)=.30 and C(k) .34->.04, pc 0.32 (images/width_lines_null.py): degree law and C(k) are NOT
+  evidence here; only pc slightly above null (SR exact 0.57).
+
+**Shoot apical meristem L1** (Willis et al. 2016, 6 plants, 4 h steps, 76 h; images/meristem.py,
+results/meristem_*.json): 1117 divisions, 672 with both hosts identified.
+- Corner cuts (new wall on two adjacent sides of the mother): 0/672 (95% upper bound 0.45%).
+  SR 0.50, uniform clocks 0.63, centroid 0.41, balanced/Errera 0.07 (model refs). Detector checked:
+  44% of neighbour pairs of a cell are adjacent around it (~2/(n-1)).
+- New junctions are not T at birth: through-angle median 143 deg (quartiles 135/143/151; >165: 3.6%),
+  relaxing to 125-134 deg by 32-36 h in all six plants (toward Y).
+- Dual degree: wall identity breaks where lineage is missing (only central L1 tracked); <= 3 cell
+  generations in 76 h — too short for a degree law (max k = 6).
+
+**Reading.** Plant cell walls are an iterated division but not SR: the rule forbids corner cuts
+(dual clustering -> 0) and junctions relax from ~145 to ~128 deg, so straight lines dissolve.
+The class prediction gamma ~ 3 is rule-independent but untestable on these films.
+Leaf veins carry the SR hierarchy (thinner veins end on thicker ones; ordered nested loops) with a
+balanced bias, but their dual degree law cannot be separated from the line construction.
+
+## Next (plants)
+- Longer/whole-organ data: UCBG whole leaves (Dryad 1g1jwsv36, needs browser download) for the full
+  vein hierarchy (HLD on whole leaves, oldest veins not cut by the sample boundary).
+- Refahi 2021 flower meristems (173 h, all layers) for more generations and a degree law.
+- Model: iterated division with zero corner cuts + junction relaxation, to give plant-specific
+  predictions (C ~ 0, gamma ~ 3, sides distribution).
