@@ -269,54 +269,45 @@ differ. In the following sections we look at what does differ: the cell tree, th
 shapes and the frame graph.
 
 % ===========================================================================
-\begin{table*}[t]
-\caption{\label{tab:net}Network mappings, $T=2\times10^4$ (four realisations; $\ell_*$ and
-$\ell_{\max}$ also at $T=10^3$). $\langle f\rangle$: mean smaller-daughter fraction;
-$\mathrm{Var}\,d$: variance of the leaf depth; $\mathrm{CV}_A$: coefficient of variation
-of the cell areas; $f_3$: fraction of triangular cells; $C$: dual clustering;
-$\langle\ln\mu\rangle$: mean log number of fewest-turn paths; $e_{95}$, $e_{99.9}$: 95th and
-99.9th percentiles of the cell elongation; $a_4$: orientation fabric; $\sin\psi$: mean
-sine of the junction angle; $\ell_*\sqrt T$, $\ell_{\max}\sqrt T$: span moment of
-Eq.~(\ref{eq:lstar}) and longest span.}
+\begin{table}[tb]
+\caption{\label{tab:net}Network mappings that distinguish the rules ($T=2\times10^4$; $\ell_*$
+at $T=10^3$). $\langle f\rangle$: mean smaller-daughter fraction; $\mathrm{Var}\,d$: variance
+of the leaf depth; $C$: dual clustering (corner cuts); $e_{95}$: 95th percentile of the cell
+elongation; $a_4$: orientation fabric; $\ell_*\sqrt T$: long-span moment of
+Eq.~(\ref{eq:lstar}). Further statistics are given in the text.}
 \begin{ruledtabular}
-\begin{tabular}{lcccccccccccc}
-rule & $\langle f\rangle$ & $\mathrm{Var}\,d$ & $\mathrm{CV}_A$ & $f_3$ & $C$ &
-$\langle\ln\mu\rangle$ & $e_{95}$ & $e_{99.9}$ & $a_4$ & $\sin\psi$ &
-$\ell_{\max}\sqrt T$ & $\ell_*\sqrt T$ ($T=10^3$)\\
+\begin{tabular}{lcccccc}
+rule & $\langle f\rangle$ & $\mathrm{Var}\,d$ & $C$ & $e_{95}$ & $a_4$ & $\ell_*\sqrt T$\\
 \hline
-SR       & 0.250 & 15.4 & 1.00 & 0.30 & 0.38 & 1.88 & 9.4  & 66      & 0.00 & 0.76 & 8.1 & 3.9\\
-uniform  & 0.250 & 15.9 & $>10$\footnotemark[1] & 0.28 & 0.45 & 2.04 & 10.6 & 63 & 0.03 & 0.75 & 41  & 13.3\\
-rect     & 0.250 & 16.4 & 1.00 & 0    & 0    & 3.55 & 918  & $9\times10^4$ & 1.00 & 1.00 & 127 & 17.9\\
-centroid & 0.473 & 0.92 & 0.67 & 0.20 & 0.28 & 1.91 & 6.2  & 16      & 0.00 & 0.80 & 6.6 & 3.2\\
-balanced & 0.484 & 0.88 & 0.67 & 0.05 & 0.06 & 2.81 & 2.0  & 2.7     & 0.36 & 0.96 & 3.1 & 1.7\\
-regular  & 0.486 & 0.23 & 0.25 & 0.04 & 0.05 & 2.93 & 1.9  & 2.5     & 0.48 & 0.96 & 2.2 & 1.3\\
+SR       & 0.25 & 15  & 0.38 & 9.4 & 0    & 3.9\\
+uniform  & 0.25 & 16  & 0.45 & 11  & 0.03 & 13\\
+rect     & 0.25 & 16  & 0    & 918 & 1    & 18\\
+centroid & 0.47 & 0.9 & 0.28 & 6.2 & 0    & 3.2\\
+balanced & 0.48 & 0.9 & 0.06 & 2.0 & 0.36 & 1.7\\
+regular  & 0.49 & 0.2 & 0.05 & 1.9 & 0.48 & 1.3\\
 \end{tabular}
 \end{ruledtabular}
-\footnotetext[1]{Grows without bound; $\mathrm{Var}\ln(TA)=23.6$ at $T=10^3$.}
-\end{table*}
+\end{table}
 
 \begin{table}[tb]
 \caption{\label{tab:phys}Physical properties, $T=10^3$, $\alpha=0$, $\bar\rho=0.2$:
-direction-averaged index (mean $\pm$ standard deviation over four realisations; range for
-\emph{rect}), isotropy of the mirror tiling and of the single cell with off-axis terms,
-lowest local resonance (geometric mean, with the geometric standard deviation as a factor),
-direction-averaged pin-jointed ceiling, and Bloch band edge at fixed index along the
-propagation direction ($\pm$ standard error, eight realisations for SR, \emph{centroid} and
-\emph{balanced}, four for \emph{regular}).}
+direction-averaged index, isotropy of the single cell, lowest local resonance, and Bloch
+band edge at fixed index. The spread of $\langle n\rangle$ between realisations is
+$2$--$7\%$, the standard errors of $\omega_h$ are $5$--$16\%$; \emph{rect} is given as a range.
+\emph{uniform}: frame model not reliable, Bloch scans not computed; \emph{rect}: realisations
+do not overlap in $n$.}
 \begin{ruledtabular}
-\begin{tabular}{lccccccc}
-rule & $\langle n\rangle$ & $\eta_n$ & $\eta_n^{\rm cell}$ & $\omega_1$ & $n_{\max}$ & $\omega_h(n{=}3)$ & $\omega_h(n{=}4)$\\
+\begin{tabular}{lccccc}
+rule & $\langle n\rangle$ & $\eta_n$ & $\omega_1$ & $\omega_h(n{=}3)$ & $\omega_h(n{=}4)$\\
 \hline
-SR       & $4.43\pm0.13$ & 0.67 & 0.56 & $0.44\times1.22^{\pm1}$ & 6.7--8.3 & $0.37\pm0.02$ & $0.20\pm0.03$\\
-uniform  & $3.37\pm0.19$\footnotemark[1] & 0.66 & 0.62 & $0.20\times1.27^{\pm1}$ & 4.1--5.4 & -- & --\\
-rect     & 4.1--7.9 & 0.41 & 0.29 & $0.0071\times2.4^{\pm1}$ & 5.7--10.4 & --\footnotemark[2] & --\footnotemark[2]\\
-centroid & $4.34\pm0.15$ & 0.69 & 0.55 & $0.52\times1.17^{\pm1}$ & 7.1--8.3 & $0.65\pm0.10$ & $0.30\pm0.05$\\
-balanced & $2.97\pm0.21$ & 0.78 & 0.80 & $1.14\times1.05^{\pm1}$ & 7.4--7.5 & $0.62\pm0.08$ & $0.23\pm0.03$\\
-regular  & $2.68\pm0.06$ & 0.75 & 0.77 & $1.23\times1.03^{\pm1}$ & 7.6 & $0.42\pm0.03$ & $0.16\pm0.02$\\
+SR       & 4.4     & 0.56 & 0.44  & 0.37 & 0.20\\
+uniform  & 3.4     & 0.62 & 0.20  & --   & --\\
+rect     & 4.1--7.9 & 0.29 & 0.007 & --   & --\\
+centroid & 4.3     & 0.55 & 0.52  & 0.65 & 0.30\\
+balanced & 3.0     & 0.80 & 1.14  & 0.62 & 0.23\\
+regular  & 2.7     & 0.77 & 1.23  & 0.42 & 0.16\\
 \end{tabular}
 \end{ruledtabular}
-\footnotetext[1]{Frame model not reliable for this rule; Bloch scans not computed.}
-\footnotetext[2]{Realisations do not overlap in $n$; $\omega_h<0.1$ where resolved.}
 \end{table}
 
 % ===========================================================================
@@ -401,7 +392,7 @@ $\langle\ln\mu\rangle=3.55$.
 $\bar\rho=0.2$, the lowest isotropy, $\eta_n=0.41$, and a resonance two orders of
 magnitude below the others, $\omega_1=0.0071$. The index depends strongly on the
 realisation and the direction: along $x$ and $y$ the four realisations give $n$ between
-$1.7$ and $12.8$ at the same densities, so the mean in Table~\ref{tab:phys} stands for a
+$1.7$ and $12.8$ at the same densities, and Table~\ref{tab:phys} gives a
 range. The Bloch band edge lies below $0.1$ wherever it is resolved; in half of the scans the
 branch keeps its plane-wave character up to the end of the grid, $3\omega_1$, so only that
 lower bound is known.
