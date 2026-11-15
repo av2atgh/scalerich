@@ -51,11 +51,72 @@ def lab(ax, s):
     ax.text(-0.02, 1.02, s, transform=ax.transAxes, fontweight='bold', va='bottom', ha='right')
 
 
+def _schematic(ax):
+    """one division step: which cell, where the cut passes, at what angle"""
+    import divisions
+    # a few existing ligaments around one convex cell (the picked cell is shaded)
+    cell = np.array([[0.18, 0.10], [0.86, 0.18], [0.95, 0.58], [0.62, 0.86], [0.10, 0.62]])
+    ax.add_patch(matplotlib.patches.Polygon(cell, closed=True, fc='#e8eef8', ec='#222222', lw=1.4))
+    for p, q in (([0.0, 0.07], [0.18, 0.10]), ([0.86, 0.18], [1.05, 0.03]), ([0.95, 0.58], [1.08, 0.70]),
+                 ([0.62, 0.86], [0.70, 1.02]), ([0.10, 0.62], [-0.05, 0.75])):
+        ax.plot([p[0], q[0]], [p[1], q[1]], color='#222222', lw=1.4)
+    A, c, I2 = divisions._moments(cell)
+    w, V = np.linalg.eigh(I2); ax_ = V[:, 1]
+    ax.plot(*np.c_[c - 0.42 * ax_, c + 0.42 * ax_], color='#777777', lw=0.7, ls='--')   # major axis
+    end = c - 0.42 * ax_ if (c - 0.42 * ax_)[0] < (c + 0.42 * ax_)[0] else c + 0.42 * ax_
+    ax.text(end[0] - 0.02, end[1] - 0.09, 'major axis', fontsize=5.5, color='#777777', ha='left')
+    def chord(p, th):
+        d = np.array([np.cos(th), np.sin(th)])
+        i, sP, j, sQ = divisions._clip(cell, p, d)
+        return p + sP * d, p + sQ * d
+    # centroid cut perpendicular to the major axis (balanced) and a uniform-point cut at a random angle (SR)
+    thp = np.arctan2(ax_[1], ax_[0]) + np.pi / 2
+    P, Q = chord(c, thp); ax.plot([P[0], Q[0]], [P[1], Q[1]], color=COL['balanced'], lw=2.0, solid_capstyle='butt')
+    x = np.array([0.66, 0.36]); th = 2.35
+    P2, Q2 = chord(x, th); ax.plot([P2[0], Q2[0]], [P2[1], Q2[1]], color=COL['SR'], lw=2.0, ls=(0, (3, 1.5)))
+    ax.plot(*c, marker='+', color='#222222', ms=7, mew=1.2); ax.text(c[0] - 0.11, c[1] + 0.03, '$c$', fontsize=7)
+    ax.plot(*x, marker='o', color='#222222', ms=3); ax.text(x[0] + 0.02, x[1] - 0.09, '$x$', fontsize=7)
+    ax.text(0.22, 0.20, '1', fontsize=7, fontweight='bold')
+    ax.text(c[0] - 0.20, c[1] - 0.13, '2', fontsize=7, fontweight='bold')
+    # angle of the random cut, measured from the x axis
+    ax.plot([x[0], x[0] + 0.16], [x[1], x[1]], color='#999999', lw=0.6)
+    arc = np.linspace(0, th - np.pi / 2 - 0.0, 2)
+    tt = np.linspace(0, th - np.pi, 20) if th > np.pi else np.linspace(0, th, 20)
+    ax.plot(x[0] + 0.09 * np.cos(tt), x[1] + 0.09 * np.sin(tt), color='#555555', lw=0.6)
+    ax.text(x[0] + 0.0, x[1] + 0.10, r'$\theta$', fontsize=7); ax.text(x[0] + 0.12, x[1] + 0.13, '3', fontsize=7, fontweight='bold')
+    # T-junctions at the ends of the new cut
+    for E in (P, Q):
+        ax.plot(*E, marker='o', ms=2.5, color=COL['balanced'])
+    ax.set_xlim(-0.06, 1.1); ax.set_ylim(-0.02, 1.02); ax.set_aspect('equal'); ax.axis('off')
+
+
 def fig1():
     import divisions
-    fig, axs = plt.subplots(2, 3, figsize=(3.4, 2.4))
+    fig = plt.figure(figsize=(3.4, 4.35))
+    outer = fig.add_gridspec(2, 1, height_ratios=[1.05, 2.0], hspace=0.12)
+    top = outer[0].subgridspec(1, 2, width_ratios=[1.0, 1.15], wspace=0.0)
+    a0 = fig.add_subplot(top[0]); _schematic(a0)
+    tb = fig.add_subplot(top[1]); tb.axis('off'); tb.set_xlim(0, 1); tb.set_ylim(0, 1)
+    rows = [('SR', 'area', 'point', 'uniform'), ('uniform', 'uniform', 'point', 'uniform'),
+            ('rect', 'area', 'point', 'axis-par.'), ('centroid', 'area', 'centroid', 'uniform'),
+            ('balanced', 'area', 'centroid', r'$\perp$ major'), ('regular', 'largest', 'centroid', r'$\perp$ major')]
+    X = [0.0, 0.27, 0.58, 0.88]
+    hdr = ['', '1 cell', '2 where', r'3 angle']
+    y0 = 0.90; dy = 0.125
+    for xx, h in zip(X, hdr):
+        tb.text(xx, y0, h, fontsize=5.8, fontweight='bold', ha='left' if xx == 0 else 'center', va='center')
+    tb.plot([0, 1.02], [y0 - 0.065, y0 - 0.065], color='#999999', lw=0.5)
+    for i, (r, c1, c2, c3) in enumerate(rows):
+        y = y0 - (i + 1) * dy - 0.02
+        tb.plot([0.04], [y], **sty(r, ls='none', ms=6.5 if MK[r] == '*' else 4.2))
+        for xx, t in zip(X[1:], (c1, c2, c3)):
+            tb.text(xx, y, t, fontsize=5.8, ha='center', va='center')
+    tb.text(0.0, y0 - 7 * dy - 0.04, r'thickness $\lambda_t=\lambda_0t^{-\alpha}$; $\kappa$ tilts the $\perp$ cut',
+            fontsize=5.6, va='center')
+    inner = outer[1].subgridspec(2, 3, hspace=0.28, wspace=0.08)
     T = 400
-    for ax, r in zip(axs.ravel(), RULES):
+    axs = [fig.add_subplot(inner[i // 3, i % 3]) for i in range(6)]
+    for ax, r in zip(axs, RULES):
         g = divisions.run(T, 3, r)
         lw = 2.2 * np.arange(1, T + 1.) ** -0.5 + 0.15
         segs = np.stack([g['A'], g['B']], 1)
@@ -65,7 +126,12 @@ def fig1():
         ax.text(0.5, 1.04, LABEL[r], transform=ax.transAxes, ha='center', va='bottom', fontsize=8)
         ax.plot([0.5 - 0.075 * len(LABEL[r]) / 2 - 0.1], [1.10], transform=ax.transAxes, clip_on=False,
                 **sty(r, ls='none', ms=7.5 if MK[r] == '*' else 4.5))
-    fig.subplots_adjust(wspace=0.08, hspace=0.24)
+    fig.canvas.draw()
+    inv = fig.transFigure.inverted()
+    ya = inv.transform(a0.get_window_extent())[1, 1]
+    yb = inv.transform(axs[0].get_window_extent())[1, 1] + 0.05
+    fig.text(0.02, ya, '(a)', fontweight='bold', ha='left', va='top')
+    fig.text(0.02, yb, '(b)', fontweight='bold', ha='left', va='top')
     fig.savefig(os.path.join(HERE, 'fig1.pdf'))
 
 
