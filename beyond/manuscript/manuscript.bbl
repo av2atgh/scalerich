@@ -243,12 +243,13 @@
   {\bibfield  {journal} {\bibinfo  {journal} {Reviews of Modern Physics}\
   }\textbf {\bibinfo {volume} {86}},\ \bibinfo {pages} {995} (\bibinfo {year}
   {2014})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Graff}(1975)}]{graff1975}%
+\bibitem [{\citenamefont {Rao}(2018)}]{rao2018}%
   \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {K.~F.}\ \bibnamefont
-  {Graff}},\ }\href@noop {} {\emph {\bibinfo {title} {Wave Motion in Elastic
-  Solids}}}\ (\bibinfo  {publisher} {Ohio State University Press},\ \bibinfo
-  {address} {Columbus},\ \bibinfo {year} {1975})\BibitemShut {NoStop}%
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {S.~S.}\ \bibnamefont
+  {Rao}},\ }\href@noop {} {\emph {\bibinfo {title} {Mechanical Vibrations}}},\
+  \bibinfo {edition} {6th}\ ed.\ (\bibinfo  {publisher} {Pearson Education},\
+  \bibinfo {address} {Harlow},\ \bibinfo {year} {2018})\ \bibinfo {note}
+  {sec.~8.5}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Krapivsky}\ and\ \citenamefont
   {Ben-Naim}(1994)}]{krapivsky1994}%
   \BibitemOpen
