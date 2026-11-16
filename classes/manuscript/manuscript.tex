@@ -22,11 +22,14 @@
 The physical properties of metamaterials depend on a balance between their fine structure and
 their long-range features. Periodic lattices are stiff because straight lines of struts span
 them. Quasicrystals are ordered without being periodic. Scale-rich metamaterials are
-disordered and bend under load. We ask what classes of materials exist given the interplay between structural order and elasticity. We generate material designs by recursive cell division. We cut each cell at a fraction $r_0$ of its length from one of its
-two ends. The value of $r_0$ sets the order class, but the rule that chooses the end
-determines the elastic class. As a corollary, the same golden split gives a stretch-dominated
-quasicrystal when $r_0$ is always measured from the same end, and a bending-dominated one when
-it is measured from the end that avoids crossings. In that case, for slender frameworks, the
+disordered and bend under load. We ask what classes of materials exist given the interplay
+between structural order and the alignment of struts into straight spanning lines. We generate
+material designs by recursive cell division. We cut each cell at a fraction $r_0$ of its length
+from one of its two ends. The value of $r_0$ sets the order class, but the rule that chooses
+the end determines the alignment class, and the alignment class determines the elasticity. As a
+corollary, the same golden split gives an aligned, stretch-dominated quasicrystal when $r_0$ is
+always measured from the same end, and a non-aligned, bending-dominated one when it is measured
+from the end that avoids crossings. In that case, for slender frameworks, the
 share of the stiffness carried by stretching vanishes as $T^{-1/2}$ with the number of cuts $T$.
 \end{abstract}
 
@@ -54,13 +57,18 @@ mainly by bending.
 
 These examples suggest two distinct classifications. One is order, as determined by
 diffraction. Order can be periodic, quasiperiodic or disordered (absence of order). The other
-is elasticity, as determined by how a framework carries load. Elasticity is stretch dominated
-if the stiffness survives when the rigid joints are replaced by pins, and bending dominated if
-it does not~\cite{deshpande2001}. In the periodic and
-scale-rich examples the two classes go together. We ask whether the order class of a
-framework fixes its elastic class. Quasiperiodic order is the critical case. Order requires a
-rule that repeats itself, repeated cuts line up across neighbouring cells, and lined-up cuts
-join into spanning lines, so one may expect quasicrystals to be stretch dominated.
+is alignment, as determined by whether struts join into straight lines that span the sample.
+If the number $m$ of spanning lines grows with the number of cuts $T$ as $m\propto T^{\mu}$,
+a framework is aligned for $\mu=1/2$, the largest value when cells have comparable sizes,
+non-aligned for $\mu=0$, and partially aligned in between. Alignment fixes how a framework carries load. A framework is
+stretch dominated if its stiffness survives when the rigid joints are replaced by pins, and
+bending dominated if it does not~\cite{deshpande2001}; spanning lines are what survive. In the
+periodic and scale-rich examples order and alignment go together: the periodic lattice is
+aligned, the scale-rich metamaterial non-aligned. We ask whether the order class of a
+framework fixes its alignment class, and with it the elasticity. Quasiperiodic order is the
+critical case. Order requires a rule that repeats itself, repeated cuts line up across
+neighbouring cells, and lined-up cuts join into spanning lines, so one may expect quasicrystals
+to be aligned and stretch dominated.
 
 Recursive cell division contains the three order classes in one model. It belongs to Cowan's
 family of iterated cell divisions~\cite{cowan2010}, defined by which cell is cut, where and at
@@ -69,9 +77,9 @@ instead each cut lies at a fixed fraction $r_0$ of the cell length, measured fro
 two sides of the cell, the family contains the periodic grid ($r_0=1/2$) and quasiperiodic
 tilings~\cite{baake2013,smilansky2020}. The rule then has two parts, the value of $r_0$ and
 the side from which it is measured, and we vary them independently. We treat the order with
-the number theory of substitution tilings, and the mechanics with an exact result: for a
-framework of horizontal and vertical bars with pinned joints, the stiffness counts the
-straight lines that span the sample.
+the number theory of substitution tilings. We connect alignment to mechanics with an exact
+result: for a framework of horizontal and vertical bars with pinned joints, the stiffness
+counts the straight lines that span the sample.
 
 \textit{Rules.}---We grow a division of the unit square by $T$ cuts (Fig.~\ref{fig:div}). At
 each step the cell of largest area is cut (ties by birth order), perpendicular to its long side
@@ -157,7 +165,7 @@ $r_0$-sequences, each with $(1.1$--$1.3)\,T^{1/2}$ coordinates. Its order is tha
 one-dimensional factors [Fig.~\ref{fig:order}(a)]. Its completed lines span the sample, and
 their number $m$ grows as $m\propto T^{\mu}$ with exponent $\mu=1/2$ [Fig.~\ref{fig:mech}(a)];
 bounds above and below by multiples of $T^{1/2}$ follow from the size window of the
-cells~\cite{supp}. The grid requires the same
+cells~\cite{supp}. Aligned divisions are therefore in the aligned class whatever their order. The grid requires the same
 side in every cell, not the largest-first pick: picking cells by area keeps the spanning
 lines.
 
@@ -166,8 +174,9 @@ when both candidate positions would form an X-crossing. Crossings therefore stil
 a minority of the ligament ends, whereas in aligned divisions they occur at nearly all of them.
 In our divisions no line other than the first cut ever spans the sample: $m=1$, so $\mu=0$, for all five
 Pisot splits up to $T=10^{6}$, and the longest other straight line is the second cut at every
-$T$. This is an observation, not a theorem. The random side lies in between, with
-$\mu\approx0.2$.
+$T$. This is an observation, not a theorem. Anti-aligned divisions are therefore in the
+non-aligned class, together with the uniform split and the scale-rich rule. The random side is
+partially aligned, with $\mu\approx0.2$.
 
 \textit{Exact pinned stiffness.}---To connect lines with stiffness, we treat the ligaments as
 elastic bars of thickness $\lambda$ and Young's modulus $E$, the frame of the square included,
@@ -195,9 +204,10 @@ largest possible index along $x$,
 n_{\max,x}^{2}=\frac{E\bar\rho}{C^{\rm pin}_{11}}=\frac{L_{\rm tot}}{m_h+1}\propto T^{1/2-\mu},
 \label{eq:nmax}
 \end{equation}
-at any density. Rigid joints only add stiffness, so they lower $n$ below this ceiling. Aligned
-divisions have $\mu=1/2$ and a ceiling that does not grow with $T$. Anti-aligned divisions,
-like the random uniform split, have $m=1$ and a ceiling that grows as $T^{1/4}$
+at any density. Rigid joints only add stiffness, so they lower $n$ below this ceiling.
+Equation~(\ref{eq:nmax}) ties the elasticity to the alignment class alone. The aligned class,
+$\mu=1/2$, has a ceiling that does not grow with $T$. The non-aligned class, $\mu=0$, has a
+ceiling that grows as $T^{1/4}$, for anti-aligned quasicrystals and random tessellations alike
 [Fig.~\ref{fig:mech}(b)].
 
 \begin{figure*}[t]
@@ -239,7 +249,8 @@ because of the same axial load in incomplete lines~\cite{supp}. The stretching
 share vanishes as the division is refined, and the index grows much more slowly than its
 ceiling [Fig.~\ref{fig:mech}(b)]. At $\bar\rho=0.1$ and $T=10^{4}$, stretching carries $14\%$
 of the stiffness of the golden anti-aligned division and $94\%$ of the aligned one. The
-anti-aligned quasicrystals are therefore in the elastic class of the random tessellations.
+non-aligned class is therefore bending dominated, whether the division is quasiperiodic or
+random.
 This conclusion does not rest on the frame of the square: thinning the frame a thousandfold
 changes their index by less than $20\%$.
 
@@ -257,34 +268,38 @@ above a minimum, but the minimum is small for the plastic splits. Treating paral
 closer than $\lambda$ as one leaves $m=1$ up to $\bar\rho=0.5$ for the golden split and
 $\bar\rho=0.25$ for the plastic ones, at every $T$ up to $10^{6}$. At higher densities
 spanning lines reappear, and the division crosses over to the aligned class. The separation of
-order and load paths therefore holds for slender frameworks: $\bar\rho\lesssim0.2$ for the
+order and alignment therefore holds for slender frameworks: $\bar\rho\lesssim0.2$ for the
 golden split and $\bar\rho\lesssim0.1$ for the plastic ones.
 
 \textit{Network description.}---Scale-rich metamaterials have also been described by a dual
 graph, with ligaments as nodes and junctions as links~\cite{vazquez2026sr}. This graph does not
-distinguish the classes found here. In every rule the degree of a ligament is proportional to
+distinguish the alignment classes. In every rule the degree of a ligament is proportional to
 its length, and space filling gives $N(\ell>x)\propto x^{-2}$, hence a degree distribution
 $p_k\sim k^{-3}$ for aligned, anti-aligned and random rules alike ($K^{2}P(k\ge K)$ varies by
 less than a factor $2.5$ over $K=4$--$96$). For the random rules the same law follows from
 local sampling of hosts by length~\cite{vazquez2026div}. What separates the
-classes, whether two collinear cuts continue each other across a host, is precisely what the
+alignment classes, whether two collinear cuts continue each other across a host, is precisely what the
 dual graph does not record.
 
 \textit{Conclusions.}---The properties of a metamaterial depend on how its fine structure is
-organised at long range. Periodic lattices are stretch dominated, random scale-rich
-metamaterials are bending dominated, and one may expect quasiperiodic order, which also
-repeats a rule, to side with periodic order. We asked whether the order class of a framework
-fixes its elastic class, and answered in recursive cell division, where the two parts of the
-cut rule can be varied independently (Fig.~S2 of Ref.~\cite{supp}). The value of $r_0$ sets the order class: Pisot values
-give Bragg peaks for every side rule. The side rule sets the elastic class. The same side in
-every cell makes an exact grid of spanning lines and a stretch-dominated framework. The side
-that avoids lining up with other cuts leaves a single spanning line, and the share of
-stiffness carried by stretching vanishes as $T^{-1/2}$, as in the random scale-rich
-metamaterials. The order class therefore does not fix the elastic class: quasiperiodic order
-is compatible with both, and the anti-aligned golden split realises a bending-dominated
-quasicrystal with three cell shapes in slender frameworks. Order forces spanning lines only
-under the aligned rule, where the grid structure makes it exact. For design, the order and the
-elastic class of such a metamaterial can be chosen independently. Open questions are a proof that the anti-aligned rule never
+organised at long range. Periodic lattices are aligned and stretch dominated, random
+scale-rich metamaterials are non-aligned and bending dominated, and one may expect quasiperiodic
+order, which also repeats a rule, to side with periodic order. We asked whether the order class
+of a framework fixes its alignment class, and answered in recursive cell division, where the
+two parts of the cut rule can be varied independently (Fig.~S2 of Ref.~\cite{supp}). The value
+of $r_0$ sets the order class: Pisot values give Bragg peaks for every side rule. The side rule
+sets the alignment class. The same side in every cell makes an exact grid of spanning lines,
+$\mu=1/2$. The side that avoids lining up with other cuts leaves a single spanning line,
+$\mu=0$. The alignment class sets the elasticity through the exact pinned stiffness: aligned
+frameworks are stretch dominated, and in non-aligned ones the share of stiffness carried by
+stretching vanishes as $T^{-1/2}$, quasiperiodic or random. The order class therefore does not
+fix the alignment class: quasiperiodic order is compatible with both, and the anti-aligned
+golden split realises a non-aligned, bending-dominated quasicrystal with three cell shapes in
+slender frameworks. Order forces alignment only under the aligned rule, where the grid
+structure makes it exact. For design, the order and the alignment of such a metamaterial can
+be chosen independently. Beyond stiffness, alignment should govern every property carried
+along straight ligaments, and waves inside the network should depend on both
+classes~\cite{supp}. Open questions are a proof that the anti-aligned rule never
 completes a spanning line, the dynamics of anti-aligned quasicrystals beyond long wavelengths,
 and divisions with more than two cut directions, the route to rotational
 order~\cite{radin1994}.

@@ -41,23 +41,24 @@ that avoids continuing a cut on the other side of a host.
 
 \begin{figure}[h]
 \includegraphics[width=0.85\textwidth]{figS2.pdf}
-\caption{Classes of the divisions. Each oval is one property: ordered (Bragg peaks) or
-disordered (no Bragg peaks), and stretch dominated or bending dominated (stretching share $s$
-close to one or vanishing with $T$). Ordered and disordered exclude each other, as do stretch
-and bending dominated, so the four overlaps are the four classes. All four are realised. The
-periodic grid ($r_0=1/2$, dashed sub-oval) has no anti-aligned version, so periodic and bending
-dominated is empty. The random-side golden split is ordered but not classified elastically: its
-stretching share was not computed, and its number of spanning lines grows as $T^{0.21}$.
-Thumbnails after $T=89$ cuts ($T=63$ for $r_0=1/2$). Members of one overlap share a class, not
-the values of their elastic constants.}
+\caption{Order and alignment classes of the divisions. Each oval is one property: ordered (Bragg
+peaks) or disordered (no Bragg peaks), and aligned or non-aligned (number of spanning lines
+$m\propto T^{\mu}$ with $\mu=1/2$ or $\mu=0$). Ordered and disordered exclude each other, as do
+aligned and non-aligned, so the four overlaps are the four classes. All four are realised. The
+alignment class sets the elasticity (in brackets): aligned frameworks are stretch dominated,
+non-aligned ones bending dominated. The periodic grid ($r_0=1/2$, dashed sub-oval) has no
+anti-aligned version, so periodic and non-aligned is empty. The random-side golden split is
+ordered and partially aligned, $\mu\approx0.2$, between the two ovals; its stretching share was
+not computed. Thumbnails after $T=89$ cuts ($T=63$ for $r_0=1/2$). Members of one overlap share a
+class, not the values of their elastic constants.}
 \label{fig:classes}
 \end{figure}
 
 Figure~\ref{fig:classes} places the divisions in the classes defined by the two properties.
 The value of $r_0$ moves a division between the ordered and disordered ovals; the side rule
-moves it between the stretch- and bending-dominated ovals. The anti-aligned Pisot splits share
-the bending-dominated class with the random uniform split and the scale-rich rule, but not the
-order class. Within that class they are less compliant: at $T=10^{3}$ and $\bar\rho=0.1$ their
+moves it between the aligned and non-aligned ovals. The anti-aligned Pisot splits share the
+non-aligned class, and with it bending domination, with the random uniform split and the
+scale-rich rule, but not the order class. Within that class they are less compliant: at $T=10^{3}$ and $\bar\rho=0.1$ their
 rigid-joint index is $78$--$94\%$ of the scale-rich value, and the ratio falls with density.
 
 \section{Scaling of the number of spanning lines}
@@ -231,6 +232,79 @@ threshold does not drift with $T$ for the golden split. For $(5,1)$ it drifts sl
 $0.30$ to $0.25$ between $T=10^{3}$ and $10^{6}$, following the slow decrease of $\delta_{\min}$;
 the range $\bar\rho\lesssim0.1$ stated for the plastic splits leaves a margin.
 
+\section{Beyond elasticity: properties set by both classes}
+
+The two labels of a division have distinct geometric origins. The order class comes from the
+arithmetic of $r_0$: it fixes where the junctions lie and therefore the Bragg peaks. The
+alignment class comes from the side rule: it fixes which cuts continue each other across a host
+(X-crossings) and how many straight lines span the sample. A property that probes only one of
+these features follows only one label. Diffraction sees only the order. The long-wavelength
+stiffness sees only the alignment (Letter). Scalar transport, such as electrical
+conduction through the ligaments, depends on connectivity alone and follows neither, as the
+dual graph does not. Waves that travel inside the network at wavelengths comparable to the cell
+size are different: the order sets which frequencies propagate, and the side rule sets along
+which paths. The four properties below should therefore depend on both labels. None has been
+computed here; they are predictions. The aligned and anti-aligned golden splits are the
+controlled pair for testing them: both are Meyer sets with Bragg peaks and three cell shapes,
+and they differ only in their straight lines.
+
+\textit{Elastic waves at finite frequency.} The Letter treats the limit of long wavelength,
+where the index is set by the stiffness. At wavelengths of the order of the cell size, Bragg
+scattering opens band gaps. Their positions are drawn from the Bragg peaks of the junction
+set, which lie in the same Fourier module for both side rules; their widths follow the peak
+intensities, which differ (Fig.~2 of the Letter). Inside the bands the side rule takes over.
+In an aligned division a longitudinal wave can run along a spanning line, a continuous beam
+loaded at its junctions, as in a one-dimensional quasiperiodic chain. In an anti-aligned
+division every straight path ends at a T-junction on a perpendicular beam, where the
+longitudinal wave is converted into flexural motion. The prediction is gaps at related
+frequencies in both, with guided propagation within the bands for the aligned division and
+scattered, possibly localised, propagation for the anti-aligned one. The Bloch-wave
+calculation on the framed periodic tiling used for scale-rich metamaterials
+(\texttt{beyond/blochsweep.py}) gives the dispersion and the plane-wave content of each mode and
+can test this directly.
+
+\textit{Electrons on networks of quantum wires.} Consider electrons hopping between junctions
+along the ligaments (a tight-binding model on the junction network), or waves on the ligaments
+with current conservation at each junction (a quantum graph). The order class sets the
+character of the spectrum: one-dimensional quasiperiodic chains such as the Fibonacci chain
+have Cantor-set spectra and critical states. The side rule sets whether the problem separates.
+The complete aligned division is a product grid, so its Hamiltonian is
+$H=H_X\otimes1+1\otimes H_Y$, with $H_X$ and $H_Y$ the chains of the two one-dimensional
+splittings. Its spectrum is the sum of two one-dimensional spectra, as for the square Fibonacci
+tiling~\cite{evendar2006,evendar2008}. The incomplete grid lines, which hold $5$--$33\%$ of the
+ligament length, break this separation weakly. The anti-aligned division has the same order
+class but no product structure, and its Hamiltonian does not separate. Comparing the two
+isolates the effect of separability at fixed quasiperiodic order on the spectrum and on the
+localisation of states. A magnetic field adds an Aharonov--Bohm phase proportional to the flux
+through each cell. For Pisot splits the cell areas take finitely many values, three for the
+golden split, so the phases are themselves quasiperiodic. In superconducting wire networks
+the field dependence of the transition temperature follows this spectrum, as measured on
+Penrose networks~\cite{behrooz1986}. It would carry both labels, the area spectrum through the
+order and the loop structure through the side rule.
+
+\textit{Spin waves in magnetic wire networks.} In connected ferromagnetic nanowires the
+magnetisation lies along each wire. Spin waves propagate along the wires and scatter at
+junctions, and magnetisation reversal proceeds by domain walls that move along the wires and
+are pinned at junctions. At an X-crossing a wire continues straight through. At a T-junction
+it ends on a perpendicular wire, where the magnetisation must turn, which scatters spin waves
+and pins domain walls. The magnon bands should inherit the quasiperiodic gaps of the order
+class. The side rule should set the propagation: spanning lines in aligned networks provide
+channels for spin waves and paths for reversal across the whole sample, while in anti-aligned
+networks most straight segments are of the order of the cell size, which confines spin waves
+and breaks reversal into avalanches bounded by the lengths of the straight lines.
+
+\textit{Phonon heat conduction.} Heat in the framework is carried by its elastic waves, so the
+thermal conductivity combines the two previous effects, weighted by the thermal population of
+the modes. At the lowest temperatures only long-wavelength modes are populated, the
+conductivity follows the sound speed, and only the side rule matters, through the index $n$.
+At temperatures where the dominant phonon wavelength is comparable to the cell size, the gaps
+of the order class remove modes, and the straight lines of the side rule decide whether the
+remaining modes travel ballistically, along spanning lines, or diffusively. The temperature
+dependence of the conductivity should therefore cross over from a single-label to a two-label
+regime.
+
 \input{supp_tables.tex}
+
+\bibliography{refs}
 
 \end{document}
