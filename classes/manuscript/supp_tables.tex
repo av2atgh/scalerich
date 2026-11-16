@@ -1,0 +1,50 @@
+\begin{table}[h]\caption{Rigid-joint beam model at $T=10^{4}$ (uniform split: one realisation; over three realisations at $T=3000$ the relative spread is below $2\%$ in $\langle n\rangle$ and $3\%$ in $s$). $\langle n\rangle$: direction-averaged index; $s=\mathrm{tr}\,C^{\rm pin}/\mathrm{tr}\,C$; $s_E$: axial part of the rigid-joint strain energy.}\label{tab:T4}
+\begin{ruledtabular}\begin{tabular}{lccccccccc}
+ & \multicolumn{3}{c}{$\bar\rho=0.05$} & \multicolumn{3}{c}{$\bar\rho=0.1$} & \multicolumn{3}{c}{$\bar\rho=0.2$} \\
+rule & $\langle n\rangle$ & $s$ & $s_E$ & $\langle n\rangle$ & $s$ & $s_E$ & $\langle n\rangle$ & $s$ & $s_E$ \\ \hline
+golden, aligned & 1.84 & 0.953 & 0.99 & 1.82 & 0.936 & 0.99 & 1.80 & 0.914 & 0.98 \\
+golden, anti & 8.01 & 0.352 & 0.41 & 5.09 & 0.143 & 0.32 & 3.24 & 0.058 & 0.41 \\
+(5,1), anti & 8.61 & 0.401 & 0.46 & 5.59 & 0.170 & 0.34 & 3.59 & 0.071 & 0.42 \\
+(3,2), anti & 7.52 & 0.323 & 0.38 & 4.66 & 0.125 & 0.29 & 2.92 & 0.050 & 0.41 \\
+uniform split & 10.18 & 0.541 & 0.60 & 7.12 & 0.267 & 0.41 & 4.71 & 0.117 & 0.41 \\
+\end{tabular}\end{ruledtabular}\end{table}
+\begin{table}[h]\caption{Size dependence at $\bar\rho=0.1$: rigid-joint $\langle n\rangle$, pinned ceiling $n_{\max,x}$ and stretching share $s$ (uniform split: mean of three realisations for $T<10^4$).}\label{tab:size}
+\begin{ruledtabular}\begin{tabular}{lcccccccc}
+rule & \multicolumn{2}{c}{$T=300$} & \multicolumn{2}{c}{$T=1000$} & \multicolumn{2}{c}{$T=3000$} & \multicolumn{2}{c}{$T=10000$} \\
+ & $\langle n\rangle$, $n_{\max,x}$ & $s$ & $\langle n\rangle$, $n_{\max,x}$ & $s$ & $\langle n\rangle$, $n_{\max,x}$ & $s$ & $\langle n\rangle$, $n_{\max,x}$ & $s$ \\ \hline
+golden, aligned & 1.78, 1.65 & 0.952 & 1.74, 1.76 & 0.997 & 1.78, 1.79 & 0.993 & 1.82, 1.87 & 0.936 \\
+golden, anti & 3.96, 5.96 & 0.497 & 4.55, 8.05 & 0.358 & 4.85, 10.59 & 0.235 & 5.09, 14.37 & 0.143 \\
+(5,1), anti & 4.46, 6.10 & 0.621 & 4.99, 8.24 & 0.426 & 5.15, 10.86 & 0.262 & 5.59, 14.65 & 0.170 \\
+(3,2), anti & 3.75, 5.93 & 0.465 & 4.15, 8.02 & 0.311 & 4.49, 10.56 & 0.212 & 4.66, 14.28 & 0.125 \\
+uniform split & 4.49, 6.28 & 0.605 & 5.59, 8.47 & 0.517 & 6.52, 11.14 & 0.407 & 7.12, 15.04 & 0.267 \\
+\end{tabular}\end{ruledtabular}\end{table}
+\begin{table}[h]\caption{Relative change of $\langle n\rangle$ from Euler--Bernoulli to Timoshenko beams ($\nu=0.3$, $\kappa=5/6$), maximum over $T=300$--$10^{4}$.}\label{tab:timo}
+\begin{ruledtabular}\begin{tabular}{lcc}rule & $\bar\rho=0.2$ & $\bar\rho=0.4$ \\ \hline
+golden, aligned & 0.1\% & 0.4\% \\
+golden, anti & 2.1\% & 5.5\% \\
+(5,1), anti & 2.3\% & 5.6\% \\
+(3,2), anti & 3.1\% & 7.1\% \\
+uniform split & 1.9\% & 4.7\% \\
+\end{tabular}\end{ruledtabular}\end{table}
+\begin{table}[h]\caption{Geometry in units of $1/L_{\rm tot}$, so that a length $\ell$ equals $\ell L_{\rm tot}/\bar\rho$ thicknesses. Segments between consecutive joints: minimum and median; fraction shorter than $3\lambda$ at $\bar\rho=0.1$ and $0.2$. Offsets $\delta$ between opposite stems on a host: minimum and first percentile.}\label{tab:geo}
+\begin{ruledtabular}\begin{tabular}{lcccccccc}
+rule & $T$ & $\ell_{\min}$ & $\ell_{\rm med}$ & $f_{<3\lambda}(0.1)$ & $f_{<3\lambda}(0.2)$ & $\delta_{\min}$ & $\delta_{1\%}$ & longest$_2$ \\ \hline
+golden, anti & $10^{3}$ & 0.32 & 1.34 & 0.000 & 0.019 & 0.32 & 0.51 & 0.618 \\
+golden, anti & $10^{4}$ & 0.39 & 1.66 & 0.000 & 0.005 & 0.39 & 0.39 & 0.618 \\
+golden, anti & $10^{5}$ & 0.47 & 1.24 & 0.000 & 0.013 & 0.47 & 0.47 & 0.618 \\
+(5,1), anti & $10^{3}$ & 0.14 & 1.29 & 0.021 & 0.146 & 0.14 & 0.18 & 0.755 \\
+(5,1), anti & $10^{4}$ & 0.11 & 1.35 & 0.021 & 0.157 & 0.11 & 0.19 & 0.755 \\
+(5,1), anti & $10^{5}$ & 0.08 & 1.39 & 0.024 & 0.160 & 0.08 & 0.19 & 0.755 \\
+(3,2), anti & $10^{3}$ & 0.30 & 1.22 & 0.001 & 0.158 & 0.30 & 0.40 & 0.570 \\
+(3,2), anti & $10^{4}$ & 0.24 & 1.28 & 0.000 & 0.168 & 0.24 & 0.42 & 0.570 \\
+(3,2), anti & $10^{5}$ & 0.18 & 1.32 & 0.000 & 0.177 & 0.18 & 0.32 & 0.570 \\
+golden, aligned & $10^{3}$ & 0.83 & 2.16 & 0.000 & 0.000 & 0.83 & 0.89 & 1.000 \\
+golden, aligned & $10^{4}$ & 1.03 & 1.67 & 0.000 & 0.000 & 1.03 & 1.03 & 1.000 \\
+golden, aligned & $10^{5}$ & 1.24 & 2.01 & 0.000 & 0.000 & 1.24 & 1.24 & 1.000 \\
+\end{tabular}\end{ruledtabular}\end{table}
+\begin{table}[h]\caption{Finite-thickness test: largest $\bar\rho$ (step $0.05$) at which merging parallel ligaments closer than $\lambda$ leaves $m=1$.}\label{tab:snap}
+\begin{ruledtabular}\begin{tabular}{lcccc}rule & $T=10^{3}$ & $10^{4}$ & $10^{5}$ & $10^{6}$ \\ \hline
+golden, anti & 0.50 & 0.60 & 0.75 & 0.55 \\
+(5,1), anti & 0.30 & 0.30 & 0.25 & 0.25 \\
+(3,2), anti & 0.35 & 0.40 & 0.30 & 0.30 \\
+\end{tabular}\end{ruledtabular}\end{table}

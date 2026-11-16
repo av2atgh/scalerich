@@ -28,6 +28,8 @@ U_i ~ k^{3/2} λ^{1/2} f(θ).
   elastic/rigidity, percolation and transport on the SR structure.
 
 Status and next steps: see `lng/NOTES.md`, `rg/NOTES.md`.
+- `classes/` — (2026-11-15) split law r of the division: periodic, quasiperiodic (Pisot
+  commensurate r, largest first) and random members of one rule; see `classes/NOTES.md`.
 
 ## Manuscript (2026-11-12)
 `manuscript.tex` (PRE, revtex4-2, pdflatex + bibtex), figures from `figures.py`.

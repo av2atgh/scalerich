@@ -1,0 +1,212 @@
+[
+ {
+  "rule": "regular",
+  "T": 300,
+  "shapes": 2,
+  "areas": 2
+ },
+ {
+  "rule": "regular",
+  "T": 1000,
+  "shapes": 2,
+  "areas": 2
+ },
+ {
+  "rule": "regular",
+  "T": 3000,
+  "shapes": 2,
+  "areas": 2
+ },
+ {
+  "rule": "regular",
+  "T": 10000,
+  "shapes": 2,
+  "areas": 2
+ },
+ {
+  "rule": "regular",
+  "T": 30000,
+  "shapes": 2,
+  "areas": 2
+ },
+ {
+  "rule": "regular",
+  "T": 100000,
+  "shapes": 2,
+  "areas": 2
+ },
+ {
+  "rule": "regular",
+  "T": 300000,
+  "shapes": 2,
+  "areas": 2
+ },
+ {
+  "rule": "golden",
+  "T": 300,
+  "shapes": 4,
+  "areas": 3
+ },
+ {
+  "rule": "golden",
+  "T": 1000,
+  "shapes": 5,
+  "areas": 3
+ },
+ {
+  "rule": "golden",
+  "T": 3000,
+  "shapes": 5,
+  "areas": 3
+ },
+ {
+  "rule": "golden",
+  "T": 10000,
+  "shapes": 5,
+  "areas": 3
+ },
+ {
+  "rule": "golden",
+  "T": 30000,
+  "shapes": 4,
+  "areas": 3
+ },
+ {
+  "rule": "golden",
+  "T": 100000,
+  "shapes": 4,
+  "areas": 3
+ },
+ {
+  "rule": "golden",
+  "T": 300000,
+  "shapes": 4,
+  "areas": 3
+ },
+ {
+  "rule": "plastic",
+  "T": 300,
+  "shapes": 8,
+  "areas": 4
+ },
+ {
+  "rule": "plastic",
+  "T": 1000,
+  "shapes": 8,
+  "areas": 4
+ },
+ {
+  "rule": "plastic",
+  "T": 3000,
+  "shapes": 8,
+  "areas": 4
+ },
+ {
+  "rule": "plastic",
+  "T": 10000,
+  "shapes": 8,
+  "areas": 4
+ },
+ {
+  "rule": "plastic",
+  "T": 30000,
+  "shapes": 8,
+  "areas": 4
+ },
+ {
+  "rule": "plastic",
+  "T": 100000,
+  "shapes": 8,
+  "areas": 4
+ },
+ {
+  "rule": "plastic",
+  "T": 300000,
+  "shapes": 8,
+  "areas": 4
+ },
+ {
+  "rule": "r0.3",
+  "T": 300,
+  "shapes": 41,
+  "areas": 17
+ },
+ {
+  "rule": "r0.3",
+  "T": 1000,
+  "shapes": 54,
+  "areas": 21
+ },
+ {
+  "rule": "r0.3",
+  "T": 3000,
+  "shapes": 76,
+  "areas": 24
+ },
+ {
+  "rule": "r0.3",
+  "T": 10000,
+  "shapes": 96,
+  "areas": 27
+ },
+ {
+  "rule": "r0.3",
+  "T": 30000,
+  "shapes": 119,
+  "areas": 30
+ },
+ {
+  "rule": "r0.3",
+  "T": 100000,
+  "shapes": 146,
+  "areas": 33
+ },
+ {
+  "rule": "r0.3",
+  "T": 300000,
+  "shapes": 171,
+  "areas": 36
+ },
+ {
+  "rule": "golden-side",
+  "T": 300,
+  "shapes": 4,
+  "areas": 3
+ },
+ {
+  "rule": "golden-side",
+  "T": 1000,
+  "shapes": 5,
+  "areas": 3
+ },
+ {
+  "rule": "golden-side",
+  "T": 3000,
+  "shapes": 5,
+  "areas": 3
+ },
+ {
+  "rule": "golden-side",
+  "T": 10000,
+  "shapes": 5,
+  "areas": 3
+ },
+ {
+  "rule": "golden-side",
+  "T": 30000,
+  "shapes": 4,
+  "areas": 3
+ },
+ {
+  "rule": "golden-side",
+  "T": 100000,
+  "shapes": 4,
+  "areas": 3
+ },
+ {
+  "rule": "golden-side",
+  "T": 300000,
+  "shapes": 4,
+  "areas": 3
+ }
+]
