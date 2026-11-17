@@ -13,3 +13,5 @@ private/
 bio/.venv/
 bio/data/raw/
 classes/manuscript/cover_letter.*
+*.fdb_latexmk
+*.fls
