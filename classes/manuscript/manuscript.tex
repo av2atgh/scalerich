@@ -27,10 +27,12 @@ between structural order and the alignment of struts into straight spanning line
 material designs by recursive cell division. We cut each cell at a fraction $r_0$ of its length
 from one of its two ends. The value of $r_0$ sets the order class, but the rule that chooses
 the end determines the alignment class, and the alignment class determines the elasticity. As a
-corollary, the same golden split gives an aligned, stretch-dominated quasicrystal when $r_0$ is
-always measured from the same end, and a non-aligned, bending-dominated one when it is measured
-from the end that avoids crossings. In that case, for slender frameworks, the
+corollary, the golden split gives two quasicrystals with the same Bragg peaks. Measured always
+from the same end, it is threaded by spanning lines and stretch dominated. Measured from the end
+that avoids crossings, it has a single spanning line and is bending dominated. In that case, for slender frameworks, the
 share of the stiffness carried by stretching vanishes as $T^{-1/2}$ with the number of cuts $T$.
+Beyond elasticity, waves of a scalar field on the wires follow the order class alone, whereas
+spin waves in magnetic wire networks depend on both classes.
 \end{abstract}
 
 \maketitle
@@ -60,8 +62,9 @@ diffraction. Order can be periodic, quasiperiodic or disordered (absence of orde
 is alignment, as determined by whether struts join into straight lines that span the sample.
 If the number $m$ of spanning lines grows with the number of cuts $T$ as $m\propto T^{\mu}$,
 a framework is aligned for $\mu=1/2$, the largest value when cells have comparable sizes,
-non-aligned for $\mu=0$, and partially aligned in between. Alignment fixes how a framework carries load. A framework is
-stretch dominated if its stiffness survives when the rigid joints are replaced by pins, and
+non-aligned for $\mu=0$, and partially aligned in between. Alignment fixes how a framework carries load. A grid of bars is stiff because every bar that
+runs from edge to edge must stretch; the same bars with staggered ends, like bricks in a wall,
+yield by bending at the joints. Formally, a framework is stretch dominated if its stiffness survives when the rigid joints are replaced by pins, and
 bending dominated if it does not~\cite{deshpande2001}; spanning lines are what survive. In the
 periodic and scale-rich examples order and alignment go together: the periodic lattice is
 aligned, the scale-rich metamaterial non-aligned. We ask whether the order class of a
@@ -79,14 +82,16 @@ tilings~\cite{baake2013,smilansky2020}. The rule then has two parts, the value o
 the side from which it is measured, and we vary them independently. We treat the order with
 the number theory of substitution tilings. We connect alignment to mechanics with an exact
 result: for a framework of horizontal and vertical bars with pinned joints, the stiffness
-counts the straight lines that span the sample.
+counts the straight lines that span the sample. Finally, we sort other properties by the class
+that sets them.
 
 \textit{Rules.}---We grow a division of the unit square by $T$ cuts (Fig.~\ref{fig:div}). At
 each step the cell of largest area is cut (ties by birth order), perpendicular to its long side
 (squares vertically), so all cells stay rectangles. Each cut is a ligament whose two ends lie
 on existing ligaments, its hosts, where they form T-junctions. The cut lies at a fraction
 $r_0$ of the cell length from one side, so the daughter on that side receives the area
-fraction $r_0$ and the other $1-r_0$. The side rule chooses that side, i.e.\ the end of the cell from which $r_0$ is measured:
+fraction $r_0$ and the other $1-r_0$. The side rule chooses that side, i.e.\ the end of the cell from which $r_0$ is measured; a cut
+a third of the way from the left differs from one a third of the way from the right:
 \emph{aligned}, always the low side (left or bottom);
 \emph{random}, a fair coin;
 \emph{anti-aligned}, the side that forms fewer X-crossings. An X-crossing is a cut end that
@@ -193,7 +198,8 @@ C^{\rm pin}_{11}=E\lambda\,(m_h+1),\quad C^{\rm pin}_{22}=E\lambda\,(m_v+1),\qua
 \label{eq:Cpin}
 \end{equation}
 where $m_h$ and $m_v$ count the horizontal and vertical spanning lines and the $1$ is the
-frame. Equation~(\ref{eq:Cpin}) agrees to machine precision with finite-element calculations
+frame. Nothing else enters, neither the number of bars nor their lengths: the count of spanning
+lines is the pinned stiffness. Equation~(\ref{eq:Cpin}) agrees to machine precision with finite-element calculations
 for aligned, random-side and anti-aligned divisions~\cite{supp}.
 
 The stiffness sets the speed $c$ of long-wavelength sound. We measure it by the index
@@ -274,13 +280,29 @@ golden split and $\bar\rho\lesssim0.1$ for the plastic ones.
 
 \textit{Network description.}---Scale-rich metamaterials have also been described by a dual
 graph, with ligaments as nodes and junctions as links~\cite{vazquez2026sr}. This graph does not
-distinguish the alignment classes. In every rule the degree of a ligament is proportional to
-its length, and space filling gives $N(\ell>x)\propto x^{-2}$, hence a degree distribution
-$p_k\sim k^{-3}$ for aligned, anti-aligned and random rules alike ($K^{2}P(k\ge K)$ varies by
-less than a factor $2.5$ over $K=4$--$96$). For the random rules the same law follows from
-local sampling of hosts by length~\cite{vazquez2026div}. What separates the
-alignment classes, whether two collinear cuts continue each other across a host, is precisely what the
-dual graph does not record.
+distinguish the alignment classes. The degree of a ligament is proportional to its length, and
+space filling gives $p_k\sim k^{-3}$ for every side rule ($K^{2}P(k\ge K)$ varies by less than a
+factor $2.5$ over $K=4$--$96$), as local sampling of hosts gives for the random
+rules~\cite{vazquez2026div}. Whether two collinear cuts continue each other across a host, which
+separates the classes, is what the dual graph does not record.
+
+\textit{Beyond elasticity.}---Order, measured by diffraction, records where the junctions sit.
+Alignment records which cuts continue each other across a host. A property follows one class or both, depending on which feature it probes.
+Waves of a scalar field on the wires, with junctions blind to the angles between wires, see only
+the wire lengths, the connectivity and the cell areas. Examples are the order parameter of a
+superconducting wire network in a magnetic field~\cite{degennes1981,alexander1983} and an
+electron in a network of single-mode quantum wires. A deformation that bends every straight line
+while keeping these quantities fixed changes the wave by a phase only, so their spectra, such as
+the field dependence of the superconducting transition temperature, follow the order class
+alone~\cite{supp}. Spin waves in magnetic nanowires are different, because the magnetisation
+follows the wire direction~\cite{gaididei2014}. The in-plane precession passes a junction only
+along a straight continuation, whereas the out-of-plane precession is shared by all the wires
+that meet there. A mode then extends along a straight line until the line ends, which the
+alignment class sets, or until random spacings of the junctions localise it, which the order
+class sets. Linear spin-wave calculations confirm that both classes matter: non-aligned
+divisions localise the modes, quasiperiodic or random, aligned divisions extend them, and among
+aligned divisions only the ordered ones keep modes that occupy a fixed fraction of the network
+as $T$ grows~\cite{supp}.
 
 \textit{Conclusions.}---The properties of a metamaterial depend on how its fine structure is
 organised at long range. Periodic lattices are aligned and stretch dominated, random
@@ -294,16 +316,18 @@ $\mu=1/2$. The side that avoids lining up with other cuts leaves a single spanni
 $\mu=0$. The alignment class sets the elasticity through the exact pinned stiffness: aligned
 frameworks are stretch dominated, and in non-aligned ones the share of stiffness carried by
 stretching vanishes as $T^{-1/2}$, quasiperiodic or random. The order class therefore does not
-fix the alignment class: quasiperiodic order is compatible with both, and the anti-aligned
-golden split realises a non-aligned, bending-dominated quasicrystal with three cell shapes in
-slender frameworks. Order forces alignment only under the aligned rule, where the grid
-structure makes it exact. For design, the order and the alignment of such a metamaterial can
-be chosen independently. Beyond stiffness, alignment should govern every property carried
-along straight ligaments, and waves inside the network should depend on both
-classes~\cite{supp}. Open questions are a proof that the anti-aligned rule never
-completes a spanning line, the dynamics of anti-aligned quasicrystals beyond long wavelengths,
+fix the alignment class: quasiperiodic order is compatible with both. The golden split gives two quasicrystals with the
+same Bragg peaks, one threaded by spanning lines and stretch dominated, the other, in slender
+frameworks, with a single spanning line and bending dominated. Order forces alignment only under the aligned rule, where the grid
+structure makes it exact. For design, a quasicrystalline pattern does not commit a framework
+to stretch-dominated mechanics, and the compliance of a random foam is available in an ordered,
+reproducible architecture with three cell shapes. The choice reaches beyond stiffness: scalar waves on the wires
+follow the order class, and spin waves follow both classes. Open questions are a proof that the
+anti-aligned rule never completes a spanning line, elastic waves at wavelengths of the cell
+size,
 and divisions with more than two cut directions, the route to rotational
-order~\cite{radin1994}.
+order~\cite{radin1994}. The order of a framework does not fix how it carries load; its straight
+lines do.
 
 \begin{acknowledgments}
 All code is available at Ref.~\cite{code}.

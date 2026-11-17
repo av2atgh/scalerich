@@ -12,3 +12,4 @@ manuscriptNotes.bib
 private/
 bio/.venv/
 bio/data/raw/
+classes/manuscript/cover_letter.*
