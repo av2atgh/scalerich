@@ -81,6 +81,7 @@ def run(T, seed=0, rule='SR', box=(1.0, 1.0)):
     hostA = np.zeros(T, int); hostB = np.zeros(T, int)
     split_of = {}
     depth = {0: 0}
+    pts = np.zeros((T, 2)); cells = []
     frac = np.zeros(T); cut_depth = np.zeros(T, int); parent_n = np.zeros(T, int)
     for t in range(T):
         # --- pick a cell
@@ -146,9 +147,11 @@ def run(T, seed=0, rule='SR', box=(1.0, 1.0)):
         for n_ in (n0, n1):
             pos[n_] = len(leaves); leaves.append(n_)
             heapq.heappush(heap, (-areas[n_], n_))
+        pts[t] = p; cells.append(poly)
         A[t] = P; B[t] = Q; hostA[t] = lab[i]; hostB[t] = lab[j]
     return dict(T=T, seed=seed, A=A, B=B, hostA=hostA, hostB=hostB,
                 leaf_area=np.array([areas[c] for c in leaves]),
                 leaf_polys=[polys[c] for c in leaves],
                 leaf_depth=np.array([depth[c] for c in leaves]),
-                frac=frac, cut_depth=cut_depth, parent_n=parent_n)
+                frac=frac, cut_depth=cut_depth, parent_n=parent_n,
+                point=pts, cell=cells)

@@ -23,13 +23,16 @@ All scripts and results are in \url{https://github.com/av2atgh/scalerich/tree/ma
 
 \begin{figure}[h]
 \includegraphics[width=\textwidth]{figS1.pdf}
-\caption{Recursive cell division with the golden split $r_0=\tau^{-2}$, after $T$ cuts. At each
+\caption{Recursive cell division after $T$ cuts. (a) Golden split $r_0=\tau^{-2}$. At each
 step the largest cell is cut perpendicular to its long side, at a fraction $r_0$ of its length
 measured from one of its two ends. Red: the newest cut; dashed: the other candidate position.
 Top, aligned rule: $r_0$ is always measured from the low end (left or bottom). Bottom,
 anti-aligned rule: $r_0$ is measured from the end whose cut forms fewer X-crossings. The two
 rows agree up to $T=3$; at $T=4$ the aligned cut would continue the cut of $T=2$ across the
-first cut, and the anti-aligned rule takes the other position.}
+first cut, and the anti-aligned rule takes the other position. (b) Scale-rich rule~\cite{both2026}.
+At each step a point is drawn uniformly in the square (dot); the cell that contains it (shaded)
+is cut along a line through the point at a uniformly random angle (red). Cells are therefore
+picked with probability proportional to their area.}
 \label{fig:steps}
 \end{figure}
 
@@ -239,69 +242,159 @@ arithmetic of $r_0$: it fixes where the junctions lie and therefore the Bragg pe
 alignment class comes from the side rule: it fixes which cuts continue each other across a host
 (X-crossings) and how many straight lines span the sample. A property that probes only one of
 these features follows only one label. Diffraction sees only the order. The long-wavelength
-stiffness sees only the alignment (Letter). Scalar transport, such as electrical
-conduction through the ligaments, depends on connectivity alone and follows neither, as the
-dual graph does not. Waves that travel inside the network at wavelengths comparable to the cell
-size are different: the order sets which frequencies propagate, and the side rule sets along
-which paths. The four properties below should therefore depend on both labels. None has been
-computed here; they are predictions. The aligned and anti-aligned golden splits are the
-controlled pair for testing them: both are Meyer sets with Bragg peaks and three cell shapes,
-and they differ only in their straight lines.
+stiffness sees only the alignment (Letter). Waves that travel inside the network at wavelengths
+comparable to the cell size are different: the order sets how the junctions scatter, and the
+side rule can set along which paths, provided the wave distinguishes a straight continuation from
+a turn at a junction. The two properties below should therefore depend on both labels. The elastic
+case is a prediction; the spin-wave case is computed in a minimal model (Fig.~\ref{fig:spin}). Waves that do not distinguish a straight continuation,
+such as the order parameter of superconducting wires and electrons in single-mode wires, are
+treated in the next section. The aligned and anti-aligned golden splits are the controlled pair
+for testing them: both are Meyer sets with Bragg peaks and three cell shapes, and they differ
+only in their straight lines.
 
 \textit{Elastic waves at finite frequency.} The Letter treats the limit of long wavelength,
 where the index is set by the stiffness. At wavelengths of the order of the cell size, Bragg
-scattering opens band gaps. Their positions are drawn from the Bragg peaks of the junction
-set, which lie in the same Fourier module for both side rules; their widths follow the peak
-intensities, which differ (Fig.~2 of the Letter). Inside the bands the side rule takes over.
+scattering can open band gaps. Along a spanning line the junctions form a one-dimensional
+quasiperiodic sequence, and the gap-labelling theorem places every gap at a value of the
+integrated density of states drawn from the module that also gives the Bragg
+peaks~\cite{bellissard1992}, the same module for both side rules. The theorem fixes where gaps
+can open, not which ones open or how wide they are; the peak intensities, which differ between
+the side rules (Fig.~2 of the Letter), suggest different widths, but that requires a
+calculation. Inside the bands the side rule takes over.
 In an aligned division a longitudinal wave can run along a spanning line, a continuous beam
 loaded at its junctions, as in a one-dimensional quasiperiodic chain. In an anti-aligned
 division every straight path ends at a T-junction on a perpendicular beam, where the
-longitudinal wave is converted into flexural motion. The prediction is gaps at related
-frequencies in both, with guided propagation within the bands for the aligned division and
-scattered, possibly localised, propagation for the anti-aligned one. The Bloch-wave
+longitudinal wave is converted into flexural motion. The prediction is guided propagation for
+the aligned division and scattered, possibly localised, propagation for the anti-aligned one;
+the gaps of a single line may be filled in the planar network, as argued for spin waves below. The Bloch-wave
 calculation on the framed periodic tiling used for scale-rich metamaterials
 (\texttt{beyond/blochsweep.py}) gives the dispersion and the plane-wave content of each mode and
 can test this directly.
 
-\textit{Electrons on networks of quantum wires.} Consider electrons hopping between junctions
-along the ligaments (a tight-binding model on the junction network), or waves on the ligaments
-with current conservation at each junction (a quantum graph). The order class sets the
-character of the spectrum: one-dimensional quasiperiodic chains such as the Fibonacci chain
-have Cantor-set spectra and critical states. The side rule sets whether the problem separates.
-The complete aligned division is a product grid, so its Hamiltonian is
-$H=H_X\otimes1+1\otimes H_Y$, with $H_X$ and $H_Y$ the chains of the two one-dimensional
-splittings. Its spectrum is the sum of two one-dimensional spectra, as for the square Fibonacci
-tiling~\cite{evendar2006,evendar2008}. The incomplete grid lines, which hold $5$--$33\%$ of the
-ligament length, break this separation weakly. The anti-aligned division has the same order
-class but no product structure, and its Hamiltonian does not separate. Comparing the two
-isolates the effect of separability at fixed quasiperiodic order on the spectrum and on the
-localisation of states. A magnetic field adds an Aharonov--Bohm phase proportional to the flux
-through each cell. For Pisot splits the cell areas take finitely many values, three for the
-golden split, so the phases are themselves quasiperiodic. In superconducting wire networks
-the field dependence of the transition temperature follows this spectrum, as measured on
-Penrose networks~\cite{behrooz1986}. It would carry both labels, the area spectrum through the
-order and the loop structure through the side rule.
+\textit{Spin waves in magnetic wire networks.} In thin ferromagnetic nanowires the shape
+anisotropy aligns the magnetisation $\mathbf m$, with $|\mathbf m|=1$, with the wire tangent
+$\mathbf t$, and spin waves are small precessions of $\mathbf m$ about $\mathbf t$. Unlike the
+scalar $\psi$ of Eq.~(\ref{eq:qgraph}), $\mathbf m$ is tied to the direction of the wire. In the
+frame of a planar wire, with normal $\mathbf n$, binormal $\mathbf b$ and curvature $\kappa$,
+write $\mathbf m=m_t\mathbf t+m_n\mathbf n+m_b\mathbf b$. The exchange energy
+$A\int|\partial_s\mathbf m|^2ds$ then contains
+\begin{equation}
+\partial_s\mathbf m=\left(\partial_s m_t-\kappa m_n\right)\mathbf t
++\left(\partial_s m_n+\kappa m_t\right)\mathbf n+\partial_s m_b\,\mathbf b .
+\label{eq:frenet}
+\end{equation}
+The term $\kappa m_t$, with $m_t\approx1$, acts on the precessing components $m_n$ and $m_b$ as
+an effective field, so bending a wire changes its spin waves~\cite{gaididei2014,sheka2015}, and
+the deformation of Eq.~(\ref{eq:bend}) is not a symmetry here. A path that turns by an angle
+$\varphi$ at a junction carries a concentrated curvature, $\kappa=\varphi\,\delta(s)$. Along a
+straight continuation, $\varphi=0$, there is no geometric scattering. At a turn by $\pi/2$ the
+in-plane precession $m_n$ of one wire becomes the longitudinal component of the next, which
+carries no spin wave, so every T-junction scatters strongly. Spanning lines are therefore channels
+for spin waves, as they are load paths in elasticity, and the alignment class sets how far spin
+waves propagate. The same turns pin the domain walls that reverse the magnetisation, so reversal
+can run along the spanning lines of an aligned network, whereas in an anti-aligned network it is
+bounded by the lengths of the straight segments.
 
-\textit{Spin waves in magnetic wire networks.} In connected ferromagnetic nanowires the
-magnetisation lies along each wire. Spin waves propagate along the wires and scatter at
-junctions, and magnetisation reversal proceeds by domain walls that move along the wires and
-are pinned at junctions. At an X-crossing a wire continues straight through. At a T-junction
-it ends on a perpendicular wire, where the magnetisation must turn, which scatters spin waves
-and pins domain walls. The magnon bands should inherit the quasiperiodic gaps of the order
-class. The side rule should set the propagation: spanning lines in aligned networks provide
-channels for spin waves and paths for reversal across the whole sample, while in anti-aligned
-networks most straight segments are of the order of the cell size, which confines spin waves
-and breaks reversal into avalanches bounded by the lengths of the straight lines.
+The order class enters through the positions of the junctions, and a minimal model shows how the
+two classes combine. Write the precession as $\mathbf m-\mathbf t=u\,\mathbf n+w\,\mathbf b$ and
+require $\mathbf m$ to be continuous at every junction. The out-of-plane component $w$ takes one
+value at a junction, whatever the angles, and obeys a scalar problem of the type of
+Eqs.~(\ref{eq:qgraph}) and (\ref{eq:kirchhoff}), which is blind to the alignment class. The
+in-plane component $u$ passes a junction only along a straight continuation: at a crossing each
+line keeps its own $u$, and at a T-junction the bar carries $u$ through while the stem ends
+freely. The $u$ problem is therefore a set of independent wires, one per maximal straight line.
+Precession couples $u$ and $w$ on every wire, so a mode extends only where both problems allow it.
+Along one straight line, each junction scatters the mode through $w$, and the line is a
+one-dimensional chain of scatterers. With random spacings the chain localises the mode within a
+length $\xi$ that does not grow with the sample~\cite{ishii1973}; with periodic or quasiperiodic
+spacings the states are extended or critical~\cite{kohmoto1983}. The extent of a mode is then set
+by the shorter of the line length, fixed by the alignment class, and $\xi$, fixed by the order
+class. The largest extent requires both long lines and ordered spacings, and removing either
+shortens it.
 
-\textit{Phonon heat conduction.} Heat in the framework is carried by its elastic waves, so the
-thermal conductivity combines the two previous effects, weighted by the thermal population of
-the modes. At the lowest temperatures only long-wavelength modes are populated, the
-conductivity follows the sound speed, and only the side rule matters, through the index $n$.
-At temperatures where the dominant phonon wavelength is comparable to the cell size, the gaps
-of the order class remove modes, and the straight lines of the side rule decide whether the
-remaining modes travel ballistically, along spanning lines, or diffusively. The temperature
-dependence of the conductivity should therefore cross over from a single-label to a two-label
-regime.
+Spectral gaps are less robust. Along a single quasiperiodic line the gap-labelling theorem places
+every gap at a value of the integrated density of states drawn from the module that also gives
+the Bragg peaks~\cite{bellissard1992}. A planar network, however, contains many lines in two
+orientations, each with a different stretch of the sequence, and $w$ couples them; their bands
+overlap and can fill the gaps of the single line.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{figSW.pdf}
+\caption{Spin waves on magnetic wire networks drawn on the divisions, minimal model of
+Eq.~(\ref{eq:spinE}). (a) Participation fraction $p$ of the modes against the number of cuts
+$T$: median over the $60$ modes nearest each of eight frequencies $4\le\omega\le8$ (wavelengths
+of three to four cell sides), geometric mean over the frequencies. The uniform split and SR are
+means of three realisations; their range is smaller than the symbols. The dotted line has slope
+$-1$, a mode of fixed length. (b) $p$ at each frequency for $T=16000$.}
+\label{fig:spin}
+\end{figure}
+
+We solved this model on the divisions of Fig.~\ref{fig:classes}, with energy
+\begin{equation}
+E=\frac12\sum_{\rm wires}\int\left[u'^2+w'^2+a\,u^2+b\,w^2\right]ds ,
+\label{eq:spinE}
+\end{equation}
+exchange plus shape anisotropy, $b=4a$, lengths in units of the mean cell side, and linear
+finite elements along the wires. The frame is removed, so cuts end freely at the sample edge.
+Precession gives $K_u u=\omega Gw$ and $K_w w=\omega G^{\rm T}u$, with $K_u$, $K_w$ the stiffness
+matrices of the two components and $G$ their overlap. The participation fraction $p$ of a mode is
+the fraction of the total wire length that it occupies.
+
+Figure~\ref{fig:spin}(a) separates the four corners of the classification. In the three
+non-aligned divisions $p\propto T^{-1}$: the modes have a fixed length and are localised. In the
+aligned divisions $p$ decays far more slowly, and in the periodic grid not at all. Within each
+alignment class the order class sets the extent. The anti-aligned golden split has modes two to
+three times longer than the uniform split and SR at the same $T$. Among the aligned divisions, the split
+with $r_0=0.3$ decays steadily, as expected once the sample exceeds $\xi$, whereas the aligned
+golden split stops decaying beyond $T\approx4000$. In the aligned golden split $p$ varies by an
+order of magnitude between nearby frequencies [Fig.~\ref{fig:spin}(b)], as the critical states of
+a quasiperiodic chain do; in the random divisions it does not depend on frequency. No spectral gap
+persists as $T$ grows: the widest gap of the aligned golden split at $T=1000$ is filled at
+$T=2000$. The model reduces the dipolar interaction between wires to shape anisotropy and treats
+each junction as a point where $\mathbf m$ is continuous; within it, both labels set how far spin
+waves travel (\texttt{classes/spinwave.py}, \texttt{spinwave\_avg.py}).
+
+\section{Beyond elasticity: properties set by order}\label{sec:negative}
+
+Two classic wave problems on wire networks are blind to
+the alignment class by construction: the order parameter $\psi$ of a superconducting wire network
+near its transition, and the wavefunction of an electron in a network of single-mode quantum
+wires. Both are scalar waves on wires thinner than the wavelength. On each wire $\psi$ obeys
+\begin{equation}
+-D_s^{2}\psi=k^{2}\psi ,\qquad D_s=\frac{d}{ds}-\frac{2\pi i}{\Phi_0}A_s ,
+\label{eq:qgraph}
+\end{equation}
+with $s$ the arc length, $A_s$ the tangential vector potential and $\Phi_0$ the flux
+quantum~\cite{degennes1981,alexander1983}. At each junction $j$,
+\begin{equation}
+\psi_e(j)=\psi_{e'}(j),\qquad \sum_{e\ni j}D_{s_e}\psi_e\big|_j=0 ,
+\label{eq:kirchhoff}
+\end{equation}
+for all wires $e,e'$ that meet at $j$, with each $s_e$ measured away from $j$: $\psi$ is
+continuous and the current is conserved. No angle appears in Eqs.~(\ref{eq:qgraph}) and
+(\ref{eq:kirchhoff}).
+
+The consequence is seen by deforming the network like a net of strings. Move the junctions and
+bend the wires, keeping the length of every wire and the area of every cell. The arc length on
+each wire is unchanged, so the only change is $A_s\to A'_s$. Let
+\begin{equation}
+\chi(x)=\frac{2\pi}{\Phi_0}\int_{x_0}^{x}\left(A'_s-A_s\right)ds ,
+\label{eq:bend}
+\end{equation}
+integrated along the wires from a reference point $x_0$ to the point $x$. Around every cell the
+integral is $B$ times the change of the cell area, which vanishes, so $\chi$ is the same along
+every path and is single-valued. Then $D'_s(e^{i\chi}\psi)=e^{i\chi}D_s\psi$, and
+$\psi'=e^{i\chi}\psi$ solves Eqs.~(\ref{eq:qgraph}) and (\ref{eq:kirchhoff}) in the deformed
+network with the same $k^2$ and the same $|\psi|^2$. The spectrum, $T_c(B)$ and the localisation
+of every state are therefore functions of the wire lengths, the connectivity and the cell areas
+alone. The deformation can bend every straight line of the network, so the alignment class
+drops out; what survives are the lengths and areas, which the order class sets through $r_0$.
+In elasticity the same deformation is not allowed: a bent bar carries load by bending, not by
+stretching, and the stiffness changes. The only trace of alignment left in
+Eqs.~(\ref{eq:qgraph}) and (\ref{eq:kirchhoff}) is local connectivity: where an aligned division
+has an X-crossing, an anti-aligned one has two T-junctions close together. This can change
+prefactors but not the positions of features set by the cell areas, nor the scaling with $T$.
 
 \input{supp_tables.tex}
 

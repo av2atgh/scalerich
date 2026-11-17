@@ -6,7 +6,7 @@
 %Control: page (0) single
 %Control: year (1) truncated
 %Control: production of eprint (0) enabled
-\begin{thebibliography}{3}%
+\begin{thebibliography}{8}%
 \makeatletter
 \providecommand \@ifxundefined [1]{%
  \@ifx{#1\undefined}
@@ -50,39 +50,93 @@
 \providecommand \BibitemShut  [1]{\csname bibitem#1\endcsname}%
 \let\auto@bib@innerbib\@empty
 %</preamble>
-\bibitem [{\citenamefont {Even-Dar~Mandel}\ and\ \citenamefont
-  {Lifshitz}(2006)}]{evendar2006}%
+\bibitem [{\citenamefont {Both}\ \emph {et~al.}(2026)\citenamefont {Both},
+  \citenamefont {Chen}, \citenamefont {Gao}, \citenamefont {Mooij},
+  \citenamefont {Charara}, \citenamefont {Wadhwa}, \citenamefont {Portela},\
+  and\ \citenamefont {Barab{\'a}si}}]{both2026}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {C.}~\bibnamefont
+  {Both}}, \bibinfo {author} {\bibfnamefont {A.~Y.-J.}\ \bibnamefont {Chen}},
+  \bibinfo {author} {\bibfnamefont {T.-T.}\ \bibnamefont {Gao}}, \bibinfo
+  {author} {\bibfnamefont {N.}~\bibnamefont {Mooij}}, \bibinfo {author}
+  {\bibfnamefont {M.}~\bibnamefont {Charara}}, \bibinfo {author} {\bibfnamefont
+  {J.}~\bibnamefont {Wadhwa}}, \bibinfo {author} {\bibfnamefont {C.~M.}\
+  \bibnamefont {Portela}},\ and\ \bibinfo {author} {\bibfnamefont {A.-L.}\
+  \bibnamefont {Barab{\'a}si}},\ }\bibfield  {title} {\bibinfo {title}
+  {Scale-rich network-based metamaterials},\ }\href
+  {https://doi.org/10.1038/s41586-026-11191-2} {\bibfield  {journal} {\bibinfo
+  {journal} {Nature}\ }\textbf {\bibinfo {volume} {659}},\ \bibinfo {pages}
+  {345} (\bibinfo {year} {2026})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Bellissard}\ \emph {et~al.}(1992)\citenamefont
+  {Bellissard}, \citenamefont {Bovier},\ and\ \citenamefont
+  {Ghez}}]{bellissard1992}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {J.}~\bibnamefont
+  {Bellissard}}, \bibinfo {author} {\bibfnamefont {A.}~\bibnamefont {Bovier}},\
+  and\ \bibinfo {author} {\bibfnamefont {J.-M.}\ \bibnamefont {Ghez}},\
+  }\bibfield  {title} {\bibinfo {title} {Gap labelling theorems for one
+  dimensional discrete {S}chr{\"o}dinger operators},\ }\href
+  {https://doi.org/10.1142/S0129055X92000029} {\bibfield  {journal} {\bibinfo
+  {journal} {Rev. Math. Phys.}\ }\textbf {\bibinfo {volume} {4}},\ \bibinfo
+  {pages} {1} (\bibinfo {year} {1992})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Gaididei}\ \emph {et~al.}(2014)\citenamefont
+  {Gaididei}, \citenamefont {Kravchuk},\ and\ \citenamefont
+  {Sheka}}]{gaididei2014}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {Y.}~\bibnamefont
+  {Gaididei}}, \bibinfo {author} {\bibfnamefont {V.~P.}\ \bibnamefont
+  {Kravchuk}},\ and\ \bibinfo {author} {\bibfnamefont {D.~D.}\ \bibnamefont
+  {Sheka}},\ }\bibfield  {title} {\bibinfo {title} {Curvature effects in thin
+  magnetic shells},\ }\href {https://doi.org/10.1103/PhysRevLett.112.257203}
+  {\bibfield  {journal} {\bibinfo  {journal} {Phys. Rev. Lett.}\ }\textbf
+  {\bibinfo {volume} {112}},\ \bibinfo {pages} {257203} (\bibinfo {year}
+  {2014})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Sheka}\ \emph {et~al.}(2015)\citenamefont {Sheka},
+  \citenamefont {Kravchuk},\ and\ \citenamefont {Gaididei}}]{sheka2015}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {D.~D.}\ \bibnamefont
+  {Sheka}}, \bibinfo {author} {\bibfnamefont {V.~P.}\ \bibnamefont
+  {Kravchuk}},\ and\ \bibinfo {author} {\bibfnamefont {Y.}~\bibnamefont
+  {Gaididei}},\ }\bibfield  {title} {\bibinfo {title} {Curvature effects in
+  statics and dynamics of low dimensional magnets},\ }\href
+  {https://doi.org/10.1088/1751-8113/48/12/125202} {\bibfield  {journal}
+  {\bibinfo  {journal} {J. Phys. A: Math. Theor.}\ }\textbf {\bibinfo {volume}
+  {48}},\ \bibinfo {pages} {125202} (\bibinfo {year} {2015})}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Ishii}(1973)}]{ishii1973}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {K.}~\bibnamefont
+  {Ishii}},\ }\bibfield  {title} {\bibinfo {title} {Localization of eigenstates
+  and transport phenomena in the one-dimensional disordered system},\ }\href
+  {https://doi.org/10.1143/PTPS.53.77} {\bibfield  {journal} {\bibinfo
+  {journal} {Prog. Theor. Phys. Suppl.}\ }\textbf {\bibinfo {volume} {53}},\
+  \bibinfo {pages} {77} (\bibinfo {year} {1973})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Kohmoto}\ \emph {et~al.}(1983)\citenamefont
+  {Kohmoto}, \citenamefont {Kadanoff},\ and\ \citenamefont
+  {Tang}}]{kohmoto1983}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {M.}~\bibnamefont
+  {Kohmoto}}, \bibinfo {author} {\bibfnamefont {L.~P.}\ \bibnamefont
+  {Kadanoff}},\ and\ \bibinfo {author} {\bibfnamefont {C.}~\bibnamefont
+  {Tang}},\ }\bibfield  {title} {\bibinfo {title} {Localization problem in one
+  dimension: Mapping and escape},\ }\href
+  {https://doi.org/10.1103/PhysRevLett.50.1870} {\bibfield  {journal} {\bibinfo
+   {journal} {Phys. Rev. Lett.}\ }\textbf {\bibinfo {volume} {50}},\ \bibinfo
+  {pages} {1870} (\bibinfo {year} {1983})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {de~Gennes}(1981)}]{degennes1981}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {P.~G.}\ \bibnamefont
+  {de~Gennes}},\ }\bibfield  {title} {\bibinfo {title} {Champ critique d'une
+  boucle supraconductrice ramifi{\'e}e},\ }\href@noop {} {\bibfield  {journal}
+  {\bibinfo  {journal} {C. R. Acad. Sci. Paris, S{\'e}r. II}\ }\textbf
+  {\bibinfo {volume} {292}},\ \bibinfo {pages} {279} (\bibinfo {year}
+  {1981})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Alexander}(1983)}]{alexander1983}%
   \BibitemOpen
   \bibfield  {author} {\bibinfo {author} {\bibfnamefont {S.}~\bibnamefont
-  {Even-Dar~Mandel}}\ and\ \bibinfo {author} {\bibfnamefont {R.}~\bibnamefont
-  {Lifshitz}},\ }\bibfield  {title} {\bibinfo {title} {Electronic energy
-  spectra and wave functions on the square {Fibonacci} tiling},\ }\href
-  {https://doi.org/10.1080/14786430500313846} {\bibfield  {journal} {\bibinfo
-  {journal} {Philos. Mag.}\ }\textbf {\bibinfo {volume} {86}},\ \bibinfo
-  {pages} {759} (\bibinfo {year} {2006})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Even-Dar~Mandel}\ and\ \citenamefont
-  {Lifshitz}(2008)}]{evendar2008}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {S.}~\bibnamefont
-  {Even-Dar~Mandel}}\ and\ \bibinfo {author} {\bibfnamefont {R.}~\bibnamefont
-  {Lifshitz}},\ }\bibfield  {title} {\bibinfo {title} {Electronic energy
-  spectra of square and cubic {Fibonacci} quasicrystals},\ }\href
-  {https://doi.org/10.1080/14786430802070805} {\bibfield  {journal} {\bibinfo
-  {journal} {Philos. Mag.}\ }\textbf {\bibinfo {volume} {88}},\ \bibinfo
-  {pages} {2261} (\bibinfo {year} {2008})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Behrooz}\ \emph {et~al.}(1986)\citenamefont
-  {Behrooz}, \citenamefont {Burns}, \citenamefont {Deckman}, \citenamefont
-  {Levine}, \citenamefont {Whitehead},\ and\ \citenamefont
-  {Chaikin}}]{behrooz1986}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {A.}~\bibnamefont
-  {Behrooz}}, \bibinfo {author} {\bibfnamefont {M.~J.}\ \bibnamefont {Burns}},
-  \bibinfo {author} {\bibfnamefont {H.}~\bibnamefont {Deckman}}, \bibinfo
-  {author} {\bibfnamefont {D.}~\bibnamefont {Levine}}, \bibinfo {author}
-  {\bibfnamefont {B.}~\bibnamefont {Whitehead}},\ and\ \bibinfo {author}
-  {\bibfnamefont {P.~M.}\ \bibnamefont {Chaikin}},\ }\bibfield  {title}
-  {\bibinfo {title} {Flux quantization on quasicrystalline networks},\ }\href
-  {https://doi.org/10.1103/PhysRevLett.57.368} {\bibfield  {journal} {\bibinfo
-  {journal} {Phys. Rev. Lett.}\ }\textbf {\bibinfo {volume} {57}},\ \bibinfo
-  {pages} {368} (\bibinfo {year} {1986})}\BibitemShut {NoStop}%
+  {Alexander}},\ }\bibfield  {title} {\bibinfo {title} {Superconductivity of
+  networks. {A} percolation approach to the effects of disorder},\ }\href
+  {https://doi.org/10.1103/PhysRevB.27.1541} {\bibfield  {journal} {\bibinfo
+  {journal} {Phys. Rev. B}\ }\textbf {\bibinfo {volume} {27}},\ \bibinfo
+  {pages} {1541} (\bibinfo {year} {1983})}\BibitemShut {NoStop}%
 \end{thebibliography}%
