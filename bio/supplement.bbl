@@ -1,4 +1,4 @@
-\begin{thebibliography}{5}
+\begin{thebibliography}{6}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -21,6 +21,12 @@ Benjamin Blonder, Sabine Both, Miguel Jodra, Hao Xu, Mark Fricker, Ilaine~S.
   networks.
 \newblock \emph{New Phytologist}, 228:\penalty0 1796--1810, 2020.
 \newblock \doi{10.1111/nph.16830}.
+
+\bibitem[Katifori and Magnasco(2012)]{katifori2012}
+Eleni Katifori and Marcelo~O. Magnasco.
+\newblock Quantifying loopy network architectures.
+\newblock \emph{PLoS ONE}, 7:\penalty0 e37994, 2012.
+\newblock \doi{10.1371/journal.pone.0037994}.
 
 \bibitem[L{\"u}ck et~al.(2010)L{\"u}ck, Sailer, Schmidt, and Walther]{luck2010}
 Sebastian L{\"u}ck, Michaela Sailer, Volker Schmidt, and Paul Walther.

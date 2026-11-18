@@ -26,15 +26,17 @@
 \maketitle
 
 \begin{abstract}
-\noindent Mathematical models of space partitioning recursively split a region with new walls between
-existing walls. In the network of which wall rests on which, contacts per wall are heavy-tailed, a property used to design scale-rich metamaterials.
-Whether living tissues are built this way is unknown: biological divisions run in
-parallel, follow specific rules and are remodelled. Here we show that parallel partitioning
-alters only the largest scales and that all partitioning rules tested share one contact law. In contrast, the clustering of the contact network depends on the rule and on wall
-mechanics. We reconstructed wall contact networks from lineage-tracked time-lapse images of
-\textit{Arabidopsis} meristems. New walls follow the shortest-wall rule and do not cut
-across cell corners. Their junctions relax from T to Y shapes within one cell cycle. A model built on these two measurements predicts, with no parameter adjusted to
-flower meristems, that 19\% of new walls land on two walls already in contact; flower
+\noindent Mathematical models of space partitioning recursively split a region with new walls
+between existing walls. In the network of which wall rests on which, contacts per wall are
+heavy-tailed, a property used to design scale-rich metamaterials. Whether living tissues are
+built this way is unknown: biological divisions run in parallel, follow specific rules and are
+remodelled. Here we show that parallel partitioning alters only the largest scales. All
+partitioning rules share one contact law; in contrast, the clustering of the contact network
+depends on the rule and on wall mechanics. We reconstructed wall contact networks from
+lineage-tracked time-lapse images of \textit{Arabidopsis} meristems. New walls follow the
+shortest-wall rule and do not cut across cell corners. Their junctions relax from T to Y
+shapes within one cell cycle. In a model built on these two measurements, with no parameter
+adjusted to flower meristems, 19\% of new walls land on two walls already in contact; flower
 meristems give $19\pm6\%$, against $0.2\%$ without relaxation. Leaf veins keep the thickness
 hierarchy of recursive partitioning; the actin network of cultured cells is a crossing mesh.
 We conclude that plant tissues are consistent with recursive space partitioning.
@@ -47,161 +49,190 @@ vertex model; metamaterials
 
 \section{Introduction}
 
-Many planar structures form by recursive space partitioning: a region is cut by a wall, each part is
-cut again, and every new wall runs until it meets a wall that is already there. Drying
-mud and glazes crack this way~\cite{bohn2005,bohn2005b,bohn2005prl}, and the resulting random
+Recursive space partitioning splits a region with a wall, splits each part again, and
+continues; every new wall extends until it meets an existing wall. Crack patterns in drying
+mud and glazes form this way~\cite{bohn2005,bohn2005b,bohn2005prl}, and the resulting random
 tessellations are a classical subject of stochastic geometry and fracture
 physics~\cite{gilbert1967,nagel2005,cowan2010,andresen2013}. In the mathematical literature
 the process is also known as recursive or iterative cell division~\cite{cowan2010}, where a
-cell is a region of the partition rather than a biological cell. Because each wall ends on older walls, the pattern carries its own history. Old walls are
-long and are struck by many later walls; young walls are short and are struck by few.
-This history is captured by the \emph{contact network} (figure~\ref{fig:schematic}): each
-wall is a node, and a link joins a wall to each of the two walls on which its ends rest.
-In the simplest version, where the domain to split is chosen in proportion to its area and
-the cut has a random position and angle, the fraction of walls with $k$ contacts decays as
-$p_k\simeq12/[k(k+1)(k+2)]\sim k^{-3}$~\cite{vazquez2026sr}. Built as ligament
-networks with older walls thicker, these structures are the scale-rich metamaterials, in
-which ligament length, thickness and connectivity span orders of magnitude~\cite{both2026}.
+cell is a region of the partition rather than a biological cell. Because each wall ends on
+older walls, the partition is a record of its own history: old walls are long and receive many
+later walls, young walls are short and receive few. The \emph{contact network}
+(figure~\ref{fig:schematic}) encodes this history: each wall is a node, and a link joins a
+wall to each of the two walls on which its ends rest. For the simplest rule, in which the
+domain to split is chosen in proportion to its area and the cut has a random position and
+angle, the fraction of walls with $k$ contacts is $p_k\simeq12/[k(k+1)(k+2)]\sim
+k^{-3}$~\cite{vazquez2026sr}, and the same tail holds for other partitioning
+rules~\cite{vazquez2026div}. Ligament networks with this architecture, with older walls
+thicker, are the scale-rich metamaterials, in which ligament length, thickness and
+connectivity span orders of magnitude~\cite{both2026}.
 
-Living matter also builds planar partitions by insertion. A plant cell divides by
-building a new wall from the division site outwards until it fuses with the walls of the
-mother cell~\cite{besson2011}; walls are glued to their neighbours and do not slide, so the
-partition is never rearranged. Leaf veins form a hierarchy in which thinner, later veins end
-on thicker, earlier ones~\cite{couder2002,bohn2002}. Actin bundles in spread animal cells
-nucleate, elongate and terminate on other bundles~\cite{tojkander2015,vignaud2021}. None of
-these processes is the idealised sequential partitioning. Many cells divide at the same time,
-new walls grow at a finite speed, the division plane follows rules such as Errera's
-shortest wall through the cell centre~\cite{errera1888,besson2011}, junctions are pulled
-by wall tension, and some materials turn over.
+Planar partitions also form by insertion in living matter. A dividing plant cell forms a new
+wall from the division site outwards until the wall fuses with the walls of the mother
+cell~\cite{besson2011}; plant walls are bonded to their neighbours, so cells do not exchange
+neighbours. Leaf veins form a hierarchy in which thinner, later veins end on thicker, earlier
+ones~\cite{couder2002,bohn2002}. Actin bundles in spread animal cells nucleate, elongate and
+terminate on other bundles~\cite{tojkander2015,vignaud2021}. These processes depart from
+sequential partitioning in four respects: many cells divide at the same time while new walls
+grow at a finite speed; the division plane follows specific rules, such as Errera's shortest
+wall through the cell centre~\cite{errera1888,besson2011}; wall tension moves junctions after
+division; and some materials turn over.
 
-This raises two questions: which properties of recursive-partitioning networks survive these
-departures, and do living partitions belong to the class? We first establish by simulation
-what is robust. Parallel partitioning changes only the largest scales; every partitioning rule
-tested gives the $k^{-3}$ contact law; uniform turnover truncates it. The contact law
-therefore cannot tell rules apart, but the clustering of the contact network can, because it
-depends on whether new walls connect walls that already touch. We then reconstruct wall
-contact networks from lineage-tracked time-lapse images of \textit{Arabidopsis} shoot and
-flower meristems~\cite{willis2016,refahi2021}, where every wall can be dated. Two measured
-ingredients, the shortest-wall rule and the slow relaxation of new junctions from a T to a
-Y shape, define a plant division model. Fitted on shoot meristems, the model predicts the
-clustering of flower-meristem contact networks with no further adjustment. Leaf veins and
-actin networks, analysed with the same tools, mark how far the class extends.
+Two questions follow: which properties of recursive-partitioning networks persist under these
+departures, and whether living partitions belong to the class. The second question requires
+data in which every wall is dated and its contacts are identified, as in lineage-tracked
+time-lapse images of plant meristems~\cite{willis2016,refahi2021}. To our knowledge, the
+contact network of a living tissue has not been reconstructed or compared with partitioning
+models.
+
+This work contributes four results. (i) Parallel partitioning alters only the first
+$n^*\sim\Pi^{2/3}$ walls, where $\Pi$ measures nucleation against growth, and uniform turnover
+truncates the contact law unless highly connected walls are stabilised. Because the contact
+law is shared by all partitioning rules, the clustering of the contact network, which differs
+between rules, is the observable that distinguishes them. (ii) In contact networks
+reconstructed from lineage in \textit{Arabidopsis} shoot meristems, no division cuts a cell
+corner, as Errera's rule requires, and new junctions relax from T to Y shapes over about one
+cell cycle; these two measurements define a plant division model with tension maturation.
+(iii) Fitted on shoot meristems, the model gives the clustering of flower-meristem contact
+networks with no further adjustment, whereas the same model without junction relaxation
+underestimates it a hundredfold: the clustering of plant walls is set by junction mechanics
+after division, not by the division rule. (iv) Leaf veins carry the thickness hierarchy of
+recursive partitioning, but their contact law is not identifiable from the available samples,
+and the ventral actin network of cultured cells is a crossing mesh. Together, the results
+identify plant tissues as a living instance of recursive space partitioning and establish
+clustering as the quantity that links the network topology of a tissue to its wall mechanics.
 
 \begin{figure}[t]
 \centering
 \includegraphics[width=\textwidth]{figs/fig1.pdf}
 \caption{Recursive space partitioning and its contact network. (a) A square partitioned
-recursively: a domain is chosen with probability proportional to its area, a straight cut
-through a random point at a random angle runs to the domain boundary; older walls are drawn thicker.
-(b) After many splits each wall becomes a node, and each end of a wall that rests on
-another wall becomes a link; node size grows with the number of contacts $k$. (c) A plant
-cell divides along the shortest wall through its centre, which ends on two non-adjacent
-sides; a random cut can instead join two adjacent sides and cut a corner (dashed).
-(d) A new plant wall meets its host wall at a straight T junction ($\theta=180^\circ$); as
-the tension of the new wall matures, the junction relaxes toward a Y.}
+recursively: a domain is chosen with probability proportional to its area, and a straight cut
+through a random point at a random angle extends to the domain boundary; older walls are drawn
+thicker. (b) After many splits each wall is a node, and each end of a wall that rests on
+another wall is a link; node size increases with the number of contacts $k$. (c) A plant cell
+divides along the shortest wall through its centre, which ends on two non-adjacent sides; a
+random cut can instead join two adjacent sides and cut a corner (dashed). (d) A new plant wall
+meets its host wall at a straight T junction ($\theta=180^\circ$); as the tension of the new
+wall matures, the junction relaxes toward a Y.}
 \label{fig:schematic}
 \end{figure}
 
-\section{What survives parallel partitioning, other rules and turnover}
+\section{What persists under parallel partitioning, other rules and turnover}
 \label{sec:theory}
 
-\subsection{Contact law}
+This section establishes which properties of the contact network persist when partitioning
+departs from the sequential model. Section~\ref{sec:law} summarises known results;
+sections~\ref{sec:parallel}--\ref{sec:turnover} are new.
 
-In recursive partitioning a wall with $k$ contacts borders about $k$ domains, and a new wall
-lands on it when one of these domains is split. The rate at which a wall gains contacts is
-therefore linear in $k$, with an attachment kernel $(a+bk)/t$ at time $t$ (number of
-walls) whose slope $b=2/\langle n\rangle=1/2$ is set by the mean number of sides
-$\langle n\rangle=4$ of a domain bounded by straight walls~\cite{vazquez2026sr,vazquezbook}.
-The rate equation for $p_k$ then gives the $k^{-3}$ tail~\cite{krapivsky2000,vazquezbook}.
-Clustering is set separately: a new wall closes a triangle in the contact network when its
-two hosts already touch, which, for straight walls, is the case when it cuts a corner of
-its domain. The mean
-clustering coefficient of the contact network, $\langle C\rangle$, and its dependence on
-degree, $C(k)\sim1/k$, therefore measure how often new walls join walls already in
-contact~\cite{vazquez2026sr}.
+\subsection{Contact law and clustering}
+\label{sec:law}
+
+In recursive partitioning a wall with $k$ contacts borders about $k$ domains and receives a
+new wall when one of these domains is split. The rate at which a wall gains contacts is
+therefore linear in $k$, with attachment kernel $(a+bk)/t$ at time $t$ (number of walls) and
+slope $b=2/\langle n\rangle=1/2$, where $\langle n\rangle=4$ is the mean number of corners of
+a domain bounded by straight walls~\cite{vazquez2026sr,vazquezbook}. The rate equation for
+$p_k$ then gives the $k^{-3}$ tail~\cite{krapivsky2000,vazquezbook}. Because $b$ depends only on
+$\langle n\rangle$, the tail is the same for every partitioning rule
+tested~\cite{vazquez2026div}. Clustering has a separate origin: a new wall closes a triangle in
+the contact network when its two hosts already touch, which, for straight walls, occurs when
+the wall cuts a corner of its domain. The mean clustering coefficient $\langle C\rangle$ and
+its degree dependence $C(k)\sim1/k$ therefore measure the frequency of such
+events~\cite{vazquez2026sr}.
 
 \subsection{Parallel partitioning}
+\label{sec:parallel}
 
-In tissues many cells divide at once. We model this by nucleating walls as a Poisson process
-of rate $R$ per unit area in a square of side $L$, each wall growing in both directions at
-speed $v$ until each tip meets an existing wall (Methods). The control parameter is
+In tissues many cells divide at once. We model parallel partitioning by nucleating walls as a
+Poisson process of rate $R$ per unit area in a square of side $L$; each wall grows in both
+directions at speed $v$ until each tip meets an existing wall (Methods). The control parameter
+is
 \begin{equation}
 \Pi=\frac{RL^3}{v},
 \end{equation}
-the number of nucleations while a tip crosses the whole square. $\Pi\to0$ is sequential
-recursive partitioning, and $\Pi\to\infty$ is the Gilbert tessellation~\cite{gilbert1967}, in
-which all walls start before any stops. When $n$ walls are present, a domain has size
-$\ell\simeq n^{-1/2}L$ and is crossed in time $\ell/v$, during which $R\ell^3/v=\Pi
-n^{-3/2}$ new walls start inside it. Partitioning is effectively sequential once this number
-is below one, that is, for
+the number of nucleations during the time a tip takes to cross the square. The limit $\Pi\to0$
+is sequential recursive partitioning, and $\Pi\to\infty$ is the Gilbert
+tessellation~\cite{gilbert1967}, in which all walls start before any stops. With $n$ walls
+present, a domain has size $\ell\simeq n^{-1/2}L$ and a tip crosses it in time $\ell/v$, during
+which $R\ell^3/v=\Pi n^{-3/2}$ new walls start inside it. Partitioning is effectively
+sequential when this number is below one, that is, for
 \begin{equation}
 n>n^*\sim\Pi^{2/3},\qquad \ell<\ell^*=(v/R)^{1/3}.
 \end{equation}
-Parallel growth therefore alters only the first $n^*$ walls, the top of the hierarchy, and
-leaves all scales below $\ell^*$ as in sequential partitioning.
+Parallel growth therefore alters only the first $n^*$ walls, the top of the hierarchy; all
+scales below $\ell^*$ are those of sequential partitioning.
 
 Simulations with $2\times10^4$ walls confirm this (figure~\ref{fig:model}a,b). Up to
-$\Pi=10^3$ the contact exponent is $\gamma\simeq2.85$ and $\langle C\rangle=0.38$, as for
-sequential partitioning. Only at $\Pi=10^6$, where $n^*$ reaches the system size, does the
-network become Gilbert-like, with $\gamma>4$ and at most 16 contacts per wall. The birth
-rank at which walls recover half of their sequential mean degree follows
-$n^*\simeq0.04\,\Pi^{2/3}$ (figure~\ref{fig:model}b; electronic supplementary material,
-figure~S1).
+$\Pi=10^3$, $\gamma\simeq2.85$ and $\langle C\rangle=0.38$, as in sequential partitioning. At
+$\Pi=10^6$, where $n^*$ reaches the system size, the network is Gilbert-like, with $\gamma>4$
+and at most 16 contacts per wall. The birth rank at which walls reach half of their sequential
+mean number of contacts follows $n^*\simeq0.04\,\Pi^{2/3}$ (figure~\ref{fig:model}b; electronic
+supplementary material, figure~S1). Simultaneous divisions in a tissue therefore leave the
+contact law intact at all scales below $\ell^*$.
 
 \subsection{Partitioning rules}
+\label{sec:rules}
 
-A partitioning rule fixes which domain is split, where the cut passes and at which
-angle~\cite{cowan2010}. We compared four rules: random cuts in domains chosen by area (the
-standard rule), random cuts in domains chosen uniformly, random-angle cuts through the domain
-centroid, and balanced cuts through the centroid perpendicular to the long axis, an
-Errera-like rule~\cite{errera1888}. All four give $\gamma=2.9$--$3.1$, as the rate
-equation requires, because the slope $b$ depends on the mean number of sides and not on how
-the domain or the cut is chosen. The rules differ in clustering, with $\langle C\rangle$ from
-$0.45$ for uniform choice to $0.06$ for balanced cuts (electronic supplementary material,
-table~S1): a balanced cut through the centre rarely joins two adjacent sides. The contact
-law is thus a property of the whole class, and clustering identifies the rule.
+A partitioning rule specifies which domain is split, where the cut passes and at which
+angle~\cite{cowan2010}. We compared four rules: random cuts in domains chosen by area (the rule
+of figure~\ref{fig:schematic}a), random cuts in domains chosen uniformly, random-angle cuts
+through the domain centroid, and balanced cuts through the centroid perpendicular to the long
+axis, an Errera-like rule~\cite{errera1888}. All four give $\gamma=2.9$--$3.1$, consistent
+with ref.~\cite{vazquez2026div}. Their clustering differs by almost an order of magnitude, from
+$\langle C\rangle=0.45$ for uniform choice to $0.06$ for balanced cuts (electronic
+supplementary material, table~S1), because a balanced cut through the centre rarely joins two
+adjacent sides. The contact law is a property of the whole class; clustering distinguishes the
+rules.
 
 \subsection{Turnover}
+\label{sec:turnover}
 
-Cytoskeletal networks turn over within minutes~\cite{tojkander2015}. When each wall is
-removed at a constant rate and the tips that rested on it resume growing, the network
-reaches a steady state, and the tail of $p_k$ is cut off at about $20$--$30$ contacts
-(figure~\ref{fig:model}c). The cutoff barely depends on network size, because a wall
-survives on average for as many nucleations as the steady-state number of walls. When
-removal is suppressed for walls with many contacts, at a rate proportional to $(2/k)^s$,
-the tail returns close to that of recursive partitioning without turnover
-(figure~\ref{fig:model}c; table~S2). A turning-over network keeps the class only if
-highly connected elements are stabilised.
+Cytoskeletal networks turn over within minutes~\cite{tojkander2015}. With each wall removed at
+a constant rate, and the tips that rested on it growing again, the network reaches a steady
+state in which the tail of $p_k$ ends at about $20$--$30$ contacts (figure~\ref{fig:model}c).
+The cutoff depends only weakly on network size, because a wall persists on average for as many
+nucleations as there are walls in the steady state. When the removal rate decreases with the
+number of contacts, as $(2/k)^s$, the tail approaches that of recursive partitioning without
+turnover (figure~\ref{fig:model}c; electronic supplementary material, table~S2). A network
+with turnover remains in the class only if highly connected elements are stabilised.
 
 \begin{figure}[t]
 \centering
 \includegraphics[width=\textwidth]{figs/fig2.pdf}
 \caption{Parallel partitioning and turnover. (a) Contact exponent $\gamma$ (fit for
-$k\geq10$, circles, left axis) and mean clustering $\langle C\rangle$ (squares, right
-axis) against $\Pi=RL^3/v$; $2\times10^4$ walls, three realisations. (b) Crossover rank $n^*$, the birth rank at which walls
-reach half of the mean number of contacts they have in sequential partitioning
-($\Pi\to0$), against $\Pi$; the line is $0.04\,\Pi^{2/3}$. (c) Contact distribution in the steady state with turnover
-($\Pi=0.01$, about 1500 walls): removal at a uniform rate ($s=0$) and at a rate
-$\propto(2/k)^s$ ($s=1,2$), compared with recursive partitioning without turnover at the same
-size.}
+$k\geq10$, circles, left axis) and mean clustering $\langle C\rangle$ (squares, right axis)
+against $\Pi=RL^3/v$; $2\times10^4$ walls, three realisations. (b) Crossover rank $n^*$, the
+birth rank at which walls reach half of the mean number of contacts they have in sequential
+partitioning ($\Pi\to0$), against $\Pi$; the line is $0.04\,\Pi^{2/3}$. (c) Contact
+distribution in the steady state with turnover ($\Pi=0.01$, about 1500 walls): removal at a
+uniform rate ($s=0$) and at a rate $\propto(2/k)^s$ ($s=1,2$), compared with recursive
+partitioning without turnover at the same size.}
 \label{fig:model}
 \end{figure}
 
 \section{Plant cell walls}
 \label{sec:plant}
 
+Plant tissues meet two conditions of the model exactly: walls do not slide, and lineage gives
+the birth time of every wall. This section reconstructs their contact networks
+(section~\ref{sec:lines}), measures the division rule and the junction mechanics
+(section~\ref{sec:sam}), combines both in a model (section~\ref{sec:plantmodel}) and tests the
+model on independent data (section~\ref{sec:refahi}).
+
 \subsection{Wall lines from lineage}
+\label{sec:lines}
 
 Willis \textit{et al.}~\cite{willis2016} imaged six \textit{Arabidopsis} shoot apical
-meristems every $4$~h for $76$--$84$~h, with every cell of the outer (L1) layer segmented
-and tracked. We projected the L1 layer to a planar label image at each time point and
-extracted walls and three-way junctions (Methods). Lineage gives every wall an identity
-through time: the wall between cells $a$ and $b$ belongs to the same \emph{wall line} as
-the wall between their mothers, unless $a$ and $b$ are sisters, in which case it is a new
-division wall. A wall line is thus the wall created by one division, followed as later
-divisions of its neighbours split it into pieces, and the contact network links each new
-line to the two lines on which it ends (its hosts). Figure~\ref{fig:map} shows the lines
-born during one film: new walls appear across the whole dome, each ending on older walls.
+meristems every $4$~h for $76$--$84$~h and segmented and tracked every cell of the outer (L1)
+layer. From these data we built contact networks as follows. The L1 layer is projected to a
+planar label image at each time point, from which walls and three-way junctions are extracted
+(Methods). Lineage defines an identity for each wall through time: the wall between cells $a$
+and $b$ belongs to the same \emph{wall line} as the wall between their mothers, unless $a$ and
+$b$ are sisters, in which case it is a new division wall. A wall line is thus the wall formed at
+one division, followed through time as divisions of neighbouring cells split it into pieces.
+The contact network links each new line to the two lines on which it ends, its hosts.
+Figure~\ref{fig:map} shows the lines born during one film: new walls form across the whole
+dome, each ending on older walls.
 
 \begin{figure}[t]
 \centering
@@ -213,103 +244,110 @@ the start or have an incomplete lineage.}
 \label{fig:map}
 \end{figure}
 
-\subsection{Shoot meristems: rule and junction mechanics}
+\subsection{Shoot meristems: division rule and junction mechanics}
+\label{sec:sam}
 
-\paragraph{No corner cuts.} A new wall cuts a corner when its two hosts are adjacent sides
-of the mother cell. This happens in none of 672 divisions with both hosts identified
-($95\%$ upper bound $0.45\%$), whereas random cuts give $21\%$ on the same definition. The
-absence is the signature of Errera's rule: the shortest wall through the centre of a cell
-never joins two adjacent sides. A topological consequence follows. Plant cells do not
-exchange neighbours, so a division of an $n$-sided cell gives daughters with $n_1+n_2=n+4$
-sides, and without corner cuts no cell ever has three sides. The meristems obey both
-relations: three-sided cells make up $0.3\%$ of 12182 cell observations, and $n_1+n_2-n$
-has mode $4$ in every plant.
+\paragraph{No corner cuts.} Under Errera's rule the new wall follows the shortest path through
+the cell centre~\cite{errera1888,besson2011}. Such a wall never joins two adjacent sides, so the
+rule implies that no division cuts a corner. A new wall cuts a corner when its two hosts are
+adjacent sides of the mother cell. In the shoot meristems this occurs in none of 672 divisions
+with both hosts identified ($95\%$ upper bound $0.45\%$), against $21\%$ for random cuts on the
+same definition. Two topological consequences follow. Because plant cells do not exchange
+neighbours, the division of an $n$-sided cell gives daughters with $n_1+n_2=n+4$ sides, and
+without corner cuts no cell has three sides. Both hold: three-sided cells make up $0.3\%$ of
+12182 cell observations, and $n_1+n_2-n$ has mode $4$ in every plant.
 
 \paragraph{Junctions relax.} At a new junction the angle $\theta$ between the two pieces of
-the host wall is $180^\circ$ for a straight T. At the first observation after division
-$\theta$ has median $143^\circ$, and it decreases to $128^\circ$ at $36$--$40$~h in all six
-plants (figure~\ref{fig:sam}a). The fraction of cells dividing per $4$~h gives a cell cycle
-$T_{cc}\simeq36$~h. Straight wall lines therefore bend into Y-shaped junctions within about
-one cell cycle.
+the host wall is $180^\circ$ for a straight T. At the first observation after division $\theta$
+has median $143^\circ$, and it decreases to $128^\circ$ at $36$--$40$~h in all six plants
+(figure~\ref{fig:sam}a). The fraction of cells dividing per $4$~h gives a cell cycle
+$T_{cc}\simeq36$~h. Wall lines therefore bend at their junctions into Y shapes within about one
+cell cycle. The time course of this relaxation is the second ingredient of the model below.
 
-\paragraph{The contact law cannot be measured here.} In $80$~h a cell divides about twice,
-and the largest observed number of contacts of a line is $6$.
+\paragraph{The contact law is not measurable in these films.} In $80$~h a cell divides about
+twice, and the largest observed number of contacts of a line is $6$.
 
 \subsection{A plant division model}
+\label{sec:plantmodel}
 
-The two measurements define a model with no free rule. Cells are polygons sharing vertices.
-A dividing cell, chosen with a probability that rises steeply with area, is cut by the
-shortest wall through its centroid (Errera's rule). Mechanics is quasi-static: vertices
-minimise a vertex-model energy~\cite{farhadifar2007} with wall tensions and cell area
-elasticity, in which a new wall starts at a fraction $t_0$ of the mature tension and
-matures over a time $\tau$ (Methods). At a fresh junction, force balance gives
-$\theta=2\arccos(t_0/2)$. Every wall keeps the identity of the division that created it,
-so the contact network is exact.
+Plant division models with Errera's rule have been used to study the side distribution
+$P(n)$~\cite{gibson2006,sahlin2010}. Here a model of this type is extended with tension
+maturation and analysed through its contact network. Cells are polygons sharing vertices. A
+dividing cell, chosen with a probability that increases steeply with area, is cut by the
+shortest wall through its centroid. Mechanics is quasi-static: vertex positions minimise a
+vertex-model energy~\cite{farhadifar2007} with wall tensions and cell-area elasticity, in which
+a new wall starts at a fraction $t_0$ of the mature tension and matures over a time $\tau$
+(Methods). At a new junction, force balance gives $\theta=2\arccos(t_0/2)$. Each wall keeps the
+identity of the division that formed it, so the contact network is exact.
 
-Fitting $t_0$ and $\tau$ to the shoot-meristem angle--age curve gives a shallow valley, from
-$t_0=0.6$, $\tau=24$~h to $t_0=0.75$, $\tau=48$~h, with root-mean-square deviation below
-$2^\circ$ (figure~\ref{fig:sam}a; table~S3). A new wall starts at about two thirds of the
-mature tension and matures over about one cell cycle.
+Fitting $t_0$ and $\tau$ to the shoot-meristem angle--age curve gives a shallow valley from
+$(t_0,\tau)=(0.6,24~\mathrm{h})$ to $(0.75,48~\mathrm{h})$, with root-mean-square deviation
+below $2^\circ$ (figure~\ref{fig:sam}a; electronic supplementary material, table~S3). A new
+wall starts at about two thirds of the mature tension and matures over about one cell cycle.
 
-The model then makes three statements (table~\ref{tab:summary}). First, corner cuts and
-three-sided cells are absent exactly, as observed. Second, the contact law is that of the
-class: $\gamma=2.8$--$3.0$ in every variant. Third, clustering depends on mechanics: without
-junction relaxation $\langle C\rangle=0.001$, because straight lines almost never let a new
-wall reach two lines that touch; with relaxation $\langle C\rangle=0.20$--$0.23$ and
-$C(k)\sim1/k$. Relaxation bends lines at their junctions, so the two sides cut by a new wall
-can belong to lines that already meet elsewhere. The side distribution $P(n)$ is reproduced
-by the division geometry alone (total-variation distance $0.03$ from the data), whereas the
-equal-tension relaxation that fits the angles makes cells too hexagonal (distance $0.11$;
-figure~\ref{fig:sam}b). Division rules are known to shape $P(n)$~\cite{gibson2006,sahlin2010}; the
-model captures junction relaxation but not every aspect of cell shape.
+The model has three consequences (table~\ref{tab:summary}). First, corner cuts and three-sided
+cells are absent, as observed. Second, the contact law is that of the class, with
+$\gamma=2.8$--$3.0$ in every variant. Third, clustering depends on mechanics. Without junction
+relaxation, $\langle C\rangle=0.001$: with straight lines, a new wall almost never reaches two
+lines that touch. With relaxation, $\langle C\rangle=0.20$--$0.23$ and $C(k)\sim1/k$, because
+lines bend at their junctions and the two sides cut by a new wall can belong to lines that
+already meet elsewhere. Clustering therefore distinguishes a tissue whose junctions relax from
+one whose junctions remain straight, even when both follow the same division rule.
+
+The side distribution $P(n)$ follows from the division geometry alone (total-variation
+distance $0.03$ from the data), whereas the equal-tension relaxation that fits the angles makes
+cells too hexagonal (distance $0.11$; figure~\ref{fig:sam}b). The model reproduces junction
+relaxation but not every aspect of cell shape.
 
 \begin{figure}[t]
 \centering
 \includegraphics[width=\textwidth]{figs/fig4.pdf}
-\caption{Meristem walls against the plant division model. (a) Junction angle $\theta$ of
-new walls against wall age. Shoot meristems: medians (dots) and quartiles (band) over six
-plants; flower meristems: medians over six films (diamonds). Lines: model with the tension
-maturation $(t_0,\tau)$ fitted on the shoot meristems ($T_{cc}=36$~h), and the same model
-at $t_0=0.7$, $\tau=36$~h with the flower cell cycle $T_{cc}=31$~h (dotted). (b) Fraction
-of cells with $n$ sides: shoot meristems (12182 cell observations), Errera division without
-relaxation, Errera division with tension maturation ($t_0=0.7$, $\tau=36$~h), and random
-cuts; model networks of 2000 cells, two realisations.}
+\caption{Meristem walls against the plant division model. (a) Junction angle $\theta$ of new
+walls against wall age. Shoot meristems: medians (dots) and quartiles (band) over six plants;
+flower meristems: medians over six films (diamonds). Lines: model with the tension maturation
+$(t_0,\tau)$ fitted on the shoot meristems ($T_{cc}=36$~h), and the same model at $t_0=0.7$,
+$\tau=36$~h with the flower cell cycle $T_{cc}=31$~h (dotted). (b) Fraction of cells with $n$
+sides: shoot meristems (12182 cell observations), Errera division without relaxation, Errera
+division with tension maturation ($t_0=0.7$, $\tau=36$~h), and random cuts; model networks of
+2000 cells, two realisations.}
 \label{fig:sam}
 \end{figure}
 
 \subsection{Flower meristems: a test without free parameters}
+\label{sec:refahi}
 
-Refahi \textit{et al.}~\cite{refahi2021} tracked all cells of wild-type flower meristems
-for up to $157$~h. We analysed the L1 layer of six films with the same wall-line
-reconstruction, giving 3008 new walls with identified hosts. The films are long enough to
-date the hosts of new walls, which the shoot films are not. The cell cycle measured from the
-number of daughters per interval is $T_{cc}=31$~h.
+The shoot films are too short to date the hosts of most new walls: only four divisions
+qualify. Refahi \textit{et al.}~\cite{refahi2021} tracked all cells of wild-type flower
+meristems for up to $157$~h. We applied the same wall-line reconstruction to the L1 layer of
+six films, which gives 3008 new walls with identified hosts and, from the number of daughters
+per interval, a cell cycle $T_{cc}=31$~h.
 
-The test statistic is the \emph{linked-host fraction} $\phi$, the fraction of new walls
-whose two hosts already touch in the contact network. It measures directly how often a
-division closes a triangle, the event that creates clustering. Deciding whether two hosts
-touch requires that both were born during the film, before the new wall, and that their own
-hosts are known; 47 divisions meet these conditions. They give $\phi=0.19\pm0.06$ (9 of
-47). The plant model with the tension maturation fitted on the shoot meristems, the flower
-cell cycle and the same observation conditions predicts $\phi=0.19$; the same model without
-junction relaxation predicts $\phi=0.002$, under which 9 or more linked hosts in 47 divisions has
-probability below $10^{-15}$. No parameter is adjusted to the flower data.
+The test statistic is the \emph{linked-host fraction} $\phi$, the fraction of new walls whose
+two hosts already touch in the contact network, that is, the fraction of divisions that close a
+triangle. Deciding whether two hosts touch requires that both were born during the film, before
+the new wall, and that their own hosts are known. Of the 47 divisions that meet these
+conditions, 9 have linked hosts: $\phi=0.19\pm0.06$. The model, with the tension maturation
+fitted on shoot meristems, the flower cell cycle and the same observation conditions, gives
+$\phi=0.19$. Without junction relaxation it gives $\phi=0.002$, under which 9 or more linked
+hosts in 47 divisions has probability below $10^{-15}$. No parameter is adjusted to the flower
+data. A model built from the division rule and the junction mechanics of one organ thus gives
+the clustering of the contact network of another.
 
 The other flower observables agree (table~\ref{tab:summary}). Corner cuts occur in 4 of 252
-decidable divisions ($1.6\%$). The junction angle decreases from $136^\circ$ in the first
-$8$~h to $125^\circ$ after two days, within $4^\circ$ of the model up to $48$~h; later the
-data level off near $125^\circ$ while the model approaches the equal-tension value $120^\circ$
-(figure~\ref{fig:sam}a). The mean number of contacts of a line grows with its age as in the
-model up to $70$~h, beyond which lines are censored by the edge of the tracked region
-(table~S5). The largest observed number of contacts is $12$, so the contact law itself is
-still out of reach.
+decidable divisions ($1.6\%$). The junction angle decreases from $136^\circ$ in the first $8$~h
+to $125^\circ$ after two days, within $4^\circ$ of the model up to $48$~h; later the data level
+off near $125^\circ$, while the model approaches the equal-tension value $120^\circ$
+(figure~\ref{fig:sam}a). The mean number of contacts of a line increases with its age as in the
+model up to $70$~h; older lines are censored by the edge of the tracked region (electronic
+supplementary material, table~S5). The largest observed number of contacts is $12$, so the
+contact law remains unmeasured.
 
 \begin{table}[t]
 \centering
 \caption{Plant meristem walls against recursive-partitioning models. Model networks: Errera
-division with and without tension maturation ($t_0=0.7$, $\tau=36$~h) and random cuts;
-$\phi$ is computed under the flower-meristem observation conditions (Methods). Dashes:
-not measurable or not applicable.}
+division with and without tension maturation ($t_0=0.7$, $\tau=36$~h) and random cuts; $\phi$
+is computed under the flower-meristem observation conditions (Methods). Dashes: not measurable
+or not applicable.}
 \label{tab:summary}
 \footnotesize
 \begin{tabular}{@{}lcccc@{}}
@@ -330,43 +368,43 @@ clustering $\langle C\rangle$ & -- & $0.20$--$0.23$ & $0.001$ & $0.36$\\
 \section{Leaf veins}
 \label{sec:venation}
 
-LeafVeinCNN~\cite{xu2021} provides vein graphs with widths for cleared-leaf samples of about
-$1$~cm$^2$; we used the 44 samples of one plot~\cite{blonder2020}, from 25 species (283380 vein
-segments). Three properties
-of recursive partitioning were tested (figure~\ref{fig:venation}).
+In leaf venation, thinner and later veins end on thicker and earlier
+ones~\cite{couder2002,bohn2002}. The LeafVeinCNN dataset~\cite{xu2021} contains vein graphs with
+widths for cleared-leaf samples of about $1$~cm$^2$; we used the 44 samples of one
+plot~\cite{blonder2020}, from 25 species (283380 vein segments), and tested three properties of
+recursive partitioning (figure~\ref{fig:venation}).
 
-\paragraph{Thickness hierarchy.} In recursive partitioning with older walls thicker, a wall
-ends on a thicker one. At three-way vein junctions the arm opposite the largest angle, the
-stem of a T, is the thinnest of the three in $71\%$ of cases, and in $78\%$ at geometrically
-T-shaped junctions, against $1/3$ if width were unrelated to geometry.
-Junction angles lie between T and Y (figure~\ref{fig:venation}a), as expected when angles
-follow vein radii~\cite{bohn2002}.
+\paragraph{Thickness hierarchy.} In recursive partitioning with older walls thicker, each wall
+ends on a thicker wall. At three-way vein junctions the arm opposite the largest angle, the stem
+of a T, is the thinnest of the three in $71\%$ of cases, and in $78\%$ at geometrically T-shaped
+junctions, against $1/3$ for widths unrelated to geometry. Junction angles lie between T and Y
+(figure~\ref{fig:venation}a), consistent with angles set by vein radii~\cite{bohn2002}.
 
-\paragraph{Loop nesting.} The hierarchical loop decomposition fuses adjacent loops in order
-of increasing width of the vein between them~\cite{xu2021}. For recursive partitioning with
-widths ordered by birth this reverses the partitioning sequence, and the area fraction of the
-smaller part at each fusion is uniform on $[0,1/2]$. The leaves give mean $0.28$ and no
-excess of very small splits, whereas a random (Voronoi) tiling with random widths and
-recursive partitioning with noisy widths both show such an excess
-(figure~\ref{fig:venation}b). The loop hierarchy is that of an ordered recursive
-subdivision, with a mild bias toward even splits.
+\paragraph{Loop nesting.} The hierarchical loop decomposition~\cite{katifori2012} merges
+adjacent loops in order of increasing width of the vein between them. For recursive
+partitioning with widths ordered by birth, this merging reverses the partitioning sequence, and
+the area fraction of the smaller part at each merger is uniform on $[0,1/2]$. The leaves give
+mean $0.28$ and no excess of very small splits, whereas a random (Voronoi) tiling with random
+widths and recursive partitioning with noisy widths both show such an excess
+(figure~\ref{fig:venation}b). The loop hierarchy is that of an ordered recursive partition,
+with a mild bias toward even splits.
 
-\paragraph{Contact law: not identifiable.} Vein junctions do not define straight lines, so
-lines must be built by continuing the two widest arms through each junction. This
-construction applied to a Voronoi tiling with random widths already produces a broad
-contact distribution and $C(k)\sim1/k$ (electronic supplementary material, section~S8). The
-venation contact law is therefore not evidence for or against the class at this sample size,
-in which the oldest veins also cross the sample boundary.
+\paragraph{Contact law not identifiable.} Vein junctions do not define straight lines, so lines
+are built by continuing the two widest arms through each junction. Applied to a Voronoi tiling
+with random widths, this construction alone produces a broad contact distribution and
+$C(k)\sim1/k$ (electronic supplementary material, section~S8). At this sample size, in which
+the oldest veins also cross the sample boundary, the venation contact law is not evidence for
+or against the class.
 
 \begin{figure}[t]
 \centering
 \includegraphics[width=\textwidth]{figs/fig5.pdf}
 \caption{Leaf venation (44 LeafVeinCNN samples). (a) Largest angle between arms at interior
 three-way junctions; $180^\circ$ is a T, $120^\circ$ a symmetric Y. (b) Area fraction of the
-smaller part at the fusions of the hierarchical loop decomposition: leaves, recursive
+smaller part at the mergers of the hierarchical loop decomposition: leaves, recursive
 partitioning with birth-ordered widths, recursive partitioning with noisy widths, and a Voronoi
 tiling with random widths. The shaded band marks where centroid and balanced partitioning rules
-put almost all splits.}
+place almost all splits.}
 \label{fig:venation}
 \end{figure}
 
@@ -374,52 +412,56 @@ put almost all splits.}
 \label{sec:actin}
 
 The highest-resolution public images of whole spread cells are those of BioSR~\cite{qiao2021}:
-51 COS-7 cells with labelled actin imaged by structured illumination ($31$~nm per pixel).
-After validating the image-to-network pipeline on rendered model networks (Methods), we
-find that the ventral actin network is a crossing mesh rather than a partition: only $61\%$
-of three-way junctions are T-shaped, $7\%$ of junctions are four-way crossings, and long
-bundles cross at shallow angles over a dense meshwork (electronic supplementary material,
-figure~S2). This agrees with the known assembly routes: branches at about $70^\circ$,
-fibres growing from adhesions, and arcs thickening by lateral fusion~\cite{tojkander2015},
-within a contractile cortical mesh~\cite{vignaud2021}. By the results of
-section~\ref{sec:theory}, a scale-rich cytoskeleton would require nucleation slow compared
-with bundle growth across a cell and stabilisation of highly connected bundles.
+51 COS-7 cells with labelled actin imaged by structured illumination ($31$~nm per pixel). With
+the image-to-network pipeline validated on rendered model networks (Methods), the ventral actin
+network is a crossing mesh rather than a partition: $61\%$ of three-way junctions are T-shaped,
+$7\%$ of junctions are four-way crossings, and long bundles cross at shallow angles over a dense
+meshwork (electronic supplementary material, figure~S2). This structure is consistent with the
+known assembly routes of stress fibres: branches at about $70^\circ$, fibres growing from
+adhesions, and arcs thickening by lateral fusion~\cite{tojkander2015}, within a contractile
+cortical mesh~\cite{vignaud2021}. By the results of section~\ref{sec:theory}, a recursively
+partitioned cytoskeleton would require nucleation slow compared with bundle growth across a
+cell, and stabilisation of highly connected bundles.
 
 \section{Discussion}
 
-Recursive partitioning generates networks in which every wall rests on older walls, and the
-number of walls resting on a wall has a $k^{-3}$ distribution. We asked whether living
-partitions belong to this class and how to tell. The contact law is robust: parallel
-partitioning alters only scales above $\ell^*=(v/R)^{1/3}$, and every partitioning rule tested
-shares it. Because it is shared, the contact law cannot distinguish rules or mechanisms;
-the clustering of the contact network can, since it counts the splits that join walls
-already in contact.
+Recursive space partitioning generates networks in which every wall rests on older walls, and
+the number of walls resting on a wall has a $k^{-3}$
+distribution~\cite{vazquez2026sr,vazquez2026div}. We asked whether living partitions belong to
+this class and which observable identifies membership. The contact law persists under parallel
+partitioning at scales below $\ell^*=(v/R)^{1/3}$ and is shared by all partitioning rules, so it
+does not distinguish rules or mechanisms. Clustering does, because it equals the frequency of
+new walls joining walls already in contact.
 
-Plant meristems are recursive-partitioning networks, and their clustering records junction
-mechanics. Lineage dates every wall, and two measurements fix the model: the shortest-wall
-rule, seen as the absence of corner cuts, and the slow maturation of new-wall tension, seen
-as the T-to-Y relaxation of junctions. Without relaxation, Errera division produces a
-contact network with almost no triangles. With the measured relaxation, it produces the
+Plant meristems belong to the class, and their clustering is set by junction mechanics.
+Lineage gives the birth time of every wall, and two measurements specify the model: the
+shortest-wall rule, observed as the absence of corner cuts, and the maturation of new-wall
+tension, observed as the T-to-Y relaxation of junctions. Errera division without relaxation
+produces a contact network with almost no triangles; with the measured relaxation it gives the
 linked-host fraction of flower meristems without any parameter adjusted to them. The
-clustering of plant wall networks is thus a mechanical record: it is created after
-division, by the tension that bends wall lines at their junctions.
+clustering of plant wall networks is therefore formed after division, by the tension that bends
+wall lines at their junctions. This result connects two aspects of plant tissue that are
+usually studied separately, the geometry of division planes and the mechanics of cell walls,
+and identifies a quantity, measurable from lineage alone, that records the mechanical history
+of a tissue.
 
-Three limits remain. The contact law of plant walls is predicted ($\gamma\simeq3$) but not
-yet observed, because current films span about four cell cycles; films that follow walls
-over more generations, or clonal reconstructions of older organs, would test it. The
-equal-tension relaxation that fits the angles makes cells too regular, which points to a
-missing ingredient that bends junctions without regularising cells, such as wall-specific
-tensions or anisotropic growth. And the analysis uses a planar projection of a curved
-surface, restricted to low-slope regions.
+Three limits remain. The contact law of plant walls is predicted ($\gamma\simeq3$) but not yet
+observed, because current films span about four cell cycles; films that follow walls over more
+generations, or clonal reconstructions of older organs, would test it. The equal-tension
+relaxation that fits the angles makes cells too regular, which indicates a missing ingredient
+that bends junctions without regularising cells, such as wall-specific tensions or anisotropic
+growth. And the analysis uses a planar projection of a curved surface, restricted to low-slope
+regions.
 
 Beyond meristems, leaf veins carry the thickness hierarchy and nested loops of recursive
-partitioning, but whole-leaf graphs are needed to test their contact law. The ventral actin
-network of cultured cells is not a recursive-partitioning network at the resolution analysed;
-the model specifies what one would require and which observables would show it: the share
-of T junctions, the rarity of crossings, and, in time-lapse data, the growth of contacts
-with bundle age. More generally, the contact network turns a static image with lineage
-into a record of how a partition was built, and its clustering separates the rule that
-places new walls from the mechanics that reshapes them afterwards.
+partitioning, but a test of their contact law requires whole-leaf graphs. The ventral actin
+network of cultured cells is not a recursive partition at the resolution analysed;
+section~\ref{sec:theory} sets the conditions under which a cytoskeletal network would be one,
+and the observables that would show it: the share of T junctions, the rarity of crossings and,
+in time-lapse data, the increase of contacts with bundle age. More generally, for any partition
+with lineage, the contact network separates the rule that sets the position of new walls, recorded
+in corner cuts, from the mechanics that reshapes them afterwards, which adds clustering beyond that set by
+the rule.
 
 \section{Methods}
 \label{sec:methods}
@@ -444,16 +486,16 @@ ridge filter, threshold and skeleton give branches; junction clusters joined by 
 shorter than 8 pixels are merged, and arm directions are fitted $6$--$18$ pixels from the
 junction. A three-arm junction is a T if two arms are collinear within $25^\circ$ and a Y
 otherwise; a four-arm junction with two collinear pairs is a crossing. On rendered model
-networks the pipeline recovers T shares of $0.87$--$0.97$, and on rasterised model tissues
-the label-image route recovers the contact distribution and clustering (electronic
-supplementary material, section~S1).
+networks the measured T share is $0.87$--$0.97$, and on rasterised model partitions the
+contact distribution and clustering obtained from label images match the true values
+(electronic supplementary material, section~S1).
 
 \paragraph{Meristem walls.} L1 labels are taken from the outermost tissue voxel along the
 optical axis; cells on surface regions with slope above $0.7$ are excluded. Hosts of a new
 wall are the lines of the mother's walls on which its ends lie. A corner cut means that the
-two hosts are sides of the mother meeting at one of its vertices; the detector reports that
-$44\%$ of neighbour pairs of a cell meet at one of its vertices, close to the value $2/(n-1)$
-expected for an $n$-sided cell. Junction angles are measured from wall pixels $2$--$8$
+two hosts are sides of the mother meeting at one of its vertices. As a check of this
+definition, $44\%$ of the neighbour pairs of a cell meet at one of its vertices, close to the
+value $2/(n-1)$ expected for an $n$-sided cell. Junction angles are measured from wall pixels $2$--$8$
 pixels from the vertex. The shoot cell cycle follows from the fraction $f$ of cells dividing
 per interval, $T_{cc}=4~\mathrm{h}\times\ln2/\ln(1+f)$; the flower cell cycle is the summed
 interval length over the summed $\log_2$ of daughter numbers. In the flower films intervals
@@ -475,8 +517,8 @@ was run with $T_{cc}=31$~h, $t_0=0.7$, $\tau=36$~h over a $150$~h window, and $\
 evaluated under the data conditions (both hosts born in the window before the new wall,
 their own hosts known). Raising $K$ to $100$ leaves $\phi$ unchanged (electronic supplementary material, table~S4).
 
-\paragraph{Leaf veins.} Graphs and hierarchical loop decompositions are those released with
-LeafVeinCNN~\cite{xu2021}. Null models are recursive partitioning with birth-ordered widths
+\paragraph{Leaf veins.} Vein graphs and their hierarchical loop decompositions are those of
+the LeafVeinCNN release~\cite{xu2021}. Null models are recursive partitioning with birth-ordered widths
 perturbed by lognormal noise of unit standard deviation, and a Voronoi tiling with random
 widths, each rasterised and processed like the leaves (electronic supplementary material,
 section~S8).
