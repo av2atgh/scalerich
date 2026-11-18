@@ -26,29 +26,29 @@
 \maketitle
 
 \begin{abstract}
-\noindent Mathematical models of cell division recursively split the space with new walls between
+\noindent Mathematical models of space partitioning recursively split a region with new walls between
 existing walls. In the resulting network of which wall rests on which, the number of
 contacts per wall is heavy-tailed, a property used to design scale-rich metamaterials.
 Whether living tissues are built this way is unknown, because biological divisions run in
-parallel, follow specific rules and are remodelled. Here we show that parallel division
-alters only the largest scales and that all division rules tested share the same contact law. In contrast, the clustering of the contact network depends on the rule and on wall
+parallel, follow specific rules and are remodelled. Here we show that parallel partitioning
+alters only the largest scales and that all partitioning rules tested share the same contact law. In contrast, the clustering of the contact network depends on the rule and on wall
 mechanics. We reconstructed wall contact networks from lineage-tracked time-lapse images of
 \textit{Arabidopsis} meristems. New walls follow the shortest-wall rule and do not cut
 across cell corners. Their junctions relax from T to Y shapes within one cell cycle. A model built on these two measurements predicts, with no parameter adjusted to
 flower meristems, that 19\% of new walls land on two walls already in contact; flower
 meristems give $19\pm6\%$, against $0.2\%$ without relaxation. Leaf veins keep the thickness
-hierarchy of recursive division; the actin network of cultured cells is a crossing mesh.
-We conclude that plant tissues are consistent with mathematical models of recursive cell division.
+hierarchy of recursive partitioning; the actin network of cultured cells is a crossing mesh.
+We conclude that plant tissues are consistent with mathematical models of recursive space partitioning.
 \end{abstract}
 
-\noindent\textbf{Keywords:} cell division; plant meristem; tessellation; network topology;
+\noindent\textbf{Keywords:} space partitioning; plant meristem; tessellation; network topology;
 vertex model; metamaterials
 
 \noindent\textbf{Subject areas:} biophysics, biomathematics
 
 \section{Introduction}
 
-Many planar structures form by recursive division: a region is cut by a wall, each part is
+Many planar structures form by recursive space partitioning: a region is cut by a wall, each part is
 cut again, and every new wall runs until it meets a wall that is already there. Drying
 mud and glazes crack this way~\cite{bohn2005,bohn2005b,bohn2005prl}, and the resulting random
 tessellations are a classical subject of stochastic geometry and fracture
@@ -57,7 +57,7 @@ Because each wall ends on older walls, the pattern carries its own history. Old 
 long and are struck by many later walls; young walls are short and are struck by few.
 This history is captured by the \emph{contact network} (figure~\ref{fig:schematic}): each
 wall is a node, and a link joins a wall to each of the two walls on which its ends rest.
-In the simplest version, where the cell to divide is chosen in proportion to its area and
+In the simplest version, where the domain to split is chosen in proportion to its area and
 the cut has a random position and angle, the fraction of walls with $k$ contacts decays as
 $p_k\simeq12/[k(k+1)(k+2)]\sim k^{-3}$~\cite{vazquez2026sr}. Built as ligament
 networks with older walls thicker, these structures are the scale-rich metamaterials, in
@@ -69,14 +69,14 @@ mother cell~\cite{besson2011}; walls are glued to their neighbours and do not sl
 partition is never rearranged. Leaf veins form a hierarchy in which thinner, later veins end
 on thicker, earlier ones~\cite{couder2002,bohn2002}. Actin bundles in spread animal cells
 nucleate, elongate and terminate on other bundles~\cite{tojkander2015,vignaud2021}. None of
-these processes is the idealised sequential division. Many cells divide at the same time,
+these processes is the idealised sequential partitioning. Many cells divide at the same time,
 new walls grow at a finite speed, the division plane follows rules such as Errera's
 shortest wall through the cell centre~\cite{errera1888,besson2011}, junctions are pulled
 by wall tension, and some materials turn over.
 
-This raises two questions: which properties of recursive-division networks survive these
+This raises two questions: which properties of recursive-partitioning networks survive these
 departures, and do living partitions belong to the class? We first establish by simulation
-what is robust. Parallel division changes only the largest scales; every division rule
+what is robust. Parallel partitioning changes only the largest scales; every partitioning rule
 tested gives the $k^{-3}$ contact law; uniform turnover truncates it. The contact law
 therefore cannot tell rules apart, but the clustering of the contact network can, because it
 depends on whether new walls connect walls that already touch. We then reconstruct wall
@@ -90,10 +90,10 @@ actin networks, analysed with the same tools, mark how far the class extends.
 \begin{figure}[t]
 \centering
 \includegraphics[width=\textwidth]{figs/fig1.pdf}
-\caption{Recursive division and its contact network. (a) A square divided recursively: a
-cell is chosen with probability proportional to its area, a straight cut through a random
-point at a random angle runs to the cell boundary; older walls are drawn thicker.
-(b) After many divisions each wall becomes a node, and each end of a wall that rests on
+\caption{Recursive space partitioning and its contact network. (a) A square partitioned
+recursively: a domain is chosen with probability proportional to its area, a straight cut
+through a random point at a random angle runs to the domain boundary; older walls are drawn thicker.
+(b) After many splits each wall becomes a node, and each end of a wall that rests on
 another wall becomes a link; node size grows with the number of contacts $k$. (c) A plant
 cell divides along the shortest wall through its centre, which ends on two non-adjacent
 sides; a random cut can instead join two adjacent sides and cut a corner (dashed).
@@ -102,25 +102,25 @@ the tension of the new wall matures, the junction relaxes toward a Y.}
 \label{fig:schematic}
 \end{figure}
 
-\section{What survives parallel division, other rules and turnover}
+\section{What survives parallel partitioning, other rules and turnover}
 \label{sec:theory}
 
 \subsection{Contact law}
 
-In recursive division a wall with $k$ contacts borders about $k$ cells, and a new wall
-lands on it when one of these cells divides. The rate at which a wall gains contacts is
+In recursive partitioning a wall with $k$ contacts borders about $k$ domains, and a new wall
+lands on it when one of these domains is split. The rate at which a wall gains contacts is
 therefore linear in $k$, with an attachment kernel $(a+bk)/t$ at time $t$ (number of
 walls) whose slope $b=2/\langle n\rangle=1/2$ is set by the mean number of sides
-$\langle n\rangle=4$ of a cell bounded by straight walls~\cite{vazquez2026sr,vazquezbook}.
+$\langle n\rangle=4$ of a domain bounded by straight walls~\cite{vazquez2026sr,vazquezbook}.
 The rate equation for $p_k$ then gives the $k^{-3}$ tail~\cite{krapivsky2000,vazquezbook}.
 Clustering is set separately: a new wall closes a triangle in the contact network when its
 two hosts already touch, which, for straight walls, is the case when it cuts a corner of
-its cell. The mean
+its domain. The mean
 clustering coefficient of the contact network, $\langle C\rangle$, and its dependence on
 degree, $C(k)\sim1/k$, therefore measure how often new walls join walls already in
 contact~\cite{vazquez2026sr}.
 
-\subsection{Parallel division}
+\subsection{Parallel partitioning}
 
 In tissues many cells divide at once. We model this by nucleating walls as a Poisson process
 of rate $R$ per unit area in a square of side $L$, each wall growing in both directions at
@@ -128,34 +128,34 @@ speed $v$ until each tip meets an existing wall (Methods). The control parameter
 \begin{equation}
 \Pi=\frac{RL^3}{v},
 \end{equation}
-the number of nucleations while a tip crosses the whole domain. $\Pi\to0$ is sequential
-recursive division, and $\Pi\to\infty$ is the Gilbert tessellation~\cite{gilbert1967}, in
-which all walls start before any stops. When $n$ walls are present, a cell has size
+the number of nucleations while a tip crosses the whole square. $\Pi\to0$ is sequential
+recursive partitioning, and $\Pi\to\infty$ is the Gilbert tessellation~\cite{gilbert1967}, in
+which all walls start before any stops. When $n$ walls are present, a domain has size
 $\ell\simeq n^{-1/2}L$ and is crossed in time $\ell/v$, during which $R\ell^3/v=\Pi
-n^{-3/2}$ new walls start inside it. Division is effectively sequential once this number
+n^{-3/2}$ new walls start inside it. Partitioning is effectively sequential once this number
 is below one, that is, for
 \begin{equation}
 n>n^*\sim\Pi^{2/3},\qquad \ell<\ell^*=(v/R)^{1/3}.
 \end{equation}
 Parallel growth therefore alters only the first $n^*$ walls, the top of the hierarchy, and
-leaves all scales below $\ell^*$ as in sequential division.
+leaves all scales below $\ell^*$ as in sequential partitioning.
 
 Simulations with $2\times10^4$ walls confirm this (figure~\ref{fig:model}a,b). Up to
 $\Pi=10^3$ the contact exponent is $\gamma\simeq2.85$ and $\langle C\rangle=0.38$, as for
-sequential division. Only at $\Pi=10^6$, where $n^*$ reaches the system size, does the
+sequential partitioning. Only at $\Pi=10^6$, where $n^*$ reaches the system size, does the
 network become Gilbert-like, with $\gamma>4$ and at most 16 contacts per wall. The birth
 rank at which walls recover half of their sequential mean degree follows
 $n^*\simeq0.04\,\Pi^{2/3}$ (figure~\ref{fig:model}b, inset).
 
-\subsection{Division rules}
+\subsection{Partitioning rules}
 
-A division rule fixes which cell divides, where the cut passes and at which
-angle~\cite{cowan2010}. We compared four rules: random cuts in cells chosen by area (the
-standard rule), random cuts in cells chosen uniformly, random-angle cuts through the cell
+A partitioning rule fixes which domain is split, where the cut passes and at which
+angle~\cite{cowan2010}. We compared four rules: random cuts in domains chosen by area (the
+standard rule), random cuts in domains chosen uniformly, random-angle cuts through the domain
 centroid, and balanced cuts through the centroid perpendicular to the long axis, an
 Errera-like rule~\cite{errera1888}. All four give $\gamma=2.9$--$3.1$, as the rate
 equation requires, because the slope $b$ depends on the mean number of sides and not on how
-the cell or the cut is chosen. The rules differ in clustering, with $\langle C\rangle$ from
+the domain or the cut is chosen. The rules differ in clustering, with $\langle C\rangle$ from
 $0.45$ for uniform choice to $0.06$ for balanced cuts (electronic supplementary material,
 table~S1): a balanced cut through the centre rarely joins two adjacent sides. The contact
 law is thus a property of the whole class, and clustering identifies the rule.
@@ -168,21 +168,21 @@ reaches a steady state, and the tail of $p_k$ is cut off at about $20$--$30$ con
 (figure~\ref{fig:model}c). The cutoff barely depends on network size, because a wall
 survives on average for as many nucleations as the steady-state number of walls. When
 removal is suppressed for walls with many contacts, at a rate proportional to $(2/k)^s$,
-the tail returns close to that of recursive division without turnover
+the tail returns close to that of recursive partitioning without turnover
 (figure~\ref{fig:model}c; table~S2). A turning-over network keeps the class only if
 highly connected elements are stabilised.
 
 \begin{figure}[t]
 \centering
 \includegraphics[width=\textwidth]{figs/fig2.pdf}
-\caption{Parallel division and turnover. (a) Contact exponent $\gamma$ (fit for
+\caption{Parallel partitioning and turnover. (a) Contact exponent $\gamma$ (fit for
 $k\geq10$, circles, left axis) and mean clustering $\langle C\rangle$ (squares, right
 axis) against $\Pi=RL^3/v$; $2\times10^4$ walls, three realisations. (b) Mean number of
-contacts of walls of birth rank $i$, relative to sequential division ($\Pi\to0$). Inset:
+contacts of walls of birth rank $i$, relative to sequential partitioning ($\Pi\to0$). Inset:
 crossover rank $n^*$, where the ratio is $1/2$, against $\Pi$; the line is
 $0.04\,\Pi^{2/3}$. (c) Contact distribution in the steady state with turnover
 ($\Pi=0.01$, about 1500 walls): removal at a uniform rate ($s=0$) and at a rate
-$\propto(2/k)^s$ ($s=1,2$), compared with recursive division without turnover at the same
+$\propto(2/k)^s$ ($s=1,2$), compared with recursive partitioning without turnover at the same
 size.}
 \label{fig:model}
 \end{figure}
@@ -306,7 +306,7 @@ still out of reach.
 
 \begin{table}[t]
 \centering
-\caption{Plant meristem walls against recursive-division models. Model networks: Errera
+\caption{Plant meristem walls against recursive-partitioning models. Model networks: Errera
 division with and without tension maturation ($t_0=0.7$, $\tau=36$~h) and random cuts;
 $\phi$ is computed under the flower-meristem observation conditions (Methods). Dashes:
 not measurable or not applicable.}
@@ -333,9 +333,9 @@ clustering $\langle C\rangle$ & -- & $0.20$--$0.23$ & $0.001$ & $0.36$\\
 LeafVeinCNN~\cite{xu2021} provides vein graphs with widths for cleared-leaf samples of about
 $1$~cm$^2$; we used the 44 samples of one plot~\cite{blonder2020}, from 25 species (283380 vein
 segments). Three properties
-of recursive division were tested (figure~\ref{fig:venation}).
+of recursive partitioning were tested (figure~\ref{fig:venation}).
 
-\paragraph{Thickness hierarchy.} In recursive division with older walls thicker, a wall
+\paragraph{Thickness hierarchy.} In recursive partitioning with older walls thicker, a wall
 ends on a thicker one. At three-way vein junctions the arm opposite the largest angle, the
 stem of a T, is the thinnest of the three in $71\%$ of cases, and in $78\%$ at geometrically
 T-shaped junctions, against $1/3$ if width were unrelated to geometry.
@@ -343,11 +343,11 @@ Junction angles lie between T and Y (figure~\ref{fig:venation}a), as expected wh
 follow vein radii~\cite{bohn2002}.
 
 \paragraph{Loop nesting.} The hierarchical loop decomposition fuses adjacent loops in order
-of increasing width of the vein between them~\cite{xu2021}. For recursive division with
-widths ordered by birth this reverses the division sequence, and the area fraction of the
+of increasing width of the vein between them~\cite{xu2021}. For recursive partitioning with
+widths ordered by birth this reverses the partitioning sequence, and the area fraction of the
 smaller part at each fusion is uniform on $[0,1/2]$. The leaves give mean $0.28$ and no
 excess of very small splits, whereas a random (Voronoi) tiling with random widths and
-recursive division with noisy widths both show such an excess
+recursive partitioning with noisy widths both show such an excess
 (figure~\ref{fig:venation}b). The loop hierarchy is that of an ordered recursive
 subdivision, with a mild bias toward even splits.
 
@@ -364,8 +364,8 @@ in which the oldest veins also cross the sample boundary.
 \caption{Leaf venation (44 LeafVeinCNN samples). (a) Largest angle between arms at interior
 three-way junctions; $180^\circ$ is a T, $120^\circ$ a symmetric Y. (b) Area fraction of the
 smaller part at the fusions of the hierarchical loop decomposition: leaves, recursive
-division with birth-ordered widths, recursive division with noisy widths, and a Voronoi
-tiling with random widths. The shaded band marks where centroid and balanced division rules
+partitioning with birth-ordered widths, recursive partitioning with noisy widths, and a Voronoi
+tiling with random widths. The shaded band marks where centroid and balanced partitioning rules
 put almost all splits.}
 \label{fig:venation}
 \end{figure}
@@ -387,15 +387,15 @@ with bundle growth across a cell and stabilisation of highly connected bundles.
 
 \section{Discussion}
 
-Recursive division generates networks in which every wall rests on older walls, and the
+Recursive partitioning generates networks in which every wall rests on older walls, and the
 number of walls resting on a wall has a $k^{-3}$ distribution. We asked whether living
 partitions belong to this class and how to tell. The contact law is robust: parallel
-division alters only scales above $\ell^*=(v/R)^{1/3}$, and every division rule tested
+partitioning alters only scales above $\ell^*=(v/R)^{1/3}$, and every partitioning rule tested
 shares it. Because it is shared, the contact law cannot distinguish rules or mechanisms;
-the clustering of the contact network can, since it counts the divisions that join walls
+the clustering of the contact network can, since it counts the splits that join walls
 already in contact.
 
-Plant meristems are recursive-division networks, and their clustering records junction
+Plant meristems are recursive-partitioning networks, and their clustering records junction
 mechanics. Lineage dates every wall, and two measurements fix the model: the shortest-wall
 rule, seen as the absence of corner cuts, and the slow maturation of new-wall tension, seen
 as the T-to-Y relaxation of junctions. Without relaxation, Errera division produces a
@@ -413,8 +413,8 @@ tensions or anisotropic growth. And the analysis uses a planar projection of a c
 surface, restricted to low-slope regions.
 
 Beyond meristems, leaf veins carry the thickness hierarchy and nested loops of recursive
-division, but whole-leaf graphs are needed to test their contact law. The ventral actin
-network of cultured cells is not a recursive-division network at the resolution analysed;
+partitioning, but whole-leaf graphs are needed to test their contact law. The ventral actin
+network of cultured cells is not a recursive-partitioning network at the resolution analysed;
 the model specifies what one would require and which observables would show it: the share
 of T junctions, the rarity of crossings, and, in time-lapse data, the growth of contacts
 with bundle age. More generally, the contact network turns a static image with lineage
@@ -424,14 +424,14 @@ places new walls from the mechanics that reshapes them afterwards.
 \section{Methods}
 \label{sec:methods}
 
-\paragraph{Parallel division.} Walls nucleate as a Poisson process of rate $R$ per unit
+\paragraph{Parallel partitioning.} Walls nucleate as a Poisson process of rate $R$ per unit
 area in the unit square, at uniform positions and angles, and grow in both directions at
 speed $v$. A tip stops when it meets an existing wall, finished or growing, or the
 boundary; when two growing walls cross, the later arrival stops. The simulation is exact
 and event driven. Exponents are maximum-likelihood fits for $k\geq10$. The crossover rank
 is the birth rank at which the cohort mean degree reaches half of its $\Pi\to0$ value.
 
-\paragraph{Division rules and turnover.} Sequential rules were simulated with $2\times10^4$
+\paragraph{Partitioning rules and turnover.} Sequential rules were simulated with $2\times10^4$
 walls. In turnover runs each wall is removed at rate $\delta$, or at rate
 $\delta(2/\max(k,2))^s$ for load-dependent stability, with $\delta$ chosen to hold about
 $1500$ walls; tips that rested on a removed wall resume growth. Removal times are drawn
@@ -476,7 +476,7 @@ evaluated under the data conditions (both hosts born in the window before the ne
 their own hosts known). Raising $K$ to $100$ leaves $\phi$ unchanged (electronic supplementary material, table~S4).
 
 \paragraph{Leaf veins.} Graphs and hierarchical loop decompositions are those released with
-LeafVeinCNN~\cite{xu2021}. Null models are recursive division with birth-ordered widths
+LeafVeinCNN~\cite{xu2021}. Null models are recursive partitioning with birth-ordered widths
 perturbed by lognormal noise of unit standard deviation, and a Voronoi tiling with random
 widths, each rasterised and processed like the leaves (electronic supplementary material,
 section~S8).

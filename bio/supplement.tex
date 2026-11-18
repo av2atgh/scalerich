@@ -27,30 +27,30 @@
 \section{Image-to-network validation}
 \label{sec:validation}
 
-\paragraph{Fluorescence route.} Model networks of 300 and 800 walls (recursive division,
+\paragraph{Fluorescence route.} Model networks of 300 and 800 walls (recursive partitioning,
 Gilbert tessellation, and freely crossing rods) were rendered at $1024^2$ pixels with
 Gaussian blur of $1.5$ pixels and additive noise, then processed as the actin images. The
-T share among three-arm junctions is $0.87$--$0.97$ for recursive-division and Gilbert
+T share among three-arm junctions is $0.87$--$0.97$ for recursive-partitioning and Gilbert
 networks, and four-way crossings per junction are $0.04$--$0.06$, against $0.16$--$0.32$ for
 crossing rods. The contact tail is undercounted, $P(k\geq4)=0.15$--$0.17$ against true
 values $0.27$--$0.31$, and the largest degree is about one third of the true one, so exponents
 estimated from fluorescence images are biased upward (\code{images/validate.py},
 \code{results/pipeline_validation.txt}).
 
-\paragraph{Label-image route.} Model tissues of 1000 cells were rasterised and processed as
-the meristems. For recursive division with random cuts the recovered contact network has
+\paragraph{Label-image route.} Model partitions of 1000 domains were rasterised and processed as
+the meristems. For recursive partitioning with random cuts the recovered contact network has
 $P(k\geq4,8,16)=0.30,0.085,0.023$ against true $0.29,0.085,0.026$, mean clustering $0.36$
-against $0.38$, and $3.97$ geometric corners per cell against $4$; for balanced cuts the
+against $0.38$, and $3.97$ geometric corners per domain against $4$; for balanced cuts the
 recovered clustering is $0.03$ (\code{images/validate_tissue.py},
 \code{results/validate_tissue.txt}).
 
-\section{Parallel division}
+\section{Parallel partitioning}
 \label{sec:parallel}
 
 With $N=2\times10^4$ walls and three realisations per value, $\Pi=10^{-3}$ to $10^3$ gives
 $\gamma=2.82$--$2.87$ (maximum likelihood, $k\geq10$), $\langle C\rangle=0.376$,
 $C(k)\sim1/k$, a triangle-closure probability of $0.49$ per new wall and a correlation of
-$0.94$ between $k-2$ and the product of length and age, as in sequential division. At
+$0.94$ between $k-2$ and the product of length and age, as in sequential partitioning. At
 $\Pi=10^4$ the largest degree is $65$, against $281$ at $\Pi=10^{-3}$. At $\Pi=10^6$ the
 network is Gilbert-like: $\gamma=9.05$ for $k\geq10$ and $4.61$ for $k\geq6$, largest degree
 $16$, $\langle C\rangle=0.26$. The crossover rank gives $n^*/\Pi^{2/3}=0.024$, $0.038$ and
@@ -58,11 +58,11 @@ $0.055$ for $\Pi=10^3$, $10^4$ and $10^6$ (\code{model/pargrow.py},
 \code{model/scan.py}, \code{model/crossover.py}, \code{results/scan_N20000.json},
 \code{results/scan_N20000.txt}).
 
-\section{Division rules}
+\section{Partitioning rules}
 
 \begin{table}[h]
 \centering
-\caption{Contact networks of four sequential division rules, $N=2\times10^4$ walls
+\caption{Contact networks of four sequential partitioning rules, $N=2\times10^4$ walls
 (\code{model/percell.py}, \code{results/percell.txt}). $\gamma$: maximum-likelihood
 exponent for $k\geq10$; $P(k\geq16)$: complementary cumulative distribution;
 $\mathrm{sd}(\ln L)$: standard deviation of log wall length.}
@@ -72,8 +72,8 @@ $\mathrm{sd}(\ln L)$: standard deviation of log wall length.}
 \toprule
 rule & $\gamma$ & $k_{\max}$ & $P(k\geq16)$ & $\langle C\rangle$ & $\mathrm{sd}(\ln L)$\\
 \midrule
-cell $\propto$ area, random cut & $2.90$ & $257$ & $0.022$ & $0.380$ & $0.86$\\
-cell uniform, random cut & $2.89$ & $184$ & $0.021$ & $0.448$ & $3.33$\\
+domain $\propto$ area, random cut & $2.90$ & $257$ & $0.022$ & $0.380$ & $0.86$\\
+domain uniform, random cut & $2.89$ & $184$ & $0.021$ & $0.448$ & $3.33$\\
 centroid, random angle & $2.90$ & $279$ & $0.021$ & $0.280$ & $0.69$\\
 centroid, perpendicular to long axis & $3.06$ & $263$ & $0.018$ & $0.055$ & $0.59$\\
 \bottomrule
@@ -87,7 +87,7 @@ centroid, perpendicular to long axis & $3.06$ & $263$ & $0.018$ & $0.055$ & $0.5
 \caption{Steady states with turnover at $\Pi=0.01$, removal rate $\delta(2/\max(k,2))^s$
 with $\delta$ set for about 1500 walls (\code{model/turnover.py},
 \code{results/turnover_nss1500_stab*.json},
-\code{results/turnover_fixed.txt}). Last row: recursive division without turnover at
+\code{results/turnover_fixed.txt}). Last row: recursive partitioning without turnover at
 $N=1500$.}
 \label{tab:turnover}
 \small
@@ -227,9 +227,9 @@ of 67926 nodes; at geometric T junctions the stem is the thinnest in $78\%$
 \code{results/venation_angles.txt}).
 
 \paragraph{Loop nesting.} Over 20112 fusions the smaller-part fraction has mean $0.28$ and
-quartiles $0.16$, $0.30$, $0.41$. Recursive division with birth-ordered widths gives a
+quartiles $0.16$, $0.30$, $0.41$. Recursive partitioning with birth-ordered widths gives a
 uniform distribution on $[0,1/2]$ (mean $0.25$); centroid and balanced cuts give means
-$0.47$ and $0.48$. A Voronoi tiling with random widths and recursive division with noisy
+$0.47$ and $0.48$. A Voronoi tiling with random widths and recursive partitioning with noisy
 widths have lower quartiles $0.047$ and $0.076$ (\code{images/hld_null.py}).
 
 \paragraph{Width-continuation lines.} On the leaf loop networks, continuing the two widest
@@ -238,8 +238,8 @@ $0.15$, $0.09$, $0.05$, $0.03$ in degree bins starting at $2$, $3$, $5$, $8$, $1
 a partial correlation of $0.40$ between $\ln k$ and $\ln W$ at fixed $\ln L$, with $W$ the
 width and $L$ the length of a line (\code{images/venation_width.py}). The same
 construction gives, on a Voronoi tiling with random widths, $P(k\geq4)=0.30$, $C(k)$ from
-$0.34$ to $0.04$ and partial correlation $0.32$; on recursive division with random widths
-$0.34$; and on recursive division with birth-ordered widths $0.57$
+$0.34$ to $0.04$ and partial correlation $0.32$; on recursive partitioning with random widths
+$0.34$; and on recursive partitioning with birth-ordered widths $0.57$
 (\code{images/width_lines_null.py}, \code{results/width_lines_null.txt}). The
 contact law and $C(k)$ are produced by the line construction; only the width--degree
 correlation lies slightly above the random-width nulls.
