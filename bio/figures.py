@@ -165,8 +165,8 @@ def fig_venation():  # -> figs/fig5.pdf
            transform=a.transAxes, fontsize=6.5)
     panel(a, '(a)')
     a = ax[1]; bins = np.linspace(0, 0.5, 11); c = 0.5 * (bins[1:] + bins[:-1])
-    for arr, lab, col, ls in [(sp, 'leaves (44)', 'k', '-'), (nul['sr'], 'recursive division, birth-ordered widths', C1, '-'),
-                              (nul['srnoise'], 'recursive division, noisy widths', C1, '--'),
+    for arr, lab, col, ls in [(sp, 'leaves (44)', 'k', '-'), (nul['sr'], 'recursive partitioning, birth-ordered widths', C1, '-'),
+                              (nul['srnoise'], 'recursive partitioning, noisy widths', C1, '--'),
                               (nul['voronoi'], 'Voronoi, random widths', C2, '-')]:
         h, _ = np.histogram(arr, bins=bins, density=True)
         a.plot(c, h, ls, color=col, marker='o', ms=2.5, label=lab)
