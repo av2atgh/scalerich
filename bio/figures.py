@@ -41,19 +41,23 @@ def fig_theory():  # -> figs/fig2.pdf
         ks = np.mean([np.load(f) for f in sorted(glob.glob(f'{R}/k_N{N}_Pi{P}_s*.npy'))], 0)
         return np.array([ks[lo:hi].mean() for lo, hi in zip(edges[:-1], edges[1:])])
     ref = cohort('0.001')
-    a = ax[1]; ns = []
+    # cohort ratio curves -> ESM figure S2; main panel (b) = crossover rank n*
+    fs, af = plt.subplots(figsize=(3.4, 2.4)); ns = []
     for P, c in zip(['1000', '10000', '1e+06'], [C1, C2, C3]):
         r = cohort(P) / ref
-        a.semilogx(cen, r, '-', color=c, label=rf'$\Pi=${float(P):.0e}'.replace('e+0', 'e').replace('e+', 'e'))
+        af.semilogx(cen, r, '-', color=c, label=rf'$\Pi=${float(P):.0e}'.replace('e+0', 'e').replace('e+', 'e'))
         j = np.where(r >= 0.5)[0]; ns.append((float(P), cen[j[0]]))
-    a.axhline(0.5, color=C4, lw=0.6, ls=':')
-    a.set_xlabel('birth rank $i$'); a.set_ylabel(r'$\bar k(i)/\bar k_{\Pi\to0}(i)$'); a.set_ylim(0, 1.6)
-    a.legend(frameon=False, loc='upper left', fontsize=6); panel(a, '(b)')
-    ins = a.inset_axes([0.66, 0.12, 0.3, 0.3])
-    ns = np.array(ns); ins.loglog(ns[:, 0], ns[:, 1], 'ko', ms=3)
-    xx = np.logspace(3, 6, 10); ins.loglog(xx, 0.04 * xx ** (2 / 3), 'k-', lw=0.7)
-    ins.set_xlabel(r'$\Pi$', fontsize=6, labelpad=0); ins.set_ylabel(r'$n^*$', fontsize=6, labelpad=0)
-    ins.tick_params(labelsize=5)
+    af.axhline(0.5, color=C4, lw=0.6, ls=':')
+    af.set_xlabel('birth rank $i$'); af.set_ylabel(r'$\bar k(i)/\bar k_{\Pi\to0}(i)$'); af.set_ylim(0, 1.6)
+    af.legend(frameon=False, loc='upper left', fontsize=7)
+    fs.tight_layout(); fs.savefig(f'{F}/figS1.pdf'); plt.close(fs)
+    ns = np.array(ns); print('n* / Pi^(2/3):', np.round(ns[:, 1] / ns[:, 0] ** (2 / 3), 3))
+    a = ax[1]
+    a.loglog(ns[:, 0], ns[:, 1], 'o', color=C1, ms=5, label='simulation')
+    xx = np.logspace(2.7, 6.3, 10); a.loglog(xx, 0.04 * xx ** (2 / 3), 'k-', lw=0.8,
+                                              label=r'$0.04\,\Pi^{2/3}$')
+    a.set_xlabel(r'$\Pi$'); a.set_ylabel(r'crossover rank $n^*$')
+    a.legend(frameon=False, fontsize=7, loc='upper left'); panel(a, '(b)')
     a = ax[2]
     q = [2, 4, 8, 16, 32, 64]
     sys.path.insert(0, f'{B}/model')
@@ -225,9 +229,9 @@ def fig_plant():  # -> figs/fig4.pdf
     return dict(ages=(ages + 2).tolist(), med=np.round(med, 1).tolist(), Pn=np.round(Pm, 3).tolist(), nobs=int(wt.sum()))
 
 
-def fig_actin():  # -> figs/figS1.png
+def fig_actin():  # -> figs/figS2.png
     import shutil
-    shutil.copy(f'{R}/overlay_Cell_011.png', f'{F}/figS1.png')
+    shutil.copy(f'{R}/overlay_Cell_011.png', f'{F}/figS2.png')
 
 
 # ------------------------------------------------------------------ schematic
