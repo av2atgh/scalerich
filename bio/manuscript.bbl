@@ -1,4 +1,4 @@
-\begin{thebibliography}{27}
+\begin{thebibliography}{26}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -149,12 +149,6 @@ Yassin Refahi, Argyris Zardilis, Ga{\"e}l Michelin, Raymond Wightman, Bruno
   growth control.
 \newblock \emph{Developmental Cell}, 56:\penalty0 540--556, 2021.
 \newblock \doi{10.1016/j.devcel.2021.01.019}.
-
-\bibitem[Vazquez(2026{\natexlab{c}})]{vazquezbook}
-Alexei Vazquez.
-\newblock \emph{Local network growth: How simple rules drive network
-  complexity}.
-\newblock Independently published, 2026{\natexlab{c}}.
 
 \bibitem[Krapivsky et~al.(2000)Krapivsky, Redner, and Leyvraz]{krapivsky2000}
 P.~L. Krapivsky, S.~Redner, and F.~Leyvraz.
