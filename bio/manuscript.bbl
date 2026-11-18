@@ -1,260 +1,206 @@
-%apsrev4-2.bst 2019-01-14 (MD) hand-edited version of apsrev4-1.bst
-%Control: key (0)
-%Control: author (8) initials jnrlst
-%Control: editor formatted (1) identically to author
-%Control: production of article title (0) allowed
-%Control: page (0) single
-%Control: year (1) truncated
-%Control: production of eprint (0) enabled
-\begin{thebibliography}{22}%
-\makeatletter
-\providecommand \@ifxundefined [1]{%
- \@ifx{#1\undefined}
-}%
-\providecommand \@ifnum [1]{%
- \ifnum #1\expandafter \@firstoftwo
- \else \expandafter \@secondoftwo
- \fi
-}%
-\providecommand \@ifx [1]{%
- \ifx #1\expandafter \@firstoftwo
- \else \expandafter \@secondoftwo
- \fi
-}%
-\providecommand \natexlab [1]{#1}%
-\providecommand \enquote  [1]{``#1''}%
-\providecommand \bibnamefont  [1]{#1}%
-\providecommand \bibfnamefont [1]{#1}%
-\providecommand \citenamefont [1]{#1}%
-\providecommand \href@noop [0]{\@secondoftwo}%
-\providecommand \href [0]{\begingroup \@sanitize@url \@href}%
-\providecommand \@href[1]{\@@startlink{#1}\@@href}%
-\providecommand \@@href[1]{\endgroup#1\@@endlink}%
-\providecommand \@sanitize@url [0]{\catcode `\\12\catcode `\$12\catcode
-  `\&12\catcode `\#12\catcode `\^12\catcode `\_12\catcode `\%12\relax}%
-\providecommand \@@startlink[1]{}%
-\providecommand \@@endlink[0]{}%
-\providecommand \url  [0]{\begingroup\@sanitize@url \@url }%
-\providecommand \@url [1]{\endgroup\@href {#1}{\urlprefix }}%
-\providecommand \urlprefix  [0]{URL }%
-\providecommand \Eprint [0]{\href }%
-\providecommand \doibase [0]{https://doi.org/}%
-\providecommand \selectlanguage [0]{\@gobble}%
-\providecommand \bibinfo  [0]{\@secondoftwo}%
-\providecommand \bibfield  [0]{\@secondoftwo}%
-\providecommand \translation [1]{[#1]}%
-\providecommand \BibitemOpen [0]{}%
-\providecommand \bibitemStop [0]{}%
-\providecommand \bibitemNoStop [0]{.\EOS\space}%
-\providecommand \EOS [0]{\spacefactor3000\relax}%
-\providecommand \BibitemShut  [1]{\csname bibitem#1\endcsname}%
-\let\auto@bib@innerbib\@empty
-%</preamble>
-\bibitem [{\citenamefont {Both}\ \emph {et~al.}(2026)\citenamefont {Both},
-  \citenamefont {Chen}, \citenamefont {Gao}, \citenamefont {Mooij},
-  \citenamefont {Charara}, \citenamefont {Wadhwa}, \citenamefont {Portela},\
-  and\ \citenamefont {Barab{\'a}si}}]{both2026}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {C.}~\bibnamefont
-  {Both}}, \bibinfo {author} {\bibfnamefont {A.~Y.-J.}\ \bibnamefont {Chen}},
-  \bibinfo {author} {\bibfnamefont {T.-T.}\ \bibnamefont {Gao}}, \bibinfo
-  {author} {\bibfnamefont {N.}~\bibnamefont {Mooij}}, \bibinfo {author}
-  {\bibfnamefont {M.}~\bibnamefont {Charara}}, \bibinfo {author} {\bibfnamefont
-  {J.}~\bibnamefont {Wadhwa}}, \bibinfo {author} {\bibfnamefont {C.~M.}\
-  \bibnamefont {Portela}},\ and\ \bibinfo {author} {\bibfnamefont {A.-L.}\
-  \bibnamefont {Barab{\'a}si}},\ }\bibfield  {title} {\bibinfo {title}
-  {Scale-rich network-based metamaterials},\ }\href
-  {https://doi.org/10.1038/s41586-026-11191-2} {\bibfield  {journal} {\bibinfo
-  {journal} {Nature}\ }\textbf {\bibinfo {volume} {659}},\ \bibinfo {pages}
-  {345} (\bibinfo {year} {2026})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Cowan}(2010)}]{cowan2010}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {R.}~\bibnamefont
-  {Cowan}},\ }\bibfield  {title} {\bibinfo {title} {New classes of random
-  tessellations arising from iterative division of cells},\ }\href
-  {https://doi.org/10.1239/aap/1269611142} {\bibfield  {journal} {\bibinfo
-  {journal} {Advances in Applied Probability}\ }\textbf {\bibinfo {volume}
-  {42}},\ \bibinfo {pages} {26} (\bibinfo {year} {2010})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Nagel}\ and\ \citenamefont
-  {Wei{\ss}}(2005)}]{nagel2005}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {W.}~\bibnamefont
-  {Nagel}}\ and\ \bibinfo {author} {\bibfnamefont {V.}~\bibnamefont
-  {Wei{\ss}}},\ }\bibfield  {title} {\bibinfo {title} {Crack {STIT}
-  tessellations: characterization of stationary random tessellations stable
-  with respect to iteration},\ }\href@noop {} {\bibfield  {journal} {\bibinfo
-  {journal} {Advances in Applied Probability}\ }\textbf {\bibinfo {volume}
-  {37}},\ \bibinfo {pages} {859} (\bibinfo {year} {2005})}\BibitemShut
-  {NoStop}%
-\bibitem [{\citenamefont {Krapivsky}\ \emph {et~al.}(2000)\citenamefont
-  {Krapivsky}, \citenamefont {Redner},\ and\ \citenamefont
-  {Leyvraz}}]{krapivsky2000}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {P.~L.}\ \bibnamefont
-  {Krapivsky}}, \bibinfo {author} {\bibfnamefont {S.}~\bibnamefont {Redner}},\
-  and\ \bibinfo {author} {\bibfnamefont {F.}~\bibnamefont {Leyvraz}},\
-  }\bibfield  {title} {\bibinfo {title} {Connectivity of growing random
-  networks},\ }\href {https://doi.org/10.1103/PhysRevLett.85.4629} {\bibfield
-  {journal} {\bibinfo  {journal} {Physical Review Letters}\ }\textbf {\bibinfo
-  {volume} {85}},\ \bibinfo {pages} {4629} (\bibinfo {year}
-  {2000})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Vazquez}(2026{\natexlab{a}})}]{vazquezbook}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {A.}~\bibnamefont
-  {Vazquez}},\ }\href@noop {} {\emph {\bibinfo {title} {Local network growth:
-  How simple rules drive network complexity}}}\ (\bibinfo  {publisher}
-  {Independently published},\ \bibinfo {year} {2026})\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Vazquez}(2026{\natexlab{b}})}]{vazquez2026sr}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {A.}~\bibnamefont
-  {Vazquez}},\ }\bibfield  {title} {\bibinfo {title} {Scale-rich network
-  metamaterials grow by local rules on a recursive cell division},\ }\href@noop
-  {} {\bibfield  {journal} {\bibinfo  {journal} {arXiv:2611.16513}\ } (\bibinfo
-  {year} {2026}{\natexlab{b}})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Besson}\ and\ \citenamefont
-  {Dumais}(2011)}]{besson2011}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {S.}~\bibnamefont
-  {Besson}}\ and\ \bibinfo {author} {\bibfnamefont {J.}~\bibnamefont
-  {Dumais}},\ }\bibfield  {title} {\bibinfo {title} {Universal rule for the
-  symmetric division of plant cells},\ }\href
-  {https://doi.org/10.1073/pnas.1011866108} {\bibfield  {journal} {\bibinfo
-  {journal} {Proceedings of the National Academy of Sciences USA}\ }\textbf
-  {\bibinfo {volume} {108}},\ \bibinfo {pages} {6294} (\bibinfo {year}
-  {2011})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Couder}\ \emph {et~al.}(2002)\citenamefont {Couder}
-  \emph {et~al.}}]{couder2002}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {Y.}~\bibnamefont
-  {Couder}} \emph {et~al.},\ }\href
-  {https://doi.org/10.1140/epjb/e2002-00211-1} {\bibfield  {journal} {\bibinfo
-  {journal} {European Physical Journal B}\ }\textbf {\bibinfo {volume} {28}},\
-  \bibinfo {pages} {135} (\bibinfo {year} {2002})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Bohn}\ \emph {et~al.}(2002)\citenamefont {Bohn} \emph
-  {et~al.}}]{bohn2002}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {S.}~\bibnamefont
-  {Bohn}} \emph {et~al.},\ }\bibfield  {title} {\bibinfo {title} {Constitutive
-  property of the local organization of leaf venation networks},\ }\href
-  {https://doi.org/10.1103/PhysRevE.65.061914} {\bibfield  {journal} {\bibinfo
-  {journal} {Physical Review E}\ }\textbf {\bibinfo {volume} {65}},\ \bibinfo
-  {pages} {061914} (\bibinfo {year} {2002})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Tojkander}\ \emph {et~al.}(2015)\citenamefont
-  {Tojkander} \emph {et~al.}}]{tojkander2015}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {S.}~\bibnamefont
-  {Tojkander}} \emph {et~al.},\ }\bibfield  {title} {\bibinfo {title}
-  {Generation of contractile actomyosin bundles depends on mechanosensitive
-  actin filament assembly and disassembly},\ }\href
-  {https://doi.org/10.7554/eLife.06126} {\bibfield  {journal} {\bibinfo
-  {journal} {eLife}\ }\textbf {\bibinfo {volume} {4}},\ \bibinfo {pages}
-  {e06126} (\bibinfo {year} {2015})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Vignaud}\ \emph {et~al.}(2021)\citenamefont {Vignaud}
-  \emph {et~al.}}]{vignaud2021}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {T.}~\bibnamefont
-  {Vignaud}} \emph {et~al.},\ }\bibfield  {title} {\bibinfo {title} {Stress
-  fibres are embedded in a contractile cortical network},\ }\href
-  {https://doi.org/10.1038/s41563-020-00825-z} {\bibfield  {journal} {\bibinfo
-  {journal} {Nature Materials}\ }\textbf {\bibinfo {volume} {20}},\ \bibinfo
-  {pages} {410} (\bibinfo {year} {2021})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Gilbert}(1967)}]{gilbert1967}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {E.~N.}\ \bibnamefont
-  {Gilbert}},\ }\bibfield  {title} {\bibinfo {title} {Random plane networks and
-  needle-shaped crystals},\ }in\ \href@noop {} {\emph {\bibinfo {booktitle}
-  {Applications of Undergraduate Mathematics in Engineering}}},\ \bibinfo
-  {editor} {edited by\ \bibinfo {editor} {\bibfnamefont {B.}~\bibnamefont
-  {Noble}}}\ (\bibinfo  {publisher} {Macmillan},\ \bibinfo {address} {New
-  York},\ \bibinfo {year} {1967})\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Errera}(1888)}]{errera1888}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {L.}~\bibnamefont
-  {Errera}},\ }\bibfield  {title} {\bibinfo {title} {{\"U}ber {Z}ellformen und
-  {S}eifenblasen},\ }\href@noop {} {\bibfield  {journal} {\bibinfo  {journal}
-  {Botanisches Centralblatt}\ }\textbf {\bibinfo {volume} {34}},\ \bibinfo
-  {pages} {395} (\bibinfo {year} {1888})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Qiao}\ \emph {et~al.}(2021)\citenamefont {Qiao} \emph
-  {et~al.}}]{qiao2021}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {C.}~\bibnamefont
-  {Qiao}} \emph {et~al.},\ }\href@noop {} {\bibfield  {journal} {\bibinfo
-  {journal} {Nature Methods}\ }\textbf {\bibinfo {volume} {18}},\ \bibinfo
-  {pages} {194} (\bibinfo {year} {2021})},\ \bibinfo {note} {data (BioSR):
-  doi:10.6084/m9.figshare.13264793}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {L{\"u}ck}\ \emph {et~al.}(2010)\citenamefont
-  {L{\"u}ck} \emph {et~al.}}]{luck2010}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {S.}~\bibnamefont
-  {L{\"u}ck}} \emph {et~al.},\ }\href
-  {https://doi.org/10.1111/j.1365-2818.2009.03348.x} {\bibfield  {journal}
-  {\bibinfo  {journal} {Journal of Microscopy}\ }\textbf {\bibinfo {volume}
-  {239}},\ \bibinfo {pages} {1} (\bibinfo {year} {2010})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Xu}\ \emph {et~al.}(2015)\citenamefont {Xu} \emph
-  {et~al.}}]{xu2015soax}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {T.}~\bibnamefont {Xu}}
-  \emph {et~al.},\ }\href {https://doi.org/10.1038/srep09081} {\bibfield
-  {journal} {\bibinfo  {journal} {Scientific Reports}\ }\textbf {\bibinfo
-  {volume} {5}},\ \bibinfo {pages} {9081} (\bibinfo {year} {2015})}\BibitemShut
-  {NoStop}%
-\bibitem [{\citenamefont {Sadegh}\ \emph {et~al.}(2017)\citenamefont {Sadegh}
-  \emph {et~al.}}]{sadegh2017}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {S.}~\bibnamefont
-  {Sadegh}} \emph {et~al.},\ }\bibfield  {title} {\bibinfo {title} {Plasma
-  membrane is compartmentalized by a self-similar cortical actin meshwork},\
-  }\href {https://doi.org/10.1103/PhysRevX.7.011031} {\bibfield  {journal}
-  {\bibinfo  {journal} {Physical Review X}\ }\textbf {\bibinfo {volume} {7}},\
-  \bibinfo {pages} {011031} (\bibinfo {year} {2017})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Xu}\ \emph {et~al.}(2021)\citenamefont {Xu},
-  \citenamefont {Blonder}, \citenamefont {Jodra}, \citenamefont {Malhi},\ and\
-  \citenamefont {Fricker}}]{xu2021}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {H.}~\bibnamefont
-  {Xu}}, \bibinfo {author} {\bibfnamefont {B.}~\bibnamefont {Blonder}},
-  \bibinfo {author} {\bibfnamefont {M.}~\bibnamefont {Jodra}}, \bibinfo
-  {author} {\bibfnamefont {Y.}~\bibnamefont {Malhi}},\ and\ \bibinfo {author}
-  {\bibfnamefont {M.}~\bibnamefont {Fricker}},\ }\href
-  {https://doi.org/10.1111/nph.16923} {\bibfield  {journal} {\bibinfo
-  {journal} {New Phytologist}\ }\textbf {\bibinfo {volume} {229}},\ \bibinfo
-  {pages} {631} (\bibinfo {year} {2021})},\ \bibinfo {note} {data:
-  doi:10.5281/zenodo.4008361}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Willis}\ \emph {et~al.}(2016)\citenamefont {Willis}
-  \emph {et~al.}}]{willis2016}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {L.}~\bibnamefont
-  {Willis}} \emph {et~al.},\ }\href@noop {} {\bibfield  {journal} {\bibinfo
-  {journal} {Proceedings of the National Academy of Sciences USA}\ }\textbf
-  {\bibinfo {volume} {113}},\ \bibinfo {pages} {E8238} (\bibinfo {year}
-  {2016})},\ \bibinfo {note} {data: doi:10.17863/CAM.7793}\BibitemShut
-  {NoStop}%
-\bibitem [{\citenamefont {Gibson}\ \emph {et~al.}(2006)\citenamefont {Gibson},
-  \citenamefont {Patel}, \citenamefont {Nagpal},\ and\ \citenamefont
-  {Perrimon}}]{gibson2006}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {M.~C.}\ \bibnamefont
-  {Gibson}}, \bibinfo {author} {\bibfnamefont {A.~B.}\ \bibnamefont {Patel}},
-  \bibinfo {author} {\bibfnamefont {R.}~\bibnamefont {Nagpal}},\ and\ \bibinfo
-  {author} {\bibfnamefont {N.}~\bibnamefont {Perrimon}},\ }\bibfield  {title}
-  {\bibinfo {title} {The emergence of geometric order in proliferating metazoan
-  epithelia},\ }\href {https://doi.org/10.1038/nature05014} {\bibfield
-  {journal} {\bibinfo  {journal} {Nature}\ }\textbf {\bibinfo {volume} {442}},\
-  \bibinfo {pages} {1038} (\bibinfo {year} {2006})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Sahlin}\ and\ \citenamefont
-  {J{\"o}nsson}(2010)}]{sahlin2010}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {P.}~\bibnamefont
-  {Sahlin}}\ and\ \bibinfo {author} {\bibfnamefont {H.}~\bibnamefont
-  {J{\"o}nsson}},\ }\href@noop {} {\bibfield  {journal} {\bibinfo  {journal}
-  {PLoS ONE}\ }\textbf {\bibinfo {volume} {5}},\ \bibinfo {pages} {e11750}
-  (\bibinfo {year} {2010})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Refahi}\ \emph {et~al.}(2021)\citenamefont {Refahi}
-  \emph {et~al.}}]{refahi2021}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {Y.}~\bibnamefont
-  {Refahi}} \emph {et~al.},\ }\href@noop {} {\bibfield  {journal} {\bibinfo
-  {journal} {Developmental Cell}\ }\textbf {\bibinfo {volume} {56}},\ \bibinfo
-  {pages} {540} (\bibinfo {year} {2021})},\ \bibinfo {note} {data:
-  doi:10.17863/CAM.61991}\BibitemShut {NoStop}%
-\end{thebibliography}%
+\begin{thebibliography}{25}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Bohn et~al.(2005{\natexlab{a}})Bohn, Pauchard, and Couder]{bohn2005}
+Steffen Bohn, Ludovic Pauchard, and Yves Couder.
+\newblock Hierarchical crack pattern as formed by successive domain divisions.
+  {I}. {T}emporal and geometrical hierarchy.
+\newblock \emph{Physical Review E}, 71\penalty0 (4):\penalty0 046214,
+  2005{\natexlab{a}}.
+\newblock \doi{10.1103/PhysRevE.71.046214}.
+
+\bibitem[Bohn et~al.(2005{\natexlab{b}})Bohn, Platkiewicz, Andreotti,
+  Adda-Bedia, and Couder]{bohn2005b}
+Steffen Bohn, Jonathan Platkiewicz, Bruno Andreotti, Mokhtar Adda-Bedia, and
+  Yves Couder.
+\newblock Hierarchical crack pattern as formed by successive domain divisions.
+  {II}. {F}rom disordered to deterministic behavior.
+\newblock \emph{Physical Review E}, 71\penalty0 (4):\penalty0 046215,
+  2005{\natexlab{b}}.
+\newblock \doi{10.1103/PhysRevE.71.046215}.
+
+\bibitem[Bohn et~al.(2005{\natexlab{c}})Bohn, Douady, and Couder]{bohn2005prl}
+Steffen Bohn, St{\'e}phane Douady, and Yves Couder.
+\newblock Four sided domains in hierarchical space dividing patterns.
+\newblock \emph{Physical Review Letters}, 94:\penalty0 054503,
+  2005{\natexlab{c}}.
+\newblock \doi{10.1103/PhysRevLett.94.054503}.
+
+\bibitem[Gilbert(1967)]{gilbert1967}
+E.~N. Gilbert.
+\newblock Random plane networks and needle-shaped crystals.
+\newblock In B.~Noble, editor, \emph{Applications of Undergraduate Mathematics
+  in Engineering}. Macmillan, New York, 1967.
+
+\bibitem[Nagel and Wei{\ss}(2005)]{nagel2005}
+Werner Nagel and Viola Wei{\ss}.
+\newblock Crack {STIT} tessellations: characterization of stationary random
+  tessellations stable with respect to iteration.
+\newblock \emph{Advances in Applied Probability}, 37\penalty0 (4):\penalty0
+  859--883, 2005.
+
+\bibitem[Cowan(2010)]{cowan2010}
+Richard Cowan.
+\newblock New classes of random tessellations arising from iterative division
+  of cells.
+\newblock \emph{Advances in Applied Probability}, 42\penalty0 (1):\penalty0
+  26--47, 2010.
+\newblock \doi{10.1239/aap/1269611142}.
+
+\bibitem[Andresen et~al.(2013)Andresen, Hansen, Le~Goc, Davy, and
+  Hope]{andresen2013}
+Christian~Andr{\'e} Andresen, Alex Hansen, Romain Le~Goc, Philippe Davy, and
+  Sigmund~Mongstad Hope.
+\newblock Topology of fracture networks.
+\newblock \emph{Frontiers in Physics}, 1:\penalty0 7, 2013.
+\newblock \doi{10.3389/fphy.2013.00007}.
+
+\bibitem[Vazquez(2026{\natexlab{a}})]{vazquez2026sr}
+Alexei Vazquez.
+\newblock Scale-rich network metamaterials grow by local rules on a recursive
+  cell division.
+\newblock arXiv:2611.16513, 2026{\natexlab{a}}.
+
+\bibitem[Both et~al.(2026)Both, Chen, Gao, Mooij, Charara, Wadhwa, Portela, and
+  Barab{\'a}si]{both2026}
+Csaba Both, Andrew Yen-Jong Chen, Ting-Ting Gao, Niek Mooij, Mohammad Charara,
+  Jayna Wadhwa, Carlos~M. Portela, and Albert-L{\'a}szl{\'o} Barab{\'a}si.
+\newblock Scale-rich network-based metamaterials.
+\newblock \emph{Nature}, 659:\penalty0 345, 2026.
+\newblock \doi{10.1038/s41586-026-11191-2}.
+
+\bibitem[Besson and Dumais(2011)]{besson2011}
+S{\'e}bastien Besson and Jacques Dumais.
+\newblock Universal rule for the symmetric division of plant cells.
+\newblock \emph{Proceedings of the National Academy of Sciences USA},
+  108:\penalty0 6294--6299, 2011.
+\newblock \doi{10.1073/pnas.1011866108}.
+
+\bibitem[Couder et~al.(2002)Couder, Pauchard, Allain, Adda-Bedia, and
+  Douady]{couder2002}
+Yves Couder, Ludovic Pauchard, Catherine Allain, Mokhtar Adda-Bedia, and
+  St{\'e}phane Douady.
+\newblock The leaf venation as formed in a tensorial field.
+\newblock \emph{European Physical Journal B}, 28:\penalty0 135--138, 2002.
+\newblock \doi{10.1140/epjb/e2002-00211-1}.
+
+\bibitem[Bohn et~al.(2002)Bohn, Andreotti, Douady, Munzinger, and
+  Couder]{bohn2002}
+Steffen Bohn, Bruno Andreotti, St{\'e}phane Douady, Jerome Munzinger, and Yves
+  Couder.
+\newblock Constitutive property of the local organization of leaf venation
+  networks.
+\newblock \emph{Physical Review E}, 65:\penalty0 061914, 2002.
+\newblock \doi{10.1103/PhysRevE.65.061914}.
+
+\bibitem[Tojkander et~al.(2015)Tojkander, Gateva, Husain, Krishnan, and
+  Lappalainen]{tojkander2015}
+Sari Tojkander, Gergana Gateva, Amjad Husain, Ramaswamy Krishnan, and Pekka
+  Lappalainen.
+\newblock Generation of contractile actomyosin bundles depends on
+  mechanosensitive actin filament assembly and disassembly.
+\newblock \emph{eLife}, 4:\penalty0 e06126, 2015.
+\newblock \doi{10.7554/eLife.06126}.
+
+\bibitem[Vignaud et~al.(2021)Vignaud, Copos, Leterrier, Toro-Nahuelpan, Tseng,
+  Mahamid, Blanchoin, Mogilner, Th{\'e}ry, and Kurzawa]{vignaud2021}
+Timoth{\'e}e Vignaud, Calina Copos, Christophe Leterrier, Mauricio
+  Toro-Nahuelpan, Qingzong Tseng, Julia Mahamid, Laurent Blanchoin, Alex
+  Mogilner, Manuel Th{\'e}ry, and Laetitia Kurzawa.
+\newblock Stress fibres are embedded in a contractile cortical network.
+\newblock \emph{Nature Materials}, 20:\penalty0 410--420, 2021.
+\newblock \doi{10.1038/s41563-020-00825-z}.
+
+\bibitem[Errera(1888)]{errera1888}
+L{\'e}o Errera.
+\newblock {\"U}ber {Z}ellformen und {S}eifenblasen.
+\newblock \emph{Botanisches Centralblatt}, 34:\penalty0 395--398, 1888.
+
+\bibitem[Willis et~al.(2016)Willis, Refahi, Wightman, Landrein, Teles, Huang,
+  Meyerowitz, and J{\"o}nsson]{willis2016}
+Lisa Willis, Yassin Refahi, Raymond Wightman, Beno{\^\i}t Landrein, Jos{\'e}
+  Teles, Kerwyn~Casey Huang, Elliot~M. Meyerowitz, and Henrik J{\"o}nsson.
+\newblock Cell size and growth regulation in the \textit{Arabidopsis thaliana}
+  apical stem cell niche.
+\newblock \emph{Proceedings of the National Academy of Sciences USA},
+  113:\penalty0 E8238--E8246, 2016.
+\newblock \doi{10.1073/pnas.1616768113}.
+
+\bibitem[Refahi et~al.(2021)Refahi, Zardilis, Michelin, Wightman, Leggio,
+  Legrand, Faure, Vachez, Armezzani, Risson, Zhao, Das, Prunet, Meyerowitz,
+  Godin, Malandain, J{\"o}nsson, and Traas]{refahi2021}
+Yassin Refahi, Argyris Zardilis, Ga{\"e}l Michelin, Raymond Wightman, Bruno
+  Leggio, Jonathan Legrand, Emmanuel Faure, Laetitia Vachez, Alessia Armezzani,
+  Anne-Evodie Risson, Feng Zhao, Pradeep Das, Nathana{\"e}l Prunet, Elliot~M.
+  Meyerowitz, Christophe Godin, Gr{\'e}goire Malandain, Henrik J{\"o}nsson, and
+  Jan Traas.
+\newblock A multiscale analysis of early flower development in
+  \textit{Arabidopsis} provides an integrated view of molecular regulation and
+  growth control.
+\newblock \emph{Developmental Cell}, 56:\penalty0 540--556, 2021.
+\newblock \doi{10.1016/j.devcel.2021.01.019}.
+
+\bibitem[Vazquez(2026{\natexlab{b}})]{vazquezbook}
+Alexei Vazquez.
+\newblock \emph{Local network growth: How simple rules drive network
+  complexity}.
+\newblock Independently published, 2026{\natexlab{b}}.
+
+\bibitem[Krapivsky et~al.(2000)Krapivsky, Redner, and Leyvraz]{krapivsky2000}
+P.~L. Krapivsky, S.~Redner, and F.~Leyvraz.
+\newblock Connectivity of growing random networks.
+\newblock \emph{Physical Review Letters}, 85\penalty0 (21):\penalty0
+  4629--4632, 2000.
+\newblock \doi{10.1103/PhysRevLett.85.4629}.
+
+\bibitem[Farhadifar et~al.(2007)Farhadifar, R{\"o}per, Aigouy, Eaton, and
+  J{\"u}licher]{farhadifar2007}
+Reza Farhadifar, Jens-Christian R{\"o}per, Benoit Aigouy, Suzanne Eaton, and
+  Frank J{\"u}licher.
+\newblock The influence of cell mechanics, cell-cell interactions, and
+  proliferation on epithelial packing.
+\newblock \emph{Current Biology}, 17:\penalty0 2095--2104, 2007.
+\newblock \doi{10.1016/j.cub.2007.11.049}.
+
+\bibitem[Gibson et~al.(2006)Gibson, Patel, Nagpal, and Perrimon]{gibson2006}
+Matthew~C. Gibson, Ankit~B. Patel, Radhika Nagpal, and Norbert Perrimon.
+\newblock The emergence of geometric order in proliferating metazoan epithelia.
+\newblock \emph{Nature}, 442\penalty0 (7106):\penalty0 1038--1041, 2006.
+\newblock \doi{10.1038/nature05014}.
+
+\bibitem[Sahlin and J{\"o}nsson(2010)]{sahlin2010}
+Patrik Sahlin and Henrik J{\"o}nsson.
+\newblock A modeling study on how cell division affects properties of
+  epithelial tissues under isotropic growth.
+\newblock \emph{PLoS ONE}, 5:\penalty0 e11750, 2010.
+\newblock \doi{10.1371/journal.pone.0011750}.
+
+\bibitem[Xu et~al.(2021)Xu, Blonder, Jodra, Malhi, and Fricker]{xu2021}
+Hao Xu, Benjamin Blonder, Miguel Jodra, Yadvinder Malhi, and Mark Fricker.
+\newblock Automated and accurate segmentation of leaf venation networks via
+  deep learning.
+\newblock \emph{New Phytologist}, 229:\penalty0 631--648, 2021.
+\newblock \doi{10.1111/nph.16923}.
+
+\bibitem[Blonder et~al.(2020)Blonder, Both, Jodra, Xu, Fricker, Matos, Majalap,
+  Burslem, Teh, and Malhi]{blonder2020}
+Benjamin Blonder, Sabine Both, Miguel Jodra, Hao Xu, Mark Fricker, Ilaine~S.
+  Matos, Noreen Majalap, David F. R.~P. Burslem, Yit~Arn Teh, and Yadvinder
+  Malhi.
+\newblock Linking functional traits to multiscale statistics of leaf venation
+  networks.
+\newblock \emph{New Phytologist}, 228:\penalty0 1796--1810, 2020.
+\newblock \doi{10.1111/nph.16830}.
+
+\bibitem[Qiao et~al.(2021)Qiao, Li, Guo, Liu, Jiang, Dai, and Li]{qiao2021}
+Chang Qiao, Di~Li, Yuting Guo, Chong Liu, Tao Jiang, Qionghai Dai, and Dong Li.
+\newblock Evaluation and development of deep neural networks for image
+  super-resolution in optical microscopy.
+\newblock \emph{Nature Methods}, 18:\penalty0 194--202, 2021.
+\newblock \doi{10.1038/s41592-020-01048-5}.
+
+\end{thebibliography}

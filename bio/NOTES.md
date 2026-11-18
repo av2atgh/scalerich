@@ -194,3 +194,16 @@ corner-free rule (Errera) that kills dual clustering; junction relaxation by ten
   figures.py (143.1, 140.0, 138.5, ...); fit valley unaffected at this resolution.
 - bio/manuscript.tex (revtex PRE, 7 pp, figures.py -> figs/fig1-4), drafted by a forked agent;
   Refahi parameter-free test is the plant headline.
+
+## 2026-11-18 — JRSI version
+- manuscript.tex rewritten for J. R. Soc. Interface (article class, line numbers, numbered refs,
+  13 pp incl. refs; abstract ≤ 200 words). Headline: plant walls are a recursive-division
+  network; the linked-host fraction φ (flower, 9/47 = 0.19 ± 0.06) is predicted with no
+  parameter adjusted to flowers (0.19 relaxed, 0.002 unrelaxed; P(≥9 | 0.002) = 7e-16).
+- "SR dual" is called the *contact network* in the text; "random cuts" = SR rule.
+- supplement.tex = ESM (S1 validation … S10 code map); tables S1 rules, S2 turnover,
+  S3 tension grid, S4 stiffness, S5 flower angle/degree-age; fig S1 actin.
+- Figures renumbered: fig1 schematic (new), fig2 theory, fig3 meristem wall-birth map (new,
+  Willis plant1, 573 dated walls), fig4 angles + P(n), fig5 venation, figS1 actin.
+- P(n) distances now in results/pn_distance.txt (model/pn_distance.py).
+- To confirm before submission: AI-use declaration, funding statement, Zenodo archive of code.

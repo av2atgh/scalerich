@@ -1,0 +1,49 @@
+\begin{thebibliography}{5}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Xu et~al.(2021)Xu, Blonder, Jodra, Malhi, and Fricker]{xu2021}
+Hao Xu, Benjamin Blonder, Miguel Jodra, Yadvinder Malhi, and Mark Fricker.
+\newblock Automated and accurate segmentation of leaf venation networks via
+  deep learning.
+\newblock \emph{New Phytologist}, 229:\penalty0 631--648, 2021.
+\newblock \doi{10.1111/nph.16923}.
+
+\bibitem[Blonder et~al.(2020)Blonder, Both, Jodra, Xu, Fricker, Matos, Majalap,
+  Burslem, Teh, and Malhi]{blonder2020}
+Benjamin Blonder, Sabine Both, Miguel Jodra, Hao Xu, Mark Fricker, Ilaine~S.
+  Matos, Noreen Majalap, David F. R.~P. Burslem, Yit~Arn Teh, and Yadvinder
+  Malhi.
+\newblock Linking functional traits to multiscale statistics of leaf venation
+  networks.
+\newblock \emph{New Phytologist}, 228:\penalty0 1796--1810, 2020.
+\newblock \doi{10.1111/nph.16830}.
+
+\bibitem[L{\"u}ck et~al.(2010)L{\"u}ck, Sailer, Schmidt, and Walther]{luck2010}
+Sebastian L{\"u}ck, Michaela Sailer, Volker Schmidt, and Paul Walther.
+\newblock Three-dimensional analysis of intermediate filament networks using
+  {SEM} tomography.
+\newblock \emph{Journal of Microscopy}, 239:\penalty0 1--16, 2010.
+\newblock \doi{10.1111/j.1365-2818.2009.03348.x}.
+
+\bibitem[Xu et~al.(2015)Xu, Vavylonis, Tsai, Koenderink, Nie, Yusuf, Lee, Wu,
+  and Huang]{xu2015soax}
+Ting Xu, Dimitrios Vavylonis, Feng-Ching Tsai, Gijsje~H. Koenderink, Wei Nie,
+  Eddy Yusuf, I-Ju Lee, Jian-Qiu Wu, and Xiaolei Huang.
+\newblock {SOAX}: a software for quantification of {3D} biopolymer networks.
+\newblock \emph{Scientific Reports}, 5:\penalty0 9081, 2015.
+\newblock \doi{10.1038/srep09081}.
+
+\bibitem[Sadegh et~al.(2017)Sadegh, Higgins, Mannion, Tamkun, and
+  Krapf]{sadegh2017}
+Sanaz Sadegh, Jenny~L. Higgins, Patrick~C. Mannion, Michael~M. Tamkun, and
+  Diego Krapf.
+\newblock Plasma membrane is compartmentalized by a self-similar cortical actin
+  meshwork.
+\newblock \emph{Physical Review X}, 7:\penalty0 011031, 2017.
+\newblock \doi{10.1103/PhysRevX.7.011031}.
+
+\end{thebibliography}

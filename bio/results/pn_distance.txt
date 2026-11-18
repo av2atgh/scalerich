@@ -1,0 +1,4 @@
+plant (errera+relax, size pick)     TV = 0.107
+plant, area pick                    TV = 0.162
+errera, no relax                    TV = 0.033
+SR (no relax)                       TV = 0.370

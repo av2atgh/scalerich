@@ -69,7 +69,7 @@ def arms_at(V, E, vertex, r1=2.0, r2=8.0):
     return out
 
 
-def run(plant, slope_max=0.7):
+def run(plant, slope_max=0.7, keep_last=False):
     files = glob.glob(f'{ROOT}/{plant}/segmentation_tiffs/*hrs_*.tif.gz')
     times = sorted({int(re.match(r'(\d+)hrs', f.split('/')[-1]).group(1)) for f in files})
     res = [l for l in open(f'{ROOT}/{plant}/{plant}_tiff_resolutions.txt') if not l.startswith('#')]
@@ -183,9 +183,23 @@ def run(plant, slope_max=0.7):
         for h in hs:
             deg[h] = deg.get(h, 0) + 1
             deg[new] = deg.get(new, 0) + 1
-    return dict(plant=plant, times=times, divs=divs, relax=relax,
-                deg={int(k): v for k, v in deg.items()},
-                birth={int(k): (v if v is None or isinstance(v, int) else str(v)) for k, v in birth.items()})
+    out = dict(plant=plant, times=times, divs=divs, relax=relax,
+               deg={int(k): v for k, v in deg.items()},
+               birth={int(k): (v if v is None or isinstance(v, int) else str(v)) for k, v in birth.items()})
+    if keep_last:
+        # last frame walls and per-wall birth (int hours, None = present at start, 'unknown')
+        tl = times[-1]
+        out['last_E'] = frames[tl]['E']
+        out['last_lab'] = frames[tl]['lab']
+        lb = {}
+        for ab in frames[tl]['walls']:
+            if ab[0] == 0:
+                continue
+            lid = line.get((tl, ab))
+            b = birth.get(lid, 'unknown') if lid is not None else 'unknown'
+            lb[ab] = b if b is None or isinstance(b, int) else 'unknown'
+        out['last_birth'] = lb
+    return out
 
 
 if __name__ == '__main__':
